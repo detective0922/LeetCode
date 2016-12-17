@@ -44,10 +44,10 @@ public class FizzBuzz {
 		List<String> strList = new ArrayList<String>(n);
 		for (int i = 1; i <= n; i++) {
 			String str = "";
-			if (i >= 3 && i % 3 == 0) {
+			if (i % 3 == 0) {
 				str += "Fizz";
 			}
-			if (i >= 5 && i % 5 == 0) {
+			if (i % 5 == 0) {
 				str += "Buzz";
 			}
 			if (str.isEmpty()) {
