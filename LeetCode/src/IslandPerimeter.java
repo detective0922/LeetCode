@@ -21,15 +21,6 @@ public class IslandPerimeter {
 		int perimeter = 0;
 		int cellPerimeter = 0;
 		int[][] tempIsland = new int[y][x];
-		/*for (int i = 0; i < y; i++) {
-			for (int j = 0; j < x; j++) {
-				if (grid[i][j]==0) {
-					continue;
-				}
-				tempIsland[i][j] = 4;				
-			}
-			
-		}*/
 		for (int i = 0; i < y; i++) {
 			for (int j = 0; j < x; j++) {
 				if (grid[i][j] == 0) {
