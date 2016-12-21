@@ -15,8 +15,23 @@ Determine the perimeter of the island.
 
 public class IslandPerimeter {
 	
-	public int IslandPerimeter(int n) {
-		
+	public int IslandPerimeter(int[][] grid) {
+		int x = grid[0].length;
+		int y = grid.length;
+		int perimeter = 0;
+		int cellPerimeter = 0;
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				cellPerimeter = 4;
+				if (grid[i][j]==0) {
+					continue;
+				}
+				
+				
+			}
+			
+		}
+		return perimeter;
 	}
 
 }
