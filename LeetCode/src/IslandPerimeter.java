@@ -32,21 +32,21 @@ public class IslandPerimeter {
 		}*/
 		for (int i = 0; i < y; i++) {
 			for (int j = 0; j < x; j++) {
-				if (grid[i][j]==0) {
+				if (grid[i][j] == 0) {
 					continue;
 				}
 				cellPerimeter = tempIsland[i][j] + 4;
-				if(i<y && grid[i+1][j] == 1){
+				if (i < y - 1 && grid[i + 1][j] == 1) {
 					tempIsland[i][j]--;
-					tempIsland[i+1][j]--;
+					tempIsland[i + 1][j]--;
 				}
-				if(j<x&&grid[i][j+1] == 1){
+				if (j < x - 1 && grid[i][j + 1] == 1) {
 					cellPerimeter--;
-					tempIsland[i][j+1]--;
+					tempIsland[i][j + 1]--;
 				}
 				perimeter += cellPerimeter;
 			}
-			
+
 		}
 		return perimeter;
 	}
