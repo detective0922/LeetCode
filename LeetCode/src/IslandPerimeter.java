@@ -20,13 +20,29 @@ public class IslandPerimeter {
 		int y = grid.length;
 		int perimeter = 0;
 		int cellPerimeter = 0;
-		for (int i = 0; i < x; i++) {
-			for (int j = 0; j < y; j++) {
-				cellPerimeter = 4;
+		int[][] tempIsland = new int[y][x];
+		for (int i = 0; i < y; i++) {
+			for (int j = 0; j < x; j++) {
 				if (grid[i][j]==0) {
 					continue;
 				}
-				
+				tempIsland[i][j] = 4;				
+			}
+			
+		}
+		for (int i = 0; i < y; i++) {
+			for (int j = 0; j < x; j++) {
+				if (grid[i][j]==0) {
+					continue;
+				}
+				if(grid[i+1][j] == 1){
+					tempIsland[i][j]--;
+					tempIsland[i+1][j]--;
+				}
+				if(grid[i][j+1] == 1){
+					cellPerimeter--;
+					tempIsland[i][j+1]--;
+				}
 				
 			}
 			
