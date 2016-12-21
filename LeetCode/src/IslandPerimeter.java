@@ -15,6 +15,11 @@ Determine the perimeter of the island.
 
 public class IslandPerimeter {
 	
+	public static void main(String[] args) {
+		int[][] grid = {{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+		System.out.println(new IslandPerimeter().IslandPerimeter(grid));
+	}
+	
 	public int IslandPerimeter(int[][] grid) {
 		int x = grid[0].length;
 		int y = grid.length;
@@ -23,19 +28,18 @@ public class IslandPerimeter {
 		int[][] tempIsland = new int[y][x];
 		for (int i = 0; i < y; i++) {
 			for (int j = 0; j < x; j++) {
-				if (grid[i][j] == 0) {
-					continue;
+				if (grid[i][j] == 1) {
+					cellPerimeter = tempIsland[i][j] + 4;
+					if (i < y - 1 && grid[i + 1][j] == 1) {
+						cellPerimeter--;
+						tempIsland[i + 1][j]--;
+					}
+					if (j < x - 1 && grid[i][j + 1] == 1) {
+						cellPerimeter--;
+						tempIsland[i][j + 1]--;
+					}
+					perimeter += cellPerimeter;
 				}
-				cellPerimeter = tempIsland[i][j] + 4;
-				if (i < y - 1 && grid[i + 1][j] == 1) {
-					tempIsland[i][j]--;
-					tempIsland[i + 1][j]--;
-				}
-				if (j < x - 1 && grid[i][j + 1] == 1) {
-					cellPerimeter--;
-					tempIsland[i][j + 1]--;
-				}
-				perimeter += cellPerimeter;
 			}
 
 		}
