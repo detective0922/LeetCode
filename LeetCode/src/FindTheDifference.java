@@ -28,7 +28,16 @@ Explanation:
 public class FindTheDifference {
 	
 	public char findTheDifference(String s, String t) {
-
+		char[] sChars = s.toCharArray();
+		char[] tChars = t.toCharArray();
+		
+		for (int i = 0; i < sChars.length; i++) {
+			if(sChars[i]!=tChars[i]){
+				return tChars[i];
+			}			
+		}
+		return '0';
+	
 	}
 
 }
