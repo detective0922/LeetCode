@@ -36,7 +36,7 @@ public class FindTheDifference {
 				return tChars[i];
 			}
 		}
-		return '0';
+		return tChars[tChars.length - 1];
 	
 	}
 
