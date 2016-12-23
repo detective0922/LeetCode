@@ -1,4 +1,4 @@
-
+import java.util.HashMap;
 
 /*
 
@@ -31,9 +31,13 @@ public class FindTheDifference {
 		char[] sChars = s.toCharArray();
 		char[] tChars = t.toCharArray();
 
+		HashMap<Character, Integer> sMap = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> tMap = new HashMap<Character, Integer>();
 		for (int i = 0; i < sChars.length; i++) {
-			if (sChars[i] != tChars[i]) {
-				return tChars[i];
+			if (sMap.containsKey(sChars[i])) {
+				sMap.put(sChars[i], sMap.get(sChars[i])+1);
+			} else {
+				sMap.put(sChars[i], 1);
 			}
 		}
 		return tChars[tChars.length - 1];
