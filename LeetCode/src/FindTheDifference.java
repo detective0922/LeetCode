@@ -32,33 +32,27 @@ public class FindTheDifference {
 		char[] sChars = s.toCharArray();
 		char[] tChars = t.toCharArray();
 
-		HashMap<Character, Integer> sMap = new HashMap<Character, Integer>();
-		HashMap<Character, Integer> tMap = new HashMap<Character, Integer>();
-		for (int i = 0; i < sChars.length; i++) {
-			int value;
-			if (sMap.containsKey(sChars[i])) {
-				value = sMap.get(sChars[i]) + 1;
-			} else {
-				value = 1;
-			}
-			sMap.put(sChars[i], value);
-		}
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
 		for (int i = 0; i < tChars.length; i++) {
 			int value;
-			if (tMap.containsKey(tChars[i])) {
-				value = tMap.get(tChars[i]) + 1;
+			if (map.containsKey(tChars[i])) {
+				value = map.get(tChars[i]) + 1;
 			} else {
 				value = 1;
 			}
-			tMap.put(tChars[i], value);
+			map.put(tChars[i], value);
+		}
+		
+		for (int i = 0; i < sChars.length; i++) {
+			if (map.containsKey(sChars[i])) {
+				map.put(sChars[i],map.get(sChars[i]) - 1);
+			}
 		}
 
-		for (Entry<Character, Integer> tEntry : tMap.entrySet()) {
-			Character tCharacter = tEntry.getKey();
-			Integer tInt = tEntry.getValue();
-			if (tInt != sMap.get(tCharacter)) {
-				return tCharacter;
+		for (Entry<Character, Integer> entry : map.entrySet()) {
+			if (entry.getValue() != 0) {
+				return entry.getKey();
 			}
 		}
 		return tChars[tChars.length - 1];
