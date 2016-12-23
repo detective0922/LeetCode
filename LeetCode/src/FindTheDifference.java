@@ -43,7 +43,7 @@ public class FindTheDifference {
 			}
 			sMap.put(sChars[i], value);
 		}
-		
+
 		for (int i = 0; i < tChars.length; i++) {
 			int value;
 			if (tMap.containsKey(tChars[i])) {
@@ -62,7 +62,7 @@ public class FindTheDifference {
 			}
 		}
 		return tChars[tChars.length - 1];
-	
+
 	}
 
 }
