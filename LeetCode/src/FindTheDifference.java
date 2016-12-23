@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 /*
 
@@ -52,8 +53,14 @@ public class FindTheDifference {
 			}
 			tMap.put(tChars[i], value);
 		}
-		
-		
+
+		for (Entry<Character, Integer> tEntry : tMap.entrySet()) {
+			Character tCharacter = tEntry.getKey();
+			Integer tInt = tEntry.getValue();
+			if (tInt != sMap.get(tCharacter)) {
+				return tCharacter;
+			}
+		}
 		return tChars[tChars.length - 1];
 	
 	}
