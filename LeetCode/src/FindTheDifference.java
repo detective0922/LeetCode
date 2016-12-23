@@ -43,10 +43,10 @@ public class FindTheDifference {
 			}
 			map.put(tChars[i], value);
 		}
-		
+
 		for (int i = 0; i < sChars.length; i++) {
 			if (map.containsKey(sChars[i])) {
-				map.put(sChars[i],map.get(sChars[i]) - 1);
+				map.put(sChars[i], map.get(sChars[i]) - 1);
 			}
 		}
 
