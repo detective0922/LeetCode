@@ -50,12 +50,12 @@ public class FindTheDifference {
 			}
 		}
 
-		for (Entry<Character, Integer> entry : map.entrySet()) {
-			if (entry.getValue() != 0) {
-				return entry.getKey();
+		for (Character c : map.keySet()) {
+			if (map.get(c) != 0) {
+				return c;
 			}
 		}
-		return tChars[tChars.length - 1];
+		return '0';
 
 	}
 
