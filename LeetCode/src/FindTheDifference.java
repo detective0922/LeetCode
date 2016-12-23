@@ -34,12 +34,26 @@ public class FindTheDifference {
 		HashMap<Character, Integer> sMap = new HashMap<Character, Integer>();
 		HashMap<Character, Integer> tMap = new HashMap<Character, Integer>();
 		for (int i = 0; i < sChars.length; i++) {
+			int value;
 			if (sMap.containsKey(sChars[i])) {
-				sMap.put(sChars[i], sMap.get(sChars[i])+1);
+				value = sMap.get(sChars[i]) + 1;
 			} else {
-				sMap.put(sChars[i], 1);
+				value = 1;
 			}
+			sMap.put(sChars[i], value);
 		}
+		
+		for (int i = 0; i < tChars.length; i++) {
+			int value;
+			if (tMap.containsKey(tChars[i])) {
+				value = tMap.get(tChars[i]) + 1;
+			} else {
+				value = 1;
+			}
+			tMap.put(tChars[i], value);
+		}
+		
+		
 		return tChars[tChars.length - 1];
 	
 	}
