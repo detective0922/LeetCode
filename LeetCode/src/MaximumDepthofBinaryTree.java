@@ -18,7 +18,9 @@ public class MaximumDepthofBinaryTree {
 		TreeNode four = new TreeNode(4);
 		TreeNode five = new TreeNode(5);
 		root.left = two;
-		
+		root.right = three;
+		two.left = four;
+		three.right = five;
 		System.out.println(new MaximumDepthofBinaryTree().maxDepth(root));
 	}
 	
@@ -53,8 +55,9 @@ public class MaximumDepthofBinaryTree {
 			return depth;
 		}
 		
+		depth++;
 		if (node.left == null && node.right == null) {
-			return ++depth;
+			return depth;
 		}
 		
 		int leftDepth = 0;
