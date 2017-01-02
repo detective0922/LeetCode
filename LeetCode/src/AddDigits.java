@@ -24,6 +24,7 @@ public class AddDigits {
 			if (sum < 10) {
 				return sum;
 			}
+			stack.push(sum);
 		}
 	}
 
