@@ -12,18 +12,30 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one
 
 */
 public class AddDigits {
+	
+	public static void main(String[] args) {
+		System.out.println(new AddDigits().addDigits(10));
+	}
+	
 	public int addDigits(int num) {
 		Stack<Integer> stack = new Stack<Integer>();
 		int sum = 0;
 		stack.push(num);
 		while (!stack.isEmpty()) {
 			num = stack.pop();
-			while (num > 0) {				
+			sum = 0;
+			while (num > 0) {
 				int remainder = num % 10;
-				num -= remainder;
+				num = num / 10;
 				sum += remainder;
 			}
+			if (sum < 10) {
+				return sum;
+			} else {
+				stack.push(sum);
+			}
 		}
+		return 0;
 	}
 
 }
