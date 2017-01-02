@@ -21,6 +21,9 @@ public class AddDigits {
 			int remainder = num % 10;
 			num -= remainder;
 			sum += remainder;
+			if (sum < 10) {
+				return sum;
+			}
 		}
 	}
 
