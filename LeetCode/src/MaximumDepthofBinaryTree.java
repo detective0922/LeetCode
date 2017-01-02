@@ -13,8 +13,12 @@ public class MaximumDepthofBinaryTree {
 	
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(1);
-		TreeNode one = new TreeNode(2);
-		root.left = one;
+		TreeNode two = new TreeNode(2);
+		TreeNode three = new TreeNode(3);
+		TreeNode four = new TreeNode(4);
+		TreeNode five = new TreeNode(5);
+		root.left = two;
+		
 		System.out.println(new MaximumDepthofBinaryTree().maxDepth(root));
 	}
 	
