@@ -10,6 +10,14 @@ The maximum depth is the number of nodes along the longest path from the root no
 
 
 public class MaximumDepthofBinaryTree {
+	
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode(1);
+		TreeNode one = new TreeNode(2);
+		root.left = one;
+		System.out.println(new MaximumDepthofBinaryTree().maxDepth(root));
+	}
+	
 	public int maxDepth(TreeNode root) {
 		if (root == null) {
 			return 0;
@@ -18,14 +26,14 @@ public class MaximumDepthofBinaryTree {
 		if (root.left == null && root.right == null) {
 			return 1;
 		}
-		int leftDepth = 1;
+		int leftDepth = 0;
 		if (root.left != null) {
-			maxDepth(root.left, leftDepth);
+			leftDepth = maxDepth(root.left, 1);
 		}
 
-		int rightDepth = 1;
+		int rightDepth = 0;
 		if (root.right != null) {
-			maxDepth(root.right, rightDepth);
+			rightDepth = maxDepth(root.right, 1);
 		}
 
 		if (leftDepth > rightDepth) {
@@ -36,22 +44,29 @@ public class MaximumDepthofBinaryTree {
 
 	}
 	
-	public static void maxDepth(TreeNode node, int depth) {
+	public static int maxDepth(TreeNode node, int depth) {
 		if (node == null) {
-			return;
+			return depth;
 		}
 		
 		if (node.left == null && node.right == null) {
-			depth++;
-			return;
+			return ++depth;
 		}
 		
+		int leftDepth = 0;
 		if (node.left != null) {
-			maxDepth(node.left, depth);
+			leftDepth = maxDepth(node.left, depth);
 		}
 
+		int rightDepth = 0;
 		if (node.right != null) {
-			maxDepth(node.right, depth);
+			rightDepth = maxDepth(node.right, depth);
+		}
+
+		if (leftDepth > rightDepth) {
+			return leftDepth;
+		} else {
+			return rightDepth;
 		}
 	}
 
