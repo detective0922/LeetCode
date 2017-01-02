@@ -15,16 +15,14 @@ public class AddDigits {
 	public int addDigits(int num) {
 		Stack<Integer> stack = new Stack<Integer>();
 		int sum = 0;
-		stack.push(sum);
+		stack.push(num);
 		while (!stack.isEmpty()) {
-			sum = stack.pop();
-			int remainder = num % 10;
-			num -= remainder;
-			sum += remainder;
-			if (sum < 10) {
-				return sum;
+			num = stack.pop();
+			while (num > 0) {				
+				int remainder = num % 10;
+				num -= remainder;
+				sum += remainder;
 			}
-			stack.push(sum);
 		}
 	}
 
