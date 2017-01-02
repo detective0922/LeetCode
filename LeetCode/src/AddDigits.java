@@ -18,6 +18,12 @@ public class AddDigits {
 			num -= remainder;
 			sum += remainder;
 		}
+		if (sum<10) {
+			return sum;
+		} else {
+			addDigits(sum);
+		}
+		return 0;
 
 	}
 
