@@ -19,8 +19,12 @@ public class MaximumDepthofBinaryTree {
 			
 		}
 		
-		if (root.left !=null) {
-			
+		if (root.left != null) {
+
+		}
+
+		if (root.right != null) {
+
 		}
 
 	}
