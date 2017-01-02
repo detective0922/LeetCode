@@ -23,7 +23,6 @@ public class AddDigits {
 		} else {
 			addDigits(sum);
 		}
-		return 0;
 
 	}
 
