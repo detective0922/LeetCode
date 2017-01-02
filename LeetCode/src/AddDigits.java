@@ -18,24 +18,19 @@ public class AddDigits {
 	}
 	
 	public int addDigits(int num) {
-		Stack<Integer> stack = new Stack<Integer>();
+		
 		int sum = 0;
-		stack.push(num);
-		while (!stack.isEmpty()) {
-			num = stack.pop();
-			sum = 0;
-			while (num > 0) {
-				int remainder = num % 10;
-				num = num / 10;
-				sum += remainder;
-			}
-			if (sum < 10) {
-				return sum;
-			} else {
-				stack.push(sum);
-			}
+		while (num > 0) {
+			int remainder = num % 10;
+			num = num / 10;
+			sum += remainder;
 		}
-		return 0;
+		if (sum < 10) {
+			return sum;
+		} else {
+			return addDigits(sum);
+		}
+		
 	}
 
 }
