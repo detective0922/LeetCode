@@ -12,6 +12,12 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one
 */
 public class AddDigits {
 	public int addDigits(int num) {
+		int sum = 0;
+		while (num > 0) {
+			int remainder = num % 10;
+			num -= remainder;
+			sum += remainder;
+		}
 
 	}
 
