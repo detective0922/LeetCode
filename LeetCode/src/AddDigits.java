@@ -21,7 +21,7 @@ public class AddDigits {
 		if (sum<10) {
 			return sum;
 		} else {
-			addDigits(sum);
+			return addDigits(sum);
 		}
 
 	}
