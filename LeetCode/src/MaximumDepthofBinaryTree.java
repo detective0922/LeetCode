@@ -28,12 +28,12 @@ public class MaximumDepthofBinaryTree {
 		}
 		int leftDepth = 1;
 		if (root.left != null) {
-			leftDepth = maxDepth(root.left, 1);
+			leftDepth = maxDepth(root.left, leftDepth);
 		}
 
 		int rightDepth = 1;
 		if (root.right != null) {
-			rightDepth = maxDepth(root.right, 1);
+			rightDepth = maxDepth(root.right, rightDepth);
 		}
 
 		if (leftDepth > rightDepth) {
