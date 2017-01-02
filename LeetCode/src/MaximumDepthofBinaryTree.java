@@ -14,9 +14,9 @@ public class MaximumDepthofBinaryTree {
 		if (root == null) {
 			return 0;
 		}
-		int depth = 1;
+
 		if (root.left == null && root.right == null) {
-			return depth;
+			return 1;
 		}
 		int leftDepth = 1;
 		if (root.left != null) {
@@ -30,21 +30,22 @@ public class MaximumDepthofBinaryTree {
 
 	}
 	
-	public static int maxDepth(TreeNode node, int depth) {
+	public static void maxDepth(TreeNode node, int depth) {
 		if (node == null) {
-			return depth;
+			return;
 		}
-		depth++;
+		
 		if (node.left == null && node.right == null) {
-			return depth;
+			depth++;
+			return;
 		}
 		
 		if (node.left != null) {
-			return maxDepth(node.left, depth);
+			maxDepth(node.left, depth);
 		}
 
 		if (node.right != null) {
-			return maxDepth(node.right, depth);
+			maxDepth(node.right, depth);
 		}
 	}
 
