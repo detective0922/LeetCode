@@ -15,8 +15,8 @@ public class MaximumDepthofBinaryTree {
 			return 0;
 		}
 		int depth = 0;
-		if (root.left==null&&root.right==null) {
-			
+		if (root.left == null && root.right == null) {
+
 		}
 		
 		if (root.left != null) {
