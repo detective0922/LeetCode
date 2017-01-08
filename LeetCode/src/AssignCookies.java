@@ -40,17 +40,18 @@ public class AssignCookies {
 
 		int childIdx = 0;
 		int cookieIdx = 0;
-		int count = 0;
+		//int count = 0;
 		while (childIdx < g.length && cookieIdx < s.length) {
 			if (s[cookieIdx] >= g[childIdx]) {
 				childIdx++;
 				cookieIdx++;
-				count++;
+				//count++;
 			} else {
 				cookieIdx++;
 			}
 		}
-		return count;
+		//return count;
+		return childIdx;
 
 	}
 
