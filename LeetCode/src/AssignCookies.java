@@ -43,10 +43,14 @@ public class AssignCookies {
 		int count = 0;
 		while (childIdx < g.length && cookieIdx < s.length) {
 			if (s[cookieIdx] >= g[childIdx]) {
-				
+				childIdx++;
+				cookieIdx++;
+				count++;
+			} else {
+				cookieIdx++;
 			}
-
 		}
+		return count;
 
 	}
 
