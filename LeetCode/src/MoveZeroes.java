@@ -21,8 +21,7 @@ public class MoveZeroes {
 		int[] test = {0, 1, 0, 3, 12};
 		new MoveZeroes().moveZeroes(test);
 		for (int i = 0; i < test.length; i++) {
-			System.out.print(test[i]);
-			
+			System.out.print(test[i]);			
 		}
 		System.out.println();
 	}
