@@ -39,7 +39,7 @@ public class MoveZeroes {
 				}
 				numIdx = zeroIdx + zeroLen;
 				while (numLen<zeroLen&&nums[numIdx + numLen] != 0) {
-					zeroLen++;
+					numLen++;
 				}
 				int swapLen = numLen > zeroLen ? zeroLen : numLen;
 				swapByLength(zeroIdx, numIdx, nums, swapLen);
