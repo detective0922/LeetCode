@@ -42,12 +42,13 @@ public class MoveZeroes {
 					}
 				}
 				numIdx = zeroIdx + zeroLen;
+				numLen = 1;
 				while (numLen < zeroLen && nums[numIdx + numLen] != 0) {
 					numLen++;
 				}
-				int swapLen = numLen > zeroLen ? zeroLen : numLen;
-				swapByLength(zeroIdx, numIdx, nums, swapLen);
-				zeroIdx = zeroIdx + swapLen;
+				//int swapLen = numLen > zeroLen ? zeroLen : numLen;
+				swapByLength(zeroIdx, numIdx, nums, zeroLen);
+				zeroIdx = zeroIdx + zeroLen;
 			} else {
 				zeroIdx++;
 				continue;
