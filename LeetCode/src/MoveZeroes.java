@@ -31,12 +31,12 @@ public class MoveZeroes {
 				while (numLen<zeroLen&&nums[numIdx + numLen + 1] != 0) {
 					zeroLen++;
 				}
-				
-				
+				int swapLen = numLen > zeroLen ? zeroLen : numLen;
+				swapByLength(zeroIdx, numIdx, nums, swapLen);
+				zeroIdx = zeroIdx + swapLen;
 			} else {
 				zeroIdx++;
-				continue;
-				
+				continue;				
 			}
 
 		}
