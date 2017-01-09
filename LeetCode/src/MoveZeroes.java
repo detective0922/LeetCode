@@ -18,14 +18,14 @@ Note:
 public class MoveZeroes {
 	
 	public static void main(String[] args) {
-		int[] test = {0, 1, 0, 3, 12};
+		int[] test = { 0, 1, 0, 3, 12 };
 		new MoveZeroes().moveZeroes(test);
 		for (int i = 0; i < test.length; i++) {
-			System.out.print(test[i]);			
+			System.out.print(test[i] + ",");
 		}
 		System.out.println();
 	}
-	
+
 	public void moveZeroes(int[] nums) {
 		int zeroIdx = 0;
 		int zeroLen = 0;
@@ -36,12 +36,12 @@ public class MoveZeroes {
 				zeroLen = 1;
 				while (nums[zeroIdx + zeroLen] == 0) {
 					zeroLen++;
-					if(zeroIdx + zeroLen >=nums.length){
+					if (zeroIdx + zeroLen >= nums.length) {
 						return;
 					}
 				}
 				numIdx = zeroIdx + zeroLen;
-				while (numLen<zeroLen&&nums[numIdx + numLen] != 0) {
+				while (numLen < zeroLen && nums[numIdx + numLen] != 0) {
 					numLen++;
 				}
 				int swapLen = numLen > zeroLen ? zeroLen : numLen;
@@ -49,12 +49,12 @@ public class MoveZeroes {
 				zeroIdx = zeroIdx + swapLen;
 			} else {
 				zeroIdx++;
-				continue;				
+				continue;
 			}
 
 		}
 	}
-	
+
 	public void swapByLength(int i, int j, int[] nums, int length) {
 		for (int k = 0; k < length; k++) {
 			int tmp = nums[j + k];
