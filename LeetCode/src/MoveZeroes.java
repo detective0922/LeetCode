@@ -23,12 +23,12 @@ public class MoveZeroes {
 		int numLen = 0;
 		while (zeroIdx < nums.length && numIdx < nums.length) {
 			if (nums[zeroIdx] == 0) {
-				zeroLen = 0;
-				while (nums[zeroIdx + zeroLen + 1] == 0) {
+				zeroLen = 1;
+				while (nums[zeroIdx + zeroLen] == 0) {
 					zeroLen++;
 				}
-				numIdx = zeroIdx + zeroLen + 1;
-				while (numLen<zeroLen&&nums[numIdx + numLen + 1] != 0) {
+				numIdx = zeroIdx + zeroLen;
+				while (numLen<zeroLen&&nums[numIdx + numLen] != 0) {
 					zeroLen++;
 				}
 				int swapLen = numLen > zeroLen ? zeroLen : numLen;
