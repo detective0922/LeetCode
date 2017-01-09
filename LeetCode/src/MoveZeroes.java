@@ -17,7 +17,29 @@ Note:
 
 public class MoveZeroes {
 	public void moveZeroes(int[] nums) {
-		
+		int zeroIdx = 0;
+		int zeroLen = 0;
+		int numIdx = 0;
+		int numLen = 0;
+		while (zeroIdx < nums.length && numIdx < nums.length) {
+			if (nums[zeroIdx] == 0) {
+				zeroLen = 0;
+				while (nums[zeroIdx + zeroLen + 1] == 0) {
+					zeroLen++;
+				}
+				numIdx = zeroIdx + zeroLen + 1;
+				while (numLen<zeroLen&&nums[numIdx + numLen + 1] != 0) {
+					zeroLen++;
+				}
+				
+				
+			} else {
+				zeroIdx++;
+				continue;
+				
+			}
+
+		}
 	}
 	
 	public void swapByLength(int i, int j, int[] nums, int length) {
@@ -25,7 +47,6 @@ public class MoveZeroes {
 			int tmp = nums[j + k];
 			nums[j + k] = nums[i + k];
 			nums[i + k] = tmp;
-
 		}
 	}
 
