@@ -18,8 +18,8 @@ Note:
 public class MoveZeroes {
 	
 	public static void main(String[] args) {
-		//int[] test = { 0, 1, 0, 3, 12 };
-		int[] test = { 0, 0, 3};
+		int[] test = { 0, 1, 0, 3, 12 };
+		//int[] test = { 0, 0, 3};
 		new MoveZeroes().moveZeroes(test);
 		for (int i = 0; i < test.length; i++) {
 			System.out.print(test[i] + ",");
@@ -43,16 +43,11 @@ public class MoveZeroes {
 				}
 				numIdx = zeroIdx + zeroLen;
 				numLen = 1;
-				while (numLen < zeroLen) {
-					if (numIdx + numLen >= nums.length) {
-						return;
-					}
-					if (nums[numIdx + numLen] != 0) {
-						numLen++;
-					}
+				while (numLen < zeroLen && numIdx + numLen < nums.length && nums[numIdx + numLen] != 0) {
+					numLen++;
 				}
-				//int swapLen = numLen > zeroLen ? zeroLen : numLen;
-				swapByLength(zeroIdx, numIdx, nums, zeroLen);
+				int swapLen = numLen > zeroLen ? zeroLen : numLen;
+				swapByLength(zeroIdx, numIdx, nums, swapLen);
 				zeroIdx = zeroIdx + zeroLen;
 			} else {
 				zeroIdx++;
