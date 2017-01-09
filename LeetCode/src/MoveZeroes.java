@@ -36,6 +36,9 @@ public class MoveZeroes {
 				zeroLen = 1;
 				while (nums[zeroIdx + zeroLen] == 0) {
 					zeroLen++;
+					if(zeroIdx + zeroLen >=nums.length){
+						return;
+					}
 				}
 				numIdx = zeroIdx + zeroLen;
 				while (numLen<zeroLen&&nums[numIdx + numLen] != 0) {
