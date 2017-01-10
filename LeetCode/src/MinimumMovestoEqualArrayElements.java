@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /*
 453. Minimum Moves to Equal Array Elements 
@@ -25,6 +26,16 @@ public class MinimumMovestoEqualArrayElements {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+	}
+	
+	public int minMoves(int[] nums) {
+		int moves = 0;
+		Arrays.sort(nums);
+		int max = nums[nums.length-1];
+		while(nums[i]<max){
+			
+		}
 
 	}
 
