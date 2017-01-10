@@ -57,12 +57,4 @@ public class MoveZeroes {
 		}
 	}
 
-	public void swapByLength(int i, int j, int[] nums, int length) {
-		for (int k = 0; k < length; k++) {
-			int tmp = nums[j + k];
-			nums[j + k] = nums[i + k];
-			nums[i + k] = tmp;
-		}
-	}
-
 }
