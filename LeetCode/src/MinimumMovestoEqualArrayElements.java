@@ -26,6 +26,8 @@ public class MinimumMovestoEqualArrayElements {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		int[] test = { 1, 2, 3};
+		System.out.println(new MinimumMovestoEqualArrayElements().minMoves(test));
 
 	}
 	
@@ -33,7 +35,7 @@ public class MinimumMovestoEqualArrayElements {
 		int moves = 0;
 		Arrays.sort(nums);
 		int min = nums[0];
-		for (int i = nums.length - 1; i < nums.length; i--) {
+		for (int i = nums.length - 1; i > 0; i--) {
 			if (nums[i] > min) {
 				moves += nums[i] - min;
 			}
