@@ -20,8 +20,8 @@ The result can be in any order.
 public class IntersectionofTwoArrays {
 	
 	public static void main(String[] args) {
-		int[] test1 = { 1 };
-		int[] test2 = { 1 };
+		int[] test1 = { 1, 2 };
+		int[] test2 = { 1, 1 };
 		int[] intersection = new IntersectionofTwoArrays().intersection(test1, test2);
 		for (int i = 0; i < intersection.length; i++) {
 			System.out.print(intersection[i] + ",");
@@ -38,7 +38,7 @@ public class IntersectionofTwoArrays {
 		int j = 0;
 		
 		while (i < nums1.length && j < nums2.length) {
-			if (nums1[i] > nums1[j]) {
+			if (nums1[i] > nums2[j]) {
 				j++;
 			} else if (nums1[i] < nums2[j]) {
 				i++;
