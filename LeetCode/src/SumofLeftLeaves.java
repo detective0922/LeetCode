@@ -28,9 +28,14 @@ public class SumofLeftLeaves {
 		}
 		int leftsum = 0;
 		int rightsum = 0;
-		if (root.left !=null) {
+		if (root.left != null) {
 			leftsum = root.left.val + sumOfLeftLeaves(root.left);
 		}
+
+		if (root.right != null) {
+			rightsum = sumOfLeftLeaves(root.left);
+		}
+		return leftsum + rightsum;
 	}
 
 }
