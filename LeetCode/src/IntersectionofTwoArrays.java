@@ -22,7 +22,7 @@ public class IntersectionofTwoArrays {
 		Arrays.sort(nums1);
 		Arrays.sort(nums2);
 		
-		List<Integer> intersection = new ArrayList<Integer>();
+		List<Integer> intersectionList = new ArrayList<Integer>();
 		int i = 0;
 		int j = 0;
 		
@@ -32,15 +32,20 @@ public class IntersectionofTwoArrays {
 			} else if (nums1[i] < nums2[j]) {
 				i++;
 			} else {
-				if (!intersection.contains(nums1[i])) {
-					intersection.add(nums1[i]);
+				if (!intersectionList.contains(nums1[i])) {
+					intersectionList.add(nums1[i]);
 				}
 				i++;
 				j++;
 			}
 		}
 		
-		
+		int[] intersection = new int[intersectionList.size()];
+		int k = 0;
+		for (int num : intersection) {
+			intersection[k++] = num;
+		}
+		return intersection;
 
 	}
 
