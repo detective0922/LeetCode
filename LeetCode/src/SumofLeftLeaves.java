@@ -17,6 +17,20 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 */
 
 public class SumofLeftLeaves {
+	
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode(3);
+		TreeNode two = new TreeNode(9);
+		TreeNode three = new TreeNode(20);
+		TreeNode four = new TreeNode(15);
+		TreeNode five = new TreeNode(7);
+		root.left = two;
+		root.right = three;
+		two.left = four;
+		three.right = five;
+		System.out.println(new SumofLeftLeaves().sumOfLeftLeaves(root));
+	}
+	
 	public int sumOfLeftLeaves(TreeNode root) {
 		
 		if (root == null) {
