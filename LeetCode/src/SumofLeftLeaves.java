@@ -18,7 +18,19 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 
 public class SumofLeftLeaves {
 	public int sumOfLeftLeaves(TreeNode root) {
+		
+		if (root == null) {
+			return 0;
+		}
 
+		if (root.left == null && root.right == null) {
+			return 0;
+		}
+		int leftsum = 0;
+		int rightsum = 0;
+		if (root.left !=null) {
+			leftsum = root.left.val + sumOfLeftLeaves(root.left);
+		}
 	}
 
 }
