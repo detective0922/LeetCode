@@ -21,24 +21,19 @@ canConstruct("aa", "aab") -> true
 
 public class RansomNote {
 	public boolean canConstruct(String ransomNote, String magazine) {
-		int x = 0;
-		for (int i = 0; i < ransomNote.length(); i++) {
-			x ^= ransomNote.charAt(i);
-		}
-
+		int[] table = new int[256];
 		for (int i = 0; i < magazine.length(); i++) {
-			x ^= magazine.charAt(i);
-		}
-		
-		for (int i = 0; i < magazine.length(); i++) {
-			x ^= magazine.charAt(i);
+			table[magazine.charAt(i)]++;
 		}
 		
 		for (int i = 0; i < ransomNote.length(); i++) {
-			x ^= ransomNote.charAt(i);
+			table[ransomNote.charAt(i)]--;
+			if (table[ransomNote.charAt(i)] < 0) {
+				return false;
+			}
 		}
 		
-		return x == 0;
+		return true;
 
 	}
 }
