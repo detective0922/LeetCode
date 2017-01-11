@@ -23,10 +23,12 @@ public class SumofLeftLeaves {
 			return 0;
 		}
 
-		if (root.left == null && root.right == null) {
+		if (root.left == null) {
 			return 0;
 		}
-		int leftsum = 0;
+
+		return root.left.val + sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+		/*int leftsum = 0;
 		int rightsum = 0;
 		if (root.left != null) {
 			leftsum = root.left.val + sumOfLeftLeaves(root.left);
@@ -35,7 +37,7 @@ public class SumofLeftLeaves {
 		if (root.right != null) {
 			rightsum = sumOfLeftLeaves(root.left);
 		}
-		return leftsum + rightsum;
+		return leftsum + rightsum;*/
 	}
 
 }
