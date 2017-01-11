@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /*
 349. Intersection of Two Arrays
@@ -16,6 +17,10 @@ The result can be in any order.
 
 public class IntersectionofTwoArrays {
 	public int[] intersection(int[] nums1, int[] nums2) {
+		Arrays.sort(nums1);
+		Arrays.sort(nums2);
+		
+		
 
 	}
 
