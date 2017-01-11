@@ -41,12 +41,18 @@ public class SumofLeftLeaves {
 			return 0;
 		}
 		
-		if(root.left != null && root.left.left==null&& root.left.right == null){
-			
-			return root.left.val + sumOfLeftLeaves(root.right);
+		int sum = 0;
+		if (root.left != null) {
+			if (root.left.left == null && root.left.right == null) {
+				sum += root.left.val;
+			} else {
+				sum +=sumOfLeftLeaves(root.left);
+			}
 		}
+		
+		sum += sumOfLeftLeaves(root.right);
 
-		return sumOfLeftLeaves(root.right);
+		return sum;
 		
 	}
 
