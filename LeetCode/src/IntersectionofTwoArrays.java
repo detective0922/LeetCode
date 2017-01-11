@@ -15,5 +15,8 @@ The result can be in any order.
 */
 
 public class IntersectionofTwoArrays {
+	public int[] intersection(int[] nums1, int[] nums2) {
+
+	}
 
 }
