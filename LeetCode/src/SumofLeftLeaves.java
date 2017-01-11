@@ -38,20 +38,16 @@ public class SumofLeftLeaves {
 		}
 
 		if (root.left == null && root.right == null) {
-			return root.val;
+			return 0;
+		}
+		
+		if(root.left != null && root.left.left==null&& root.left.right == null){
+			
+			return root.left.val + sumOfLeftLeaves(root.right);
 		}
 
-		return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
-		/*int leftsum = 0;
-		int rightsum = 0;
-		if (root.left != null) {
-			leftsum = root.left.val + sumOfLeftLeaves(root.left);
-		}
-
-		if (root.right != null) {
-			rightsum = sumOfLeftLeaves(root.left);
-		}
-		return leftsum + rightsum;*/
+		return sumOfLeftLeaves(root.right);
+		
 	}
 
 }
