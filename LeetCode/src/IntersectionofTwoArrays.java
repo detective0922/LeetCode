@@ -18,6 +18,17 @@ The result can be in any order.
 */
 
 public class IntersectionofTwoArrays {
+	
+	public static void main(String[] args) {
+		int[] test1 = { 1 };
+		int[] test2 = { 1 };
+		int[] intersection = new IntersectionofTwoArrays().intersection(test1, test2);
+		for (int i = 0; i < intersection.length; i++) {
+			System.out.print(intersection[i] + ",");
+		}
+		System.out.println();
+	}
+	
 	public int[] intersection(int[] nums1, int[] nums2) {
 		Arrays.sort(nums1);
 		Arrays.sort(nums2);
@@ -42,7 +53,7 @@ public class IntersectionofTwoArrays {
 		
 		int[] intersection = new int[intersectionList.size()];
 		int k = 0;
-		for (int num : intersection) {
+		for (int num : intersectionList) {
 			intersection[k++] = num;
 		}
 		return intersection;
