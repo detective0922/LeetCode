@@ -27,7 +27,10 @@ public class SameTree {
 			TreeNode pNode = pQueue.poll();
 			TreeNode qNode = qQueue.poll();
 			if (pNode.val == qNode.val) {
-				return false;
+				if (pNode.left != null && pNode.right != null) {
+					pQueue.offer(pNode.left);
+					qQueue.offer(qNode.left);
+				}
 			}
 		}
 	}
