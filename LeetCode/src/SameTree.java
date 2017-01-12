@@ -19,17 +19,17 @@ public class SameTree {
 		if (p == null && q == null) {
 			return true;
 		}
-		
-		if (p.val != q.val || p == null && q != null || p != null && q == null) {
+
+		if (p.val != q.val || (p == null && q != null) || (p != null && q == null)) {
 			return false;
 		}
 		
-		if (p.left != null && p.left != null) {
-			return isSameTree(p.left, p.right);
+		if (p.left != null && q.left != null) {
+			return isSameTree(p.left, q.left);
 		}
 		
-		if (p.right != null && p.right != null) {
-			return isSameTree(p.right, p.right);
+		if (p.right != null && q.right != null) {
+			return isSameTree(p.right, q.right);
 		}
 		
 		return true;
