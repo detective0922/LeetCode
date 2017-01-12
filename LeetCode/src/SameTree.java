@@ -26,11 +26,8 @@ public class SameTree {
 		while (!pQueue.isEmpty() && !qQueue.isEmpty()) {
 			TreeNode pNode = pQueue.poll();
 			TreeNode qNode = qQueue.poll();
-			if (pNode.val == qNode.val) {
-				if (pNode.left != null && pNode.right != null) {
-					pQueue.offer(pNode.left);
-					qQueue.offer(qNode.left);
-				}
+			if (pNode.val != qNode.val) {
+				return false;
 			}
 		}
 	}
