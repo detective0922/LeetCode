@@ -22,7 +22,18 @@ For example:
 
 public class ExcelSheetColumnNumber {
 	public int titleToNumber(String s) {
-
+		int[] chars = new int[26];
+		char c = 'A';
+		int i = 1;
+		for (; c<='Z'; c++, i++) {
+			chars[c] = i;	
+		}
+		
+		int num = 0;
+		for (int j = 0; j < s.length(); j++) {
+			num += chars[s.charAt(j)];
+		}
+		
+		return num;
 	}
-
 }
