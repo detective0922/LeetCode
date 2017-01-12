@@ -31,6 +31,17 @@ public class FirstUniqueCharacterinaString {
 			}
 		}
 		
+		int min = s.length();
+		for (char c = 0; c < 256; c++) {
+			if (table[c] == 1) {
+				int pos = charMap.get(c);
+				if (pos < min) {
+					min = pos;
+				}
+			}
+		}
+		
+		return min;
 		
 
 	}
