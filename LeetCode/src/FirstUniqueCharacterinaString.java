@@ -48,6 +48,14 @@ public class FirstUniqueCharacterinaString {
 		} else {
 			return -1;
 		}
+		
+		//another solution: don't user charMap
+		/*for (int i = 0; i < s.length(); i++) {
+			if (table[s.charAt(i)] == 1) {
+				return i;
+			}
+		}
+		return -1;*/
 
 	}
 
