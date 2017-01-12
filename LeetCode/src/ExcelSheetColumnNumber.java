@@ -22,7 +22,7 @@ For example:
 
 public class ExcelSheetColumnNumber {
 	public int titleToNumber(String s) {
-		int[] chars = new int[26];
+		int[] chars = new int[256];
 		char c = 'A';
 		int i = 1;
 		for (; c<='Z'; c++, i++) {
