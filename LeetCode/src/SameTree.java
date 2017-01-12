@@ -20,18 +20,11 @@ public class SameTree {
 			return true;
 		}
 
-		if (p.val != q.val || (p == null && q != null) || (p != null && q == null)) {
+		if ((p == null && q != null) || (p != null && q == null) || p.val != q.val) {
 			return false;
+		} else {
+			return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 		}
 		
-		if (p.left != null && q.left != null) {
-			return isSameTree(p.left, q.left);
-		}
-		
-		if (p.right != null && q.right != null) {
-			return isSameTree(p.right, q.right);
-		}
-		
-		return true;
 	}
 }
