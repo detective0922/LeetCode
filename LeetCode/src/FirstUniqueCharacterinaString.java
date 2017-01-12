@@ -18,5 +18,9 @@ Note: You may assume the string contain only lowercase letters.
 */
 
 public class FirstUniqueCharacterinaString {
+	public int firstUniqChar(String s) {
+		
+
+	}
 
 }
