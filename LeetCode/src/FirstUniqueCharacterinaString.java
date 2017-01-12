@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 
@@ -19,6 +21,16 @@ Note: You may assume the string contain only lowercase letters.
 
 public class FirstUniqueCharacterinaString {
 	public int firstUniqChar(String s) {
+		int[] table = new int[256];
+		Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			table[c]++;
+			if (!charMap.containsKey(c)) {
+				charMap.put(c, i);
+			}
+		}
+		
 		
 
 	}
