@@ -1,3 +1,5 @@
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 /*
@@ -14,6 +16,19 @@ Two binary trees are considered equal if they are structurally identical and the
 
 public class SameTree {
 	public boolean isSameTree(TreeNode p, TreeNode q) {
-		
+		if (p == null && q == null) {
+			return true;
+		}
+		Queue<TreeNode> pQueue = new LinkedBlockingQueue<TreeNode>();
+		Queue<TreeNode> qQueue = new LinkedBlockingQueue<TreeNode>();
+		pQueue.offer(p);
+		qQueue.offer(q);
+		while (!pQueue.isEmpty() && !qQueue.isEmpty()) {
+			TreeNode pNode = pQueue.poll();
+			TreeNode qNode = qQueue.poll();
+			if (pNode.val == qNode.val) {
+				return false;
+			}
+		}
 	}
 }
