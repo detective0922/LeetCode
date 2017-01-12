@@ -19,27 +19,17 @@ public class SameTree {
 		if (p == null && q == null) {
 			return true;
 		}
-		Queue<TreeNode> pQueue = new LinkedBlockingQueue<TreeNode>();
-		Queue<TreeNode> qQueue = new LinkedBlockingQueue<TreeNode>();
-		pQueue.offer(p);
-		qQueue.offer(q);
-		while (!pQueue.isEmpty() && !qQueue.isEmpty()) {
-			TreeNode pNode = pQueue.poll();
-			TreeNode qNode = qQueue.poll();
-			if ((pNode == null && qNode != null) || (pNode != null && qNode == null)) {
-				return false;
-			}
-			if (pNode == null && qNode == null) {
-				return true;
-			}
-			if (pNode.val != qNode.val) {
-				return false;
-			}
-			
-			pQueue.offer(pNode.left);
-			pQueue.offer(pNode.right);
-			qQueue.offer(qNode.left);
-			qQueue.offer(qNode.right);			
+		
+		if (p.val != q.val || p == null && q != null || p != null && q == null) {
+			return false;
+		}
+		
+		if (p.left != null && p.left != null) {
+			return isSameTree(p.left, p.right);
+		}
+		
+		if (p.right != null && p.right != null) {
+			return isSameTree(p.right, p.right);
 		}
 		
 		return true;
