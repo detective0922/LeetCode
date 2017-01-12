@@ -32,8 +32,10 @@ public class FirstUniqueCharacterinaString {
 		}
 		
 		int min = s.length();
+		boolean isExist = false;
 		for (char c = 0; c < 256; c++) {
 			if (table[c] == 1) {
+				isExist = true;
 				int pos = charMap.get(c);
 				if (pos < min) {
 					min = pos;
@@ -41,8 +43,11 @@ public class FirstUniqueCharacterinaString {
 			}
 		}
 		
-		return min;
-		
+		if (isExist) {
+			return min;
+		} else {
+			return -1;
+		}
 
 	}
 
