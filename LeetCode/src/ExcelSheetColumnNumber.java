@@ -31,7 +31,7 @@ public class ExcelSheetColumnNumber {
 		
 		int num = 0;
 		for (int j = 0; j < s.length(); j++) {
-			num += chars[s.charAt(j)];
+			num += chars[s.charAt(j)] + j * 26;
 		}
 		
 		return num;
