@@ -20,7 +20,7 @@ public class SameTree {
 			return true;
 		}
 
-		if (p == null || q == null || p.val != q.val) {
+		if (p == null || q == null) {
 			return false;
 		} else {
 			return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
