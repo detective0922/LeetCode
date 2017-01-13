@@ -35,8 +35,11 @@ public class ExcelSheetColumnNumber {
 		}
 		
 		int num = 0;
-		for (int j = s.length() -1 ; j >= 0; j--) {
+		/*for (int j = s.length() -1 ; j >= 0; j--) {
 			num += chars[s.charAt(j)] * Math.pow(26, s.length() - j - 1);
+		}*/
+		for (int j = 0; j < s.length(); j++) {
+			num = num * 26 + chars[s.charAt(j)];
 		}
 		
 		return num;
