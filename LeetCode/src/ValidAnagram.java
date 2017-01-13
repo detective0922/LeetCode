@@ -42,10 +42,10 @@ public class ValidAnagram {
 
 		for (Character c : map.keySet()) {
 			if (map.get(c) != 0) {
-				return false;
+				return c;
 			}
 		}
-		return true;
+		return '0';
 	}
 
 }
