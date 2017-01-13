@@ -21,6 +21,11 @@ For example:
 
 
 public class ExcelSheetColumnNumber {
+	public static void main(String[] args) {
+		System.out.println(new ExcelSheetColumnNumber().titleToNumber("ZZ"));
+		System.out.println(new ExcelSheetColumnNumber().titleToNumber("AAA"));
+	}
+	
 	public int titleToNumber(String s) {
 		int[] chars = new int[256];
 		char c = 'A';
@@ -30,8 +35,8 @@ public class ExcelSheetColumnNumber {
 		}
 		
 		int num = 0;
-		for (int j = 0; j < s.length(); j++) {
-			num += chars[s.charAt(j)] + j * 26;
+		for (int j = s.length() -1 ; j >= 0; j--) {
+			num += chars[s.charAt(j)] * Math.pow(26, s.length() - j - 1);
 		}
 		
 		return num;
