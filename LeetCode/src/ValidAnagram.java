@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 /*
 242. Valid Anagram
@@ -18,17 +19,33 @@ Follow up:
 
 public class ValidAnagram {
 	public boolean isAnagram(String s, String t) {
-		int x = 0;
+		char[] sChars = s.toCharArray();
+		char[] tChars = t.toCharArray();
 
-		for (int i = 0; i < s.length(); i++) {
-			x = x ^ s.charAt(i);
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+
+		for (int i = 0; i < tChars.length; i++) {
+			int value;
+			if (map.containsKey(tChars[i])) {
+				value = map.get(tChars[i]) + 1;
+			} else {
+				value = 1;
+			}
+			map.put(tChars[i], value);
 		}
 
-		for (int i = 0; i < t.length(); i++) {
-			x = x ^ t.charAt(i);
+		for (int i = 0; i < sChars.length; i++) {
+			if (map.containsKey(sChars[i])) {
+				map.put(sChars[i], map.get(sChars[i]) - 1);
+			}
 		}
 
-		return (char) x == 0;
+		for (Character c : map.keySet()) {
+			if (map.get(c) != 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
