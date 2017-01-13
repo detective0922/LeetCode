@@ -11,5 +11,17 @@ the linked list should become 1 -> 2 -> 4 after calling your function.
 
 */
 public class DeleteNodeinaLinkedList {
+	public void deleteNode(ListNode node) {
 
+	}
+
+}
+
+class ListNode {
+	int val;
+	ListNode next;
+	
+	ListNode(int x) {
+		val = x;
+	}
 }
