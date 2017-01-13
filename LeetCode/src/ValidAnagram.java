@@ -19,33 +19,34 @@ Follow up:
 
 public class ValidAnagram {
 	public boolean isAnagram(String s, String t) {
+		
 		char[] sChars = s.toCharArray();
 		char[] tChars = t.toCharArray();
 
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
-		for (int i = 0; i < tChars.length; i++) {
+		for (int i = 0; i < sChars.length; i++) {
 			int value;
-			if (map.containsKey(tChars[i])) {
-				value = map.get(tChars[i]) + 1;
+			if (map.containsKey(sChars[i])) {
+				value = map.get(sChars[i]) + 1;
 			} else {
 				value = 1;
 			}
-			map.put(tChars[i], value);
+			map.put(sChars[i], value);
 		}
 
-		for (int i = 0; i < sChars.length; i++) {
-			if (map.containsKey(sChars[i])) {
-				map.put(sChars[i], map.get(sChars[i]) - 1);
+		for (int i = 0; i < tChars.length; i++) {
+			if (map.containsKey(tChars[i])) {
+				map.put(tChars[i], map.get(tChars[i]) - 1);
 			}
 		}
 
 		for (Character c : map.keySet()) {
 			if (map.get(c) != 0) {
-				return c;
+				return false;
 			}
 		}
-		return '0';
+		return true;
 	}
 
 }
