@@ -21,6 +21,14 @@ public class ContainsDuplicate {
 			count.put(i, 1);
 		}
 		return false;
+		
+		//maybe hashset is better
+		/*Set<Integer> set = new HashSet<Integer>();
+		for (int i : nums)
+			if (!set.add(i))
+				return true;
+		return false;*/
+
 
 	}
 
