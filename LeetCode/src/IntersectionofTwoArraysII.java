@@ -21,6 +21,10 @@ What if elements of nums2 are stored on disk, and the memory is limited such tha
 
 
 */
+
 public class IntersectionofTwoArraysII {
+	public int[] intersect(int[] nums1, int[] nums2) {
+
+	}
 
 }
