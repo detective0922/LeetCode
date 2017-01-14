@@ -13,15 +13,18 @@ You may assume that the array is non-empty and the majority element always exist
 
 public class MajorityElement {
 	public int majorityElement(int[] nums) {
+		int majority = nums.length / 2;
 		Map<Integer, Integer> count = new HashMap<Integer, Integer>();
 		for (Integer i : nums) {
+			int value = 1;
 			if (count.containsKey(i)) {
-				count.put(i, count.get(i) + 1);
-			} else {
-				count.put(i, 1);
+				value = count.get(i) + 1;
+				if (value > majority) {
+					return i;
+				}
 			}
+			count.put(i, value);
 		}
-		
 
 	}
 
