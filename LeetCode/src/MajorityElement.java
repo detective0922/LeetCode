@@ -19,9 +19,9 @@ public class MajorityElement {
 			int value = 1;
 			if (count.containsKey(i)) {
 				value = count.get(i) + 1;
-				if (value > majority) {
-					return i;
-				}
+			}
+			if (value > majority) {
+				return i;
 			}
 			count.put(i, value);
 		}
