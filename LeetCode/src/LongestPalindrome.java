@@ -29,18 +29,18 @@ public class LongestPalindrome {
 		}
 		
 		int length = 0;
-		int max = 0;
+		boolean hasOdd = false;
 		for (int i = 0; i < table.length; i++) {
 			if (table[i] % 2 == 0) {
 				length += table[i];
 			} else {
 				length += table[i] - 1;
-				if (table[i] > max) {
-					max = table[i];
-				}
+				hasOdd = true;
 			}
 		}
-		
+		if (hasOdd) {
+			length++;
+		}
 		return length;
 
 	}
