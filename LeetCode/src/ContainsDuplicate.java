@@ -10,5 +10,8 @@ and it should return false if every element is distinct.
 */
 
 public class ContainsDuplicate {
+	public boolean containsDuplicate(int[] nums) {
+
+	}
 
 }
