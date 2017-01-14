@@ -27,7 +27,7 @@ public class LongestPalindrome {
 		for (int i = 0; i < s.length(); i++) {
 			table[s.charAt(i)]++;
 		}
-		
+
 		int length = 0;
 		boolean hasOdd = false;
 		for (int i = 0; i < table.length; i++) {
