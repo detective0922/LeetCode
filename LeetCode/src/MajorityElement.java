@@ -25,6 +25,7 @@ public class MajorityElement {
 			}
 			count.put(i, value);
 		}
+		return -1;
 
 	}
 
