@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 
@@ -11,6 +13,14 @@ and it should return false if every element is distinct.
 
 public class ContainsDuplicate {
 	public boolean containsDuplicate(int[] nums) {
+		Map<Integer, Integer> count = new HashMap<Integer, Integer>();
+		for (int i : nums) {
+			if (count.containsKey(i)) {
+				return true;
+			}
+			count.put(i, 1);
+		}
+		return false;
 
 	}
 
