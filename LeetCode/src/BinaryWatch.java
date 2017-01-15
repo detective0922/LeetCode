@@ -26,6 +26,9 @@ The minute must be consist of two digits and may contain a leading zero, for exa
 
 public class BinaryWatch {
 	public List<String> readBinaryWatch(int num) {
+		for (int i = 0; i < num; i++) {
+			
+		}
 
 	}
 
