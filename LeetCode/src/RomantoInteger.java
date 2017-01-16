@@ -13,6 +13,12 @@ Input is guaranteed to be within the range from 1 to 3999.
 */
 
 public class RomantoInteger {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(new RomantoInteger().romanToInt("DCXXI"));
+	}
+	
 	public int romanToInt(String s) {
 		
 		if (s == null) {
@@ -35,9 +41,9 @@ public class RomantoInteger {
 				return -1;
 			}
 			if (intNum >= romanToInt[s.charAt(i + 1)]) {
-				intNum += intNum;
+				sum += intNum;
 			} else {
-				intNum -= intNum;
+				sum -= intNum;
 			}
 		}
 
