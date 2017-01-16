@@ -8,12 +8,14 @@ Reverse a singly linked list.
 
 public class ReverseLinkedList {
 	public ListNode reverseList(ListNode head) {
-		ListNode newHead = null;
+		ListNode previousNode = null;
 		while (head != null) {
-			ListNode temp = head.next;
-			
-			head = temp;
+			ListNode nextNode = head.next;
+			head.next = previousNode;
+			previousNode = head;
+			head = nextNode;
 		}
+		return previousNode;
 
 	}
 
