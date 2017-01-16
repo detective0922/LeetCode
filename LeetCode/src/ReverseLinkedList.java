@@ -9,11 +9,12 @@ Reverse a singly linked list.
 public class ReverseLinkedList {
 	public ListNode reverseList(ListNode head) {
 		ListNode previousNode = null;
-		while (head != null) {
-			ListNode nextNode = head.next;
-			head.next = previousNode;
-			previousNode = head;
-			head = nextNode;
+		ListNode currentNode = head;
+		while (currentNode != null) {
+			ListNode nextNode = currentNode.next;
+			currentNode.next = previousNode;
+			previousNode = currentNode;
+			currentNode = nextNode;
 		}
 		return previousNode;
 
