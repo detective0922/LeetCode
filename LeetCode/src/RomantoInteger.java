@@ -30,21 +30,21 @@ public class RomantoInteger {
 		romanToInt['D'] = 500;
 		romanToInt['M'] = 1000;
 		
-		int intNum = 0;
+		int sum = 0;
 		for (int i = 0; i < s.length() - 1; i++) {
-			char c = s.charAt(i);
-			if (c == 0) {
+			int intNum = romanToInt[s.charAt(i)];
+			if (intNum == 0) {
 				return -1;
 			}
-			if (c >= romanToInt[s.charAt(i + 1)]) {
-				intNum += c;
+			if (intNum >= romanToInt[s.charAt(i + 1)]) {
+				intNum += intNum;
 			} else {
-				intNum -= c;
+				intNum -= intNum;
 			}
 		}
-		
-		intNum += romanToInt[s.charAt(s.length() - 1)];
-		return intNum;
+
+		sum += romanToInt[s.charAt(s.length() - 1)];
+		return sum;
 		
 	}
 
