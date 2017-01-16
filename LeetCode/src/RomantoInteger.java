@@ -36,10 +36,10 @@ public class RomantoInteger {
 			if (c == 0) {
 				return -1;
 			}
-			if (romanToInt[s.charAt(i)]>=romanToInt[s.charAt(i+1)]) {
-				intNum += romanToInt[s.charAt(i)];
+			if (c >= romanToInt[s.charAt(i + 1)]) {
+				intNum += c;
 			} else {
-				intNum -= romanToInt[s.charAt(i)];
+				intNum -= c;
 			}
 		}
 		
