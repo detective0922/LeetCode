@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -27,8 +28,13 @@ The minute must be consist of two digits and may contain a leading zero, for exa
 
 public class BinaryWatch {
 	public List<String> readBinaryWatch(int num) {
-		for (int i = 0; i < num; i++) {
-			
+		List<String> times = new ArrayList<String>();
+		for (int hour = 0; hour < 12; hour++) {
+			for (int min = 0; min < 60; min++) {
+				if (Integer.bitCount(hour) + Integer.bitCount(min) == num) {
+					times.add(hour + ":" + (min<10? "0" + min: min));					
+				}
+			}
 		}
 
 	}
