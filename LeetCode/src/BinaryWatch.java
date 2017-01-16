@@ -32,11 +32,11 @@ public class BinaryWatch {
 		for (int hour = 0; hour < 12; hour++) {
 			for (int min = 0; min < 60; min++) {
 				if (Integer.bitCount(hour) + Integer.bitCount(min) == num) {
-					times.add(hour + ":" + (min<10? "0" + min: min));					
+					times.add(hour + ":" + (min < 10 ? "0" + min : min));
 				}
 			}
 		}
-
+		return times;
 	}
 
 }
