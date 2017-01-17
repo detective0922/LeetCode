@@ -35,8 +35,10 @@ public class NumberofBoomerangs {
 				}
 				map.put(length, count);
 			}
-			for(int cnt:map.values()){
-				total = 
+			for (int cnt : map.values()) {
+				if (cnt > 1) {
+					total += cnt;
+				}
 			}
 			
 		}
