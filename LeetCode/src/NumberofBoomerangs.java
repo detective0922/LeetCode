@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 447. Number of Boomerangs
@@ -21,8 +23,13 @@ The two boomerangs are [[1,0],[0,0],[2,0]] and [[1,0],[2,0],[0,0]]
 
 public class NumberofBoomerangs {
 	public int numberOfBoomerangs(int[][] points) {
+		int count = 0;
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < points.length; i++) {
-			
+			for (int j = 0; j < points.length && j!=i; j++) {
+				
+				
+			}
 		}
 
 	}
