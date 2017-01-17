@@ -32,7 +32,10 @@ public class NumberofBoomerangs {
 		int total = 0;
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < points.length; i++) {
-			for (int j = 0; j < points.length && j != i; j++) {
+			for (int j = 0; j < points.length; j++) {
+				if (j == i) {
+					continue;
+				}
 				int length = Math.abs((points[i][0] - points[j][0])) * Math.abs((points[i][0] - points[j][0]))
 						+ Math.abs((points[i][1] - points[j][1])) * Math.abs((points[i][1] - points[j][1]));
 				int count = 1;
