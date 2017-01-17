@@ -40,7 +40,7 @@ public class NumberofBoomerangs {
 						+ Math.abs((points[i][1] - points[j][1])) * Math.abs((points[i][1] - points[j][1]));
 				int count = 1;
 				if (map.containsKey(length)) {
-					count = map.get(length);
+					count = map.get(length) + 1;
 				}
 				map.put(length, count);
 			}
