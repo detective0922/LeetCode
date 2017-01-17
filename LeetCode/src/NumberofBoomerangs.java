@@ -22,6 +22,12 @@ The two boomerangs are [[1,0],[0,0],[2,0]] and [[1,0],[2,0],[0,0]]
 */
 
 public class NumberofBoomerangs {
+	
+	public static void main(String[] args) {
+		int[][] test = { { 0, 0 }, { 1, 0 }, { 2, 0 } };
+		System.out.println(new NumberofBoomerangs().numberOfBoomerangs(test));
+	}
+	
 	public int numberOfBoomerangs(int[][] points) {
 		int total = 0;
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -40,7 +46,7 @@ public class NumberofBoomerangs {
 					total += cnt * (cnt - 1);
 				}
 			}
-			
+			map.clear();
 		}
 		
 		return total;
