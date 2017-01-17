@@ -23,14 +23,25 @@ The two boomerangs are [[1,0],[0,0],[2,0]] and [[1,0],[2,0],[0,0]]
 
 public class NumberofBoomerangs {
 	public int numberOfBoomerangs(int[][] points) {
-		int count = 0;
+		int total = 0;
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < points.length; i++) {
-			for (int j = 0; j < points.length && j!=i; j++) {
-				
-				
+			for (int j = 0; j < points.length && j != i; j++) {
+				int length = Math.abs((points[i][0] - points[j][0])) * Math.abs((points[i][0] - points[j][0]))
+						+ Math.abs((points[i][1] - points[j][1])) * Math.abs((points[i][1] - points[j][1]));
+				int count = 1;
+				if (map.containsKey(length)) {
+					count = map.get(length);
+				}
+				map.put(length, count);
 			}
+			for(int cnt:map.values()){
+				total = 
+			}
+			
 		}
+		
+		return total;
 
 	}
 
