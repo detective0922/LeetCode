@@ -24,9 +24,24 @@ public class AddStrings {
 		}
 		int[] num1Array = new int[num1.length() / 9 + 1];
 		int[] num2Array = new int[num2.length() / 9 + 1];
+		int firstLen = num1Array.length % 9;
+		String firstNum  = num1.substring(0, firstLen);
 		
-		
-
+	}
+	
+	public static int[] strToArray(String num) {
+		int[] numArray = new int[num.length() / 9 + 1];
+		String subNum = null;
+		numArray[numArray.length - 1] = Integer.parseInt(subNum);
+		for (int i = 0; i < numArray.length; i++) {
+			int endIndex = (i + 1) * 9;
+			if (endIndex > num.length()) {
+				endIndex = num.length();
+			}
+			subNum = num.substring(i * 9, endIndex);
+			numArray[i] = Integer.parseInt(subNum);
+		}
+		return numArray;
 	}
 
 }
