@@ -16,6 +16,12 @@ Note:
 
 public class AddStrings {
 	public String addStrings(String num1, String num2) {
+		if (num1.equals("0")) {
+			return num2;
+		}
+		if (num2.equals("0")) {
+			return num1;
+		}
 
 	}
 
