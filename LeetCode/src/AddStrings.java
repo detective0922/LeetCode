@@ -24,7 +24,7 @@ public class AddStrings {
 		}
 		int[] num1Array = strToArray(num1);
 		int[] num2Array = strToArray(num2);
-		int firstLen = num1Array.length % 9;
+		
 		String firstNum  = num1.substring(0, firstLen);
 		
 	}
