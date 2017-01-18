@@ -22,8 +22,8 @@ public class AddStrings {
 		if (num2.equals("0")) {
 			return num1;
 		}
-		int[] num1Array = new int[num1.length() / 9 + 1];
-		int[] num2Array = new int[num2.length() / 9 + 1];
+		int[] num1Array = strToArray(num1);
+		int[] num2Array = strToArray(num2);
 		int firstLen = num1Array.length % 9;
 		String firstNum  = num1.substring(0, firstLen);
 		
