@@ -22,6 +22,10 @@ public class AddStrings {
 		if (num2.equals("0")) {
 			return num1;
 		}
+		int[] num1Array = new int[num1.length() / 9 + 1];
+		int[] num2Array = new int[num2.length() / 9 + 1];
+		
+		
 
 	}
 
