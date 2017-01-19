@@ -22,7 +22,7 @@ public class AddStrings {
 		if (num2.equals("0")) {
 			return num1;
 		}
-		int Arraylength = 0;
+		int arraylength = 0;
 		int addLength = 0;
 		if (num1.length() > num2.length()) {
 			Arraylength = num1.length();
@@ -32,7 +32,15 @@ public class AddStrings {
 			addLength = num1.length();
 		}
 		
-		char[] sum = new char[Arraylength];
+		int[] sum = new int[arraylength];
+		
+		for (int i = 0; i < ; i++) {
+			
+		}
+		
+		for (int i = 0; i < addLength; i++) {
+			
+		}
 		
 		
 		/*int[] num1Array = strToArray(num1);
