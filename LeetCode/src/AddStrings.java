@@ -32,7 +32,7 @@ public class AddStrings {
 			addLength = num1.length();
 		}
 		
-		char[] sum = new char[Arraylength + 1];
+		char[] sum = new char[Arraylength];
 		
 		
 		/*int[] num1Array = strToArray(num1);
