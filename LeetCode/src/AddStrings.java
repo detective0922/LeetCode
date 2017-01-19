@@ -83,32 +83,6 @@ public class AddStrings {
         }
         return sb.reverse().toString();*/
 
-		
-		/*int[] num1Array = strToArray(num1);
-		int[] num2Array = strToArray(num2);
-		
-		int carry = 0;
-		for (int i = 0; i < num2Array.length && i < num1Array.length; i++) {
-			
-
-		}*/
-		
-		
 	}
-	
-	/*public static int[] strToArray(String num) {
-		int[] numArray = new int[num.length() / 9 + 1];
-		String subNum = null;
-		numArray[numArray.length - 1] = Integer.parseInt(subNum);
-		for (int i = 0; i < numArray.length; i++) {
-			int endIndex = (i + 1) * 9;
-			if (endIndex > num.length()) {
-				endIndex = num.length();
-			}
-			subNum = num.substring(i * 9, endIndex);
-			numArray[i] = Integer.parseInt(subNum);
-		}
-		return numArray;
-	}*/
 
 }
