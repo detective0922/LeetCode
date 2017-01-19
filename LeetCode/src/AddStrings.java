@@ -22,14 +22,14 @@ public class AddStrings {
 		if (num2.equals("0")) {
 			return num1;
 		}
-		int[] num1Array = strToArray(num1);
-		int[] num2Array = strToArray(num2);
+		/*int[] num1Array = strToArray(num1);
+		int[] num2Array = strToArray(num2);*/
 		
-		String firstNum  = num1.substring(0, firstLen);
+		
 		
 	}
 	
-	public static int[] strToArray(String num) {
+	/*public static int[] strToArray(String num) {
 		int[] numArray = new int[num.length() / 9 + 1];
 		String subNum = null;
 		numArray[numArray.length - 1] = Integer.parseInt(subNum);
@@ -42,6 +42,6 @@ public class AddStrings {
 			numArray[i] = Integer.parseInt(subNum);
 		}
 		return numArray;
-	}
+	}*/
 
 }
