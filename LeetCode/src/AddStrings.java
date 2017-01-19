@@ -51,11 +51,22 @@ public class AddStrings {
 		
 		sumDigit = 0;
 		for (int i = shortStr.length(); i < longStr.length(); i++) {
-			sumDigit += Character.digit(longStr.charAt(longStr.length() - 1 - i), radix);
-			if (sumDigit == 0) {
-				
+			sumDigit = Character.digit(longStr.charAt(longStr.length() - 1 - i), radix) + carry;
+			if (sumDigit < 10) {
+				carry = 0;
+				sumStr.append(sumDigit);
+			} else {
+				carry = 1;
+				sumStr.append(sumDigit - 10);
 			}
 		}
+		
+		StringBuffer newSumStr = new StringBuffer();
+		for (int i = 0; i < sumStr.length(); i++) {
+			newSumStr.append(sumStr.charAt(sumStr.length() - 1 - i));
+		}
+		
+		return newSumStr.toString();
 		
 		/*int[] num1Array = strToArray(num1);
 		int[] num2Array = strToArray(num2);
