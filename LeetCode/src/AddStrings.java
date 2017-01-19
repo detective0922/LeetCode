@@ -70,12 +70,7 @@ public class AddStrings {
 			sumStr.append(1);
 		}
 		
-		StringBuffer newSumStr = new StringBuffer();
-		for (int i = 0; i < sumStr.length(); i++) {
-			newSumStr.append(sumStr.charAt(sumStr.length() - 1 - i));
-		}
-		
-		return newSumStr.toString();
+		return sumStr.reverse().toString();
 		
 		/*int[] num1Array = strToArray(num1);
 		int[] num2Array = strToArray(num2);
