@@ -22,6 +22,13 @@ public class AddStrings {
 		if (num2.equals("0")) {
 			return num1;
 		}
+		int length = 0;
+		if (num1.length() > num2.length()) {
+			length = num1.length();
+		} else {
+			length = num2.length();
+		}
+		
 		/*int[] num1Array = strToArray(num1);
 		int[] num2Array = strToArray(num2);*/
 		
