@@ -15,6 +15,11 @@ Note:
 
 
 public class AddStrings {
+	
+	public static void main(String[] args) {
+		System.out.println(new AddStrings().addStrings("999999", "88888"));
+	}
+	
 	public String addStrings(String num1, String num2) {
 		if (num1.equals("0")) {
 			return num2;
@@ -59,6 +64,10 @@ public class AddStrings {
 				carry = 1;
 				sumStr.append(sumDigit - 10);
 			}
+		}
+		
+		if (carry == 1) {
+			sumStr.append(1);
 		}
 		
 		StringBuffer newSumStr = new StringBuffer();
