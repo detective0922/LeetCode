@@ -23,10 +23,33 @@ public class AddStrings {
 			return num1;
 		}
 		
-		StringBuffer sum = new StringBuffer();
-		int num1int = 0, num2int = 0, carry = 0;
+		int addlength = 0;
+		int sumLength = 0;
+		if (num1.length() > num2.length()) {
+			addlength = num2.length();
+			sumLength = num1.length();
+		} else {
+			addlength = num1.length();
+			sumLength = num2.length();
+		}
+		
+		
+		int num1Index = num1.length() - 1;
+		int num2Index = num2.length() - 1;
+		StringBuffer sumStr = new StringBuffer();
+		int num1Digit = 0, num2Digit = 0, sumDigit = 0, carry = 0;
+		int radix = 10;
 		for (int i = 0; i < num1.length() && i < num2.length(); i++) {
-
+			num1Digit = Character.digit(num1.charAt(num1Index - i), radix);
+			num2Digit = Character.digit(num2.charAt(num2Index - i), radix);
+			sumDigit = num1Digit + num2Digit + carry;
+			if (sumDigit < 10) {
+				carry = 0;
+				sumStr.append(sumDigit);
+			} else {
+				carry = 1;
+				sumStr.append(sumDigit - 10);
+			}
 		}
 		
 		/*int[] num1Array = strToArray(num1);
