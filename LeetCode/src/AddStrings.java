@@ -21,37 +21,17 @@ public class AddStrings {
 		}
 		if (num2.equals("0")) {
 			return num1;
-		}
-		int arraylength = 0;
-		int addLength = 0;
-		if (num1.length() > num2.length()) {
-			arraylength = num1.length();
-			addLength = num2.length();
-		} else {
-			arraylength = num2.length();
-			addLength = num1.length();
-		}
+		}	
 		
-		int[] sum = new int[arraylength];
-		
-		for (int i = 0; i < ; i++) {
-			
-		}
-		
-		for (int i = 0; i < addLength; i++) {
-			
-		}
-		
-		
-		/*int[] num1Array = strToArray(num1);
-		int[] num2Array = strToArray(num2);*/
+		int[] num1Array = strToArray(num1);
+		int[] num2Array = strToArray(num2);
 		
 		
 		
 		
 	}
 	
-	/*public static int[] strToArray(String num) {
+	public static int[] strToArray(String num) {
 		int[] numArray = new int[num.length() / 9 + 1];
 		String subNum = null;
 		numArray[numArray.length - 1] = Integer.parseInt(subNum);
@@ -64,6 +44,6 @@ public class AddStrings {
 			numArray[i] = Integer.parseInt(subNum);
 		}
 		return numArray;
-	}*/
+	}
 
 }
