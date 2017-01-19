@@ -23,25 +23,22 @@ public class AddStrings {
 			return num1;
 		}
 		
-		int addlength = 0;
-		int sumLength = 0;
+		String shortStr = null;
+		String longStr = null;
 		if (num1.length() > num2.length()) {
-			addlength = num2.length();
-			sumLength = num1.length();
+			longStr = num1;
+			shortStr = num2;
 		} else {
-			addlength = num1.length();
-			sumLength = num2.length();
+			longStr = num2;
+			shortStr = num1;
 		}
 		
-		
-		int num1Index = num1.length() - 1;
-		int num2Index = num2.length() - 1;
 		StringBuffer sumStr = new StringBuffer();
 		int num1Digit = 0, num2Digit = 0, sumDigit = 0, carry = 0;
 		int radix = 10;
-		for (int i = 0; i < num1.length() && i < num2.length(); i++) {
-			num1Digit = Character.digit(num1.charAt(num1Index - i), radix);
-			num2Digit = Character.digit(num2.charAt(num2Index - i), radix);
+		for (int i = 0; i < shortStr.length(); i++) {
+			num1Digit = Character.digit(num1.charAt(num1.length() - 1 - i), radix);
+			num2Digit = Character.digit(num2.charAt(num2.length() - 1 - i), radix);
 			sumDigit = num1Digit + num2Digit + carry;
 			if (sumDigit < 10) {
 				carry = 0;
@@ -49,6 +46,14 @@ public class AddStrings {
 			} else {
 				carry = 1;
 				sumStr.append(sumDigit - 10);
+			}
+		}
+		
+		sumDigit = 0;
+		for (int i = shortStr.length(); i < longStr.length(); i++) {
+			sumDigit += Character.digit(longStr.charAt(longStr.length() - 1 - i), radix);
+			if (sumDigit == 0) {
+				
 			}
 		}
 		
