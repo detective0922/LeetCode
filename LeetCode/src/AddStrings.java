@@ -25,10 +25,10 @@ public class AddStrings {
 		int arraylength = 0;
 		int addLength = 0;
 		if (num1.length() > num2.length()) {
-			Arraylength = num1.length();
+			arraylength = num1.length();
 			addLength = num2.length();
 		} else {
-			Arraylength = num2.length();
+			arraylength = num2.length();
 			addLength = num1.length();
 		}
 		
