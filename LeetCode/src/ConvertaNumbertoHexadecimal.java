@@ -31,7 +31,8 @@ Output:
 
 public class ConvertaNumbertoHexadecimal {
 	public static void main(String[] args) {
-		System.out.println(new ConvertaNumbertoHexadecimal().toHex(26));
+		System.out.println(new ConvertaNumbertoHexadecimal().toHex(-100));
+		System.out.println(Integer.toHexString(-100));
 	}
 	
 	public String toHex(int num) {
@@ -46,7 +47,7 @@ public class ConvertaNumbertoHexadecimal {
 		int mask = 15;
 		StringBuilder hex = new StringBuilder();
 		int digitIndex = 0;
-		while (num > 0) {
+		while (num != 0) {
 			digitIndex = num & mask;
 			hex.append(digits[digitIndex]);
 			num >>>= shift;
