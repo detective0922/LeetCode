@@ -31,15 +31,23 @@ Output:
 
 public class ConvertaNumbertoHexadecimal {
 	public String toHex(int num) {
+		if (num == 0) {
+			return "0";
+		}
 		char[] digits = {
 				'0' , '1' , '2' , '3' , '4' , '5' ,
 				'6' , '7' , '8' , '9' , 'a' , 'b' ,
 				'c' , 'd' , 'e' , 'f' };
 		int shift = 4;
 		int mask = 15;
+		StringBuffer hex = new StringBuffer();
+		int digitIndex = 0;
 		while (num > 0) {
-
+			digitIndex = num & mask;
+			hex.append(digits[digitIndex]);
+			digitIndex >>>= shift;
 		}
+		return hex.reverse().toString();
 	}
 
 }
