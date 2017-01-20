@@ -30,5 +30,8 @@ Output:
 */
 
 public class ConvertaNumbertoHexadecimal {
+	public String toHex(int num) {
+
+	}
 
 }
