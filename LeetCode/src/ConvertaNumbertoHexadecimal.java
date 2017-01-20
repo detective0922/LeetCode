@@ -30,6 +30,10 @@ Output:
 */
 
 public class ConvertaNumbertoHexadecimal {
+	public static void main(String[] args) {
+		System.out.println(new ConvertaNumbertoHexadecimal().toHex(26));
+	}
+	
 	public String toHex(int num) {
 		if (num == 0) {
 			return "0";
@@ -45,7 +49,7 @@ public class ConvertaNumbertoHexadecimal {
 		while (num > 0) {
 			digitIndex = num & mask;
 			hex.append(digits[digitIndex]);
-			digitIndex >>>= shift;
+			num >>>= shift;
 		}
 		return hex.reverse().toString();
 	}
