@@ -40,7 +40,7 @@ public class ConvertaNumbertoHexadecimal {
 				'c' , 'd' , 'e' , 'f' };
 		int shift = 4;
 		int mask = 15;
-		StringBuffer hex = new StringBuffer();
+		StringBuilder hex = new StringBuilder();
 		int digitIndex = 0;
 		while (num > 0) {
 			digitIndex = num & mask;
