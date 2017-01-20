@@ -31,7 +31,11 @@ Output:
 
 public class ConvertaNumbertoHexadecimal {
 	public String toHex(int num) {
-		
+		int shift = 4;
+		int mask = 15;
+		while (num > 0) {
+
+		}
 	}
 
 }
