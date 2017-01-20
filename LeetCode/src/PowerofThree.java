@@ -11,5 +11,8 @@ Follow up:
 */
 
 public class PowerofThree {
+	public boolean isPowerOfThree(int n) {
+
+	}
 
 }
