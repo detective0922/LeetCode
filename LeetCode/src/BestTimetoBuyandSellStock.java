@@ -30,9 +30,14 @@ In this case, no transaction is done, i.e. max profit = 0.
 
 public class BestTimetoBuyandSellStock {
 	public int maxProfit(int[] prices) {
+		int minPrice = prices[0];
 		int maxProfit = 0;
 		for (int i = 0; i < prices.length; i++) {
-			int buy = prices[i];
+			if (prices[i] < minPrice) {
+				minPrice = prices[i];
+			} else {
+				int profit = prices[j] - buy;
+			}
 			for (int j = i + 1; j < prices.length; j++) {
 				int profit = prices[j] - buy;
 				if (profit > maxProfit) {
