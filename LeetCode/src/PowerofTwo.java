@@ -17,6 +17,10 @@ public class PowerofTwo {
 			num *= 2;
 		}
 		return num == n;
+		
+		//a better solution
+		//return (n > 0 && ((n & (n - 1)) == 0));
+
 
 	}
 
