@@ -12,6 +12,11 @@ public class PowerofTwo {
 		if (n == 1) {
 			return true;
 		}
+		long num = 2;
+		while (num < n) {
+			num *= 2;
+		}
+		return num == n;
 
 	}
 
