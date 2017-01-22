@@ -24,7 +24,19 @@ public class HappyNumber {
 		if (n == 1) {
 			return true;
 		}
+		
+		
 
+	}
+	
+	public int sumOfDigits(int num) {
+		int sum = 0;
+		while (num > 0) {
+			int remainder = num % 10;
+			num = num / 10;
+			sum += remainder * remainder;
+		}
+		return sum;
 	}
 
 }
