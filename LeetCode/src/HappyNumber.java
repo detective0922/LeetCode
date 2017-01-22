@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 /*
 
@@ -25,7 +26,15 @@ public class HappyNumber {
 			return true;
 		}
 		
-		
+		HashSet<Integer> sumRec = new HashSet<Integer>();
+		int sum = n;
+		while (sum != 1) {
+			if (!sumRec.add(sum)) {
+				return false;
+			}
+			sum = sumOfDigits(sum);
+		}
+		return true;
 
 	}
 	
