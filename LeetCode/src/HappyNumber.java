@@ -21,6 +21,11 @@ Example: 19 is a happy number
 */
 
 public class HappyNumber {
+	
+	public static void main(String[] args){
+		System.out.println(new HappyNumber().isHappy(19));
+	}
+	
 	public boolean isHappy(int n) {
 		if (n == 1) {
 			return true;
