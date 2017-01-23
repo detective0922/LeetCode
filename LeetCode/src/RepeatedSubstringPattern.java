@@ -43,7 +43,10 @@ public class RepeatedSubstringPattern {
 
 		int minCopies = str.length();
 		for (int i = 0; i < counts.length; i++) {
-			if (counts[i] != 0 && counts[i] < minCopies) {
+			if (counts[i] == 1) {
+				return false;
+			}
+			if (counts[i] > 1 && counts[i] < minCopies) {
 				minCopies = counts[i];
 			}
 		}
