@@ -35,6 +35,10 @@ public class HammingDistance {
 			y >>= 1;
 		}
 		return count;
+		
+		//a simple solution
+		//return Integer.bitCount(x ^ y);
+
 	}
 
 }
