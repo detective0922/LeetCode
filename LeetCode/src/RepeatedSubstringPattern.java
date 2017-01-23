@@ -32,6 +32,10 @@ Explanation: It's the substring "abc" four times. (And the substring "abcabc" tw
 
 public class RepeatedSubstringPattern {
 	public boolean repeatedSubstringPattern(String str) {
+		if (str.length() == 1) {
+			return false;
+		}
+		
 		int[] counts = new int[26];
 		for (int i = 0; i < str.length(); i++) {
 			counts[str.charAt(i) - 'a']++;
