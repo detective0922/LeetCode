@@ -36,6 +36,8 @@ public class RepeatedSubstringPattern {
 		for (int i = 0; i < str.length(); i++) {
 			counts[str.charAt(i) - 'a']++;
 		}
+		
+		
 	}
 
 }
