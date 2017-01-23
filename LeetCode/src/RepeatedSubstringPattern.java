@@ -1,3 +1,4 @@
+import java.util.Map;
 
 /*
 459. Repeated Substring Pattern 
@@ -31,7 +32,10 @@ Explanation: It's the substring "abc" four times. (And the substring "abcabc" tw
 
 public class RepeatedSubstringPattern {
 	public boolean repeatedSubstringPattern(String str) {
-
+		char[] counts = new char[26];
+		for (int i = 0; i < str.length(); i++) {
+			counts[str.charAt(i) - 'a']++;
+		}
 	}
 
 }
