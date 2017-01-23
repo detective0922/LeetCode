@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Map;
 
 /*
@@ -37,19 +38,23 @@ public class RepeatedSubstringPattern {
 		for (int i = 0; i < str.length(); i++) {
 			counts[str.charAt(i) - 'a']++;
 		}
-
+		
+		Arrays.sort(counts);
+		
 		int minCopies = str.length();
-		for (int i = 0; i < counts.length; i++) {
-			if (counts[i] == 1) {
+		int index = 0;
+		int gct = 0;
+		for (; index < counts.length; index++) {
+			if (counts[index] == 1) {
 				return false;
 			}
-			if (counts[i] > 1 && counts[i] < minCopies) {
-				minCopies = counts[i];
+			if (counts[index] > 1 && counts[index] < minCopies) {
+				gct = gcd(counts[index], counts[index]);
 			}
 		}
 
 		for (int i = 0; i < counts.length; i++) {
-			if (counts[i] != 0 && counts[i] % minCopies != 0) {
+			if (counts[i] != 0 && counts[i] % gct != 0) {
 				return false;
 			}
 		}
