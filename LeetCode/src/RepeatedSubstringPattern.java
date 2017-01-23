@@ -41,17 +41,15 @@ public class RepeatedSubstringPattern {
 			counts[str.charAt(i) - 'a']++;
 		}
 
-		int copies = 0;
-		int index = 0;
-		for (; index < counts.length; index++) {
-			if (counts[index] != 0) {
-				copies = counts[index];
-				break;
+		int minCopies = str.length();
+		for (int i = 0; i < counts.length; i++) {
+			if (counts[i] != 0 && counts[i] < minCopies) {
+				minCopies = counts[i];
 			}
 		}
 
-		for (int i = index + 1; i < counts.length; i++) {
-			if (counts[i] != 0 && counts[i] != copies) {
+		for (int i = 0; i < counts.length; i++) {
+			if (counts[i] != 0 && counts[i] % minCopies != 0) {
 				return false;
 			}
 		}
