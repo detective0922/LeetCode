@@ -32,40 +32,33 @@ Explanation: It's the substring "abc" four times. (And the substring "abcabc" tw
 */
 
 public class RepeatedSubstringPattern {
-	public boolean repeatedSubstringPattern(String str) {
-		
-		int[] counts = new int[26];
-		for (int i = 0; i < str.length(); i++) {
-			counts[str.charAt(i) - 'a']++;
-		}
-		
-		Arrays.sort(counts);
-		
-		int minCopies = str.length();
-		int index = 0;
-		int gct = 0;
-		for (; index < counts.length; index++) {
-			if (counts[index] == 1) {
-				return false;
-			}
-			if (counts[index] > 1 && counts[index] < minCopies) {
-				gct = gcd(counts[index], counts[index + 1]);
-			}
-		}
-
-		for (int i = 0; i < counts.length; i++) {
-			if (counts[i] != 0 && counts[i] % gct != 0) {
-				return false;
-			}
-		}
-
-		return true;
+	
+	public static void main(String[] args) {
+		System.out.println(new RepeatedSubstringPattern().repeatedSubstringPattern("aaaa"));
 	}
 	
-	public int gcd(int p, int q){
-		if(q == 0) return p;
-		int r = p % q;
-		return gcd(q, r);
+	public boolean repeatedSubstringPattern(String str) {
+		if (str.length() < 2) {
+			return false;
+		}
+		int len = str.length();
+		for (int i = len / 2; i > 1; i--) {
+			if (len % i == 0) {
+				String subStr = str.substring(0, i);
+				int m = len / i;
+				int j;
+				for (j = 1; j < m; j++) {
+					if (!subStr.equals(str.substring(j * i, (j + 1) * i))) {
+						break;
+					}
+				}
+				if (j == m) {
+					return true;
+				}
+			}
+		}
+		return false;
+		
 	}
 
 }
