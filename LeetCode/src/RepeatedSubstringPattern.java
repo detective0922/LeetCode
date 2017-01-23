@@ -34,7 +34,7 @@ Explanation: It's the substring "abc" four times. (And the substring "abcabc" tw
 public class RepeatedSubstringPattern {
 	
 	public static void main(String[] args) {
-		System.out.println(new RepeatedSubstringPattern().repeatedSubstringPattern("aaaa"));
+		System.out.println(new RepeatedSubstringPattern().repeatedSubstringPattern("bb"));
 	}
 	
 	public boolean repeatedSubstringPattern(String str) {
@@ -42,7 +42,7 @@ public class RepeatedSubstringPattern {
 			return false;
 		}
 		int len = str.length();
-		for (int i = len / 2; i > 1; i--) {
+		for (int i = len / 2; i >= 1; i--) {
 			if (len % i == 0) {
 				String subStr = str.substring(0, i);
 				int m = len / i;
