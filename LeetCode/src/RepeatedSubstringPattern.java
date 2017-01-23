@@ -49,7 +49,7 @@ public class RepeatedSubstringPattern {
 				return false;
 			}
 			if (counts[index] > 1 && counts[index] < minCopies) {
-				gct = gcd(counts[index], counts[index]);
+				gct = gcd(counts[index], counts[index + 1]);
 			}
 		}
 
