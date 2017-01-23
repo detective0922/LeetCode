@@ -30,5 +30,8 @@ Explanation: It's the substring "abc" four times. (And the substring "abcabc" tw
 */
 
 public class RepeatedSubstringPattern {
+	public boolean repeatedSubstringPattern(String str) {
+
+	}
 
 }
