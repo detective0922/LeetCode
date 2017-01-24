@@ -12,11 +12,16 @@ For example,
 
 public class RemoveDuplicatesfromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
-		ListNode previousNode = null;
+		
 		ListNode currentNode = head;
 		while(currentNode != null) {
-			
+			ListNode nextNode = currentNode.next;
+			if (currentNode.val == nextNode.val) {
+				currentNode.next = nextNode.next;
+			}
+			currentNode = currentNode.next;
 		}
+		return currentNode;
 
 	}
 }
