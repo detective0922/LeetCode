@@ -35,7 +35,7 @@ public class RemoveDuplicatesfromSortedList {
 			}
 			currentNode = currentNode.next;
 		}
-		return currentNode;
+		return head;
 
 	}
 }
