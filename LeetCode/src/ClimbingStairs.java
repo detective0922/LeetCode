@@ -13,7 +13,7 @@ Note: Given n will be a positive integer.
 
 public class ClimbingStairs {
 	public int climbStairs(int n) {
-
+		int count = 0;
 	}
 
 }
