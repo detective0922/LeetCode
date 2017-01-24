@@ -11,6 +11,12 @@ For example,
 */
 
 public class RemoveDuplicatesfromSortedList {
-	
+	public ListNode deleteDuplicates(ListNode head) {
+		ListNode previousNode = null;
+		ListNode currentNode = head;
+		while(currentNode != null) {
+			
+		}
 
+	}
 }
