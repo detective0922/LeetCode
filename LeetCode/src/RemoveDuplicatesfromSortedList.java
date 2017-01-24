@@ -32,9 +32,9 @@ public class RemoveDuplicatesfromSortedList {
 			ListNode nextNode = currentNode.next;
 			if (nextNode != null && currentNode.val == nextNode.val) {
 				currentNode.next = nextNode.next;
-				continue;
-			}
-			currentNode = currentNode.next;
+			} else {
+				currentNode = currentNode.next;
+			}		
 		}
 		return head;
 
