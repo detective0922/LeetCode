@@ -28,10 +28,11 @@ public class RemoveDuplicatesfromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
 		
 		ListNode currentNode = head;
-		while(currentNode != null) {
+		while (currentNode != null) {
 			ListNode nextNode = currentNode.next;
-			if (currentNode.val == nextNode.val) {
+			if (nextNode != null && currentNode.val == nextNode.val) {
 				currentNode.next = nextNode.next;
+				continue;
 			}
 			currentNode = currentNode.next;
 		}
