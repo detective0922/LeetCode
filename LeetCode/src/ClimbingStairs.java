@@ -16,6 +16,7 @@ public class ClimbingStairs {
         if (n <= 2) {
             return n;
         }
+        int[] ways = new int[n];
 
     }
 
