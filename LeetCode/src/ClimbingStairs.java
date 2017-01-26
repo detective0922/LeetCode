@@ -14,7 +14,10 @@ Note: Given n will be a positive integer.
 public class ClimbingStairs {
 	public int climbStairs(int n) {
 		int count = 0;
-		count = n/2;
+		int maxTwo = n/2;
+		for(int i = 0;i<maxTwo;i++){
+
+		}
 		return count;
 	}
 
