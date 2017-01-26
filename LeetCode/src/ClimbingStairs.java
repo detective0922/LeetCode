@@ -17,6 +17,9 @@ public class ClimbingStairs {
             return n;
         }
         int[] ways = new int[n];
+        for (int i = 2; i < n; i++) {
+
+        }
 
     }
 
