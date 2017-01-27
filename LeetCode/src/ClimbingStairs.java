@@ -12,6 +12,10 @@ Note: Given n will be a positive integer.
 */
 
 public class ClimbingStairs {
+    public static void main(String[] args) {
+        System.out.println(new ClimbingStairs().climbStairs(4));
+    }
+
     public int climbStairs(int n) {
         if (n <= 2) {
             return n;
