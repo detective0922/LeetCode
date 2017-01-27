@@ -22,7 +22,7 @@ public class ClimbingStairs {
         for (int i = 2; i < n; i++) {
             ways[n] = ways[n - 1] + ways[n - 2];
         }
-
+        return ways[n - 1];
     }
 
 }
