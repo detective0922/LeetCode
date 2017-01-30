@@ -16,6 +16,7 @@ public class MaximumSubarray {
                 sum += nums[i];
             }
         }
+        return sum;
 
     }
 }
