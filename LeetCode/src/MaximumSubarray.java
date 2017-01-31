@@ -15,7 +15,7 @@ public class MaximumSubarray {
         for (int i = 1; i < nums.length; i++) {
             sum += nums[i];
             if(sum> maxSub){
-
+                maxSub = sum;
             }
         }
         return sum;
