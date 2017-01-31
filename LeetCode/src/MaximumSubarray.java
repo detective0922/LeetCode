@@ -14,12 +14,12 @@ public class MaximumSubarray {
         int maxSub = Integer.MIN_VALUE;
         for (int i = 1; i < nums.length; i++) {
             sum += nums[i];
-            if(sum> maxSub){
+            if (sum > maxSub) {
                 maxSub = sum;
             }
-                if(sum<0){
-                    sum = 0;
-                }
+            if (sum < 0) {
+                sum = 0;
+            }
 
         }
         return sum;
