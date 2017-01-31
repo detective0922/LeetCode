@@ -16,7 +16,10 @@ public class MaximumSubarray {
             sum += nums[i];
             if(sum> maxSub){
                 maxSub = sum;
+            } else {
+
             }
+
         }
         return sum;
 
