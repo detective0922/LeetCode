@@ -22,6 +22,6 @@ public class MaximumSubarray {
             }
 
         }
-        return sum;
+        return maxSub;
     }
 }
