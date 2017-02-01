@@ -17,6 +17,9 @@ public class UglyNumber {
             return false;
         }
         while (num > 0) {
+            if (num == 1) {
+                return true;
+            }
             if (num % 5 == 0) {
                 num /= 5;
             } else if (num % 3 == 0) {
