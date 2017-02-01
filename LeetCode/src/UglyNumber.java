@@ -24,6 +24,6 @@ public class UglyNumber {
                 return  false;
             }
         }
-
+        return  true;
     }
 }
