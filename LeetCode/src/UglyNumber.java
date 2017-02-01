@@ -13,6 +13,9 @@ Note that 1 is typically treated as an ugly number.
 */
 public class UglyNumber {
     public boolean isUgly(int num) {
+        if (num <= 0) {
+            return false;
+        }
         while (num > 0) {
             if (num % 5 == 0) {
                 num /= 5;
