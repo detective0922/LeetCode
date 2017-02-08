@@ -24,6 +24,10 @@ public class PathSum {
 		if (root == null) {
 			return false;
 		}
+		sum = sum - root.val;
+		if (sum == 0) {
+			return true;
+		}
 		
 		
 	}
