@@ -32,4 +32,7 @@ Return 3. The paths that sum to 8 are:
 */
 
 public class PathSumIII {
+	public int pathSum(TreeNode root, int sum) {
+
+	}
 }
