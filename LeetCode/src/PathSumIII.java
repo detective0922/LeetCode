@@ -50,9 +50,8 @@ public class PathSumIII {
 		sum = sum - root.val;
 		if (sum == 0) {
 			count++;
-		} else {
-			
-		}	
+		}
+		
 	}
 	
 	
