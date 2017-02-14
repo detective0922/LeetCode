@@ -51,7 +51,8 @@ public class PathSumIII {
 		if (sum == 0) {
 			count++;
 		}
-		
+		pathSumCount(root.left, sum, count);
+		pathSumCount(root.right, sum, count);
 	}
 	
 	
