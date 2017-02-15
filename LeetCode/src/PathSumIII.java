@@ -39,6 +39,8 @@ public class PathSumIII {
 		
 		int count = 0;
 		pathSumCount(root, sum, count);
+		pathSumCount(root.left, sum, count);
+		pathSumCount(root.right, sum, count);
 		return count;
 	}
 
