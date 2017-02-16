@@ -44,7 +44,7 @@ public class PathSumIII {
 		return count;
 	}
 
-	private void pathSumCount(TreeNode root, int sum, int count) {
+	private int pathSumCount(TreeNode root, int sum, int count) {
 		if (root == null) {
 			return;
 		}
