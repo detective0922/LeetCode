@@ -44,17 +44,18 @@ public class PathSumIII {
 		return count;
 	}
 
-	private int pathSumCount(TreeNode root, int sum, int count) {
+	private int pathSumCount(TreeNode root, int sum) {
 		if (root == null) {
 			return 0;
 		}
 		
+		int count = 0;
 		sum = sum - root.val;
 		if (sum == 0) {
 			count++;
 		}
-		pathSumCount(root.left, sum, count);
-		pathSumCount(root.right, sum, count);
+		pathSumCount(root.left, sum);
+		pathSumCount(root.right, sum);
 	}
 	
 	
