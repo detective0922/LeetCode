@@ -46,7 +46,7 @@ public class PathSumIII {
 
 	private int pathSumCount(TreeNode root, int sum, int count) {
 		if (root == null) {
-			return;
+			return 0;
 		}
 		
 		sum = sum - root.val;
