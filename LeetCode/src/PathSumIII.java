@@ -37,7 +37,7 @@ public class PathSumIII {
 			return 0;
 		}
 
-		return pathSumCount(root, sum) + pathSumCount(root.left, sum) + pathSumCount(root.right, sum);
+		return pathSumCount(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
 	}
 
 	private int pathSumCount(TreeNode root, int sum) {
