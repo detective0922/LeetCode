@@ -26,5 +26,8 @@ Note: If a tree has more than one mode, you can return them in any order.
 
 
 public class FindModeinBinarySearchTree {
+	public int[] findMode(TreeNode root) {
+
+	}
 
 }
