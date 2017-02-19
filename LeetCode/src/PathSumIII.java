@@ -53,6 +53,10 @@ public class PathSumIII {
 		count += pathSumCount(root.left, sum);
 		count += pathSumCount(root.right, sum);
 		return count;
+		} else {
+			pathSumCount(root.left, sum, count);
+			pathSumCount(root.right, sum, count);
+		}	
 	}
 	
 	
