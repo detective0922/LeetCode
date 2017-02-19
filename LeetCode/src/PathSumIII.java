@@ -36,28 +36,24 @@ public class PathSumIII {
 		if (root == null) {
 			return 0;
 		}
-
-		return pathSumCount(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
+		
+		int count = 0;
+		count = pathSumCount(root.right, sum, count);
+		return count;
 	}
 
-	private int pathSumCount(TreeNode root, int sum) {
+	private int pathSumCount(TreeNode root, int sum, int count) {
 		if (root == null) {
-			return 0;
+			return count;
 		}
-
-		int count = 0;
+		
 		sum = sum - root.val;
 		if (sum == 0) {
 			count++;
 		}
-		count += pathSumCount(root.left, sum);
-		count += pathSumCount(root.right, sum);
-		return count;
-		} else {
-			pathSumCount(root.left, sum, count);
-			pathSumCount(root.right, sum, count);
-		}	
+		pathSumCount(root.left, sum, count);
+		pathSumCount(root.right, sum, count);
+		return count;		
 	}
-	
 	
 }
