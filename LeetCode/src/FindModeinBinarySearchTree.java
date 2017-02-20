@@ -57,8 +57,21 @@ public class FindModeinBinarySearchTree {
 			}
 		});
 		
+		int max = sortedList.get(sortedList.size() - 1).getValue();
+		List<Integer> modes = new ArrayList<Integer>();
+		for (int i = sortedList.size() - 2; i >= 0; i--) {
+			if (sortedList.get(i).getValue()<max) {
+				break;
+			}
+			modes.add(sortedList.get(i).getValue());
+		}
 		
+		int[] modesArray = new int[modes.size()];
+		for (int i = 0; i < modes.size(); i++) {
+			modesArray[i] = modes.get(i);
+		}
 		
+		return modesArray;
 	}
 	
 	public void findMode(TreeNode root, Map<Integer, Integer> modeMap){
