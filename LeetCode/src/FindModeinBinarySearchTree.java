@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -45,14 +47,15 @@ public class FindModeinBinarySearchTree {
 		Map<Integer, Integer> modeMap = new HashMap<Integer, Integer>();
 		findMode(root, modeMap);
 		
-		TreeMap<Integer, Integer> sortedMap = new TreeMap<Integer, Integer>();
-		for (Entry<Integer, Integer> entry : modeMap.entrySet()) {
-			sortedMap.put(entry.getValue(), entry.getKey());
-		}
-		
-		List<Integer> modes = new ArrayList<Integer>();
-		int mode = sortedMap.lastKey();
-		modes.add(mode);
+		List<Map.Entry<Integer, Integer>> sortedList = new ArrayList<Map.Entry<Integer, Integer>>(modeMap.entrySet());
+		Collections.sort(sortedList, new Comparator<Map.Entry<Integer, Integer>>() {
+
+			@Override
+			public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
+				// TODO Auto-generated method stub
+				return o1.getValue().compareTo(o2.getValue());
+			}
+		});
 		
 		
 		
