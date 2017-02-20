@@ -1,5 +1,14 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Stack;
+import java.util.TreeMap;
+
+import sun.reflect.generics.tree.Tree;
 
 /*
 
@@ -33,24 +42,33 @@ public class FindModeinBinarySearchTree {
 			return new int[0];
 		}
 		
-		Map<Integer, Integer> modes = new HashMap<Integer, Integer>();
-		findMode(root, modes);
-		findMode(root.left, modes);
-		findMode(root.right, modes);
+		Map<Integer, Integer> modeMap = new HashMap<Integer, Integer>();
+		findMode(root, modeMap);
+		
+		TreeMap<Integer, Integer> sortedMap = new TreeMap<Integer, Integer>();
+		for (Entry<Integer, Integer> entry : modeMap.entrySet()) {
+			sortedMap.put(entry.getValue(), entry.getKey());
+		}
+		
+		List<Integer> modes = new ArrayList<Integer>();
+		int mode = sortedMap.lastKey();
+		modes.add(mode);
+		
+		
 		
 	}
 	
-	public void findMode(TreeNode root, Map<Integer, Integer> modes){
+	public void findMode(TreeNode root, Map<Integer, Integer> modeMap){
 		if (root == null) {
 			return;
 		}
 		int mode = 1;
-		if (modes.containsKey(root.val)) {
-			mode = modes.get(root.val) + 1;
+		if (modeMap.containsKey(root.val)) {
+			mode = modeMap.get(root.val) + 1;
 		}
-		modes.put(root.val, mode);
-		findMode(root.left, modes);
-		findMode(root.right, modes);
+		modeMap.put(root.val, mode);
+		findMode(root.left, modeMap);
+		findMode(root.right, modeMap);
 	}
 
 }
