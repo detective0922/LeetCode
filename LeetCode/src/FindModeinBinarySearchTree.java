@@ -41,7 +41,16 @@ public class FindModeinBinarySearchTree {
 	}
 	
 	public void findMode(TreeNode root, Map<Integer, Integer> modes){
-		
+		if (root == null) {
+			return;
+		}
+		int mode = 1;
+		if (modes.containsKey(root.val)) {
+			mode = modes.get(root.val) + 1;
+		}
+		modes.put(root.val, mode);
+		findMode(root.left, modes);
+		findMode(root.right, modes);
 	}
 
 }
