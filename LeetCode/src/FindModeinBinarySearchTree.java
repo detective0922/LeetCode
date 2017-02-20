@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 
@@ -30,7 +32,16 @@ public class FindModeinBinarySearchTree {
 		if (root == null) {
 			return new int[0];
 		}
-
+		
+		Map<Integer, Integer> modes = new HashMap<Integer, Integer>();
+		findMode(root, modes);
+		findMode(root.left, modes);
+		findMode(root.right, modes);
+		
+	}
+	
+	public void findMode(TreeNode root, Map<Integer, Integer> modes){
+		
 	}
 
 }
