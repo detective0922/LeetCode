@@ -46,24 +46,13 @@ public class FindModeinBinarySearchTree {
 		
 		Map<Integer, Integer> modeMap = new HashMap<Integer, Integer>();
 		findMode(root, modeMap);
-		/*
-		List<Map.Entry<Integer, Integer>> sortedList = new ArrayList<Map.Entry<Integer, Integer>>(modeMap.entrySet());
-		Collections.sort(sortedList, new Comparator<Map.Entry<Integer, Integer>>() {
-
-			@Override
-			public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
-				// TODO Auto-generated method stub
-				return o1.getValue().compareTo(o2.getValue());
-			}
-		});*/
 		
-		int max = sortedList.get(sortedList.size() - 1).getValue();
+		int maxMode = 1;
 		List<Integer> modes = new ArrayList<Integer>();
-		for (int i = sortedList.size() - 2; i >= 0; i--) {
-			if (sortedList.get(i).getValue()<max) {
-				break;
+		for (Integer key : modeMap.keySet()) {
+			if (mode >= maxMode) {
+				modes.add(mode);
 			}
-			modes.add(sortedList.get(i).getValue());
 		}
 		
 		int[] modesArray = new int[modes.size()];
