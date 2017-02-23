@@ -50,8 +50,9 @@ public class FindModeinBinarySearchTree {
 		int maxMode = 1;
 		List<Integer> modes = new ArrayList<Integer>();
 		for (Integer key : modeMap.keySet()) {
-			if (mode >= maxMode) {
-				modes.add(mode);
+			if (modeMap.get(key)>maxMode) {
+				modes.add(key);
+				maxMode = modeMap.get(key);
 			}
 		}
 		
