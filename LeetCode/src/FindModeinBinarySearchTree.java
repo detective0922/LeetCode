@@ -49,11 +49,6 @@ public class FindModeinBinarySearchTree {
 		findMode(root, modeMap);
 		
 		List<Integer> modes = new ArrayList<Integer>();
-		for (Integer key : modeMap.keySet()) {
-			if (modeMap.get(key) >= maxMode) {
-				maxMode = modeMap.get(key);
-			}
-		}
 		
 		for (Integer key : modeMap.keySet()) {
 			if (modeMap.get(key) >= maxMode) {
