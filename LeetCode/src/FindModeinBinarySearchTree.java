@@ -39,6 +39,7 @@ Note: If a tree has more than one mode, you can return them in any order.
 
 
 public class FindModeinBinarySearchTree {
+	private int maxMode = 0;
 	public int[] findMode(TreeNode root) {
 		if (root == null) {
 			return new int[0];
@@ -50,9 +51,14 @@ public class FindModeinBinarySearchTree {
 		int maxMode = 0;
 		List<Integer> modes = new ArrayList<Integer>();
 		for (Integer key : modeMap.keySet()) {
-			if (modeMap.get(key) > maxMode) {
-				modes.add(key);
+			if (modeMap.get(key) >= maxMode) {
 				maxMode = modeMap.get(key);
+			}
+		}
+		
+		for (Integer key : modeMap.keySet()) {
+			if (modeMap.get(key) >= maxMode) {
+				modes.add(key);
 			}
 		}
 		
