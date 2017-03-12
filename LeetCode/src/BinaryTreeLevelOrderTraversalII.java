@@ -50,7 +50,6 @@ public class BinaryTreeLevelOrderTraversalII {
 		List<List<Integer>> nodeList = new ArrayList<List<Integer>>();
 		int depth = 0;
 		Order(root, nodeList, depth);
-		List<List<Integer>> revNodeList = new ArrayList<List<Integer>>(nodeList.size());
 		Collections.reverse(nodeList);
 		return nodeList;
 	}
