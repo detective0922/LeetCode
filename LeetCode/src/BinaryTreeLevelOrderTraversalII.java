@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -27,6 +28,20 @@ return its bottom-up level order traversal as:
 */
 
 public class BinaryTreeLevelOrderTraversalII {
+	
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode(3);
+		TreeNode two = new TreeNode(9);
+		TreeNode three = new TreeNode(20);
+		TreeNode four = new TreeNode(15);
+		TreeNode five = new TreeNode(7);
+		root.left = two;
+		root.right = three;
+		three.left = four;
+		three.right = five;
+		System.out.println(new BinaryTreeLevelOrderTraversalII().levelOrderBottom(root));
+	}
+	
 	public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		if (root == null) {
 			return null;
@@ -36,10 +51,8 @@ public class BinaryTreeLevelOrderTraversalII {
 		int depth = 0;
 		Order(root, nodeList, depth);
 		List<List<Integer>> revNodeList = new ArrayList<List<Integer>>(nodeList.size());
-		for (int i = 0; i < nodeList.size(); i++) {
-			revNodeList.set(nodeList.size() - 1 - i, nodeList.get(i));
-		}
-		return revNodeList;
+		Collections.reverse(nodeList);
+		return nodeList;
 	}
 	
 	public void Order(TreeNode root, List<List<Integer>> nodeList, int depth) {
@@ -47,8 +60,8 @@ public class BinaryTreeLevelOrderTraversalII {
 			return;
 		}
 		
-		if (nodeList.get(depth) == null) {
-			nodeList.set(depth, new ArrayList<Integer>());
+		if (depth >= nodeList.size()) {
+			nodeList.add(new ArrayList<Integer>());
 		}
 		nodeList.get(depth).add(root.val);
 		
