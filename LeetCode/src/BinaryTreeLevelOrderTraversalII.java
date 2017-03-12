@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 
@@ -28,7 +30,24 @@ public class BinaryTreeLevelOrderTraversalII {
 		if (root == null) {
 			return null;
 		}
-
+		
+		ArrayList<ArrayList<Integer>> nodeList = new ArrayList<ArrayList<Integer>>();
+		int depth = 0;
+		
+	}
+	
+	public void Order(TreeNode root, ArrayList<ArrayList<Integer>> nodeList, int depth) {
+		if (root == null) {
+			return;
+		}
+		
+		List<Integer> lvlList = nodeList.get(depth);
+		if (lvlList == null) {
+			lvlList = new ArrayList<Integer>();
+		}
+		lvlList.add(root.val);
+		
+		
 	}
 
 }
