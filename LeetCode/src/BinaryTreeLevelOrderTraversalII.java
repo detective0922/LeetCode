@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /*
@@ -33,7 +34,11 @@ public class BinaryTreeLevelOrderTraversalII {
 		
 		ArrayList<ArrayList<Integer>> nodeList = new ArrayList<ArrayList<Integer>>();
 		int depth = 0;
-		
+		Order(root, nodeList, depth);
+		ArrayList<ArrayList<Integer>> revNodeList = new ArrayList<ArrayList<Integer>>(nodeList.size());
+		for (int i = 0; i < nodeList.size(); i++) {
+			revNodeList.set(nodeList.size() - 1 - i, nodeList.get(i));
+		}
 	}
 	
 	public void Order(TreeNode root, ArrayList<ArrayList<Integer>> nodeList, int depth) {
@@ -41,11 +46,10 @@ public class BinaryTreeLevelOrderTraversalII {
 			return;
 		}
 		
-		List<Integer> lvlList = nodeList.get(depth);
-		if (lvlList == null) {
-			lvlList = new ArrayList<Integer>();
+		if (nodeList.get(depth) == null) {
+			nodeList.set(depth, new ArrayList<Integer>());
 		}
-		lvlList.add(root.val);
+		nodeList.get(depth).add(root.val);
 		
 		depth++;
 		Order(root.left, nodeList, depth);
