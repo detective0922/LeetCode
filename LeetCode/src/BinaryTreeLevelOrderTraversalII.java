@@ -43,11 +43,12 @@ public class BinaryTreeLevelOrderTraversalII {
 	}
 	
 	public List<List<Integer>> levelOrderBottom(TreeNode root) {
-		if (root == null) {
-			return null;
-		}
 		
 		List<List<Integer>> nodeList = new ArrayList<List<Integer>>();
+		if (root == null) {
+			return nodeList;
+		}
+		
 		int depth = 0;
 		Order(root, nodeList, depth);
 		Collections.reverse(nodeList);
