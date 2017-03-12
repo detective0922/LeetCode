@@ -41,33 +41,33 @@ public class BinaryTreeLevelOrderTraversalII {
 		three.right = five;
 		System.out.println(new BinaryTreeLevelOrderTraversalII().levelOrderBottom(root));
 	}
-	
+
 	public List<List<Integer>> levelOrderBottom(TreeNode root) {
-		
+
 		List<List<Integer>> nodeList = new ArrayList<List<Integer>>();
 		if (root == null) {
 			return nodeList;
 		}
-		
+
 		int depth = 0;
 		Order(root, nodeList, depth);
 		return nodeList;
 	}
-	
+
 	public void Order(TreeNode root, List<List<Integer>> nodeList, int depth) {
 		if (root == null) {
 			return;
 		}
-		
+
 		if (depth >= nodeList.size()) {
 			nodeList.add(0, new ArrayList<Integer>());
 		}
-		nodeList.get(nodeList.size() - 1- depth).add(root.val);
-		
+		nodeList.get(nodeList.size() - 1 - depth).add(root.val);
+
 		depth++;
 		Order(root.left, nodeList, depth);
 		Order(root.right, nodeList, depth);
-				
+
 	}
 
 }
