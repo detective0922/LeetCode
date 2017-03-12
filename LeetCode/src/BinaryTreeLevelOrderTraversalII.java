@@ -47,7 +47,10 @@ public class BinaryTreeLevelOrderTraversalII {
 		}
 		lvlList.add(root.val);
 		
-		
+		depth++;
+		Order(root.left, nodeList, depth);
+		Order(root.right, nodeList, depth);
+				
 	}
 
 }
