@@ -32,16 +32,17 @@ public class BinaryTreeLevelOrderTraversalII {
 			return null;
 		}
 		
-		ArrayList<ArrayList<Integer>> nodeList = new ArrayList<ArrayList<Integer>>();
+		List<List<Integer>> nodeList = new ArrayList<List<Integer>>();
 		int depth = 0;
 		Order(root, nodeList, depth);
-		ArrayList<ArrayList<Integer>> revNodeList = new ArrayList<ArrayList<Integer>>(nodeList.size());
+		List<List<Integer>> revNodeList = new ArrayList<List<Integer>>(nodeList.size());
 		for (int i = 0; i < nodeList.size(); i++) {
 			revNodeList.set(nodeList.size() - 1 - i, nodeList.get(i));
 		}
+		return revNodeList;
 	}
 	
-	public void Order(TreeNode root, ArrayList<ArrayList<Integer>> nodeList, int depth) {
+	public void Order(TreeNode root, List<List<Integer>> nodeList, int depth) {
 		if (root == null) {
 			return;
 		}
