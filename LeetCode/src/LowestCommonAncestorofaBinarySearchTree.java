@@ -22,5 +22,8 @@ return its bottom-up level order traversal as:
 */
 
 public class LowestCommonAncestorofaBinarySearchTree {
+	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+	}
 
 }
