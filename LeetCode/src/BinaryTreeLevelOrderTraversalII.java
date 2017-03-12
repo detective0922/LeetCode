@@ -51,7 +51,6 @@ public class BinaryTreeLevelOrderTraversalII {
 		
 		int depth = 0;
 		Order(root, nodeList, depth);
-		Collections.reverse(nodeList);
 		return nodeList;
 	}
 	
@@ -61,7 +60,7 @@ public class BinaryTreeLevelOrderTraversalII {
 		}
 		
 		if (depth >= nodeList.size()) {
-			nodeList.add(new ArrayList<Integer>());
+			nodeList.add
 		}
 		nodeList.get(depth).add(root.val);
 		
