@@ -31,7 +31,7 @@ public class LowestCommonAncestorofaBinarySearchTree {
 			return false;
 		}
 
-		return isDescendant(root, p) && isDescendant(root, q);
+		return isAncestor(root, p) && isAncestor(root, q);
 	}
 	
 	public boolean isAncestor(TreeNode ancestor, TreeNode descendant) {
