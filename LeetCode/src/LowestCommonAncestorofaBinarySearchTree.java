@@ -34,13 +34,13 @@ public class LowestCommonAncestorofaBinarySearchTree {
 		return isDescendant(root, p) && isDescendant(root, q);
 	}
 	
-	public boolean isDescendant(TreeNode descendant, TreeNode ancestor) {
-		if(descendant==null||ancestor==null){
+	public boolean isAncestor(TreeNode ancestor, TreeNode descendant) {
+		if(ancestor==null||descendant==null){
 			return false;
 		}
 		
-		return descendant.val == ancestor.val || isDescendant(descendant.left, ancestor)
-				|| isDescendant(descendant.right, ancestor);
+		return ancestor.val == descendant.val || isAncestor(ancestor.left, descendant)
+				|| isAncestor(ancestor.right, descendant);
 	}
 
 }
