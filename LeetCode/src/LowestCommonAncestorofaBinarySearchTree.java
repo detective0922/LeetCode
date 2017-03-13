@@ -25,5 +25,22 @@ public class LowestCommonAncestorofaBinarySearchTree {
 		}
 
 	}
+	
+	public boolean isCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		if (root == null || p == null || q == null) {
+			return false;
+		}
+
+		return isDescendant(root, p) && isDescendant(root, q);
+	}
+	
+	public boolean isDescendant(TreeNode descendant, TreeNode ancestor) {
+		if(descendant==null||ancestor==null){
+			return false;
+		}
+		
+		return descendant.val == ancestor.val || isDescendant(descendant.left, ancestor)
+				|| isDescendant(descendant.right, ancestor);
+	}
 
 }
