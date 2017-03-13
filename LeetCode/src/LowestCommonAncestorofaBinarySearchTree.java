@@ -41,7 +41,7 @@ public class LowestCommonAncestorofaBinarySearchTree {
 			lowestCommonAncestor = root;
 			lowest = depth;
 		}
-		depth++;
+		
 		lowestCommonAncestor(root.left, p, q, depth);
 		lowestCommonAncestor(root.right, p, q, depth);
 
