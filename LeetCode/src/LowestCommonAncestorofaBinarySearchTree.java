@@ -25,9 +25,10 @@ public class LowestCommonAncestorofaBinarySearchTree {
 		if (root == null || p == null || q == null) {
 			return null;
 		}
-		lowestCommonAncestor = root;
+		lowestCommonAncestor = null;
 		lowest = 0;
-
+		lowestCommonAncestor(root, p, q, lowest);
+		return lowestCommonAncestor;
 	}
 	
 	public void lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q, int depth) {
