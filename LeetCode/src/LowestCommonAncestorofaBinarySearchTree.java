@@ -20,6 +20,9 @@ Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant o
 
 public class LowestCommonAncestorofaBinarySearchTree {
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		if (root == null || p == null || q == null) {
+			return null;
+		}
 
 	}
 
