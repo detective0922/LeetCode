@@ -21,6 +21,7 @@ Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant o
 public class LowestCommonAncestorofaBinarySearchTree {
 	private TreeNode lowestCommonAncestor;
 	private int lowest;
+
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 		if (root == null || p == null || q == null) {
 			return null;
@@ -30,12 +31,12 @@ public class LowestCommonAncestorofaBinarySearchTree {
 		lowestCommonAncestor(root, p, q, lowest);
 		return lowestCommonAncestor;
 	}
-	
+
 	public void lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q, int depth) {
 		if (root == null || p == null || q == null) {
 			return;
 		}
-		
+
 		if (isCommonAncestor(root, p, q) && depth > lowest) {
 			lowestCommonAncestor = root;
 			lowest = depth;
@@ -45,7 +46,7 @@ public class LowestCommonAncestorofaBinarySearchTree {
 		lowestCommonAncestor(root.right, p, q, depth);
 
 	}
-	
+
 	public boolean isCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 		if (root == null || p == null || q == null) {
 			return false;
@@ -53,12 +54,12 @@ public class LowestCommonAncestorofaBinarySearchTree {
 
 		return isAncestor(root, p) && isAncestor(root, q);
 	}
-	
+
 	public boolean isAncestor(TreeNode ancestor, TreeNode descendant) {
-		if(ancestor==null||descendant==null){
+		if (ancestor == null || descendant == null) {
 			return false;
 		}
-		
+
 		return ancestor.val == descendant.val || isAncestor(ancestor.left, descendant)
 				|| isAncestor(ancestor.right, descendant);
 	}
