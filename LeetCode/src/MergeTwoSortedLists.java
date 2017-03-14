@@ -1,11 +1,9 @@
 
 /*
-53. Maximum Subarray
+21. Merge Two Sorted Lists
 
-Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
-
-For example, given the array [-2,1,-3,4,-1,2,1,-5,4],
-the contiguous subarray [4,-1,2,1] has the largest sum = 6.
+Merge two sorted linked lists and return it as a new list. 
+The new list should be made by splicing together the nodes of the first two lists.
 
 */
 
