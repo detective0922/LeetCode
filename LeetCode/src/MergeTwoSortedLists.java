@@ -37,6 +37,10 @@ public class MergeTwoSortedLists {
 			tmpNode.next = currentL2Node;
 		}
 		
+		if (currentL1Node == null) {
+			tmpNode.next = currentL2Node;
+		}
+		
 
 	}
 }
