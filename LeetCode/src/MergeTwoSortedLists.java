@@ -20,18 +20,18 @@ public class MergeTwoSortedLists {
 		}
 		
 		ListNode headNode = null;
-		ListNode currentL1Node = null;
-		ListNode currentL2Node = null;
-		if (l1.val < l2.val) {
-			headNode = l1;
-			currentL1Node = l1;
-			currentL2Node = l2.next;
-		} else {
-			
-		}
+		ListNode currentL1Node = l1;
+		ListNode currentL2Node = l2;
+		
 		ListNode currentNode = headNode;
 		while (headNode!=null) {
-			
+			if (l1.val < l2.val) {
+				headNode = l1;
+				currentL1Node = l1;
+				currentL2Node = l2.next;
+			} else {
+				
+			}
 		}
 		
 
