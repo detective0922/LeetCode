@@ -33,6 +33,10 @@ public class MergeTwoSortedLists {
 			}
 		}
 		
+		if (currentL1Node == null) {
+			tmpNode.next = currentL2Node;
+		}
+		
 
 	}
 }
