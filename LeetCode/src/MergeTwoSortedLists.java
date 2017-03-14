@@ -22,12 +22,14 @@ public class MergeTwoSortedLists {
 		ListNode headNode = l1.val < l2.val ? l1 : l2;
 		ListNode currentL1Node = l1;
 		ListNode currentL2Node = l2;
-		ListNode tmpNode = null;
+		ListNode tmpNode = headNode;
 		while (headNode!=null) {
 			if (currentL1Node.val < currentL2Node.val) {
+				tmpNode.next = currentL1Node;
 				currentL1Node = currentL1Node.next;				
 			} else {
-				
+				tmpNode.next = currentL2Node;
+				currentL2Node = currentL2Node.next;
 			}
 		}
 		
