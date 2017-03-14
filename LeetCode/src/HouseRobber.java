@@ -15,5 +15,8 @@ determine the maximum amount of money you can rob tonight without alerting the p
 */
 
 public class HouseRobber {
+public int rob(int[] nums) {
+        
+    }
 
 }
