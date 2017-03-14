@@ -19,11 +19,10 @@ public class MergeTwoSortedLists {
 			return l1;
 		}
 		
-		ListNode headNode = null;
+		ListNode headNode = headNode;
 		ListNode currentL1Node = l1;
 		ListNode currentL2Node = l2;
 		
-		ListNode currentNode = headNode;
 		while (headNode!=null) {
 			if (l1.val < l2.val) {
 				headNode = l1;
