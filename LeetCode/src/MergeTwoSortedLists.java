@@ -18,7 +18,7 @@ public class MergeTwoSortedLists {
 		if (l2 == null) {
 			return l1;
 		}
-		
+
 		ListNode headNode = l1.val < l2.val ? l1 : l2;
 		ListNode currentL1Node = l1;
 		ListNode currentL2Node = l2;
@@ -32,15 +32,15 @@ public class MergeTwoSortedLists {
 				currentL2Node = currentL2Node.next;
 			}
 		}
-		
+
 		if (currentL1Node == null) {
 			tmpNode.next = currentL2Node;
 		}
-		
+
 		if (currentL1Node == null) {
 			tmpNode.next = currentL2Node;
 		}
-		
+
 		return headNode;
 
 	}
