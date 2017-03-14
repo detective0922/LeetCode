@@ -18,6 +18,15 @@ public class MergeTwoSortedLists {
 		if (l2 == null) {
 			return l1;
 		}
+		
+		ListNode headNode = l1.val < l2.val ? l1 : l2;
+		ListNode currentL1Node = l1;
+		ListNode currentL2Node = l2;
+		ListNode currentNode = headNode;
+		while (headNode!=null) {
+			
+		}
+		
 
 	}
 }
