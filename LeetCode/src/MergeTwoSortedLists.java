@@ -32,7 +32,7 @@ public class MergeTwoSortedLists {
 			return l1;
 		}
 
-		ListNode headNode = l1.val < l2.val ? l1 : l2;
+		ListNode headNode = new ListNode(l1.val < l2.val ? l1.val : l2.val);
 		ListNode currentL1Node = l1;
 		ListNode currentL2Node = l2;
 		ListNode tmpNode = headNode;
