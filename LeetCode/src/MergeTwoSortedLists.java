@@ -38,10 +38,10 @@ public class MergeTwoSortedLists {
 		ListNode tmpNode = headNode;
 		while (currentL1Node != null && currentL2Node != null) {
 			if (currentL1Node.val < currentL2Node.val) {
-				tmpNode.next = currentL1Node;
+				tmpNode.next = new ListNode(currentL1Node.val);
 				currentL1Node = currentL1Node.next;
 			} else {
-				tmpNode.next = currentL2Node;
+				tmpNode.next = new ListNode(currentL2Node.val);
 				currentL2Node = currentL2Node.next;
 			}
 			tmpNode = tmpNode.next;
