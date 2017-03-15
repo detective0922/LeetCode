@@ -8,6 +8,19 @@ The new list should be made by splicing together the nodes of the first two list
 */
 
 public class MergeTwoSortedLists {
+	
+	public static void main(String[] args) {
+		ListNode root = new ListNode(1);
+		ListNode two = new ListNode(2);
+		ListNode three = new ListNode(3);
+		ListNode four = new ListNode(4);
+		ListNode five = new ListNode(5);
+		root.next = three;
+		two.next = four;
+		four.next = five;
+		System.out.println(new BinaryTreeLevelOrderTraversalII().levelOrderBottom(root));
+	}
+	
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		if (l1 == null && l2 == null) {
 			return null;
