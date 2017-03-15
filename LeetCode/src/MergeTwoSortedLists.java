@@ -18,7 +18,7 @@ public class MergeTwoSortedLists {
 		root.next = three;
 		two.next = four;
 		four.next = five;
-		System.out.println(new BinaryTreeLevelOrderTraversalII().levelOrderBottom(root));
+		System.out.println(new MergeTwoSortedLists().mergeTwoLists(root,two));
 	}
 	
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
