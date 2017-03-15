@@ -52,7 +52,7 @@ public class MergeTwoSortedLists {
 			tmpNode.next = currentL1Node;
 		}
 
-		return headNode;
+		return headNode.next;
 
 	}
 }
