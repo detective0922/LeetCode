@@ -20,6 +20,7 @@ public class HouseRobber {
 			return 0;
 		}
 		
+		boolean[] isRobbed = new boolean[nums.length];
 		for (int i = 0; i < nums.length; i++) {
 			
 		}
