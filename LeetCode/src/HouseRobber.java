@@ -23,7 +23,6 @@ public class HouseRobber {
 			return nums[0];
 		}
 		
-		boolean[] isRobbed = new boolean[nums.length];
 		int preRobbed = 0;
 		int preNotRobbed = 0;
 		for (int i = 0; i < nums.length; i++) {		
