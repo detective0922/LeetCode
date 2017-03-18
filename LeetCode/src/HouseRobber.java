@@ -26,10 +26,11 @@ public class HouseRobber {
 		boolean[] isRobbed = new boolean[nums.length];
 		int preRobbed = 0;
 		int preNotRobbed = 0;
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i]>nums[i-1]) {
-				int currentRobbed = preNotRobbed + 
-			}
+		for (int i = 0; i < nums.length; i++) {		
+			int currentRobbed = preNotRobbed + nums[i];
+			int currNotRobbed = Math.max(preNotRobbed, preRobbed);
+			preRobbed = currentRobbed;
+			preNotRobbed = currentRobbed;
 		}
 		
 
