@@ -24,9 +24,9 @@ public class HouseRobber {
 		}
 		
 		boolean[] isRobbed = new boolean[nums.length];
-		
+		int[] max = new int[nums.length];
 		for (int i = 0; i < nums.length; i++) {
-			if (!isRobbed[i-1]) {
+			if (nums[i]>nums[i-1]) {
 				
 			}
 		}
