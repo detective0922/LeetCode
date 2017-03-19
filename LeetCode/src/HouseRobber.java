@@ -16,9 +16,6 @@ determine the maximum amount of money you can rob tonight without alerting the p
 
 public class HouseRobber {
 	public int rob(int[] nums) {
-		if (nums.length == 0) {
-			return 0;
-		}
 		
 		int preRobbed = 0;
 		int preNotRobbed = 0;
