@@ -29,7 +29,7 @@ public class HouseRobber {
 			int currentRobbed = preNotRobbed + nums[i];
 			int currNotRobbed = Math.max(preNotRobbed, preRobbed);
 			preRobbed = currentRobbed;
-			preNotRobbed = currentRobbed;
+			preNotRobbed = currNotRobbed;
 		}
 		
 		return Math.max(preRobbed, preNotRobbed);
