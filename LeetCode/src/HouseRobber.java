@@ -32,6 +32,7 @@ public class HouseRobber {
 			preNotRobbed = currentRobbed;
 		}
 		
+		return Math.max(preRobbed, preNotRobbed);
 
 	}
 
