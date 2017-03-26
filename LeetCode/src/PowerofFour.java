@@ -12,5 +12,8 @@ Follow up: Could you solve it without loops/recursion?
 */
 
 public class PowerofFour {
+	public boolean isPowerOfFour(int num) {
+
+	}
 
 }
