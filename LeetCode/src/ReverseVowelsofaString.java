@@ -14,6 +14,8 @@ Given s = "leetcode", return "leotcede".
 */
 
 public class ReverseVowelsofaString {
-    aaa
+    public String reverseVowels(String s) {
+
+    }
 
 }
