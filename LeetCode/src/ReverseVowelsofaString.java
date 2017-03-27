@@ -15,17 +15,23 @@ Given s = "leetcode", return "leotcede".
 
 public class ReverseVowelsofaString {
     public String reverseVowels(String s) {
+        if (s == null) {
+            return null;
+        }
+        char[] sChars = s.toCharArray();
+        int lowIndex = 0;
+        int highIndex = sChars.length - 1;
 
     }
 
-    public boolean isVowel(char c){
-        switch (c){
+    public boolean isVowel(char c) {
+        switch (c) {
             case 'a':
             case 'e':
             case 'i':
             case 'o':
             case 'u':
-                return  true;
+                return true;
             default:
                 return false;
         }
