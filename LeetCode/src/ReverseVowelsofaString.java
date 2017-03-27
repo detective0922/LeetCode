@@ -21,7 +21,24 @@ public class ReverseVowelsofaString {
         char[] sChars = s.toCharArray();
         int lowIndex = 0;
         int highIndex = sChars.length - 1;
+        while (lowIndex < highIndex) {
+            if (!isVowel(sChars[lowIndex])){
+                lowIndex++;
+            }
+            if (!isVowel(sChars[highIndex])){
+                highIndex--;
+            }
+            if (isVowel(sChars[lowIndex]) && isVowel(sChars[highIndex])){
 
+            }
+        }
+
+    }
+
+    public void swap(char[] charArray, int index1, int index2) {
+        char temp = charArray[index1];
+        charArray[index1] = charArray[index2];
+        charArray[index2] = charArray[index1];
     }
 
     public boolean isVowel(char c) {
