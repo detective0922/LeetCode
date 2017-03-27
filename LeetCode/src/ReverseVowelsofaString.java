@@ -29,6 +29,7 @@ public class ReverseVowelsofaString {
                 highIndex--;
             }
             if (isVowel(sChars[lowIndex]) && isVowel(sChars[highIndex])){
+                swap(sChars, lowIndex,highIndex);
 
             }
         }
