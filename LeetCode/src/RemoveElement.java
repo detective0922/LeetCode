@@ -17,31 +17,11 @@ Your function should return length = 2, with the first two elements of nums bein
 
 public class RemoveElement {
     public static void main(String[] args) {
-        System.out.println(new RemoveElement().removeElement(new int[]{2, 2, 2, 3}, 2));
+        System.out.println(new RemoveElement().removeElement(new int[]{2}, 2));
     }
 
     public int removeElement(int[] nums, int val) {
-        int index = 0;
-        int notValIndex = nums.length - 1;
-        while (index <= notValIndex) {
-            while (nums[index] != val) {
-                index++;
-            }
-            while (nums[notValIndex] == val) {
-                notValIndex--;
-            }
-            if (index < notValIndex) {
-                swap(nums, index, notValIndex);
-                index++;
-                notValIndex--;
-            }
-        }
-        return index;
-    }
+        int notValIndex = 0;
 
-    public void swap(int[] array, int index1, int index2) {
-        int temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
     }
 }
