@@ -30,10 +30,11 @@ public class ReverseVowelsofaString {
             }
             if (isVowel(sChars[lowIndex]) && isVowel(sChars[highIndex])){
                 swap(sChars, lowIndex,highIndex);
-
+                lowIndex++;
+                highIndex--;
             }
         }
-
+        return  new String(sChars);
     }
 
     public void swap(char[] charArray, int index1, int index2) {
