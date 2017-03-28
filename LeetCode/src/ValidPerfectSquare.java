@@ -21,27 +21,27 @@ Returns: False
 public class ValidPerfectSquare {
 
     public static void main(String[] args) {
-        System.out.println(new ValidPerfectSquare().isPerfectSquare(16));
+        System.out.println(new ValidPerfectSquare().isPerfectSquare(2147483647));
     }
 
     public boolean isPerfectSquare(int num) {
-        if (num < 1){
-            return  false;
+        if (num < 1) {
+            return false;
         }
 
-        int low = 1, high = num;
-        while (low < high) {
-            int mid = (low + high) / 2;
-            int sqrt = mid * mid;
-            if (sqrt > num){
+        long low = 1, high = num;
+        while (low <= high) {
+            long mid = (low + high) / 2;
+            long sqrt = mid * mid;
+            if (sqrt > num) {
                 high = mid - 1;
             } else if (sqrt < num) {
                 low = mid + 1;
             } else {
-                return  true;
+                return true;
             }
         }
-        return  false;
+        return false;
 
 
     }
