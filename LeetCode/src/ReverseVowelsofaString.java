@@ -45,7 +45,7 @@ public class ReverseVowelsofaString {
     public void swap(char[] charArray, int index1, int index2) {
         char temp = charArray[index1];
         charArray[index1] = charArray[index2];
-        charArray[index2] = charArray[index1];
+        charArray[index2] = temp;
     }
 
     public boolean isVowel(char c) {
