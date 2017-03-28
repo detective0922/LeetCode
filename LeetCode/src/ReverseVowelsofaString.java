@@ -14,6 +14,11 @@ Given s = "leetcode", return "leotcede".
 */
 
 public class ReverseVowelsofaString {
+
+    public static void main(String[] args){
+        System.out.println(new ReverseVowelsofaString().reverseVowels("leetcode"));
+    }
+
     public String reverseVowels(String s) {
         if (s == null) {
             return null;
