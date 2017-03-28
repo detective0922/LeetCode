@@ -16,7 +16,7 @@ Given s = "leetcode", return "leotcede".
 public class ReverseVowelsofaString {
 
     public static void main(String[] args){
-        System.out.println(new ReverseVowelsofaString().reverseVowels("leetcode"));
+        System.out.println(new ReverseVowelsofaString().reverseVowels("aA"));
     }
 
     public String reverseVowels(String s) {
@@ -50,6 +50,11 @@ public class ReverseVowelsofaString {
 
     public boolean isVowel(char c) {
         switch (c) {
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
             case 'a':
             case 'e':
             case 'i':
