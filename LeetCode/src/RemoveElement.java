@@ -17,6 +17,8 @@ Your function should return length = 2, with the first two elements of nums bein
 
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {
+        int index = 0;
+        int valIndex = nums.length - 1;
 
     }
 }
