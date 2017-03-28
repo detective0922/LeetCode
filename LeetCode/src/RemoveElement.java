@@ -19,20 +19,20 @@ public class RemoveElement {
     public int removeElement(int[] nums, int val) {
         int index = 0;
         int notValIndex = nums.length - 1;
-        while(index < notValIndex) {
-            while (nums[index] !=val){
+        while (index < notValIndex) {
+            while (nums[index] != val) {
                 index++;
             }
-            while (nums[notValIndex]==val){
+            while (nums[notValIndex] == val) {
                 notValIndex--;
             }
             if (index < notValIndex) {
-                swap(nums, index,notValIndex);
+                swap(nums, index, notValIndex);
                 index++;
                 notValIndex--;
             }
         }
-        return  index;
+        return index;
     }
 
     public void swap(int[] array, int index1, int index2) {
