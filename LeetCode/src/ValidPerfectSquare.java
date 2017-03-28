@@ -20,4 +20,28 @@ Returns: False
 
 public class ValidPerfectSquare {
 
+
+
+    public boolean isPerfectSquare(int num) {
+        if (num < 1){
+            return  false;
+        }
+
+        int low = 1, high = num;
+        while (low < high) {
+            int mid = (low + high) / 2;
+            int sqrt = mid * mid;
+            if (sqrt > num){
+                high = mid + 1;
+            } else if (sqrt < num) {
+                low = mid + 1;
+            } else {
+                return  true;
+            }
+        }
+        return  false;
+
+
+    }
+
 }
