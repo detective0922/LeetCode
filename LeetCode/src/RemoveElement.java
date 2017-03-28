@@ -21,7 +21,25 @@ public class RemoveElement {
     }
 
     public int removeElement(int[] nums, int val) {
-        int notValIndex = 0;
+        int index = 0;
+        int notValIndex = nums.length - 1;
+        while (index <= notValIndex) {
+            if (nums[index] != val) {
+                index++;
+            } else if (nums[notValIndex] == val) {
+                notValIndex--;
+            } else {
+                swap(nums, index, notValIndex);
+                index++;
+                notValIndex--;
+            }
+        }
+        return index;
+    }
 
+    public void swap(int[] array, int index1, int index2) {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
     }
 }
