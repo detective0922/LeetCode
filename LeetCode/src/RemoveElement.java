@@ -18,7 +18,16 @@ Your function should return length = 2, with the first two elements of nums bein
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {
         int index = 0;
-        int valIndex = nums.length - 1;
+        int notValIndex = nums.length - 1;
+        while(index < notValIndex) {
+            while (nums[index] !=val){
+                index++;
+            }
+            while (nums[notValIndex]==val){
+                notValIndex--;
+            }
+
+        }
 
     }
 }
