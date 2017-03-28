@@ -15,7 +15,7 @@ Given s = "leetcode", return "leotcede".
 
 public class ReverseVowelsofaString {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(new ReverseVowelsofaString().reverseVowels("aA"));
     }
 
@@ -27,19 +27,19 @@ public class ReverseVowelsofaString {
         int lowIndex = 0;
         int highIndex = sChars.length - 1;
         while (lowIndex < highIndex) {
-            if (!isVowel(sChars[lowIndex])){
+            if (!isVowel(sChars[lowIndex])) {
                 lowIndex++;
             }
-            if (!isVowel(sChars[highIndex])){
+            if (!isVowel(sChars[highIndex])) {
                 highIndex--;
             }
-            if (isVowel(sChars[lowIndex]) && isVowel(sChars[highIndex])){
-                swap(sChars, lowIndex,highIndex);
+            if (isVowel(sChars[lowIndex]) && isVowel(sChars[highIndex])) {
+                swap(sChars, lowIndex, highIndex);
                 lowIndex++;
                 highIndex--;
             }
         }
-        return  new String(sChars);
+        return new String(sChars);
     }
 
     public void swap(char[] charArray, int index1, int index2) {
