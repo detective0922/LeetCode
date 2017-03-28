@@ -17,13 +17,13 @@ Your function should return length = 2, with the first two elements of nums bein
 
 public class RemoveElement {
     public static void main(String[] args) {
-        System.out.println(new RemoveElement().removeElement(new  int[]{3,2,2,3},3));
+        System.out.println(new RemoveElement().removeElement(new  int[]{2,2,2,3},2));
     }
 
     public int removeElement(int[] nums, int val) {
         int index = 0;
         int notValIndex = nums.length - 1;
-        while (index < notValIndex) {
+        while (index <= notValIndex) {
             while (nums[index] != val) {
                 index++;
             }
