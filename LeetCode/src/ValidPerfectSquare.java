@@ -20,7 +20,9 @@ Returns: False
 
 public class ValidPerfectSquare {
 
-
+    public static void main(String[] args) {
+        System.out.println(new ValidPerfectSquare().isPerfectSquare(16));
+    }
 
     public boolean isPerfectSquare(int num) {
         if (num < 1){
@@ -32,7 +34,7 @@ public class ValidPerfectSquare {
             int mid = (low + high) / 2;
             int sqrt = mid * mid;
             if (sqrt > num){
-                high = mid + 1;
+                high = mid - 1;
             } else if (sqrt < num) {
                 low = mid + 1;
             } else {
