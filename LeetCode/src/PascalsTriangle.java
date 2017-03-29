@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 118. Pascal's Triangle
 
@@ -15,4 +17,7 @@ For example, given numRows = 5,
 
 */
 public class PascalsTriangle {
+    public List<List<Integer>> generate(int numRows) {
+
+    }
 }
