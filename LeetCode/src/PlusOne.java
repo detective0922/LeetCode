@@ -29,6 +29,12 @@ public class PlusOne {
             digitList.add(carry);
         }
 
+        int[] newDigits = new int[digitList.size()];
+        for (int i = 0;i<newDigits.length;i++){
+            newDigits[i] = digitList.get(newDigits.length - 1 -i);
+        }
+        return newDigits;
+
     }
 
 }
