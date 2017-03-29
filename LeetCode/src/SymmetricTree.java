@@ -25,6 +25,14 @@ But the following [1,2,2,null,3,null,3] is not:
 
 public class SymmetricTree {
     public boolean isSymmetric(TreeNode root) {
+        if (root == null){
+            return  false;
+        }
+
+
+    }
+
+    public boolean isSame(TreeNode node1, TreeNode node2) {
 
     }
 }
