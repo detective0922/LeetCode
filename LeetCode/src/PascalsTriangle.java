@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -18,6 +19,14 @@ For example, given numRows = 5,
 */
 public class PascalsTriangle {
     public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> triangle = new ArrayList<List<Integer>>();
+        triangle.add(new ArrayList<Integer>());
+        if (numRows < 1) {
+            return triangle;
+        }
+        for (int i = 0; i < numRows; i++) {
+
+        }
 
     }
 }
