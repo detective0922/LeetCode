@@ -12,6 +12,11 @@ The digits are stored such that the most significant digit is at the head of the
 
 */
 public class PlusOne {
+
+    public static void main(String[] args) {
+        System.out.println(new PlusOne().plusOne(new int[]{9,9,9}));
+    }
+
     public int[] plusOne(int[] digits) {
         if (digits.length == 0) {
             return new int[0];
