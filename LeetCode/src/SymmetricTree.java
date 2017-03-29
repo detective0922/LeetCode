@@ -26,7 +26,7 @@ But the following [1,2,2,null,3,null,3] is not:
 public class SymmetricTree {
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
-            return false;
+            return true;
         }
 
         return isSame(root.left, root.right);
