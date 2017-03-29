@@ -14,24 +14,24 @@ The digits are stored such that the most significant digit is at the head of the
 public class PlusOne {
     public int[] plusOne(int[] digits) {
         if (digits.length == 0) {
-            return  new int[0];
+            return new int[0];
         }
         List<Integer> digitList = new ArrayList<Integer>();
         int digit = (digits[digits.length - 1] + 1) % 10;
         int carry = (digits[digits.length - 1] + 1) / 10;
         digitList.add(digit);
-        for (int i = digits.length -2;i>=0;i--){
+        for (int i = digits.length - 2; i >= 0; i--) {
             digit = (digits[i] + carry) % 10;
             carry = (digits[i] + carry) / 10;
             digitList.add(digit);
         }
-        if (carry >0 ){
+        if (carry > 0) {
             digitList.add(carry);
         }
 
         int[] newDigits = new int[digitList.size()];
-        for (int i = 0;i<newDigits.length;i++){
-            newDigits[i] = digitList.get(newDigits.length - 1 -i);
+        for (int i = 0; i < newDigits.length; i++) {
+            newDigits[i] = digitList.get(newDigits.length - 1 - i);
         }
         return newDigits;
 
