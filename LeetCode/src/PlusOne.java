@@ -10,5 +10,8 @@ The digits are stored such that the most significant digit is at the head of the
 
 */
 public class PlusOne {
+    public int[] plusOne(int[] digits) {
+
+    }
 
 }
