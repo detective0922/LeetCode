@@ -23,9 +23,24 @@ public class PascalsTriangle {
     }
 
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> triangleList = new ArrayList<List<Integer>>();
+
         int[][] triangleArray = new int[numRows][numRows];
+        if (numRows<1){
 
+            return
+        }
 
+    }
+
+    public List<List<Integer>> triangleArrayToList(int[][] triangleArray){
+        List<List<Integer>> triangleList = new ArrayList<List<Integer>>();
+        for (int i = 0;i<triangleArray.length;i++){
+            List<Integer> lineList = new ArrayList<Integer>();
+            for (int j = 0;j<triangleArray[i].length;j++){
+                lineList.add(triangleArray[i][j]);
+            }
+            triangleList.add(lineList);
+        }
+        return triangleList;
     }
 }
