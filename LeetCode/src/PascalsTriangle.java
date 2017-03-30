@@ -29,9 +29,6 @@ public class PascalsTriangle {
             return triangleArrayToList(triangleArray);
         }
         triangleArray[0][1] = 1;
-        /*if (numRows == 1){
-            return triangleArrayToList(triangleArray);
-        }*/
 
         for(int i = 1;i<numRows;i++){
             for (int j = 1;j<=i+1;j++){
