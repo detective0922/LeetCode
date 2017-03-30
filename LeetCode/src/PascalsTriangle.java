@@ -26,9 +26,10 @@ public class PascalsTriangle {
 
         int[][] triangleArray = new int[numRows][numRows];
         if (numRows<1){
-
-            return
+            return triangleArrayToList(triangleArray);
         }
+        triangleArray[0][1] = 1;
+
 
     }
 
@@ -37,7 +38,9 @@ public class PascalsTriangle {
         for (int i = 0;i<triangleArray.length;i++){
             List<Integer> lineList = new ArrayList<Integer>();
             for (int j = 0;j<triangleArray[i].length;j++){
-                lineList.add(triangleArray[i][j]);
+                if (triangleArray[i][j]!=0){
+                    lineList.add(triangleArray[i][j]);
+                }
             }
             triangleList.add(lineList);
         }
