@@ -29,6 +29,16 @@ public class PascalsTriangle {
             return triangleArrayToList(triangleArray);
         }
         triangleArray[0][1] = 1;
+        if (numRows == 1){
+            return triangleArrayToList(triangleArray);
+        }
+        triangleArray[1][0] = 1;
+        triangleArray[1][1] = 1;
+        if (numRows==2){
+            return  triangleArrayToList(triangleArray);
+        }
+
+        for()
 
 
     }
