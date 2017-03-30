@@ -11,4 +11,7 @@ Output: 5
 
 */
 public class NumberofSegmentsinaString {
+    public int countSegments(String s) {
+
+    }
 }
