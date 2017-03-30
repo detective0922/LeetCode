@@ -19,7 +19,7 @@ For example, given numRows = 5,
 */
 public class PascalsTriangle {
     public static void main(String[] args) {
-        System.out.println(new PascalsTriangle().generate(5));
+        System.out.println(new PascalsTriangle().generate(2));
     }
 
     public List<List<Integer>> generate(int numRows) {
@@ -32,15 +32,15 @@ public class PascalsTriangle {
         if (numRows == 1){
             return triangleArrayToList(triangleArray);
         }
-        triangleArray[1][0] = 1;
-        triangleArray[1][1] = 1;
+        /*triangleArray[1][1] = 1;
+        triangleArray[1][2] = 1;
         if (numRows==2){
             return  triangleArrayToList(triangleArray);
-        }
+        }*/
 
-        for(int i = 2;i<numRows;i++){
-            for (int j = 0;j<i;j++){
-                triangleArray[i][j] = triangleArray[i-1][j] + triangleArray[i-1][j+1];
+        for(int i = 1;i<numRows;i++){
+            for (int j = 1;j<=i+1;j++){
+                triangleArray[i][j] = triangleArray[i-1][j-1] + triangleArray[i-1][j];
             }
         }
 
