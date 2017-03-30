@@ -28,7 +28,7 @@ public class PascalsTriangle {
             List<Integer> lineList = new ArrayList<Integer>();
             lineList.add(1);
             for (int j = 1; j<numRows;j++){
-                if (triangle.get(i-1)==null){
+                if (triangle.get(i-1)==null||triangle.get(i).size()<2){
                     lineList.add(1);
                 }
             }
