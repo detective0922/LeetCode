@@ -25,7 +25,13 @@ public class PascalsTriangle {
             return triangle;
         }
         for (int i = 0; i < numRows; i++) {
-
+            List<Integer> lineList = new ArrayList<Integer>();
+            lineList.add(1);
+            for (int j = 1; j<numRows;j++){
+                if (triangle.get(i-1)==null){
+                    lineList.add(1);
+                }
+            }
         }
 
     }
