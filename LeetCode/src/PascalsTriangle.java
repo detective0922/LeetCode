@@ -32,11 +32,12 @@ public class PascalsTriangle {
                     lineList.add(1);
 
                 } else {
-
+                    int sum = triangle.get(i-1).get(j) + triangle.get(i-1).get(j-1);
+                    lineList.add(sum);
                 }
             }
             lineList.add(1);
         }
-
+        return triangle;
     }
 }
