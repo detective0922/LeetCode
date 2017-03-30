@@ -23,29 +23,27 @@ public class PascalsTriangle {
     }
 
     public List<List<Integer>> generate(int numRows) {
-
-        int[][] triangleArray = new int[numRows][numRows+1];
-        if (numRows<1){
+        int[][] triangleArray = new int[numRows][numRows + 1];
+        if (numRows < 1) {
             return triangleArrayToList(triangleArray);
         }
         triangleArray[0][1] = 1;
 
-        for(int i = 1;i<numRows;i++){
-            for (int j = 1;j<=i+1;j++){
-                triangleArray[i][j] = triangleArray[i-1][j-1] + triangleArray[i-1][j];
+        for (int i = 1; i < numRows; i++) {
+            for (int j = 1; j <= i + 1; j++) {
+                triangleArray[i][j] = triangleArray[i - 1][j - 1] + triangleArray[i - 1][j];
             }
         }
 
         return triangleArrayToList(triangleArray);
-
     }
 
-    public List<List<Integer>> triangleArrayToList(int[][] triangleArray){
+    public List<List<Integer>> triangleArrayToList(int[][] triangleArray) {
         List<List<Integer>> triangleList = new ArrayList<List<Integer>>();
-        for (int i = 0;i<triangleArray.length;i++){
+        for (int i = 0; i < triangleArray.length; i++) {
             List<Integer> lineList = new ArrayList<Integer>();
-            for (int j = 0;j<triangleArray[i].length;j++){
-                if (triangleArray[i][j]!=0){
+            for (int j = 0; j < triangleArray[i].length; j++) {
+                if (triangleArray[i][j] != 0) {
                     lineList.add(triangleArray[i][j]);
                 }
             }
