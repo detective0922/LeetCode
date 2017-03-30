@@ -24,7 +24,7 @@ public class PascalsTriangle {
 
     public List<List<Integer>> generate(int numRows) {
 
-        int[][] triangleArray = new int[numRows][numRows];
+        int[][] triangleArray = new int[numRows][numRows+1];
         if (numRows<1){
             return triangleArrayToList(triangleArray);
         }
@@ -38,8 +38,13 @@ public class PascalsTriangle {
             return  triangleArrayToList(triangleArray);
         }
 
-        for()
+        for(int i = 2;i<numRows;i++){
+            for (int j = 0;j<i;j++){
+                triangleArray[i][j] = triangleArray[i-1][j] + triangleArray[i-1][j+1];
+            }
+        }
 
+        return triangleArrayToList(triangleArray);
 
     }
 
