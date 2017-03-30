@@ -27,11 +27,15 @@ public class PascalsTriangle {
         for (int i = 0; i < numRows; i++) {
             List<Integer> lineList = new ArrayList<Integer>();
             lineList.add(1);
-            for (int j = 1; j<numRows;j++){
+            for (int j = 1; j<numRows-1;j++){
                 if (triangle.get(i-1)==null||triangle.get(i).size()<2){
                     lineList.add(1);
+
+                } else {
+
                 }
             }
+            lineList.add(1);
         }
 
     }
