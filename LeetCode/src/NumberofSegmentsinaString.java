@@ -20,5 +20,6 @@ public class NumberofSegmentsinaString {
             }
         }
         return count;
+
     }
 }
