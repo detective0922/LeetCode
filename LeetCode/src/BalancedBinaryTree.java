@@ -8,6 +8,20 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 
 */
 public class BalancedBinaryTree {
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3);
+        TreeNode two = new TreeNode(9);
+        TreeNode three = new TreeNode(20);
+        TreeNode four = new TreeNode(15);
+        TreeNode five = new TreeNode(7);
+        root.left = null;
+        root.right = three;
+        three.left = null;
+        three.right = five;
+        System.out.println(new BalancedBinaryTree().isBalanced(root));
+    }
+
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
@@ -15,7 +29,7 @@ public class BalancedBinaryTree {
         int leftDepth = depth(root.left, 0);
         int rightDepth = depth(root.right, 0);
 
-        return leftDepth - rightDepth == 1 || leftDepth - rightDepth == -1;
+        return leftDepth - rightDepth <= 1 && leftDepth - rightDepth >= -1;
     }
 
     public int depth(TreeNode node, int depth) {
