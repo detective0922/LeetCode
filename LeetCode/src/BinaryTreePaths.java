@@ -20,4 +20,7 @@ All root-to-leaf paths are:
 
 */
 public class BinaryTreePaths {
+    public List<String> binaryTreePaths(TreeNode root) {
+
+    }
 }
