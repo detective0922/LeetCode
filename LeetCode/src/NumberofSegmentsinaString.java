@@ -15,7 +15,7 @@ public class NumberofSegmentsinaString {
         char[] sChars = s.toCharArray();
         int count = 0;
         for (int i=0;i<sChars.length;i++){
-            if(sChars[i]!=' '&&sChars[i-1]==' '){
+            if(sChars[i]!=' '&&(i==0||sChars[i-1]==' ')){
                 count++;
             }
         }
