@@ -8,4 +8,12 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 
 */
 public class BalancedBinaryTree {
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return  false;
+        }
+
+
+
+    }
 }
