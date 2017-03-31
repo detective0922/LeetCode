@@ -29,7 +29,7 @@ public class BalancedBinaryTree {
         int leftDepth = depth(root.left, 0);
         int rightDepth = depth(root.right, 0);
 
-        return leftDepth - rightDepth <= 1 && leftDepth - rightDepth >= -1;
+        return Math.abs(leftDepth - rightDepth) <= 1 && isBalanced(root.left) && isBalanced(root.right);
     }
 
     public int depth(TreeNode node, int depth) {
