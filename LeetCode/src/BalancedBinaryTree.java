@@ -12,11 +12,16 @@ public class BalancedBinaryTree {
         if (root == null) {
             return  false;
         }
+        int leftDepth = 0;
+        int rightDepth = 0;
+
     }
 
     public int depth(TreeNode node, int depth) {
         if (node != null) {
             depth++;
+        } else {
+            return depth;
         }
 
         int leftDepth = 0;
