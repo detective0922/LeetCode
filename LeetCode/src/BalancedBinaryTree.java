@@ -15,6 +15,7 @@ public class BalancedBinaryTree {
         int leftDepth = depth(root.left, 0);
         int rightDepth = depth(root.right, 0);
 
+        return leftDepth - rightDepth == 1 || leftDepth - rightDepth == -1;
     }
 
     public int depth(TreeNode node, int depth) {
@@ -24,15 +25,8 @@ public class BalancedBinaryTree {
             return depth;
         }
 
-        int leftDepth = 0;
-        int rightDepth = 0;
-
-        if(node.left != null) {
-            leftDepth = depth(node.left,depth);
-        }
-        if(node.right != null) {
-            rightDepth = depth(node.right,depth);
-        }
+        int leftDepth = depth(node.left,depth);
+        int rightDepth = depth(node.right,depth);
 
         return leftDepth > rightDepth ? leftDepth:rightDepth;
     }
