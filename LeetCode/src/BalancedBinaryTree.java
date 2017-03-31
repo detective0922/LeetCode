@@ -18,11 +18,17 @@ public class BalancedBinaryTree {
         if (node != null) {
             depth++;
         }
+
         int leftDepth = 0;
         int rightDepth = 0;
+
         if(node.left != null) {
             leftDepth = depth(node.left,depth);
         }
+        if(node.right != null) {
+            rightDepth = depth(node.right,depth);
+        }
 
+        return leftDepth > rightDepth ? leftDepth:rightDepth;
     }
 }
