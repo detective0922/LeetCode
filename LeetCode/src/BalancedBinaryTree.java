@@ -10,7 +10,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 public class BalancedBinaryTree {
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
-            return  false;
+            return true;
         }
         int leftDepth = depth(root.left, 0);
         int rightDepth = depth(root.right, 0);
@@ -25,9 +25,9 @@ public class BalancedBinaryTree {
             return depth;
         }
 
-        int leftDepth = depth(node.left,depth);
-        int rightDepth = depth(node.right,depth);
+        int leftDepth = depth(node.left, depth);
+        int rightDepth = depth(node.right, depth);
 
-        return leftDepth > rightDepth ? leftDepth:rightDepth;
+        return leftDepth > rightDepth ? leftDepth : rightDepth;
     }
 }
