@@ -12,8 +12,8 @@ public class BalancedBinaryTree {
         if (root == null) {
             return  false;
         }
-        int leftDepth = 0;
-        int rightDepth = 0;
+        int leftDepth = depth(root.left, 0);
+        int rightDepth = depth(root.right, 0);
 
     }
 
