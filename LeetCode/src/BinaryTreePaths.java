@@ -35,13 +35,13 @@ public class BinaryTreePaths {
     }
 
     public void path(TreeNode node, StringBuilder path, List<String> pathList) {
+        int len = path.length();
         if (node != null) {
             path.append(node.val);
         } else {
             return;
         }
 
-        int len = path.length();
         if (node.left == null && node.right == null) {
             pathList.add(path.toString());
         }
