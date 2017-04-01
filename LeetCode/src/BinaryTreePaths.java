@@ -34,19 +34,18 @@ public class BinaryTreePaths {
         return pathList;
     }
 
-    public void path(TreeNode node, StringBuilder strBuilder, List<String> pathList) {
+    public void path(TreeNode node, String path, List<String> pathList) {
         if (node != null) {
-            strBuilder.append(node.val);
+            path=path+node.val;
         } else {
             return;
         }
 
         if (node.left == null && node.right == null) {
-            pathList.add(strBuilder.toString());
+            pathList.add(path);
         }
         if (node.left !=null) {
-            StringBuilder aaa = new StringBuilder()
-            path(node.left, strBuilder.append("->"), pathList);
+            path(node.left, path+"->", pathList);
         }
         path(node.right, strBuilder.append("->"), pathList);
 
