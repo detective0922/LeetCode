@@ -31,7 +31,19 @@ public class BinaryTreePaths {
 
     }
 
-    public void path(TreeNode node, List<String> pathList) {
+    public void path(TreeNode node, StringBuilder strBuilder, List<String> pathList) {
+        if (node!=null){
+            strBuilder.append("->").append(node.val);
+        } else {
+            return;
+        }
+
+        if (node.left == null && node.right==null) {
+
+        } else {
+            path(node.left, strBuilder, pathList);
+            path(node.right, strBuilder, pathList);
+        }
 
     }
 }
