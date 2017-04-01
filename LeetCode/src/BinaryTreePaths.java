@@ -29,27 +29,29 @@ public class BinaryTreePaths {
             return pathList;
         }
 
-        String path = new String();
+        StringBuilder path = new StringBuilder();
         path(root, path, pathList);
         return pathList;
     }
 
-    public void path(TreeNode node, String path, List<String> pathList) {
+    public void path(TreeNode node, StringBuilder path, List<String> pathList) {
         if (node != null) {
-            path = path + node.val;
+            path.append(node.val);
         } else {
             return;
         }
 
+        int len = path.length();
         if (node.left == null && node.right == null) {
-            pathList.add(path);
+            pathList.add(path.toString());
         }
         if (node.left != null) {
-            path(node.left, path + "->", pathList);
+            path(node.left, path.append("->"), pathList);
         }
         if (node.right != null) {
-            path(node.right, path + "->", pathList);
+            path(node.right, path.append("->"), pathList);
         }
+        path.setLength(len);
 
     }
 }
