@@ -32,4 +32,7 @@ Because the 4th row is incomplete, we return 3.
 
 */
 public class ArrangingCoins {
+    public int arrangeCoins(int n) {
+
+    }
 }
