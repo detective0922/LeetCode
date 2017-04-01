@@ -36,12 +36,10 @@ public class BinaryTreePaths {
 
     public void path(TreeNode node, StringBuilder path, List<String> pathList) {
         int len = path.length();
-        if (node != null) {
-            path.append(node.val);
-        } else {
+        if (node == null) {
             return;
         }
-
+        path.append(node.val);
         if (node.left == null && node.right == null) {
             pathList.add(path.toString());
         } else {
