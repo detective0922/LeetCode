@@ -44,12 +44,10 @@ public class BinaryTreePaths {
 
         if (node.left == null && node.right == null) {
             pathList.add(path.toString());
-        }
-        if (node.left != null) {
-            path(node.left, path.append("->"), pathList);
-        }
-        if (node.right != null) {
-            path(node.right, path.append("->"), pathList);
+        } else {
+            path.append("->");
+            path(node.left, path, pathList);
+            path(node.right, path, pathList);
         }
         path.setLength(len);
 
