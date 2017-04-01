@@ -30,4 +30,8 @@ public class BinaryTreePaths {
         }
 
     }
+
+    public void path(TreeNode node, List<String> pathList) {
+
+    }
 }
