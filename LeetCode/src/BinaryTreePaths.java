@@ -29,6 +29,10 @@ public class BinaryTreePaths {
             return pathList;
         }
 
+        StringBuilder strBuilder = new StringBuilder();
+        strBuilder.append(root.val);
+        path(root,strBuilder,pathList);
+        return pathList;
     }
 
     public void path(TreeNode node, StringBuilder strBuilder, List<String> pathList) {
@@ -39,11 +43,10 @@ public class BinaryTreePaths {
         }
 
         if (node.left == null && node.right==null) {
-
+            pathList.add(strBuilder.toString());
         } else {
             path(node.left, strBuilder, pathList);
             path(node.right, strBuilder, pathList);
         }
-
     }
 }
