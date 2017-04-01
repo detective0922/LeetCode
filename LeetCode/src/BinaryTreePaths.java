@@ -30,24 +30,25 @@ public class BinaryTreePaths {
         }
 
         StringBuilder strBuilder = new StringBuilder();
-        strBuilder.append(root.val);
-        path(root.left, strBuilder, pathList);
-        path(root.right, strBuilder, pathList);
+        path(root, strBuilder, pathList);
         return pathList;
     }
 
     public void path(TreeNode node, StringBuilder strBuilder, List<String> pathList) {
         if (node != null) {
-            strBuilder.append("->").append(node.val);
+            strBuilder.append(node.val);
         } else {
             return;
         }
 
         if (node.left == null && node.right == null) {
             pathList.add(strBuilder.toString());
-        } else {
-            path(node.left, strBuilder, pathList);
-            path(node.right, strBuilder, pathList);
         }
+        if (node.left !=null) {
+            StringBuilder aaa = new StringBuilder()
+            path(node.left, strBuilder.append("->"), pathList);
+        }
+        path(node.right, strBuilder.append("->"), pathList);
+
     }
 }
