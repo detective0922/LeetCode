@@ -29,8 +29,8 @@ public class BinaryTreePaths {
             return pathList;
         }
 
-        StringBuilder strBuilder = new StringBuilder();
-        path(root, strBuilder, pathList);
+        String path = new String();
+        path(root, path, pathList);
         return pathList;
     }
 
@@ -47,7 +47,9 @@ public class BinaryTreePaths {
         if (node.left !=null) {
             path(node.left, path+"->", pathList);
         }
-        path(node.right, strBuilder.append("->"), pathList);
+        if (node.right !=null) {
+            path(node.right, path+"->", pathList);
+        }
 
     }
 }
