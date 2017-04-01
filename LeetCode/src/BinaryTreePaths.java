@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -23,6 +24,10 @@ All root-to-leaf paths are:
 */
 public class BinaryTreePaths {
     public List<String> binaryTreePaths(TreeNode root) {
+        List<String> pathList = new ArrayList<String>();
+        if (root == null){
+            return pathList;
+        }
 
     }
 }
