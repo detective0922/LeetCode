@@ -31,7 +31,8 @@ public class BinaryTreePaths {
 
         StringBuilder strBuilder = new StringBuilder();
         strBuilder.append(root.val);
-        path(root,strBuilder,pathList);
+        path(root.left,strBuilder,pathList);
+        path(root.right,strBuilder,pathList);
         return pathList;
     }
 
