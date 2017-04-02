@@ -33,18 +33,25 @@ Because the 4th row is incomplete, we return 3.
 */
 public class ArrangingCoins {
     public static void main(String[] args) {
-        System.out.println(new ArrangingCoins().arrangeCoins(10));
+        System.out.println(new ArrangingCoins().arrangeCoins(6));
     }
 
     public int arrangeCoins(int n) {
         if (n == 0) {
             return 0;
         }
-        int count = 1;
+        int low = 0;
+        int high = n;
+        int mid = 0;
         int total = 2 * n;
-        while (count * (count + 1) <= total) {
-            count++;
+        while (low<=high) {
+            mid = (low + high) / 2;
+            if (mid*(mid+1)<=total){
+                low = mid + 1;
+            } else {
+                high = mid -1;
+            }
         }
-        return count - 1;
+        return low - 1;
     }
 }
