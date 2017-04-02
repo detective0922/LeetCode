@@ -32,12 +32,19 @@ Because the 4th row is incomplete, we return 3.
 
 */
 public class ArrangingCoins {
+    public static void main(String[] args) {
+        System.out.println(new ArrangingCoins().arrangeCoins(10));
+    }
+
     public int arrangeCoins(int n) {
-        int count = 0;
+        if (n == 0) {
+            return 0;
+        }
+        int count = 1;
         int total = 2 * n;
-        while (count * (count + 1) < total) {
+        while (count * (count + 1) <= total) {
             count++;
         }
-        return count;
+        return count - 1;
     }
 }
