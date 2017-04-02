@@ -36,6 +36,11 @@ public class ArrangingCoins {
         if (n==0){
             return 0;
         }
-
+        int count = 0;
+        int total = 2*n;
+        while (count * (count + 1) <= total){
+            count++;
+        }
+        return  count;
     }
 }
