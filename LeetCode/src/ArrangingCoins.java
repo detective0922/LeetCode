@@ -33,14 +33,11 @@ Because the 4th row is incomplete, we return 3.
 */
 public class ArrangingCoins {
     public int arrangeCoins(int n) {
-        if (n==0){
-            return 0;
-        }
         int count = 0;
-        int total = 2*n;
-        while (count * (count + 1) < total){
+        int total = 2 * n;
+        while (count * (count + 1) < total) {
             count++;
         }
-        return  count;
+        return count;
     }
 }
