@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 119. Pascal's Triangle II
 
@@ -11,4 +13,7 @@ Could you optimize your algorithm to use only O(k) extra space?
 
 */
 public class PascalsTriangleII {
+    public List<Integer> getRow(int rowIndex) {
+
+    }
 }
