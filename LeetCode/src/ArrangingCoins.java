@@ -38,7 +38,7 @@ public class ArrangingCoins {
         }
         int count = 0;
         int total = 2*n;
-        while (count * (count + 1) <= total){
+        while (count * (count + 1) < total){
             count++;
         }
         return  count;
