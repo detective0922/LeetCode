@@ -37,9 +37,6 @@ public class ArrangingCoins {
     }
 
     public int arrangeCoins(int n) {
-        if (n == 0) {
-            return 0;
-        }
         int low = 0;
         int high = n;
         int mid = 0;
