@@ -53,7 +53,7 @@ class MyQueue {
 
     /** Returns whether the queue is empty. */
     public boolean empty() {
-
+        return stack.empty();
     }
 }
 
