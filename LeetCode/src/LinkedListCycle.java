@@ -9,4 +9,7 @@ Can you solve it without using extra space?
 */
 
 public class LinkedListCycle {
+    public boolean hasCycle(ListNode head) {
+
+    }
 }
