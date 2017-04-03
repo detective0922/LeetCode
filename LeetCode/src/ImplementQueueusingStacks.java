@@ -43,7 +43,7 @@ class MyQueue {
 
     /** Removes the element from in front of queue and returns that element. */
     public int pop() {
-
+        return stack.pop();
     }
 
     /** Get the front element. */
