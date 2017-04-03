@@ -15,6 +15,8 @@ You may assume that all operations are valid (for example, no pop or peek operat
 
 */
 
+import java.util.Stack;
+
 /**
  * Your MyQueue object will be instantiated and called as such:
  * MyQueue obj = new MyQueue();
@@ -24,9 +26,14 @@ You may assume that all operations are valid (for example, no pop or peek operat
  * boolean param_4 = obj.empty();
  */
 public class ImplementQueueusingStacks {
-    /** Initialize your data structure here. */
-    public MyQueue() {
 
+}
+
+class MyQueue {
+    /** Initialize your data structure here. */
+    private Stack<Integer> stack;
+    public MyQueue() {
+        stack = new Stack<Integer>();
     }
 
     /** Push element x to the back of queue. */
