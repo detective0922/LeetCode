@@ -48,7 +48,7 @@ class MyQueue {
 
     /** Get the front element. */
     public int peek() {
-
+        return stack.peek();
     }
 
     /** Returns whether the queue is empty. */
