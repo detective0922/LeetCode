@@ -38,7 +38,14 @@ class MyQueue {
 
     /** Push element x to the back of queue. */
     public void push(int x) {
-
+        Stack<Integer> tmpStack = new Stack<Integer>();
+        while (!stack.empty()){
+            tmpStack.push(stack.pop());
+        }
+        stack.push(x);
+        while (!tmpStack.empty()) {
+            stack.push(tmpStack.pop());
+        }
     }
 
     /** Removes the element from in front of queue and returns that element. */
