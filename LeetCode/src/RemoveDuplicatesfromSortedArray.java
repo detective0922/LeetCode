@@ -14,7 +14,7 @@ Your function should return length = 2, with the first two elements of nums bein
 public class RemoveDuplicatesfromSortedArray {
     public static void main(String[] args) {
 
-        System.out.println(new RemoveDuplicatesfromSortedArray().removeDuplicates(new int[]{1, 1, 2, 2}));
+        System.out.println(new RemoveDuplicatesfromSortedArray().removeDuplicates(new int[]{4, 5, 5, 5,5,5}));
     }
 
     public int removeDuplicates(int[] nums) {
