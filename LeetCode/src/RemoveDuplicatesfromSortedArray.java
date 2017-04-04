@@ -12,22 +12,27 @@ Your function should return length = 2, with the first two elements of nums bein
 
 */
 public class RemoveDuplicatesfromSortedArray {
+    public static void main(String[] args) {
+
+        System.out.println(new RemoveDuplicatesfromSortedArray().removeDuplicates(new int[]{1, 1, 2, 2}));
+    }
+
     public int removeDuplicates(int[] nums) {
-        if (nums.length == 0){
+        if (nums.length == 0) {
             return 0;
         }
         int j = 0;
-        for (int i = 0;i<nums.length;i++){
-            if (nums[i]!=nums[j]){
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != nums[j]) {
                 j++;
-                swap(nums,i,j);
+                swap(nums, i, j);
             }
         }
-        return j;
+        return j + 1;
     }
 
     public void swap(int[] array, int index1, int index2) {
-        if (index1 == index2){
+        if (index1 == index2) {
             return;
         }
         int temp = array[index1];
