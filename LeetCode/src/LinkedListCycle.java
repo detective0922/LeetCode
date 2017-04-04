@@ -10,12 +10,13 @@ Can you solve it without using extra space?
 
 public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {
-        ListNode walker = null;
-        ListNode runner = null;
-        while (head !=null && head.next != null) {
-            walker = head;
-            runner = head.next;
+        ListNode walker = head;
+        ListNode runner = head;
+        while (walker!=null&&runner !=null && runner.next != null) {
+            walker = walker.next;
+            runner = runner.next.next;
         }
+        return false;
 
     }
 }
