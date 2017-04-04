@@ -13,10 +13,13 @@ Your function should return length = 2, with the first two elements of nums bein
 */
 public class RemoveDuplicatesfromSortedArray {
     public int removeDuplicates(int[] nums) {
+        int j = 0;
         for (int i = 0;i<nums.length;i++){
-
-
+            if (nums[i]!=nums[j]){
+                j++;
+            }
         }
+        return j;
     }
 
     public void swap(int[] array, int index1, int index2) {
