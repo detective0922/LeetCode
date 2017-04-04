@@ -24,18 +24,10 @@ public class RemoveDuplicatesfromSortedArray {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != nums[j]) {
-                swap(nums, i, ++j);
+                nums[++j] = nums[i];
             }
         }
         return j + 1;
     }
 
-    public void swap(int[] array, int index1, int index2) {
-        if (index1 == index2) {
-            return;
-        }
-        int temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
-    }
 }
