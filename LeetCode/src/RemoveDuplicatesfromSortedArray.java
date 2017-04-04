@@ -13,6 +13,9 @@ Your function should return length = 2, with the first two elements of nums bein
 */
 public class RemoveDuplicatesfromSortedArray {
     public int removeDuplicates(int[] nums) {
+        for (int i = 0;i<nums.length;i++){
 
+
+        }
     }
 }
