@@ -12,8 +12,13 @@ public class FactorialTrailingZeroes {
         int count = 0;
         int k = 1;
         while (k<n){
-            count++;
             k*=5;
+            count++;
+        }
+
+        int zeroCount = 0;
+        for (int i = 1;i<count;i++){
+
         }
     }
 
