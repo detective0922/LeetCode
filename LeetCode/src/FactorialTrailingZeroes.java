@@ -13,16 +13,16 @@ public class FactorialTrailingZeroes {
     }
 
     public int trailingZeroes(int n) {
-        int count = 0;
+        int power = 0;
         int k = 1;
         while (k <= n) {
             k *= 5;
-            count++;
+            power++;
         }
 
         int zeroCount = 0;
         int fiveCount = 5;
-        for (int i = 1; i < count; i++) {
+        for (int i = 1; i < power; i++) {
             zeroCount += n / fiveCount;
             fiveCount *= 5;
         }
