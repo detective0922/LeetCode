@@ -21,10 +21,10 @@ public class FactorialTrailingZeroes {
         }
 
         int zeroCount = 0;
-        int fiveCount = 5;
+        int fivePower = 5;
         for (int i = 1; i < power; i++) {
-            zeroCount += n / fiveCount;
-            fiveCount *= 5;
+            zeroCount += n / fivePower;
+            fivePower *= 5;
         }
         return zeroCount;
     }
