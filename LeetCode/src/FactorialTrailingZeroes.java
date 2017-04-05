@@ -17,9 +17,12 @@ public class FactorialTrailingZeroes {
         }
 
         int zeroCount = 0;
+        int fiveCount = 5;
         for (int i = 1;i<count;i++){
-
+            zeroCount += n / fiveCount;
+            fiveCount *=5;
         }
+        return zeroCount;
     }
 
 }
