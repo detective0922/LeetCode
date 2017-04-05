@@ -46,7 +46,7 @@ public class GuessNumberHigherorLower {
                 return mid;
             }
         }
-        return 0;
+        return 1;
     }
 
 }
