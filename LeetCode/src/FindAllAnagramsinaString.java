@@ -35,4 +35,7 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 
 */
 public class FindAllAnagramsinaString {
+    public List<Integer> findAnagrams(String s, String p) {
+
+    }
 }
