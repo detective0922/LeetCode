@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.List;
+
 /*
 
 438. Find All Anagrams in a String
@@ -37,5 +40,39 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 public class FindAllAnagramsinaString {
     public List<Integer> findAnagrams(String s, String p) {
 
+    }
+
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+
+        for (int i = 0; i < sChars.length; i++) {
+            int value;
+            if (map.containsKey(sChars[i])) {
+                value = map.get(sChars[i]) + 1;
+            } else {
+                value = 1;
+            }
+            map.put(sChars[i], value);
+        }
+
+        for (int i = 0; i < tChars.length; i++) {
+            if (map.containsKey(tChars[i])) {
+                map.put(tChars[i], map.get(tChars[i]) - 1);
+            }
+        }
+
+        for (Character c : map.keySet()) {
+            if (map.get(c) != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
