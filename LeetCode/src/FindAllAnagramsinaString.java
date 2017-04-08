@@ -43,6 +43,11 @@ public class FindAllAnagramsinaString {
         List<Integer> indexList = new ArrayList<Integer>();
         char[] sChars = s.toCharArray();
         char[] pChars = p.toCharArray();
+
+        for (int i = 0; i < sChars.length; i++) {
+
+        }
+
     }
 
     public boolean isAnagram(char[] sChars, char[] tChars) {
