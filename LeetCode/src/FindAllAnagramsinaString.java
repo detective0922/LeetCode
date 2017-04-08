@@ -63,7 +63,6 @@ public class FindAllAnagramsinaString {
             return false;
         }
         int[] hash = new int[26];
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
         for (int i = start; i < end; i++) {
             hash[sChars[i] - 'a']++;
