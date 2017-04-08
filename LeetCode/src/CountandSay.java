@@ -17,4 +17,7 @@ Note: The sequence of integers will be represented as a string.
 
 */
 public class CountandSay {
+    public String countAndSay(int n) {
+
+    }
 }
