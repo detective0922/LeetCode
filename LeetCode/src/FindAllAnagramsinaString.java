@@ -49,15 +49,17 @@ public class FindAllAnagramsinaString {
             return indexList;
         }
 
-
         for (int i = 0; i < sChars.length - pChars.length; i++) {
-
+            if (isAnagram(sChars,pChars, i, i + pChars.length)){
+                indexList.add(i);
+            }
         }
+        return indexList;
 
     }
 
-    public boolean isAnagram(char[] sChars, char[] tChars, int start, int end) {
-        if (sChars.length != tChars.length) {
+    public boolean isAnagram(char[] sChars, char[] pChars, int start, int end) {
+        if (sChars.length != pChars.length) {
             return false;
         }
 
@@ -73,9 +75,9 @@ public class FindAllAnagramsinaString {
             map.put(sChars[i], value);
         }
 
-        for (int i = 0; i < tChars.length; i++) {
-            if (map.containsKey(tChars[i])) {
-                map.put(tChars[i], map.get(tChars[i]) - 1);
+        for (int i = 0; i < pChars.length; i++) {
+            if (map.containsKey(pChars[i])) {
+                map.put(pChars[i], map.get(pChars[i]) - 1);
             }
         }
 
