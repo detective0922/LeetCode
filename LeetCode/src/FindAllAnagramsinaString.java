@@ -44,6 +44,11 @@ public class FindAllAnagramsinaString {
         char[] sChars = s.toCharArray();
         char[] pChars = p.toCharArray();
 
+        if (pChars.length > sChars.length) {
+            return indexList;
+        }
+
+
         for (int i = 0; i < sChars.length; i++) {
 
         }
