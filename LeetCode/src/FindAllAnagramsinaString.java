@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -39,7 +40,9 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 */
 public class FindAllAnagramsinaString {
     public List<Integer> findAnagrams(String s, String p) {
-
+        List<Integer> indexList = new ArrayList<Integer>();
+        char[] sChars = s.toCharArray();
+        char[] pChars = p.toCharArray();
     }
 
     public boolean isAnagram(char[] sChars, char[] tChars) {
