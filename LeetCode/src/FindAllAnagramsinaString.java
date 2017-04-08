@@ -40,13 +40,17 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 
 */
 public class FindAllAnagramsinaString {
+    public static void main(String[] args) {
+        System.out.println(new FindAllAnagramsinaString().findAnagrams("cbaebabacd","abc"));
+    }
+
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> indexList = new ArrayList<Integer>();
         char[] sChars = s.toCharArray();
         char[] pChars = p.toCharArray();
 
         for (int i = 0; i < sChars.length - pChars.length; i++) {
-            if (isAnagram(sChars,pChars, i, i + pChars.length)){
+            if (isAnagram(sChars, pChars, i, i + pChars.length)) {
                 indexList.add(i);
             }
         }
@@ -55,7 +59,7 @@ public class FindAllAnagramsinaString {
     }
 
     public boolean isAnagram(char[] sChars, char[] pChars, int start, int end) {
-        if (sChars.length != pChars.length) {
+        if ((end - start) != pChars.length) {
             return false;
         }
 
