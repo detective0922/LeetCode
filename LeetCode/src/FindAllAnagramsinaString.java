@@ -70,16 +70,12 @@ public class FindAllAnagramsinaString {
         }
 
         for (int i = 0; i < pChars.length; i++) {
-            if (map.containsKey(pChars[i])) {
-                map.put(pChars[i], map.get(pChars[i]) - 1);
-            }
-        }
-
-        for (Character c : map.keySet()) {
-            if (map.get(c) != 0) {
+            hash[sChars[i] - 'a']--;
+            if (hash[sChars[i] - 'a'] < 0) {
                 return false;
             }
         }
+
         return true;
     }
 }
