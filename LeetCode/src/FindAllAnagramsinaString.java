@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -49,20 +50,20 @@ public class FindAllAnagramsinaString {
         }
 
 
-        for (int i = 0; i < sChars.length; i++) {
+        for (int i = 0; i < sChars.length - pChars.length; i++) {
 
         }
 
     }
 
-    public boolean isAnagram(char[] sChars, char[] tChars) {
+    public boolean isAnagram(char[] sChars, char[] tChars, int start, int end) {
         if (sChars.length != tChars.length) {
             return false;
         }
 
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
-        for (int i = 0; i < sChars.length; i++) {
+        for (int i = start; i < end; i++) {
             int value;
             if (map.containsKey(sChars[i])) {
                 value = map.get(sChars[i]) + 1;
