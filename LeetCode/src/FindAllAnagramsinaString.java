@@ -41,7 +41,7 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 */
 public class FindAllAnagramsinaString {
     public static void main(String[] args) {
-        System.out.println(new FindAllAnagramsinaString().findAnagrams("cbaebabacd","abc"));
+        System.out.println(new FindAllAnagramsinaString().findAnagrams("abab","ab"));
     }
 
     public List<Integer> findAnagrams(String s, String p) {
@@ -49,7 +49,7 @@ public class FindAllAnagramsinaString {
         char[] sChars = s.toCharArray();
         char[] pChars = p.toCharArray();
 
-        for (int i = 0; i < sChars.length - pChars.length; i++) {
+        for (int i = 0; i < sChars.length - pChars.length + 1; i++) {
             if (isAnagram(sChars, pChars, i, i + pChars.length)) {
                 indexList.add(i);
             }
@@ -62,17 +62,11 @@ public class FindAllAnagramsinaString {
         if ((end - start) != pChars.length) {
             return false;
         }
-
+        int[] hash = new int[26];
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
         for (int i = start; i < end; i++) {
-            int value;
-            if (map.containsKey(sChars[i])) {
-                value = map.get(sChars[i]) + 1;
-            } else {
-                value = 1;
-            }
-            map.put(sChars[i], value);
+            hash[sChars[i] - 'a']++;
         }
 
         for (int i = 0; i < pChars.length; i++) {
