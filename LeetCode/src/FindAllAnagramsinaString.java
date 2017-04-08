@@ -42,13 +42,10 @@ public class FindAllAnagramsinaString {
 
     }
 
-    public boolean isAnagram(String s, String t) {
-        if (s.length() != t.length()) {
+    public boolean isAnagram(char[] sChars, char[] tChars) {
+        if (sChars.length != tChars.length) {
             return false;
         }
-
-        char[] sChars = s.toCharArray();
-        char[] tChars = t.toCharArray();
 
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
