@@ -29,9 +29,11 @@ public class CountandSay {
         int say = 1;
         int currNum = 0;
         int count = 0;
-        Queue<Integer> queue = new LinkedBlockingQueue<>();
+        Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
         queue.add(1);
         for (int i = 0; i < n; i++) {
+            count = 0;
+            strLen = queue.size();
             currNumLen = 1;
             while(count<strLen){
                 currNum = queue.poll();
@@ -47,8 +49,8 @@ public class CountandSay {
                 count++;
             }
 
-
         }
+        return seq.toString();
 
     }
 }
