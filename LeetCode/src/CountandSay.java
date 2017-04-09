@@ -1,3 +1,5 @@
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /*
 
@@ -22,8 +24,13 @@ public class CountandSay {
             return "";
         }
         StringBuilder seq = new StringBuilder();
-        int count = 1;
+        int count = 0;
         int say = 1;
+        Queue<Integer> queue = new LinkedBlockingQueue<>();
+        queue.add(1);
+        for (int i = 0;i<n;i++){
+
+        }
 
     }
 }
