@@ -21,6 +21,9 @@ public class CountandSay {
         if (n==0){
             return "";
         }
+        StringBuilder seq = new StringBuilder();
+        int count = 1;
+        int say = 1;
 
     }
 }
