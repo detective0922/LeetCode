@@ -24,12 +24,14 @@ public class CountandSay {
             return "";
         }
         StringBuilder seq = new StringBuilder();
-        int count = 0;
+        int count = 1;
         int say = 1;
+        int num = 0;
         Queue<Integer> queue = new LinkedBlockingQueue<>();
         queue.add(1);
-        for (int i = 0;i<n;i++){
-
+        for (int i = 0; i < n; i++) {
+            num = queue.poll();
+            if (num == )
         }
 
     }
