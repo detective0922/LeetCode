@@ -25,21 +25,24 @@ public class CountandSay {
         }
         StringBuilder seq = new StringBuilder();
         int strLen = 1;
-        int cuurNumLen = 1;
+        int currNumLen = 1;
         int say = 1;
-        int cuurNum = 0;
+        int currNum = 0;
         int count = 0;
         Queue<Integer> queue = new LinkedBlockingQueue<>();
         queue.add(1);
         for (int i = 0; i < n; i++) {
-            cuurNumLen = 0;
+            currNumLen = 1;
             while(count<strLen){
-                cuurNum = queue.poll();
-                if (cuurNum == say){
-                    cuurNumLen++;
+                currNum = queue.poll();
+                if (currNum == say){
+                    currNumLen++;
                 } else {
-                    say = cuurNum;
-                    cuurNumLen = 1;
+                    seq.append(currNumLen).append(currNum).append(", ");
+                    queue.add(currNumLen);
+                    queue.add(currNum);
+                    say = currNum;
+                    currNumLen = 1;
                 }
                 count++;
             }
