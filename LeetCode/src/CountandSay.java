@@ -20,7 +20,7 @@ Note: The sequence of integers will be represented as a string.
 */
 public class CountandSay {
     public String countAndSay(int n) {
-        if (n==0){
+        if (n == 0) {
             return "";
         }
         StringBuilder seq = new StringBuilder();
@@ -35,9 +35,9 @@ public class CountandSay {
             count = 0;
             strLen = queue.size();
             currNumLen = 1;
-            while(count<strLen){
+            while (count < strLen) {
                 currNum = queue.poll();
-                if (currNum == say){
+                if (currNum == say) {
                     currNumLen++;
                 } else {
                     seq.append(currNumLen).append(currNum).append(", ");
