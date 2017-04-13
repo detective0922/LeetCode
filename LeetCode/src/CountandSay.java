@@ -39,7 +39,7 @@ public class CountandSay {
         for (int i = 0; i < n; i++) {
             count = 0;
             strLen = queue.size();
-            currNumLen = 1;
+            currNumLen = 0;
             while (count < strLen) {
                 currNum = queue.poll();
                 if (currNum == say) {
