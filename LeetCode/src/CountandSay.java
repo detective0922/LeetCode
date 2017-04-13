@@ -54,6 +54,8 @@ public class CountandSay {
                 count++;
             }
             seq.append(currNumLen).append(currNum).append(", ");
+            queue.add(currNumLen);
+            queue.add(currNum);
         }
         return seq.toString();
 
