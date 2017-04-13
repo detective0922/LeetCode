@@ -53,7 +53,7 @@ public class CountandSay {
                 }
                 count++;
             }
-
+            seq.append(currNumLen).append(currNum).append(", ");
         }
         return seq.toString();
 
