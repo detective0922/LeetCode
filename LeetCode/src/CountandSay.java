@@ -21,7 +21,7 @@ Note: The sequence of integers will be represented as a string.
 public class CountandSay {
 
     public static void main(String[] args) {
-        System.out.println(new CountandSay().countAndSay(5));
+        System.out.println(new CountandSay().countAndSay(4));
     }
 
     public String countAndSay(int n) {
