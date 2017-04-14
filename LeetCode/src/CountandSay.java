@@ -36,11 +36,13 @@ public class CountandSay {
         int count = 0;
         Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
         queue.add(1);
-        for (int i = 0; i < n; i++) {
+        seq.append(1);
+        for (int i = 1; i < n; i++) {
             count = 0;
             strLen = queue.size();
             say = queue.peek();
             currNumLen = 0;
+            seq = new StringBuilder();
             while (count < strLen) {
                 currNum = queue.poll();
                 if (currNum == say) {
