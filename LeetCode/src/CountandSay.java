@@ -46,7 +46,7 @@ public class CountandSay {
                 if (currNum == say) {
                     currNumLen++;
                 } else {
-                    seq.append(currNumLen).append(say).append(", ");
+                    seq.append(currNumLen).append(say);
                     queue.add(currNumLen);
                     queue.add(say);
                     say = currNum;
