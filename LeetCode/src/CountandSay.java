@@ -48,7 +48,7 @@ public class CountandSay {
                 } else {
                     seq.append(currNumLen).append(say).append(", ");
                     queue.add(currNumLen);
-                    queue.add(currNum);
+                    queue.add(say);
                     say = currNum;
                     currNumLen = 1;
                 }
