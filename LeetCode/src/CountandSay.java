@@ -34,7 +34,8 @@ public class CountandSay {
         int say = 1;
         int currNum = 0;
         int count = 0;
-        Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
+        //leetcode don't support queue
+        //Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
         queue.add(1);
         seq.append(1);
         for (int i = 1; i < n; i++) {
