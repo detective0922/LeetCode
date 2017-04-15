@@ -37,8 +37,8 @@ public class CountandSay {
         //leetcode don't support queue
         //Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
         StringBuilder prev = new StringBuilder();
-        seq.append(1);
-        prev = seq;
+        prev.append(1);
+        seq = prev;
         for (int i = 1; i < n; i++) {
             count = 0;
             strLen = prev.length();
