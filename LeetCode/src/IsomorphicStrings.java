@@ -28,14 +28,12 @@ public class IsomorphicStrings {
             if (sChar!=tChar){
                 if(map[sChar]==0){
                     map[sChar]= tChar;
-                } else if (map[sChar]==tChar){
-
-                }else {
+                } else if (map[sChar]!=tChar){
                     return false;
+
                 }
             }
-
         }
-
+        return true;
     }
 }
