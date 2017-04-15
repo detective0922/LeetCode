@@ -57,7 +57,7 @@ public class CountandSay {
                 }
                 count++;
             }
-            seq.append(currNumLen).append(say).append(", ");
+            seq.append(currNumLen).append(say);
             prev.append(currNumLen).append(say);
         }
         return seq.toString();
