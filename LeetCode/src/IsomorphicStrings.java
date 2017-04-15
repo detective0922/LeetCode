@@ -30,7 +30,6 @@ public class IsomorphicStrings {
                     map[sChar] = tChar;
                 } else if (map[sChar] != tChar) {
                     return false;
-
                 }
             }
         }
