@@ -20,4 +20,7 @@ You may assume both s and t have the same length.
 
 */
 public class IsomorphicStrings {
+    public boolean isIsomorphic(String s, String t) {
+
+    }
 }
