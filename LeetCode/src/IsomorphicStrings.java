@@ -23,6 +23,17 @@ public class IsomorphicStrings {
     public boolean isIsomorphic(String s, String t) {
         char[] map = new char[128];
         for (int i = 0; i < s.length(); i++) {
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+            if (sChar!=tChar){
+                if(map[sChar]==0){
+                    map[sChar]= tChar;
+                } else if (map[sChar]==tChar){
+
+                }else {
+                    return false;
+                }
+            }
 
         }
 
