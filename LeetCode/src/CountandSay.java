@@ -21,7 +21,7 @@ Note: The sequence of integers will be represented as a string.
 public class CountandSay {
 
     public static void main(String[] args) {
-        System.out.println(new CountandSay().countAndSay(5));
+        System.out.println(new CountandSay().countAndSay(6));
     }
 
     public String countAndSay(int n) {
@@ -31,8 +31,8 @@ public class CountandSay {
         StringBuilder seq = new StringBuilder();
         int strLen = 1;
         int currNumLen = 1;
-        int say = 1;
-        int currNum = 0;
+        char say = 1;
+        char currNum = 0;
         int count = 0;
         //leetcode don't support queue
         //Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
