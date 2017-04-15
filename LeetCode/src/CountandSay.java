@@ -36,31 +36,29 @@ public class CountandSay {
         int count = 0;
         //leetcode don't support queue
         //Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
-        StringBuilder queue = new StringBuilder();
-        queue.append(1);
-        seq.append(1);
+        StringBuilder prev = new StringBuilder();
+        prev.append(1);
+        seq = prev;
         for (int i = 1; i < n; i++) {
             count = 0;
-            strLen = queue.length();
-            say = queue.charAt(count);
+            strLen = prev.length();
+            say = prev.charAt(count);
             currNumLen = 0;
             seq = new StringBuilder();
             while (count < strLen) {
-                currNum = queue.poll();
+                currNum = prev.charAt(count);
                 if (currNum == say) {
                     currNumLen++;
                 } else {
                     seq.append(currNumLen).append(say);
-                    queue.add(currNumLen);
-                    queue.add(say);
+                    prev.append(currNumLen).append(say);
                     say = currNum;
                     currNumLen = 1;
                 }
                 count++;
             }
             seq.append(currNumLen).append(say).append(", ");
-            queue.add(currNumLen);
-            queue.add(say);
+            prev.append(currNumLen).append(say);
         }
         return seq.toString();
 
