@@ -42,7 +42,7 @@ public class CountandSay {
         for (int i = 1; i < n; i++) {
             count = 0;
             strLen = prev.length();
-            say = prev.charAt(count);
+            say = prev.charAt(0);
             currNumLen = 0;
             seq = new StringBuilder();
             while (count < strLen) {
