@@ -36,12 +36,13 @@ public class CountandSay {
         int count = 0;
         //leetcode don't support queue
         //Queue<Integer> queue = new LinkedBlockingQueue<Integer>();
-        queue.add(1);
+        StringBuilder queue = new StringBuilder();
+        queue.append(1);
         seq.append(1);
         for (int i = 1; i < n; i++) {
             count = 0;
-            strLen = queue.size();
-            say = queue.peek();
+            strLen = queue.length();
+            say = queue.charAt(count);
             currNumLen = 0;
             seq = new StringBuilder();
             while (count < strLen) {
