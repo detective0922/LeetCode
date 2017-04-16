@@ -11,8 +11,7 @@ public class ValidParentheses {
         if (s.length() % 2!=0){
             return false;
         }
-        int[] ParenthesesCount = new int[3];
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i+=2) {
             char sChar = s.charAt(i);
             switch (sChar) {
                 case '(':
