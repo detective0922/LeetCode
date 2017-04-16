@@ -9,6 +9,12 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 public class ValidParentheses {
     public boolean isValid(String s) {
         int[] ParenthesesCount = new int[3];
+        for (int i = 0;i<s.length();i++){
+            char sChar = s.charAt(i);
+            if (sChar=='('){
+                ParenthesesCount[0]++;
+            }
+        }
 
     }
 }
