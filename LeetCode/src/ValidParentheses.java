@@ -11,9 +11,17 @@ public class ValidParentheses {
         int[] ParenthesesCount = new int[3];
         for (int i = 0;i<s.length();i++){
             char sChar = s.charAt(i);
-            if (sChar=='('){
-                ParenthesesCount[0]++;
+            switch (sChar){
+                case '(':
+                    ParenthesesCount[0]++;
+                case '{':
+                case '[':
+                case ')':
+                case '}':
+                case ']':
             }
+
+
         }
 
     }
