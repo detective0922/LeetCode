@@ -9,29 +9,37 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 public class ValidParentheses {
     public boolean isValid(String s) {
         int[] ParenthesesCount = new int[3];
-        for (int i = 0;i<s.length();i++){
+        for (int i = 0; i < s.length(); i++) {
             char sChar = s.charAt(i);
-            switch (sChar){
+            switch (sChar) {
                 case '(':
                     ParenthesesCount[0]++;
                     break;
                 case '{':
-                    ParenthesesCount[0]++;
+                    ParenthesesCount[1]++;
                     break;
                 case '[':
-                    ParenthesesCount[0]++;
+                    ParenthesesCount[2]++;
                     break;
                 case ')':
-                    ParenthesesCount[0]++;
+                    ParenthesesCount[0]--;
+                    if (ParenthesesCount[0] < 0) {
+                        return false;
+                    }
                     break;
                 case '}':
-                    ParenthesesCount[0]++;
+                    ParenthesesCount[1]--;
+                    if (ParenthesesCount[1] < 0) {
+                        return false;
+                    }
                     break;
                 case ']':
-                    ParenthesesCount[0]++;
+                    ParenthesesCount[2]--;
+                    if (ParenthesesCount[2] < 0) {
+                        return false;
+                    }
                     break;
             }
-
         }
         return true;
     }
