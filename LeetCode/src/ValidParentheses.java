@@ -14,15 +14,25 @@ public class ValidParentheses {
             switch (sChar){
                 case '(':
                     ParenthesesCount[0]++;
+                    break;
                 case '{':
+                    ParenthesesCount[0]++;
+                    break;
                 case '[':
+                    ParenthesesCount[0]++;
+                    break;
                 case ')':
+                    ParenthesesCount[0]++;
+                    break;
                 case '}':
+                    ParenthesesCount[0]++;
+                    break;
                 case ']':
+                    ParenthesesCount[0]++;
+                    break;
             }
 
-
         }
-
+        return true;
     }
 }
