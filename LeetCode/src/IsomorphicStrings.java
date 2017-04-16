@@ -26,9 +26,10 @@ public class IsomorphicStrings {
         for (int i = 0; i < s.length(); i++) {
             char sChar = s.charAt(i);
             char tChar = t.charAt(i);
-            if (sMap[sChar] == 0&&tMap[tChar]==0) {
+            if (sMap[sChar] == 0 && tMap[tChar] == 0) {
                 sMap[sChar] = tChar;
-            } else if (map[sChar] != tChar) {
+                tMap[tChar] = sChar;
+            } else if (sMap[sChar] != tChar || tMap[tChar] != sChar) {
                 return false;
             }
         }
