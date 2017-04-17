@@ -19,7 +19,7 @@ public class ValidParentheses {
             return false;
         }
         Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < s.length(); i += 2) {
+        for (int i = 0; i < s.length(); i++) {
             char sChar = s.charAt(i);
             switch (sChar) {
                 case '(':
