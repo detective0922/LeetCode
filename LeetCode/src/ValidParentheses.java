@@ -18,16 +18,20 @@ public class ValidParentheses {
         if (s.length() % 2 != 0) {
             return false;
         }
-        Stack<Character> atack = new Stack<Character>();
+        Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < s.length(); i += 2) {
             char sChar = s.charAt(i);
-
-            if ((sChar1 == '(' && sChar2 == ')')
-                    || (sChar1 == '{' && sChar2 == '}')
-                    || (sChar1 == '[' && sChar2 == ']')) {
-                continue;
-            } else {
-                return false;
+            switch (sChar){
+                case '(':
+                case '{':
+                case '[':
+                    stack.push(sChar);
+                    break;
+                case ')':
+                    if (stack.isEmpty()||stack.pop()!='('){
+                        return false;
+                    }
+                    break;
             }
         }
         return true;
