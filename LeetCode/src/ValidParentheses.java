@@ -43,11 +43,7 @@ public class ValidParentheses {
                     break;
             }
         }
-        for (int i = 0; i < ParenthesesCount.length; i++) {
-            if (ParenthesesCount[i] != 0) {
-                return false;
-            }
-        }
+
         return true;
     }
 }
