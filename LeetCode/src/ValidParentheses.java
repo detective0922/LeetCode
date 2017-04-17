@@ -11,7 +11,7 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 public class ValidParentheses {
 
     public static void main(String[] args) {
-        System.out.println(new ValidParentheses().isValid("([)]"));
+        System.out.println(new ValidParentheses().isValid("()[]{}"));
     }
 
     public boolean isValid(String s) {
@@ -33,12 +33,12 @@ public class ValidParentheses {
                     }
                     break;
                 case '}':
-                    if (stack.isEmpty() || stack.pop() != '}') {
+                    if (stack.isEmpty() || stack.pop() != '{') {
                         return false;
                     }
                     break;
                 case ']':
-                    if (stack.isEmpty() || stack.pop() != ']') {
+                    if (stack.isEmpty() || stack.pop() != '[') {
                         return false;
                     }
                     break;
