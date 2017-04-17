@@ -21,14 +21,24 @@ public class ValidParentheses {
         Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < s.length(); i += 2) {
             char sChar = s.charAt(i);
-            switch (sChar){
+            switch (sChar) {
                 case '(':
                 case '{':
                 case '[':
                     stack.push(sChar);
                     break;
                 case ')':
-                    if (stack.isEmpty()||stack.pop()!='('){
+                    if (stack.isEmpty() || stack.pop() != '(') {
+                        return false;
+                    }
+                    break;
+                case '}':
+                    if (stack.isEmpty() || stack.pop() != '}') {
+                        return false;
+                    }
+                    break;
+                case ']':
+                    if (stack.isEmpty() || stack.pop() != ']') {
                         return false;
                     }
                     break;
