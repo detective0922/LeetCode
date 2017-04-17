@@ -44,6 +44,6 @@ public class ValidParentheses {
                     break;
             }
         }
-        return true;
+        return stack.isEmpty();
     }
 }
