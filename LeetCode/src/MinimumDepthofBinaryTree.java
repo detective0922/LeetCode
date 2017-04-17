@@ -7,4 +7,7 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 */
 public class MinimumDepthofBinaryTree {
+    public int minDepth(TreeNode root) {
+
+    }
 }
