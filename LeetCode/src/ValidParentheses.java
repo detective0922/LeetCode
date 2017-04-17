@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /*
 20. Valid Parentheses
 
@@ -16,9 +18,10 @@ public class ValidParentheses {
         if (s.length() % 2 != 0) {
             return false;
         }
+        Stack<Character> atack = new Stack<Character>();
         for (int i = 0; i < s.length(); i += 2) {
-            char sChar1 = s.charAt(i);
-            char sChar2 = s.charAt(i + 1);
+            char sChar = s.charAt(i);
+
             if ((sChar1 == '(' && sChar2 == ')')
                     || (sChar1 == '{' && sChar2 == '}')
                     || (sChar1 == '[' && sChar2 == ']')) {
