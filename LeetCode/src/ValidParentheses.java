@@ -12,38 +12,16 @@ public class ValidParentheses {
             return false;
         }
         for (int i = 0; i < s.length(); i+=2) {
-            char sChar = s.charAt(i);
-            switch (sChar) {
-                case '(':
-                    ParenthesesCount[0]++;
-                    break;
-                case '{':
-                    ParenthesesCount[1]++;
-                    break;
-                case '[':
-                    ParenthesesCount[2]++;
-                    break;
-                case ')':
-                    ParenthesesCount[0]--;
-                    if (ParenthesesCount[0] < 0) {
-                        return false;
-                    }
-                    break;
-                case '}':
-                    ParenthesesCount[1]--;
-                    if (ParenthesesCount[1] < 0) {
-                        return false;
-                    }
-                    break;
-                case ']':
-                    ParenthesesCount[2]--;
-                    if (ParenthesesCount[2] < 0) {
-                        return false;
-                    }
-                    break;
+            char sChar1 = s.charAt(i);
+            char sChar2 = s.charAt(i + 1);
+            if ((sChar1 == '(' && sChar2 == ')')
+                    || (sChar1 == '{' && sChar2 == '}')
+                    || (sChar1 == '[' && sChar2 == ']')) {
+                continue;
+            } else {
+                return false;
             }
         }
-
         return true;
     }
 }
