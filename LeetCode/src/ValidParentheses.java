@@ -7,11 +7,16 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 
 */
 public class ValidParentheses {
+
+    public static void main(String[] args) {
+        System.out.println(new ValidParentheses().isValid("([)]"));
+    }
+
     public boolean isValid(String s) {
-        if (s.length() % 2!=0){
+        if (s.length() % 2 != 0) {
             return false;
         }
-        for (int i = 0; i < s.length(); i+=2) {
+        for (int i = 0; i < s.length(); i += 2) {
             char sChar1 = s.charAt(i);
             char sChar2 = s.charAt(i + 1);
             if ((sChar1 == '(' && sChar2 == ')')
