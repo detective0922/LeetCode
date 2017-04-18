@@ -17,15 +17,15 @@ public class MinimumDepthofBinaryTree {
         }
         int leftDepth = 1;
         if (root.left != null) {
-            leftDepth = maxDepth(root.left, leftDepth);
+            leftDepth = minDepth(root.left, leftDepth);
         }
 
         int rightDepth = 1;
         if (root.right != null) {
-            rightDepth = maxDepth(root.right, rightDepth);
+            rightDepth = minDepth(root.right, rightDepth);
         }
 
-        if (leftDepth > rightDepth) {
+        if (leftDepth < rightDepth) {
             return leftDepth;
         } else {
             return rightDepth;
