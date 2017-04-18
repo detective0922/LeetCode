@@ -33,7 +33,7 @@ public class MinimumDepthofBinaryTree {
 
     }
 
-    public static int maxDepth(TreeNode node, int depth) {
+    public static int minDepth(TreeNode node, int depth) {
         if (node == null) {
             return depth;
         }
@@ -45,15 +45,15 @@ public class MinimumDepthofBinaryTree {
 
         int leftDepth = 0;
         if (node.left != null) {
-            leftDepth = maxDepth(node.left, depth);
+            leftDepth = minDepth(node.left, depth);
         }
 
         int rightDepth = 0;
         if (node.right != null) {
-            rightDepth = maxDepth(node.right, depth);
+            rightDepth = minDepth(node.right, depth);
         }
 
-        if (leftDepth > rightDepth) {
+        if (leftDepth < rightDepth) {
             return leftDepth;
         } else {
             return rightDepth;
