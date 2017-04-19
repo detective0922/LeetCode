@@ -16,9 +16,9 @@ public class MinimumDepthofBinaryTree {
         TreeNode five = new TreeNode(5);
         root.left = two;
         root.right = three;
-        two.left = four;
+        //two.left = four;
         three.right = five;
-        System.out.println(new MaximumDepthofBinaryTree().maxDepth(root));
+        System.out.println(new MinimumDepthofBinaryTree().minDepth(root));
     }
 
     public int minDepth(TreeNode root) {
