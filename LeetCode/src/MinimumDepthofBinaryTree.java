@@ -39,11 +39,7 @@ public class MinimumDepthofBinaryTree {
             rightDepth = minDepth(root.right, rightDepth);
         }
 
-        if (leftDepth < rightDepth) {
-            return leftDepth;
-        } else {
-            return rightDepth;
-        }
+        return leftDepth < rightDepth ? leftDepth : rightDepth;
 
     }
 
