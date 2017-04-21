@@ -51,6 +51,12 @@ public class MinimumDepthofBinaryTree {
         depth++;
         if (node.left == null && node.right == null) {
             return depth;
+        } else if (node.left != null && node.right != null) {
+            int leftDepth = minDepth(node.left, depth);
+            int rightDepth = minDepth(node.right, depth);
+        } else if (){
+
+        } else if() {
         }
 
         int leftDepth = 0;
