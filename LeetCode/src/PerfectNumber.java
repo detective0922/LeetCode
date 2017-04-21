@@ -14,4 +14,10 @@ Note: The input number n will not exceed 100,000,000. (1e8)
 
 */
 public class PerfectNumber {
+    public boolean checkPerfectNumber(int num) {
+        if (num <= 0) {
+            return false;
+        }
+
+    }
 }
