@@ -19,7 +19,7 @@ public class PerfectNumber {
             return false;
         }
         double sqrt = Math.sqrt(num);
-        int sum = 0;
+        int sum = 1;
         for (int i = 2; i < sqrt; i++) {
             if (num % i == 0) {
                 sum += i;
