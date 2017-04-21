@@ -18,6 +18,14 @@ public class PerfectNumber {
         if (num <= 1) {
             return false;
         }
-
+        double sqrt = Math.sqrt(num);
+        int sum = 0;
+        for (int i = 2; i < sqrt; i++) {
+            if (num % i == 0) {
+                sum += i;
+                sum += num / i;
+            }
+        }
+        return sum == num;
     }
 }
