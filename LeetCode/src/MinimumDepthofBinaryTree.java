@@ -28,19 +28,15 @@ public class MinimumDepthofBinaryTree {
 
         if (root.left == null && root.right == null) {
             return 1;
+        } else if (root.left != null && root.right != null){
+            int leftDepth = minDepth(root.left, 1);
+            int rightDepth = minDepth(root.right, 1);
+            return leftDepth < rightDepth ? leftDepth : rightDepth;
+        } else if (root.left != null) {
+            return minDepth(root.left, 1);
+        } else {
+            return minDepth(root.right, 1);
         }
-        int leftDepth = 1;
-        if (root.left != null) {
-            leftDepth = minDepth(root.left, leftDepth);
-        }
-
-        int rightDepth = 1;
-        if (root.right != null) {
-            rightDepth = minDepth(root.right, rightDepth);
-        }
-
-        return leftDepth < rightDepth ? leftDepth : rightDepth;
-
     }
 
     public static int minDepth(TreeNode node, int depth) {
