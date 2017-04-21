@@ -28,7 +28,7 @@ public class MinimumDepthofBinaryTree {
 
         if (root.left == null && root.right == null) {
             return 1;
-        } else if (root.left != null && root.right != null){
+        } else if (root.left != null && root.right != null) {
             int leftDepth = minDepth(root.left, 1);
             int rightDepth = minDepth(root.right, 1);
             return leftDepth < rightDepth ? leftDepth : rightDepth;
