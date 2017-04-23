@@ -19,9 +19,10 @@ Notes:
 */
 public class WordPattern {
     public boolean wordPattern(String pattern, String str) {
-        if(str==null||pattern==null){
+        if (str == null || pattern == null) {
             return false;
         }
+        String[] strArray = str.split(" ");
 
     }
 }
