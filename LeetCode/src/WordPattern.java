@@ -23,7 +23,7 @@ Notes:
 public class WordPattern {
 
     public static void main(String[] args) {
-        System.out.println(new WordPattern().wordPattern("abba", "dog cat cat dog"));
+        System.out.println(new WordPattern().wordPattern("abba", "dog dog dog dog"));
     }
 
     public boolean wordPattern(String pattern, String str) {
