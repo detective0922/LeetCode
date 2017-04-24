@@ -39,7 +39,7 @@ public class WordPattern {
             if (!patterMap.containsKey(patterChar) && !strMap.containsKey(string)) {
                 patterMap.put(patterChar, string);
                 strMap.put(string, patterChar);
-            } else if (patterMap.get(patterChar) != string || strMap.get(string) != patterChar ){
+            } else if (patterMap.get(patterChar) != string || strMap.get(string) != patterChar) {
                 return false;
             }
         }
