@@ -26,11 +26,16 @@ public class WordPattern {
             return false;
         }
         String[] strArray = str.split(" ");
-        if (strArray.length != pattern.length()) {
+        char[] patternArray = pattern.toCharArray();
+        if (strArray.length != patternArray.length) {
             return false;
         }
         Map<Character, String> patterMap = new HashMap<Character, String>();
         Map<String, Character> strMap = new HashMap<String, Character>();
+
+        for (int i = 0; i < patternArray.length; i++) {
+
+        }
 
 
     }
