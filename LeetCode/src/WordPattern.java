@@ -25,9 +25,13 @@ public class WordPattern {
         if (str == null || pattern == null) {
             return false;
         }
+        String[] strArray = str.split(" ");
+        if (strArray.length != pattern.length()) {
+            return false;
+        }
         Map<Character, String> patterMap = new HashMap<Character, String>();
         Map<String, Character> strMap = new HashMap<String, Character>();
-        String[] strArray = str.split(" ");
+
 
     }
 }
