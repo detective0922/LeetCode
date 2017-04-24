@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 1. Two Sum
 
@@ -16,6 +19,7 @@ return [0, 1].
 */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<Integer, Integer>();
 
     }
 }
