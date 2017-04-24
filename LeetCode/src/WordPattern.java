@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 290. Word Pattern
 
@@ -22,6 +25,8 @@ public class WordPattern {
         if (str == null || pattern == null) {
             return false;
         }
+        Map<Character, String> patterMap = new HashMap<Character, String>();
+        Map<String, Character> strMap = new HashMap<String, Character>();
         String[] strArray = str.split(" ");
 
     }
