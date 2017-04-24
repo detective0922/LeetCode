@@ -21,6 +21,11 @@ Notes:
 
 */
 public class WordPattern {
+
+    public static void main(String[] args) {
+        System.out.println(new WordPattern().wordPattern("abba", "dog cat cat dog"));
+    }
+
     public boolean wordPattern(String pattern, String str) {
         if (str == null || pattern == null) {
             return false;
@@ -39,7 +44,7 @@ public class WordPattern {
             if (!patterMap.containsKey(patterChar) && !strMap.containsKey(string)) {
                 patterMap.put(patterChar, string);
                 strMap.put(string, patterChar);
-            } else if (patterMap.get(patterChar) != string || strMap.get(string) != patterChar) {
+            } else if (!patterMap.get(patterChar).equals(string) || !strMap.get(string).equals(patterChar)) {
                 return false;
             }
         }
