@@ -34,7 +34,12 @@ public class WordPattern {
         Map<String, Character> strMap = new HashMap<String, Character>();
 
         for (int i = 0; i < patternArray.length; i++) {
-
+            char patterChar = patternArray[i];
+            String string = strArray[i];
+            if (!patterMap.containsKey(patterChar) && !strMap.containsKey(string)) {
+                patterMap.put(patterChar, string);
+                strMap.put(string, patterChar);
+            }
         }
 
 
