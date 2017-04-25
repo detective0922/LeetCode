@@ -14,9 +14,11 @@ public class ContainsDuplicateII {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         Map<Integer, Integer> count = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
-            if (count.containsKey(nums[i])){
-
-
+            if (count.containsKey(nums[i])) {
+                int difference = i - count.get(nums[i]);
+                if (difference <= k) {
+                    return true;
+                }
             }
             count.put(nums[i], i);
         }
