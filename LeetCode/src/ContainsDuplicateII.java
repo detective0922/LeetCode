@@ -16,9 +16,10 @@ public class ContainsDuplicateII {
         for (int i = 0; i < nums.length; i++) {
             if (count.containsKey(nums[i])){
 
+
             }
             count.put(nums[i], i);
         }
-
+        return false;
     }
 }
