@@ -13,7 +13,12 @@ and the absolute difference between i and j is at most k.
 public class ContainsDuplicateII {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         Map<Integer, Integer> count = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            if (count.containsKey(nums[i])){
 
+            }
+            count.put(nums[i], i);
+        }
 
     }
 }
