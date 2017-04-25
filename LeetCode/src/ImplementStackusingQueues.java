@@ -29,7 +29,11 @@ public class ImplementStackusingQueues {
 
     /** Push element x onto stack. */
     public void push(int x) {
-
+        Queue<Integer> tmpQueue = new LinkedList<Integer>();
+        while (queue.isEmpty()) {
+            tmpQueue.add(queue.poll());
+        }
+        queue.add(x);
     }
 
     /** Removes the element on top of the stack and returns that element. */
