@@ -20,6 +20,9 @@ import java.util.Queue;
 
 public class ImplementStackusingQueues {
 
+}
+
+class MyStack {
     private Queue<Integer> queue;
 
     /**
@@ -63,4 +66,5 @@ public class ImplementStackusingQueues {
     public boolean empty() {
         return queue.isEmpty();
     }
+
 }
