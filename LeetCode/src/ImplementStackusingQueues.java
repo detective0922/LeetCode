@@ -21,13 +21,10 @@ import java.util.Queue;
 public class ImplementStackusingQueues {
 
     private Queue<Integer> queue;
-    public MyQueue() {
-        queue = new LinkedList<Integer>();
-    }
 
     /** Initialize your data structure here. */
     public MyStack() {
-
+        queue = new LinkedList<Integer>();
     }
 
     /** Push element x onto stack. */
