@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 
 219. Contains Duplicate II
@@ -9,6 +12,8 @@ and the absolute difference between i and j is at most k.
 */
 public class ContainsDuplicateII {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Map<Integer, Integer> count = new HashMap<Integer, Integer>();
+
 
     }
 }
