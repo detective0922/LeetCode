@@ -8,4 +8,7 @@ and the absolute difference between i and j is at most k.
 
 */
 public class ContainsDuplicateII {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+    }
 }
