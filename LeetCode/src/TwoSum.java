@@ -19,7 +19,16 @@ return [0, 1].
 */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer,Integer> map = new HashMap<Integer, Integer>();
-
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int[] sum = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                sum[0] = map.get(target - nums[i]);
+                sum[1] = i;
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        return sum;
     }
 }
