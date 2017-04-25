@@ -18,6 +18,11 @@ return [0, 1].
 
 */
 public class TwoSum {
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        System.out.println(new TwoSum().twoSum(nums, 9));
+    }
+
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int[] sum = new int[2];
