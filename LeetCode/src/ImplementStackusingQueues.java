@@ -22,31 +22,44 @@ public class ImplementStackusingQueues {
 
     private Queue<Integer> queue;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public MyStack() {
         queue = new LinkedList<Integer>();
     }
 
-    /** Push element x onto stack. */
+    /**
+     * Push element x onto stack.
+     */
     public void push(int x) {
         Queue<Integer> tmpQueue = new LinkedList<Integer>();
         while (!queue.isEmpty()) {
             tmpQueue.add(queue.poll());
         }
         queue.add(x);
+        while (!tmpQueue.isEmpty()) {
+            queue.add(tmpQueue.poll());
+        }
     }
 
-    /** Removes the element on top of the stack and returns that element. */
+    /**
+     * Removes the element on top of the stack and returns that element.
+     */
     public int pop() {
         return queue.poll();
     }
 
-    /** Get the top element. */
+    /**
+     * Get the top element.
+     */
     public int top() {
         return queue.peek();
     }
 
-    /** Returns whether the stack is empty. */
+    /**
+     * Returns whether the stack is empty.
+     */
     public boolean empty() {
         return queue.isEmpty();
     }
