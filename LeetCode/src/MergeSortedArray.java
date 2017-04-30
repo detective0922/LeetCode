@@ -16,13 +16,12 @@ public class MergeSortedArray {
         while (i >= 0 && j >= 0) {
             if (nums2[j] >= nums1[i]) {
                 nums1[k] = nums2[j];
-                k--;
                 j--;
             } else {
                 nums1[k] = nums1[i];
-                k--;
                 i--;
             }
+            k--;
         }
 
         while (i >= 0) {
