@@ -13,7 +13,7 @@ public class MergeSortedArray {
         int i = n - 1;
         int j = m - 1;
         int k = m + n - 1;
-        while (i >= 0) {
+        while (i >= 0 && j >= 0) {
             if (nums2[j]>=nums1[i]){
                 nums1[k] = nums2[j];
                 k--;
@@ -23,8 +23,8 @@ public class MergeSortedArray {
                 k--;
                 i--;
             }
-
         }
+
 
     }
 }
