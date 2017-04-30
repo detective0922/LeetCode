@@ -25,6 +25,12 @@ public class MergeSortedArray {
             }
         }
 
+        if (i>=0){
+            nums1[k] = nums2[i];
+            k--;
+            i--;
+        }
+
 
     }
 }
