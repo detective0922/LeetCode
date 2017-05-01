@@ -10,4 +10,7 @@ Return: 1 --> 2 --> 3 --> 4 --> 5
 */
 
 public class RemoveLinkedListElements {
+    public ListNode removeElements(ListNode head, int val) {
+
+    }
 }
