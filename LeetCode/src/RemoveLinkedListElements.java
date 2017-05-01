@@ -11,13 +11,10 @@ Return: 1 --> 2 --> 3 --> 4 --> 5
 
 public class RemoveLinkedListElements {
     public ListNode removeElements(ListNode head, int val) {
-        if (head == null) {
-            return null;
-        }
         ListNode tmpHead = new ListNode(0);
         tmpHead.next = head;
-        ListNode currNode = head;
-        while (currNode != null) {
+        ListNode currNode = tmpHead;
+        while (currNode != null && currNode.next != null) {
             if (currNode.val == val){
                 tmpHead
             }
