@@ -13,7 +13,10 @@ public class RemoveLinkedListElements {
     public ListNode removeElements(ListNode head, int val) {
         ListNode tmpHead = head;
         ListNode currNode = head;
-        while (currNode.next != null) {
+        while (currNode != null) {
+            if (currNode.val == val){
+
+            }
 
         }
 
