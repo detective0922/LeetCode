@@ -15,9 +15,9 @@ public class LongestCommonPrefix {
 
         StringBuilder commPerfix = new StringBuilder();
         String str = strs[0];
-        for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i < str.length() - 1; i++) {
             char c = str.charAt(i);
-            for (int j = 0; j < str.length(); j++) {
+            for (int j = 1; j < strs.length - 1; j++) {
                 if (strs[j].length() < i + 1 || strs[j].charAt(i) != c) {
                     return commPerfix.toString();
                 }
