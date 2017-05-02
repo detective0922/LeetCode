@@ -18,16 +18,13 @@ public class LengthofLastWord {
         if (s == null) {
             return 0;
         }
-        if (s.length() == 1) {
-            return s.charAt(0) == ' ' ? 0 : 1;
-        }
 
         char[] sArray = s.toCharArray();
         int len = 0;
         for (int i = sArray.length - 1; i >= 0; i--) {
             if (sArray[i] != ' ') {
                 len++;
-            } else if (sArray[i - 1] == ' ') {
+            } else if (len > 0) {
                 break;
             }
         }
