@@ -12,13 +12,12 @@ For example,
 */
 public class AddBinary {
     public String addBinary(String a, String b) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sum = new StringBuilder();
         int carry = 0;
+        for (int i = a.length(), j=b.length();i>=0||j>=0||carry==1;i--,j--){
 
-        return sb.reverse().toString();
-
-
-
+        }
+        return sum.reverse().toString();
 
     }
 }
