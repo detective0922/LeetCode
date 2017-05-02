@@ -11,6 +11,10 @@ For example,
 
 */
 public class AddBinary {
+    public static void main(String[] args) {
+        System.out.println(new AddBinary().addBinary("0", "1"));
+    }
+
     public String addBinary(String a, String b) {
         StringBuilder sum = new StringBuilder();
         int carry = 0;
@@ -20,7 +24,7 @@ public class AddBinary {
             aNum = i < 0 ? 0 : a.charAt(i) - '0';
             bNum = j < 0 ? 0 : b.charAt(j) - '0';
             sum.append((aNum + bNum + carry) % 2);
-            carry = aNum + bNum + carry / 2;
+            carry = (aNum + bNum + carry) / 2;
         }
         return sum.reverse().toString();
 
