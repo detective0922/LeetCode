@@ -26,13 +26,19 @@ The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... is a 0, wh
 */
 public class NthDigit {
     public int findNthDigit(int n) {
-        int i = 1;
-        int sum = 0;
-        while (n > 0) {
-            sum += i * 9 * Math.pow(10, i - 1);
-            n -= sum;
-            i++;
+        int bitCount = 1;
+        int digitIndex = 0;
+        int numIndex = 0;
+        while (n > digitIndex) {
+            digitIndex += bitCount * 9 * Math.pow(10, bitCount - 1);
+            numIndex += 9 * Math.pow(10, bitCount - 1);
+            if (digitIndex > n) {
+                break;
+            }
+            bitCount++;
         }
+        digitIndex -= bitCount * 9 * Math.pow(10, bitCount - 1);
+
 
     }
 }
