@@ -51,7 +51,7 @@ public class NthDigit {
         }
         digitIndex -= bitCount;
         numIndex--;
-        char c = String.valueOf(numIndex).charAt(n - digitIndex);
+        char c = String.valueOf(numIndex).charAt(n - digitIndex + 1);
         return Character.digit(c, 10);
     }
 }
