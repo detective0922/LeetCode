@@ -28,10 +28,10 @@ public class NthDigit {
     public int findNthDigit(int n) {
         int i = 1;
         int sum = 0;
-        while(n>0){
-            sum += i * 9 * Math.pow();
-
-
+        while (n > 0) {
+            sum += i * 9 * Math.pow(10, i - 1);
+            n -= sum;
+            i++;
         }
 
     }
