@@ -45,11 +45,13 @@ public class NthDigit {
         }
         digitIndex -= bitCount * 9 * Math.pow(10, bitCount - 1);
         numIndex -= 9 * Math.pow(10, bitCount - 1);
-        for (int i = digitIndex; i<= n;i+=bitCount){
-            digitIndex +=bitCount;
-            numIndex ++;
+        for (int i = digitIndex; i <= n; i += bitCount) {
+            digitIndex += bitCount;
+            numIndex++;
         }
-        char c = String.valueOf(numIndex).charAt(n-digitIndex);
-        return  Character.digit(c, 10);
+        digitIndex -= bitCount;
+        numIndex--;
+        char c = String.valueOf(numIndex).charAt(n - digitIndex);
+        return Character.digit(c, 10);
     }
 }
