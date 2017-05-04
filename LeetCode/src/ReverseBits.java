@@ -19,10 +19,8 @@ public class ReverseBits {
     public int reverseBits(int n) {
         long reverseInt = 0;
         for (int i = 32; i> 0 ;i--){
-            /*reverseInt <<=1;
-            reverseInt +=  n & 1;*/
             int bit = n & 1;
-            reverseInt += bit * Math.pow(2, count - 1);
+            reverseInt += bit * Math.pow(2, i - 1);
             n >>>= 1;
         }
         return (int)reverseInt;
