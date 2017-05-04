@@ -32,12 +32,12 @@ public class NthDigit {
     }
 
     public int findNthDigit(int n) {
-        int bitCount = 1;
-        int digitIndex = 0;
-        int numIndex = 0;
-        while (n > digitIndex) {
-            n -= bitCount * 9 * Math.pow(10, bitCount - 1);
-            bitCount++;
+        int numCount = 1;
+        int bitLen = 1;
+        while (n > bitLen * numCount) {
+            n -= bitLen * 9 * numCount;
+            numCount *= 10;
+            bitLen++;
         }
         digitIndex -= bitCount * 9 * Math.pow(10, bitCount - 1);
         numIndex -= 9 * Math.pow(10, bitCount - 1);
