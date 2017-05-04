@@ -34,7 +34,7 @@ public class NthDigit {
     public int findNthDigit(int n) {
         int numCount = 1;
         int bitLen = 1;
-        while (n > bitLen * 9 * numCount) {
+        while ((long) n > (long) bitLen * 9 * numCount) {
             n -= bitLen * 9 * numCount;
             numCount *= 10;
             bitLen++;
