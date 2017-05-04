@@ -28,7 +28,7 @@ public class NthDigit {
 
     public static void main(String[] args) {
 
-        System.out.println(new NthDigit().findNthDigit(11));
+        System.out.println(new NthDigit().findNthDigit(9));
     }
 
     public int findNthDigit(int n) {
@@ -36,11 +36,7 @@ public class NthDigit {
         int digitIndex = 0;
         int numIndex = 0;
         while (n > digitIndex) {
-            digitIndex += bitCount * 9 * Math.pow(10, bitCount - 1);
-            numIndex += 9 * Math.pow(10, bitCount - 1);
-            if (digitIndex > n) {
-                break;
-            }
+            n -= bitCount * 9 * Math.pow(10, bitCount - 1);
             bitCount++;
         }
         digitIndex -= bitCount * 9 * Math.pow(10, bitCount - 1);
