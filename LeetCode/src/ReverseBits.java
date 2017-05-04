@@ -17,15 +17,14 @@ public class ReverseBits {
 
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
-        int reverseInt = 0;
-        int count = 32;
-        while (count > 0) {
-            reverseInt <<=1;
-            reverseInt +=  n & 1;
-            //reverseInt += bit * Math.pow(2, count - 1);
+        long reverseInt = 0;
+        for (int i = 32; i> 0 ;i--){
+            /*reverseInt <<=1;
+            reverseInt +=  n & 1;*/
+            int bit = n & 1;
+            reverseInt += bit * Math.pow(2, count - 1);
             n >>>= 1;
-            count--;
         }
-        return reverseInt;
+        return (int)reverseInt;
     }
 }
