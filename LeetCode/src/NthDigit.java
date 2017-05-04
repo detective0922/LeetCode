@@ -39,6 +39,7 @@ public class NthDigit {
             numCount *= 10;
             bitLen++;
         }
+        int num = numCount + (n - 1) / bitLen;
         digitIndex -= bitCount * 9 * Math.pow(10, bitCount - 1);
         numIndex -= 9 * Math.pow(10, bitCount - 1);
         for (int i = digitIndex; i <= n; i += bitCount) {
