@@ -21,9 +21,10 @@ public class ReverseBits {
         //StringBuilder reverseStr = new StringBuilder();
         int count = 32;
         while (count > 0) {
-            int bit = n & 1;
+            reverseInt <<=1;
+            reverseInt +=  n & 1;
             //reverseStr.append(bit);
-            reverseInt += bit * Math.pow(2, count - 1);
+            //reverseInt += bit * Math.pow(2, count - 1);
             n >>>= 1;
             count--;
         }
