@@ -19,10 +19,12 @@ public class ReverseBits {
     public int reverseBits(int n) {
         int reverseInt = 0;
         StringBuilder reverseStr = new StringBuilder();
-        while (n > 0) {
+        int count = 32;
+        while (count > 0) {
             int bit = n & 1;
             reverseStr.append(bit);
             n >>>= 1;
+            count --;
         }
         if (reverseStr.length() > 0) {
             reverseInt = Integer.valueOf(reverseStr.toString(), 2);
