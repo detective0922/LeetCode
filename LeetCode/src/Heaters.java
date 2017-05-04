@@ -39,7 +39,7 @@ public class Heaters {
                 index = -(index+1);
                 int dict1 = house -  heaters[index - 1];
                 int dict2 = heaters[index] - house;
-                radius = Math.min(radius, Math.min(dict1, dict2));
+                radius = Math.max(radius, Math.min(dict1, dict2));
             }
         }
         return radius;
