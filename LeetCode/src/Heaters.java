@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 
 475. Heaters
@@ -29,6 +31,10 @@ Explanation: The two heater was placed in the position 1 and 4. We need to use r
 */
 public class Heaters {
     public int findRadius(int[] houses, int[] heaters) {
-
+        Arrays.sort(heaters);
+        int radius = 0;
+        for (int house : houses) {
+            int index = Arrays.binarySearch(heaters, house);
+        }
     }
 }
