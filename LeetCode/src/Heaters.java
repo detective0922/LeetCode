@@ -37,10 +37,11 @@ public class Heaters {
             int index = Arrays.binarySearch(heaters, house);
             if (index < 0) {
                 index = -(index+1);
-                int dict1 = house -  heaters[index - 1];
+                int dict1 = house -  heaters[index];
                 int dict2 = heaters[index + 1] - house;
                 radius = Math.min(radius, Math.min(dict1, dict2));
             }
         }
+        return radius;
     }
 }
