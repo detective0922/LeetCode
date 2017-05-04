@@ -13,6 +13,10 @@ Follow up:
 public class ReverseBits {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
+        int reverseInt = 0;
+        while (n>0){
 
+        }
+        return reverseInt;
     }
 }
