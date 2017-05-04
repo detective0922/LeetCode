@@ -40,15 +40,7 @@ public class NthDigit {
             bitLen++;
         }
         int num = numCount + (n - 1) / bitLen;
-        digitIndex -= bitCount * 9 * Math.pow(10, bitCount - 1);
-        numIndex -= 9 * Math.pow(10, bitCount - 1);
-        for (int i = digitIndex; i <= n; i += bitCount) {
-            digitIndex += bitCount;
-            numIndex++;
-        }
-        digitIndex -= bitCount;
-        numIndex--;
-        char c = String.valueOf(numIndex).charAt((n - digitIndex + 1) % bitCount);
+        char c = String.valueOf(num).charAt((n - 1) % bitLen);
         return Character.digit(c, 10);
     }
 }
