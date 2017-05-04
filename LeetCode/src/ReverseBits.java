@@ -18,19 +18,14 @@ public class ReverseBits {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
         int reverseInt = 0;
-        //StringBuilder reverseStr = new StringBuilder();
         int count = 32;
         while (count > 0) {
             reverseInt <<=1;
             reverseInt +=  n & 1;
-            //reverseStr.append(bit);
             //reverseInt += bit * Math.pow(2, count - 1);
             n >>>= 1;
             count--;
         }
-        /*if (reverseStr.length() > 0) {
-            reverseInt = Integer.valueOf(reverseStr.toString(), 2);
-        }*/
         return reverseInt;
     }
 }
