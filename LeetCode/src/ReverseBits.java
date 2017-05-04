@@ -18,7 +18,7 @@ public class ReverseBits {
         while (n > 0) {
             int bit = n & 1;
             reverseStr.append(bit);
-            n >>> 1;
+            n >>>= 1;
         }
         return reverseInt;
     }
