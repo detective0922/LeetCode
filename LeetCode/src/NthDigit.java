@@ -28,7 +28,7 @@ public class NthDigit {
 
     public static void main(String[] args) {
 
-        System.out.println(new NthDigit().findNthDigit(9));
+        System.out.println(new NthDigit().findNthDigit(2147483647));
     }
 
     public int findNthDigit(int n) {
