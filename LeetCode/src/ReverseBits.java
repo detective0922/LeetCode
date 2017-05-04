@@ -20,6 +20,9 @@ public class ReverseBits {
             reverseStr.append(bit);
             n >>>= 1;
         }
+        if (reverseStr.length() > 0) {
+            reverseInt = Integer.valueOf(reverseStr.toString(), 2);
+        }
         return reverseInt;
     }
 }
