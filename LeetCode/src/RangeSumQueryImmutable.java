@@ -32,10 +32,12 @@ public class RangeSumQueryImmutable {
 class NumArray {
 
     private int[] sums;
+    private int[] nums;
 
     public NumArray(int[] nums) {
-        sums = new int[nums.length];
-        int sum = nums[0];
+        this.sums = new int[nums.length];
+        this.nums = nums;
+        int sum = 0;
         for (int i = 1; i < nums.length; i++) {
             sum += nums[i];
             sums[i] = sum;
@@ -43,7 +45,7 @@ class NumArray {
     }
 
     public int sumRange(int i, int j) {
-        return sums[j] - sums[i];
+        return sums[j] - sums[i] + nums[i];
     }
 }
 
