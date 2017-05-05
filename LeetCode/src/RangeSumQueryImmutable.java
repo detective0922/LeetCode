@@ -35,10 +35,12 @@ class NumArray {
 
     public NumArray(int[] nums) {
         this.sums = new int[nums.length];
-        int sum = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            sum += nums[i];
-            sums[i] = sum;
+        if (nums.length > 0) {
+            int sum = nums[0];
+            for (int i = 1; i < nums.length; i++) {
+                sum += nums[i];
+                sums[i] = sum;
+            }
         }
     }
 
