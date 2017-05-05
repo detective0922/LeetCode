@@ -30,7 +30,7 @@ class NumArray {
     }
 
     public int sumRange(int i, int j) {
-
+        return sums[j] - sums[i];
     }
 }
 
