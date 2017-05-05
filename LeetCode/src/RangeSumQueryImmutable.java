@@ -24,8 +24,9 @@ public class RangeSumQueryImmutable {
 }
 class NumArray {
 
+    private int[] sums;
     public NumArray(int[] nums) {
-
+        sums = new int[nums.length];
     }
 
     public int sumRange(int i, int j) {
