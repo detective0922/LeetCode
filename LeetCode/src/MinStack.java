@@ -21,8 +21,12 @@ minStack.getMin();   --> Returns -2.
 
 */
 
+import java.util.Stack;
+
 public class MinStack {
 
+    private Stack<Integer> stack;
+    private int min;
     /** initialize your data structure here. */
     public MinStack() {
 
