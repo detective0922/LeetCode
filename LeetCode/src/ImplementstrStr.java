@@ -13,6 +13,9 @@ public class ImplementstrStr {
                 || haystack.length() < needle.length()) {
             return -1;
         }
+        if (needle.isEmpty()){
+            return 0;
+        }
 
         char[] haystackArray = haystack.toCharArray();
         char[] needleArray = needle.toCharArray();
