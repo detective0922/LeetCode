@@ -10,10 +10,16 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 public class ImplementstrStr {
     public int strStr(String haystack, String needle) {
         if (haystack == null || needle == null
-                || haystack.isEmpty() || needle.isEmpty()) {
+                || haystack.isEmpty() || needle.isEmpty()
+                || haystack.length() < needle.length()) {
             return -1;
         }
 
+        char[] haystackArray = haystack.toCharArray();
+        char[] needleArray = needle.toCharArray();
+        for (int i = 0; i<haystackArray.length;i++){
+
+        }
 
 
     }
