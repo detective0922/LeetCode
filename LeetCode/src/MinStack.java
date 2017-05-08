@@ -34,7 +34,10 @@ public class MinStack {
     }
 
     public void push(int x) {
-
+        stack.push(x);
+        if (x < min) {
+            min = x;
+        }
     }
 
     public void pop() {
