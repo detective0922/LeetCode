@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 532. K-diff Pairs in an Array
 
@@ -32,6 +35,14 @@ Note:
 */
 public class KdiffPairsinanArray {
     public int findPairs(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = 1; j < nums.length; j++) {
+                if (Math.abs(nums[j] - nums[i]) == k) {
 
+                }
+            }
+        }
+        return map.size();
     }
 }
