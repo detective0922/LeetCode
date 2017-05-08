@@ -39,18 +39,10 @@ public class KdiffPairsinanArray {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 1; j < nums.length; j++) {
                 if (Math.abs(nums[j] - nums[i]) == k) {
-                    if ( !map.containsKey(nums[i])){
+                    if (!map.containsKey(nums[i])) {
                         map.put(nums[i], nums[j]);
-                    } else if (!map.containsKey(nums[j])){
+                    } else if (!map.containsKey(nums[j])) {
                         map.put(nums[j], nums[i]);
-                    }
-
-
-                    if ((map.containsKey(nums[i]) && map.get(nums[i]) == nums[j])
-                            || (map.containsKey(nums[j]) && map.get(nums[j]) == nums[i])) {
-                        continue;
-                    } else {
-                        map.put(nums[i], nums[j]);
                     }
                 }
             }
