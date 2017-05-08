@@ -30,7 +30,7 @@ public class MinStack {
     /** initialize your data structure here. */
     public MinStack() {
         stack = new Stack<Integer>();
-        min = Integer.MIN_VALUE;
+        min = Integer.MAX_VALUE;
     }
 
     public void push(int x) {
@@ -43,6 +43,7 @@ public class MinStack {
     public void pop() {
         int pop = stack.pop();
         if (pop == min) {
+            min = Integer.MAX_VALUE;
             for (Integer i : stack) {
                 if (i < min) {
                     min = i;
