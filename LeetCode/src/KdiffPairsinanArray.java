@@ -31,4 +31,7 @@ Note:
 
 */
 public class KdiffPairsinanArray {
+    public int findPairs(int[] nums, int k) {
+
+    }
 }
