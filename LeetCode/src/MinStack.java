@@ -41,7 +41,14 @@ public class MinStack {
     }
 
     public void pop() {
-        stack.pop();
+        int pop = stack.pop();
+        if (pop == min) {
+            for (Integer i : stack) {
+                if (i < min) {
+                    min = i;
+                }
+            }
+        }
     }
 
     public int top() {
