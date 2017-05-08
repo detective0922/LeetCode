@@ -29,7 +29,8 @@ public class MinStack {
     private int min;
     /** initialize your data structure here. */
     public MinStack() {
-
+        stack = new Stack<Integer>();
+        min = Integer.MIN_VALUE;
     }
 
     public void push(int x) {
