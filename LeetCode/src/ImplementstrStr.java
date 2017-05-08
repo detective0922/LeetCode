@@ -17,10 +17,20 @@ public class ImplementstrStr {
 
         char[] haystackArray = haystack.toCharArray();
         char[] needleArray = needle.toCharArray();
-        for (int i = 0; i<haystackArray.length;i++){
-
+        int max = haystackArray.length - needleArray.length;
+        for (int i = 0; i < max; i++) {
+            if (haystackArray[i] == needleArray[0]) {
+                int j = 1;
+                for (; j < needleArray.length; j++) {
+                    if (haystackArray[i + j] != needleArray[j]) {
+                        break;
+                    }
+                }
+                if (j == needleArray.length) {
+                    return i;
+                }
+            }
         }
-
-
+        return -1;
     }
 }
