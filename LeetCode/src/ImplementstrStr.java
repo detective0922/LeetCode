@@ -8,4 +8,7 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 
 */
 public class ImplementstrStr {
+    public int strStr(String haystack, String needle) {
+
+    }
 }
