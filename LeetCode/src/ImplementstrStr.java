@@ -13,14 +13,14 @@ public class ImplementstrStr {
                 || haystack.length() < needle.length()) {
             return -1;
         }
-        if (needle.isEmpty()){
+        if (needle.isEmpty()) {
             return 0;
         }
 
         char[] haystackArray = haystack.toCharArray();
         char[] needleArray = needle.toCharArray();
         int max = haystackArray.length - needleArray.length;
-        for (int i = 0; i < max; i++) {
+        for (int i = 0; i <= max; i++) {
             if (haystackArray[i] == needleArray[0]) {
                 int j = 0;
                 for (; j < needleArray.length; j++) {
