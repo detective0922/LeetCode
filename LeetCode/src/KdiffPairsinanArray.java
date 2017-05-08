@@ -34,14 +34,24 @@ Note:
 
 */
 public class KdiffPairsinanArray {
+    public static void main(String[] args) {
+        int[] test = {3,1,4,1,5};
+        System.out.println(new KdiffPairsinanArray().findPairs(test, 2));
+    }
+
     public int findPairs(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 1; j < nums.length; j++) {
                 if (Math.abs(nums[j] - nums[i]) == k) {
-                    if (!map.containsKey(nums[i])) {
+                    boolean iKey = map.containsKey(nums[i]);
+                    boolean jKey = map.containsKey(nums[j]);
+                    if (((iKey) && map.get(nums[i]) == nums[j])
+                            || ((jKey) && map.get(nums[j]) == nums[i])) {
+                        continue;
+                    } else if (!iKey) {
                         map.put(nums[i], nums[j]);
-                    } else if (!map.containsKey(nums[j])) {
+                    } else if (!jKey) {
                         map.put(nums[j], nums[i]);
                     }
                 }
