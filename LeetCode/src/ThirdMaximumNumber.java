@@ -42,31 +42,35 @@ public class ThirdMaximumNumber {
     }
 
     public int thirdMax(int[] nums) {
-        List<Integer> max = new ArrayList<Integer>(3);
-        max.add(Integer.MIN_VALUE);
-        max.add(Integer.MIN_VALUE);
-        max.add(Integer.MIN_VALUE);
+        Integer[] maxArray = new Integer[3];
+        maxArray[0] = null;
+        maxArray[1] = null;
+        maxArray[2] = null;
         boolean isThirdMax = false;
-        for (int num : nums) {
-            if (max.contains(num)) {
-                continue;
+        for (Integer num : nums) {
+            if (num.equals(maxArray[0]||num.equals(maxArray[1]||num.equals(maxArray[2])){
+
             }
-            if (num > max.get(0)) {
+            if (num >= max.get(0)) {
                 max.remove(2);
                 max.add(0, num);
-            } else if (num > max.get(1)) {
+            } else if (num >= max.get(1)) {
                 max.remove(2);
                 max.add(1, num);
-            } else if (num > max.get(2)) {
+            } else if (num >= max.get(2)) {
                 max.remove(2);
                 max.add(2, num);
                 isThirdMax = true;
             }
         }
-        if (max.get(2) != Integer.MIN_VALUE || isThirdMax) {
+        if (max.get(2)!=Integer.MIN_VALUE||isThirdMax) {
             return max.get(2);
         } else {
-            return max.get(0);
+            if (isThirdMax) {
+                return max.get(2);
+            } else {
+                return max.get(0);
+            }
         }
     }
 }
