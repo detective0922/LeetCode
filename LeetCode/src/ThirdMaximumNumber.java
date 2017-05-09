@@ -1,7 +1,8 @@
 /*
 414. Third Maximum Number
 
-Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return the maximum number. The time complexity must be in O(n).
+Given a non-empty array of integers, return the third maximum number in this array.
+If it does not exist, return the maximum number. The time complexity must be in O(n).
 
 Example 1:
 
@@ -33,6 +34,13 @@ Both numbers with value 2 are both considered as second maximum.
 */
 public class ThirdMaximumNumber {
     public int thirdMax(int[] nums) {
+        int[] maxArray = new int[3];
+        maxArray[0] = Integer.MIN_VALUE;
+        maxArray[1] = Integer.MIN_VALUE;
+        maxArray[2] = Integer.MIN_VALUE;
+        for (int num : nums) {
 
+        }
+        return nums.length < 3 ? maxArray[0] : maxArray[2];
     }
 }
