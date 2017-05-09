@@ -48,29 +48,20 @@ public class ThirdMaximumNumber {
         maxArray[2] = null;
         boolean isThirdMax = false;
         for (Integer num : nums) {
-            if (num.equals(maxArray[0]||num.equals(maxArray[1]||num.equals(maxArray[2])){
-
+            if (num.equals(maxArray[0]) || num.equals(maxArray[1]) || num.equals(maxArray[2])) {
+                continue;
             }
-            if (num >= max.get(0)) {
-                max.remove(2);
-                max.add(0, num);
-            } else if (num >= max.get(1)) {
-                max.remove(2);
-                max.add(1, num);
-            } else if (num >= max.get(2)) {
-                max.remove(2);
-                max.add(2, num);
-                isThirdMax = true;
-            }
-        }
-        if (max.get(2)!=Integer.MIN_VALUE||isThirdMax) {
-            return max.get(2);
-        } else {
-            if (isThirdMax) {
-                return max.get(2);
-            } else {
-                return max.get(0);
+            if (num >= maxArray[0]) {
+                maxArray[2] = maxArray[1];
+                maxArray[1] = maxArray[0];
+                maxArray[0] = num;
+            } else if (num >= maxArray[1]) {
+                maxArray[2] = maxArray[1];
+                maxArray[1] = num;
+            } else if (num >= maxArray[2]) {
+                maxArray[2] = num;
             }
         }
+        return maxArray[2] == null ? maxArray[0] : maxArray[2];
     }
 }
