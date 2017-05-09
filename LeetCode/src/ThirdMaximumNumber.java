@@ -42,11 +42,10 @@ public class ThirdMaximumNumber {
     }
 
     public int thirdMax(int[] nums) {
-        int[] maxArray = new int[3];
-        maxArray[0] = Integer.MIN_VALUE;
-        maxArray[1] = Integer.MIN_VALUE;
-        maxArray[2] = Integer.MIN_VALUE;
         List<Integer> max = new ArrayList<Integer>();
+        max.add(Integer.MIN_VALUE);
+        max.add(Integer.MIN_VALUE);
+        max.add(Integer.MIN_VALUE);
         boolean isThirdMax = false;
         for (int num : nums) {
             if (max.contains(num)) {
