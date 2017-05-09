@@ -43,6 +43,9 @@ public class KdiffPairsinanArray {
     }
 
     public int findPairs(int[] nums, int k) {
+        if (k < 0) {
+            return 0;
+        }
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int result = 0;
         for(int num : nums) {
@@ -50,10 +53,20 @@ public class KdiffPairsinanArray {
             if (map.containsKey(num)) {
                 count = map.get(num);
             }
-            map.put(num, count + 1);
+            map.put(num, ++count);
 
-
-
+            if (k == 0) {
+                if (count == 2) {
+                    result++;
+                }
+            } else if (count == 1){
+                if (map.containsKey(num - k)) {
+                    result++;
+                }
+                if (map.containsKey(num + k)) {
+                    result++;
+                }
+            }
         }
         return result;
 
