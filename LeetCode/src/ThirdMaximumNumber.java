@@ -38,9 +38,17 @@ public class ThirdMaximumNumber {
         maxArray[0] = Integer.MIN_VALUE;
         maxArray[1] = Integer.MIN_VALUE;
         maxArray[2] = Integer.MIN_VALUE;
+        boolean isThirdMax = false;
         for (int num : nums) {
-
+            if (num >= maxArray[0]) {
+                maxArray[0] = num;
+            } else if (num >= maxArray[1]) {
+                maxArray[1] = num;
+            } else if (num >= maxArray[2]) {
+                maxArray[2] = num;
+                isThirdMax = true;
+            }
         }
-        return nums.length < 3 ? maxArray[0] : maxArray[2];
+        return isThirdMax ? maxArray[2] : maxArray[0];
     }
 }
