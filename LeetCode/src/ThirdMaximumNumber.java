@@ -32,4 +32,7 @@ Both numbers with value 2 are both considered as second maximum.
 
 */
 public class ThirdMaximumNumber {
+    public int thirdMax(int[] nums) {
+
+    }
 }
