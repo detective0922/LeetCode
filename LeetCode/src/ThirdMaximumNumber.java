@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 414. Third Maximum Number
 
@@ -33,18 +36,30 @@ Both numbers with value 2 are both considered as second maximum.
 
 */
 public class ThirdMaximumNumber {
+    public static void main(String[] args) {
+        int[] nums = {2,2,3,1};
+        System.out.println(new ThirdMaximumNumber().thirdMax(nums));
+    }
+
     public int thirdMax(int[] nums) {
         int[] maxArray = new int[3];
         maxArray[0] = Integer.MIN_VALUE;
         maxArray[1] = Integer.MIN_VALUE;
         maxArray[2] = Integer.MIN_VALUE;
+        List<Integer> max = new ArrayList<Integer>();
         boolean isThirdMax = false;
         for (int num : nums) {
-            if (num >= maxArray[0]) {
+            if (max.contains(num)) {
+                continue;
+            }
+            if (num > max.) {
+                maxArray[2] = maxArray[1];
+                maxArray[1] = maxArray[0];
                 maxArray[0] = num;
-            } else if (num >= maxArray[1]) {
+            } else if (num > maxArray[1]) {
+                maxArray[2] = maxArray[1];
                 maxArray[1] = num;
-            } else if (num >= maxArray[2]) {
+            } else if (num > maxArray[2]) {
                 maxArray[2] = num;
                 isThirdMax = true;
             }
