@@ -42,7 +42,7 @@ public class ThirdMaximumNumber {
     }
 
     public int thirdMax(int[] nums) {
-        List<Integer> max = new ArrayList<Integer>();
+        List<Integer> max = new ArrayList<Integer>(3);
         max.add(Integer.MIN_VALUE);
         max.add(Integer.MIN_VALUE);
         max.add(Integer.MIN_VALUE);
@@ -63,7 +63,7 @@ public class ThirdMaximumNumber {
                 isThirdMax = true;
             }
         }
-        if (max.get(2)!=Integer.MIN_VALUE||isThirdMax) {
+        if (max.get(2) != Integer.MIN_VALUE || isThirdMax) {
             return max.get(2);
         } else {
             return max.get(0);
