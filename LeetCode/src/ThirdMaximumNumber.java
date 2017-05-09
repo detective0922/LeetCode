@@ -51,14 +51,14 @@ public class ThirdMaximumNumber {
             if (num.equals(maxArray[0]) || num.equals(maxArray[1]) || num.equals(maxArray[2])) {
                 continue;
             }
-            if (num >= maxArray[0]) {
+            if (maxArray[0] == null || num >= maxArray[0]) {
                 maxArray[2] = maxArray[1];
                 maxArray[1] = maxArray[0];
                 maxArray[0] = num;
-            } else if (num >= maxArray[1]) {
+            } else if (maxArray[1] == null || num >= maxArray[1]) {
                 maxArray[2] = maxArray[1];
                 maxArray[1] = num;
-            } else if (num >= maxArray[2]) {
+            } else if (maxArray[2] == null || num >= maxArray[2]) {
                 maxArray[2] = num;
             }
         }
