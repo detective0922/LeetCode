@@ -37,7 +37,7 @@ Both numbers with value 2 are both considered as second maximum.
 */
 public class ThirdMaximumNumber {
     public static void main(String[] args) {
-        int[] nums = {2,2,3,1};
+        int[] nums = {1,2,2,5,3,5};
         System.out.println(new ThirdMaximumNumber().thirdMax(nums));
     }
 
@@ -54,15 +54,19 @@ public class ThirdMaximumNumber {
             if (num > max.get(0)) {
                 max.remove(2);
                 max.add(0, num);
-            } else if (num > maxArray[1]) {
+            } else if (num > max.get(1)) {
                 max.remove(2);
                 max.add(1, num);
-            } else if (num > maxArray[2]) {
+            } else if (num > max.get(2)) {
                 max.remove(2);
                 max.add(2, num);
                 isThirdMax = true;
             }
         }
-        return isThirdMax ? max.get(2) : max.get(0);
+        if (max.get(2)!=Integer.MIN_VALUE||isThirdMax) {
+            return max.get(2);
+        } else {
+            return max.get(0);
+        }
     }
 }
