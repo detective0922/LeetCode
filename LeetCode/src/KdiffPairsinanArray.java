@@ -44,11 +44,18 @@ public class KdiffPairsinanArray {
 
     public int findPairs(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        int count = 0;
+        int result = 0;
         for(int num : nums) {
+            int count = 0;
+            if (map.containsKey(num)) {
+                count = map.get(num);
+            }
+            map.put(num, count + 1);
+
+
 
         }
-        return count;
+        return result;
 
     }
 }
