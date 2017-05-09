@@ -51,18 +51,18 @@ public class ThirdMaximumNumber {
             if (max.contains(num)) {
                 continue;
             }
-            if (num > max.) {
-                maxArray[2] = maxArray[1];
-                maxArray[1] = maxArray[0];
-                maxArray[0] = num;
+            if (num > max.get(0)) {
+                max.remove(2);
+                max.add(0, num);
             } else if (num > maxArray[1]) {
-                maxArray[2] = maxArray[1];
-                maxArray[1] = num;
+                max.remove(2);
+                max.add(1, num);
             } else if (num > maxArray[2]) {
-                maxArray[2] = num;
+                max.remove(2);
+                max.add(2, num);
                 isThirdMax = true;
             }
         }
-        return isThirdMax ? maxArray[2] : maxArray[0];
+        return isThirdMax ? max.get(2) : max.get(0);
     }
 }
