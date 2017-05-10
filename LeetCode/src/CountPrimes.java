@@ -20,11 +20,14 @@ public class CountPrimes {
             return 0;
         }
         List<Integer> primes = new ArrayList<Integer>();
-        primes.add(2);
        // HashSet<Integer> notPrimes = new HashSet<Integer>();
-        for (int i = 3; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             boolean isPrime = true;
+            int sqrt = (int)Math.sqrt(i);
             for (int prime : primes) {
+                if (prime > sqrt) {
+                    break;
+                }
                 if (i % prime == 0) {
                     //notPrimes.add(i);
                     isPrime = false;
