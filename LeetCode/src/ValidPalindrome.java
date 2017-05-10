@@ -14,4 +14,7 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
 */
 public class ValidPalindrome {
+    public boolean isPalindrome(String s) {
+
+    }
 }
