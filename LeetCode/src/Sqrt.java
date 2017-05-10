@@ -12,14 +12,12 @@ public class Sqrt {
     }
 
     public int mySqrt(int x) {
-        long sqrt = 0;
         int low = 0;
         int high = x;
-        int mid = 0;
         int res = 0;
         while ( low <= high ) {
-            mid = (high - low) / 2 + low;
-            sqrt = mid * mid;
+            int mid = (high - low) / 2 + low;
+            long sqrt = mid * mid;
             if (sqrt > x) {
                 high = mid - 1;
             } else if (sqrt < x) {
