@@ -15,11 +15,11 @@ public class CountPrimes {
     }
 
     public int countPrimes(int n) {
-        if (n == 0 && n==1) {
+        if (n == 0 && n == 1) {
             return n;
         }
         List<Integer> primes = new ArrayList<Integer>();
-        for (int i = 2; i<=n;i++) {
+        for (int i = 2; i < n; i++) {
             boolean isPrime = true;
             for (int prime : primes) {
                 if (i % prime == 0) {
