@@ -13,30 +13,29 @@ public class CountPrimes {
 
     public static void main(String[] args) {
         System.out.println(new CountPrimes().countPrimes( 499979));
+        //System.out.println(new CountPrimes().countPrimes( 72));
     }
 
     public int countPrimes(int n) {
         if (n < 3) {
             return 0;
         }
-        int count = 1; // 2 is prime
+        int count = 0;
         boolean[] notPrimes = new boolean[n];
-        for (int i = 3; i < n; i += 2) {
-            boolean isPrime = true;
-            int sqrt = (int) Math.sqrt(i);
-            for (int prime : primes) {
-                if (prime > sqrt) {
-                    break;
-                }
-                if (i % prime == 0) {
-                    isPrime = false;
-                    break;
-                }
+        for (int i = 2; i < n; i++) {
+            if (i == n / 2 - 10) {
+                System.out.println(i);
             }
-            if (isPrime) {
-                primes.add(i);
+            if (!notPrimes[i]) {
+                count++;
+                if (i > Math.sqrt(n)) {
+                    continue;
+                }
+                for (int j = i; j * i < n; j++) {
+                    notPrimes[i * j] = true;
+                }
             }
         }
-        return primes.size();
+        return count;
     }
 }
