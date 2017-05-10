@@ -16,7 +16,7 @@ public class Sqrt {
         int low = 0;
         int high = x;
         int mid = 0;
-        while (sqrt < x && low <= high ) {
+        while ( low <= high ) {
             mid = (high - low) / 2 + low;
             sqrt = mid * mid;
             if (sqrt > x) {
@@ -24,10 +24,10 @@ public class Sqrt {
             } else if (sqrt < x) {
                 low = mid + 1;
             } else {
-                break;
+                return mid;
             }
         }
-        return mid;
+        return low;
 
     }
 }
