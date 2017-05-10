@@ -23,9 +23,6 @@ public class CountPrimes {
         int count = 0;
         boolean[] notPrimes = new boolean[n];
         for (int i = 2; i < n; i++) {
-            if (i == n / 2 - 10) {
-                System.out.println(i);
-            }
             if (!notPrimes[i]) {
                 count++;
                 if (i > Math.sqrt(n)) {
