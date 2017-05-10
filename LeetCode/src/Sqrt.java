@@ -21,7 +21,7 @@ public class Sqrt {
             if (sqrt > x) {
                 high = mid - 1;
             } else if (sqrt < x) {
-                low = mid;
+                low = mid + 1;
                 res = mid;
             } else {
                 return mid;
