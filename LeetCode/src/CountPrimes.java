@@ -19,10 +19,11 @@ public class CountPrimes {
         if (n < 3) {
             return 0;
         }
-        List<Integer> primes = new ArrayList<Integer>();
-        for (int i = 2; i < n; i++) {
+        int count = 1; // 2 is prime
+        boolean[] notPrimes = new boolean[n];
+        for (int i = 3; i < n; i += 2) {
             boolean isPrime = true;
-            int sqrt = (int)Math.sqrt(i);
+            int sqrt = (int) Math.sqrt(i);
             for (int prime : primes) {
                 if (prime > sqrt) {
                     break;
