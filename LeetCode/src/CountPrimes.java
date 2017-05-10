@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 
 204. Count Primes
@@ -7,12 +10,23 @@ Count the number of prime numbers less than a non-negative number, n.
 */
 public class CountPrimes {
     public int countPrimes(int n) {
-        if (n == 0) {
-            return 0;
+        if (n == 0 && n==1) {
+            return n;
         }
-        for (int i = 1; i<=n;i++) {
-
+        List<Integer> primes = new ArrayList<Integer>();
+        List<Integer> notPrimes = new ArrayList<Integer>();
+        for (int i = 2; i<=n;i++) {
+            boolean isPrime = true;
+            for (int prime : primes) {
+                if (i % prime == 0) {
+                    notPrimes.add(i);
+                    isPrime = false;
+                }
+            }
+            if (isPrime) {
+                primes.add(i);
+            }
         }
-
+        return primes.size();
     }
 }
