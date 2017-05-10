@@ -19,12 +19,10 @@ public class CountPrimes {
             return n;
         }
         List<Integer> primes = new ArrayList<Integer>();
-        List<Integer> notPrimes = new ArrayList<Integer>();
         for (int i = 2; i<=n;i++) {
             boolean isPrime = true;
             for (int prime : primes) {
                 if (i % prime == 0) {
-                    notPrimes.add(i);
                     isPrime = false;
                 }
             }
