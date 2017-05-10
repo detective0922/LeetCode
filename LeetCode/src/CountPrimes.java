@@ -9,6 +9,11 @@ Count the number of prime numbers less than a non-negative number, n.
 
 */
 public class CountPrimes {
+
+    public static void main(String[] args) {
+        System.out.println(new CountPrimes().countPrimes(72));
+    }
+
     public int countPrimes(int n) {
         if (n == 0 && n==1) {
             return n;
