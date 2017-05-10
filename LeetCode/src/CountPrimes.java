@@ -16,16 +16,17 @@ public class CountPrimes {
     }
 
     public int countPrimes(int n) {
-        if (n < 2) {
+        if (n < 3) {
             return 0;
         }
         List<Integer> primes = new ArrayList<Integer>();
-        HashSet<Integer> notPrimes = new HashSet<Integer>();
-        for (int i = 2; i < n; i++) {
+        primes.add(2);
+       // HashSet<Integer> notPrimes = new HashSet<Integer>();
+        for (int i = 3; i < n; i++) {
             boolean isPrime = true;
             for (int prime : primes) {
                 if (i % prime == 0) {
-                    notPrimes.add(i);
+                    //notPrimes.add(i);
                     isPrime = false;
                     break;
                 }
