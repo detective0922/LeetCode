@@ -16,18 +16,20 @@ public class Sqrt {
         int low = 0;
         int high = x;
         int mid = 0;
+        int res = 0;
         while ( low <= high ) {
             mid = (high - low) / 2 + low;
             sqrt = mid * mid;
             if (sqrt > x) {
                 high = mid - 1;
             } else if (sqrt < x) {
-                low = mid + 1;
+                low = mid;
+                res = mid;
             } else {
                 return mid;
             }
         }
-        return low;
+        return res;
 
     }
 }
