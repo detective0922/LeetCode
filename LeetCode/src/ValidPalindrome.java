@@ -28,13 +28,16 @@ public class ValidPalindrome {
             char end = s.charAt(j);
             boolean isStartValid = Character.isLetterOrDigit(start);
             boolean isEndValid = Character.isLetterOrDigit(end);
-            if (Character.isLetterOrDigit(start) && Character.isLetterOrDigit(end)) {
+            if (isStartValid && isEndValid) {
 
+                i++;
+                j--;
+                continue;
             }
-            if (!Character.isLetterOrDigit(start)) {
+            if (!isStartValid) {
                 i++;
             }
-            if (!Character.isLetterOrDigit(end)) {
+            if (!isEndValid) {
                 j--;
             }
 
