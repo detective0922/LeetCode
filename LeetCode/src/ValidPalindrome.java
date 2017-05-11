@@ -14,6 +14,11 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
 */
 public class ValidPalindrome {
+
+    public static void main(String[] args) {
+        System.out.println(new ValidPalindrome().isPalindrome("A man, a plan, a canal: Panama"));
+    }
+
     public boolean isPalindrome(String s) {
         if (s == null) {
             return false;
