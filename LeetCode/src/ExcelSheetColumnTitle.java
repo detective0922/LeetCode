@@ -15,9 +15,15 @@ For example:
 
 */
 public class ExcelSheetColumnTitle {
+
+    public static void main(String[] args) {
+        System.out.println(new ExcelSheetColumnTitle().convertToTitle(3));
+        System.out.println(new ExcelSheetColumnTitle().convertToTitle(28));
+    }
+
     public String convertToTitle(int n) {
         char[] chars = new char[26];
-        for (char c = 'A'; c <= 'z'; c++) {
+        for (char c = 'A'; c <= 'Z'; c++) {
             chars[c - 'A'] = c;
         }
         int quotient;
