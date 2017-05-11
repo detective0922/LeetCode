@@ -16,6 +16,19 @@ For example:
 */
 public class ExcelSheetColumnTitle {
     public String convertToTitle(int n) {
+        char[] chars = new char[26];
+        for (char c = 'A'; c <= 'z'; c++) {
+            chars[c - 'A'] = c;
+        }
+        int quotient;
+        int remainder;
+        StringBuilder title = new StringBuilder();
+        while (n > 0) {
+            remainder = n % 26;
+            title.append(chars[remainder]);
+            n /= 26;
+
+        }
 
     }
 }
