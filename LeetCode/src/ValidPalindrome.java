@@ -29,7 +29,9 @@ public class ValidPalindrome {
             boolean isStartValid = Character.isLetterOrDigit(start);
             boolean isEndValid = Character.isLetterOrDigit(end);
             if (isStartValid && isEndValid) {
-
+                if (Character.toLowerCase(start) != Character.toLowerCase(end)){
+                    return false;
+                }
                 i++;
                 j--;
                 continue;
@@ -40,9 +42,7 @@ public class ValidPalindrome {
             if (!isEndValid) {
                 j--;
             }
-
         }
-
-
+        return true;
     }
 }
