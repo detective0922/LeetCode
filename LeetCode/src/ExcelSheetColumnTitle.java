@@ -20,20 +20,21 @@ public class ExcelSheetColumnTitle {
         System.out.println(new ExcelSheetColumnTitle().convertToTitle(26));
         System.out.println(new ExcelSheetColumnTitle().convertToTitle(27));
         System.out.println(new ExcelSheetColumnTitle().convertToTitle(28));
+        System.out.println(new ExcelSheetColumnTitle().convertToTitle(52));
     }
 
     public String convertToTitle(int n) {
-        char[] chars = new char[27];
+        char[] chars = new char[26];
         for (char c = 'A'; c <= 'Z'; c++) {
-            chars[c - 'A' + 1] = c;
+            chars[c - 'A'] = c;
         }
-        chars[0] = 'A';
-        int remainder = 0;
+
         StringBuilder title = new StringBuilder();
         while (n > 0) {
-            remainder = n % 27;
+            n--;
+            int remainder = n % 26;
             title.append(chars[remainder]);
-            n -= 26;
+            n /= 26;
         }
         return title.reverse().toString();
     }
