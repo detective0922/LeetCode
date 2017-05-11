@@ -15,4 +15,7 @@ For example:
 
 */
 public class ExcelSheetColumnTitle {
+    public String convertToTitle(int n) {
+
+    }
 }
