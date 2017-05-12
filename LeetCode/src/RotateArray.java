@@ -19,7 +19,8 @@ public class RotateArray {
 
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
-        int[] tmp = new int[nums.length];
+        //solution 1
+        /*int[] tmp = new int[nums.length];
         for(int i = 0; i< k; i++) {
             tmp[i] = nums[nums.length - k + i];
         }
@@ -29,6 +30,19 @@ public class RotateArray {
 
         for(int i = 0; i< nums.length; i++) {
             nums[i] = tmp[i];
+        }*/
+
+        //solution 2
+
+    }
+
+    public void Reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int tmp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = tmp;
+            start++;
+            end--;
         }
     }
 }
