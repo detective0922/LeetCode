@@ -18,21 +18,21 @@ public class ReverseInteger {
 
         String tmpStr = Long.toString(x);
         StringBuilder tmpStrBuilder = new StringBuilder(tmpStr);
-        if (x>=0) {
-            result = tmpStrBuilder.reverse();
+        tmpStrBuilder = tmpStrBuilder.reverse();
+        if (x >= 0) {
+            result = tmpStrBuilder;
         } else {
             result.append('-');
-            for (int i = 1; i<tmpStrBuilder.length();i++){
+            for (int i = 0; i < tmpStrBuilder.length() - 1; i++) {
                 result.append(tmpStrBuilder.charAt(i));
             }
         }
         long tmpLong = Long.parseLong(result.toString());
-        if (tmpLong>Integer.MAX_VALUE||tmpLong<Integer.MIN_VALUE){
+        if (tmpLong > Integer.MAX_VALUE || tmpLong < Integer.MIN_VALUE) {
             return 0;
         } else {
             return Integer.parseInt(result.toString());
         }
-
 
     }
 }
