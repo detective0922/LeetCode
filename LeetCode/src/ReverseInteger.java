@@ -16,15 +16,15 @@ public class ReverseInteger {
     public int reverse(int x) {
         StringBuilder result = new StringBuilder();
 
-        String tmpStr = Long.toString(x);
-        StringBuilder tmpStrBuilder = new StringBuilder(tmpStr);
-        tmpStrBuilder = tmpStrBuilder.reverse();
+        String xStr = Long.toString(x);
+        StringBuilder xStrBuilder = new StringBuilder(xStr);
+        xStrBuilder = xStrBuilder.reverse();
         if (x >= 0) {
-            result = tmpStrBuilder;
+            result = xStrBuilder;
         } else {
             result.append('-');
-            for (int i = 0; i < tmpStrBuilder.length() - 1; i++) {
-                result.append(tmpStrBuilder.charAt(i));
+            for (int i = 0; i < xStrBuilder.length() - 1; i++) {
+                result.append(xStrBuilder.charAt(i));
             }
         }
         long tmpLong = Long.parseLong(result.toString());
