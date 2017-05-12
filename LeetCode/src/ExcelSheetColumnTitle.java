@@ -27,8 +27,7 @@ public class ExcelSheetColumnTitle {
             remainder = n % 26;
             title.append(chars[remainder]);
             n /= 26;
-
         }
-
+        return title.toString();
     }
 }
