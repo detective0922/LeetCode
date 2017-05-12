@@ -33,7 +33,9 @@ public class RotateArray {
         }*/
 
         //solution 2
-
+        Reverse(nums, 0, nums.length - 1);
+        Reverse(nums, 0, k - 1);
+        Reverse(nums, k,nums.length - 1);
     }
 
     public void Reverse(int[] nums, int start, int end) {
