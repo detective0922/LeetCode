@@ -24,16 +24,11 @@ public class ExcelSheetColumnTitle {
     }
 
     public String convertToTitle(int n) {
-        char[] chars = new char[26];
-        for (char c = 'A'; c <= 'Z'; c++) {
-            chars[c - 'A'] = c;
-        }
-
         StringBuilder title = new StringBuilder();
         while (n > 0) {
             n--;
             int remainder = n % 26;
-            title.append(chars[remainder]);
+            title.append((char)('A' + remainder));
             n /= 26;
         }
         return title.reverse().toString();
