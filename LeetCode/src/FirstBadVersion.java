@@ -19,11 +19,17 @@ Implement a function to find the first bad version. You should minimize the numb
       boolean isBadVersion(int version); */
 public class FirstBadVersion {
     public int firstBadVersion(int n) {
+        if (n == 1) {
+            return isBadVersion(n);
+        }
         int low = 1;
         int high = n;
         while ( low < high) {
             int mid = (high - low) / 2 + low;
             if (isBadVersion(mid)) {
+                if (mid >!isBadVersion(mid - 1)) {
+                    return mid;
+                }
                 high = mid - 1;
             } else {
                 low = mid + 1;
