@@ -20,7 +20,7 @@ Implement a function to find the first bad version. You should minimize the numb
 public class FirstBadVersion {
     public int firstBadVersion(int n) {
         if (n == 1) {
-            return isBadVersion(n);
+            return n;
         }
         int low = 1;
         int high = n;
