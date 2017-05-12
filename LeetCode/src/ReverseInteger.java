@@ -14,16 +14,25 @@ public class ReverseInteger {
     }
 
     public int reverse(int x) {
-        int tmp = x >= 0 ? x : -x;
+        StringBuilder result = new StringBuilder();
 
-        String tmpStr = Long.toString(tmp);
+        String tmpStr = Long.toString(x);
         StringBuilder tmpStrBuilder = new StringBuilder(tmpStr);
-        tmpStr = tmpStrBuilder.reverse().toString();
-        long tmpLong = Long.parseLong(tmpStr);
-        if (tmpLong > Integer.MAX_VALUE) {
-            return 0;
+        if (x>=0) {
+            result = tmpStrBuilder.reverse();
+        } else {
+            result.append('-');
+            for (int i = 1; i<tmpStrBuilder.length();i++){
+                result.append(tmpStrBuilder.charAt(i));
+            }
         }
-        tmp = (int) tmpLong;
-        return x >= 0 ? tmp : -tmp;
+        long tmpLong = Long.parseLong(result.toString());
+        if (tmpLong>Integer.MAX_VALUE||tmpLong<Integer.MIN_VALUE){
+            return 0;
+        } else {
+            return Integer.parseInt(result.toString());
+        }
+
+
     }
 }
