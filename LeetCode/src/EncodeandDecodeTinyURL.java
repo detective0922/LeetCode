@@ -11,4 +11,13 @@ You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL
 
 */
 public class EncodeandDecodeTinyURL {
+    // Encodes a URL to a shortened URL.
+    public String encode(String longUrl) {
+
+    }
+
+    // Decodes a shortened URL to its original URL.
+    public String decode(String shortUrl) {
+
+    }
 }
