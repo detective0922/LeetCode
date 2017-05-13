@@ -10,6 +10,10 @@ There is no restriction on how your encode/decode algorithm should work.
 You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL can be decoded to the original URL.
 
 */
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.decode(codec.encode(url));
 public class EncodeandDecodeTinyURL {
     // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
