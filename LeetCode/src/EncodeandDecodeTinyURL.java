@@ -11,11 +11,14 @@ You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL
 
 */
 
+import java.util.List;
+
 // Your Codec object will be instantiated and called as such:
 // Codec codec = new Codec();
 // codec.decode(codec.encode(url));
 public class EncodeandDecodeTinyURL {
     // Encodes a URL to a shortened URL.
+    private List<String> urlList;
     public String encode(String longUrl) {
 
     }
