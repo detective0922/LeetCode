@@ -29,6 +29,12 @@ Could you do it in one-pass, using only O(1) extra memory and without modifying 
 
 */
 public class BattleshipsinaBoard {
+
+    public static void main(String[] args) {
+        char[][] board = {{'X','.','.','X'},{'X','.','.','X'},{'X','.','.','.'} };
+        System.out.println(new BattleshipsinaBoard().countBattleships(board));
+    }
+
     public int countBattleships(char[][] board) {
         if (board.length == 0 || board[0].length == 0) {
             return 0;
@@ -40,12 +46,12 @@ public class BattleshipsinaBoard {
             for (int j = 0; j < board[0].length; j++) {
                 if (!isCounted[i][j] && board[i][j] == 'X') {
                     count++;
-                    while (board[i][j+1]=='X') {
-                        isCounted[i][j+1] = true;
+                    while (j < board[0].length - 1 && board[i][j + 1] == 'X') {
+                        isCounted[i][j + 1] = true;
                         j++;
                     }
-                    while (board[i+1][j] == 'X') {
-                        isCounted[i+1][j] = true;
+                    while (i < board.length - 1 && board[i + 1][j] == 'X') {
+                        isCounted[i + 1][j] = true;
                         i++;
                     }
                 }
