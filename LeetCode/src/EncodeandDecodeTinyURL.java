@@ -20,11 +20,13 @@ public class EncodeandDecodeTinyURL {
     // Encodes a URL to a shortened URL.
     private List<String> urlList;
     public String encode(String longUrl) {
-
+        urlList.add(longUrl);
+        return String.valueOf(urlList.size());
     }
 
     // Decodes a shortened URL to its original URL.
     public String decode(String shortUrl) {
-
+        int size = Integer.parseInt(shortUrl);
+        return urlList.get(size - 1);
     }
 }
