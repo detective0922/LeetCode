@@ -30,6 +30,10 @@ Could you do it in one-pass, using only O(1) extra memory and without modifying 
 */
 public class BattleshipsinaBoard {
     public int countBattleships(char[][] board) {
+        if (board.length == 0 ||board[0].length == 0) {
+            return 0;
+        }
+        boolean[] isCounted = new boolean[board.length * board[0].length];
 
     }
 }
