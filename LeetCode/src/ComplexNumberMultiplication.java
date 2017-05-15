@@ -27,9 +27,17 @@ And the output should be also in this form.
 
 */
 public class ComplexNumberMultiplication {
+
+    public static void main(String[] args) {
+        System.out.println(new ComplexNumberMultiplication().complexNumberMultiply("1+-1i", "1+-1i"));
+    }
+
     public String complexNumberMultiply(String a, String b) {
-        String[] acn = a.split("+");
-        String[] bcn = b.split("+");
+        if (a == null || b == null) {
+            return "";
+        }
+        String[] acn = a.split("\\+");
+        String[] bcn = b.split("\\+");
 
         int acn1 = Integer.parseInt(acn[0]);
         int acn2 = Integer.parseInt(acn[1].substring(0, acn[1].length()-1));
