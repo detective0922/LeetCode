@@ -33,7 +33,15 @@ public class BattleshipsinaBoard {
         if (board.length == 0 || board[0].length == 0) {
             return 0;
         }
-        boolean[] isCounted = new boolean[board.length * board[0].length];
+        boolean[][] isCounted = new boolean[board.length][board[0].length];
+
+        for (int i = 0; i< board.length; i++) {
+            for (int j = 0; j< board[0].length; j++) {
+                if (!isCounted[i][j]) {
+
+                }
+            }
+        }
 
 
 
