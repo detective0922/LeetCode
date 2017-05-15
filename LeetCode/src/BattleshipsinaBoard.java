@@ -60,8 +60,5 @@ public class BattleshipsinaBoard {
             }
         }
         return count;
-
-
-
     }
 }
