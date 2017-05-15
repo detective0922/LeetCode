@@ -11,6 +11,7 @@ You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL
 
 */
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Your Codec object will be instantiated and called as such:
@@ -18,7 +19,7 @@ import java.util.List;
 // codec.decode(codec.encode(url));
 public class EncodeandDecodeTinyURL {
     // Encodes a URL to a shortened URL.
-    private List<String> urlList;
+    private List<String> urlList = new ArrayList<String>();
     public String encode(String longUrl) {
         urlList.add(longUrl);
         return String.valueOf(urlList.size());
