@@ -46,13 +46,15 @@ public class BattleshipsinaBoard {
             for (int j = 0; j < board[0].length; j++) {
                 if (!isCounted[i][j] && board[i][j] == 'X') {
                     count++;
-                    while (j < board[0].length - 1 && board[i][j + 1] == 'X') {
-                        isCounted[i][j + 1] = true;
-                        j++;
+                    int jTmp = j;
+                    while (jTmp < board[0].length - 1 && board[i][jTmp + 1] == 'X') {
+                        isCounted[i][jTmp + 1] = true;
+                        jTmp++;
                     }
-                    while (i < board.length - 1 && board[i + 1][j] == 'X') {
-                        isCounted[i + 1][j] = true;
-                        i++;
+                    int iTmp = i;
+                    while (iTmp < board.length - 1 && board[iTmp + 1][j] == 'X') {
+                        isCounted[iTmp + 1][j] = true;
+                        iTmp++;
                     }
                 }
             }
