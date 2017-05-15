@@ -36,8 +36,11 @@ public class ComplexNumberMultiplication {
         int bcn1 = Integer.parseInt(bcn[0]);
         int bcn2 = Integer.parseInt(bcn[1].substring(0, bcn[1].length()-1));
 
+        int rtcn1 = acn1 * bcn1 - acn2 * bcn2;
+        int rtcn2 = acn1 * bcn2 + acn2 * bcn1;
 
-
-
+        StringBuilder str = new StringBuilder();
+        str.append(rtcn1).append("+").append(rtcn2).append("i");
+        return str.toString();
     }
 }
