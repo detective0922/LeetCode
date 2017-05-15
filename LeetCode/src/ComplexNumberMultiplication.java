@@ -28,6 +28,9 @@ And the output should be also in this form.
 */
 public class ComplexNumberMultiplication {
     public String complexNumberMultiply(String a, String b) {
+        String[] acn = a.indexOf("+") >= 0 ? a.split("+") : a.split("-");
+        String[] bcn = b.indexOf("+") >= 0 ? b.split("+") : b.split("-");
+
 
     }
 }
