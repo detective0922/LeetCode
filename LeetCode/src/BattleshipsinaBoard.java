@@ -29,4 +29,7 @@ Could you do it in one-pass, using only O(1) extra memory and without modifying 
 
 */
 public class BattleshipsinaBoard {
+    public int countBattleships(char[][] board) {
+
+    }
 }
