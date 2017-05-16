@@ -57,18 +57,18 @@ public class FindBottomLeftTreeValue {
     }
 
     private int maxDepth = 0;
-    private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    private int leftMost = 0;
     public int findBottomLeftValue(TreeNode root) {
         int depth = 0;
-        map.put(maxDepth, root.val);
+        leftMost = root.val;
         recordLeft(root, depth);
-        return map.get(maxDepth);
+        return leftMost;
     }
 
     public void recordLeft(TreeNode node, int depth) {
         if (depth > maxDepth) {
             maxDepth = depth;
-            map.put(maxDepth, node.val);
+            leftMost = node.val;
         }
         if (node.left != null) {
             recordLeft(node.left, depth + 1);
