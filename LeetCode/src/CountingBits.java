@@ -24,13 +24,13 @@ public class CountingBits {
     public int[] countBits(int num) {
         int[] countBits = new int[num + 1];
         for (int i = 0; i <= num; i++) {
-            int index = i;
-            i = (i & 0x55555555) + ((i >> 1) & 0x55555555);
-            i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
-            i = (i & 0x0F0F0F0F) + ((i >> 4) & 0x0F0F0F0F);
-            i = (i & 0x00FF00FF) + ((i >> 8) & 0x00FF00FF);
-            i = (i & 0x0000FFFF) + ((i >> 16) & 0x0000FFFF);
-            countBits[index] = i;
+            int count = i;
+            count = (count & 0x55555555) + ((count >> 1) & 0x55555555);
+            count = (count & 0x33333333) + ((count >> 2) & 0x33333333);
+            count = (count & 0x0F0F0F0F) + ((count >> 4) & 0x0F0F0F0F);
+            count = (count & 0x00FF00FF) + ((count >> 8) & 0x00FF00FF);
+            count = (count & 0x0000FFFF) + ((count >> 16) & 0x0000FFFF);
+            countBits[i] = count;
         }
         return countBits;
     }
