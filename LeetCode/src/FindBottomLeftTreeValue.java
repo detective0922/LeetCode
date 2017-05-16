@@ -39,11 +39,28 @@ Note: You may assume the tree (i.e., the given root node) is not NULL.
 
 */
 public class FindBottomLeftTreeValue {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+        TreeNode four = new TreeNode(4);
+        TreeNode five = new TreeNode(5);
+        TreeNode six = new TreeNode(6);
+        TreeNode seven = new TreeNode(7);
+        root.left = two;
+        root.right = three;
+        two.left = four;
+        three.left = five;
+        three.right = six;
+        five.left = seven;
+        System.out.println(new FindBottomLeftTreeValue().findBottomLeftValue(root));
+    }
+
     private int maxDepth = 0;
     private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-
     public int findBottomLeftValue(TreeNode root) {
         int depth = 0;
+        map.put(maxDepth, root.val);
         recordLeft(root, depth);
         return map.get(maxDepth);
     }
