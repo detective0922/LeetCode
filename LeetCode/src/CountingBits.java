@@ -16,6 +16,11 @@ Follow up:
 
 */
 public class CountingBits {
+
+    public static void main(String[] args) {
+        System.out.println(new CountingBits().countBits(5));
+    }
+
     public int[] countBits(int num) {
         int[] countBits = new int[num + 1];
         for (int i = 0; i <= num; i++) {
