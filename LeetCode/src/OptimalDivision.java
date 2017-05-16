@@ -32,4 +32,7 @@ Note:
 
 */
 public class OptimalDivision {
+    public String optimalDivision(int[] nums) {
+
+    }
 }
