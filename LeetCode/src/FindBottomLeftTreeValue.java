@@ -41,6 +41,7 @@ Note: You may assume the tree (i.e., the given root node) is not NULL.
 public class FindBottomLeftTreeValue {
     private int maxDepth = 0;
     private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
     public int findBottomLeftValue(TreeNode root) {
         int depth = 0;
         recordLeft(root, depth);
@@ -52,6 +53,11 @@ public class FindBottomLeftTreeValue {
             maxDepth = depth;
             map.put(maxDepth, node.val);
         }
-
+        if (node.left != null) {
+            recordLeft(node.left, depth + 1);
+        }
+        if (node.right != null) {
+            recordLeft(node.right, depth + 1);
+        }
     }
 }
