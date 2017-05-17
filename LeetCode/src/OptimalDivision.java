@@ -32,9 +32,18 @@ Note:
 
 */
 public class OptimalDivision {
+
+    public static void main(String[] args) {
+        int[] nums = {1000};
+        System.out.println(new OptimalDivision().optimalDivision(nums));
+    }
+
     public String optimalDivision(int[] nums) {
         if (nums.length == 1) {
             return String.valueOf(nums[0]);
+        }
+        if (nums.length == 2) {
+            return String.valueOf(nums[0]) + "/" + String.valueOf(nums[1]);
         }
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < nums.length; i++) {
