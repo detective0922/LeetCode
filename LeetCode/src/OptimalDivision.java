@@ -33,6 +33,16 @@ Note:
 */
 public class OptimalDivision {
     public String optimalDivision(int[] nums) {
+        if (nums.length == 1) {
+            return String.valueOf(nums[0]);
+        }
+        StringBuilder str = new StringBuilder();
+        str.append(nums[0]).append("/(");
+        for (int i = 1; i < nums.length; i++) {
+            str.append(nums[i]).append("/");
+        }
+
+
 
     }
 }
