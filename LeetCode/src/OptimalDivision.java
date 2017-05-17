@@ -37,12 +37,11 @@ public class OptimalDivision {
             return String.valueOf(nums[0]);
         }
         StringBuilder str = new StringBuilder();
-        str.append(nums[0]).append("/(");
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             str.append(nums[i]).append("/");
         }
-
-
-
+        str.insert(str.indexOf("/") + 1, "(");
+        str.replace(str.length() - 1, str.length(), ")");
+        return str.toString();
     }
 }
