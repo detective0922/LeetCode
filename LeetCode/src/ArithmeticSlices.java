@@ -29,6 +29,9 @@ return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 4] i
 
 public class ArithmeticSlices {
     public int numberOfArithmeticSlices(int[] A) {
+        if(A.length == 0) {
+            return 0;
+        }
 
     }
 }
