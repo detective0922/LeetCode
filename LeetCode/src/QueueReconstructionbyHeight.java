@@ -21,6 +21,8 @@ Output:
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class QueueReconstructionbyHeight {
     public int[][] reconstructQueue(int[][] people) {
@@ -31,5 +33,11 @@ public class QueueReconstructionbyHeight {
             }
         });
 
+        List<int[]> newQueue = new LinkedList<int[]>();
+        for (int[] person : people) {
+            newQueue.add(person[1] , person);
+        }
+
+        return newQueue.toArray(new int[people.length][]);
     }
 }
