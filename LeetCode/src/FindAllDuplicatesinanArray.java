@@ -26,11 +26,11 @@ public class FindAllDuplicatesinanArray {
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> count = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; i++) {
-            int hash = Math.abs(nums[i]) - 1;
-            if (nums[hash] < 0) {
-                count.add(nums[i]);
+            int num = Math.abs(nums[i]);
+            if (nums[num - 1] < 0) {
+                count.add(num);
             }
-            nums[hash] = -nums[hash];
+            nums[num - 1] = -nums[num - 1];
         }
         return count;
     }
