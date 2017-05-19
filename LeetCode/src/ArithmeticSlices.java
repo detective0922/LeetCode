@@ -42,11 +42,10 @@ public class ArithmeticSlices {
         for (int i = 2; i < A.length; i++) {
             diff[i] = A[i] - A[i - 1];
             count++;
-            if (diff[i] == diff[i - 1]) {
-                counts[i] = counts[i - 1] + count;
-            } else {
+            if (diff[i] != diff[i - 1]) {
                 count = 0;
             }
+            counts[i] = counts[i - 1] + count;
         }
         return counts[A.length - 1];
     }
