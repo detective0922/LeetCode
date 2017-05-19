@@ -38,7 +38,7 @@ public class ArithmeticSlices {
         counts[1] = 0;
         diff[0] = 0;
         diff[1] = A[1] - A[0];
-        int count  = 0;
+        int count = 0;
         for (int i = 2; i < A.length; i++) {
             diff[i] = A[i] - A[i - 1];
             count++;
@@ -48,5 +48,6 @@ public class ArithmeticSlices {
                 count = 0;
             }
         }
+        return counts[A.length - 1];
     }
 }
