@@ -35,6 +35,9 @@ Note:
 */
 public class BeautifulArrangement {
     public int countArrangement(int N) {
+        if(N == 1) {
+            return 1;
+        }
 
     }
 }
