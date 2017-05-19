@@ -39,7 +39,7 @@ public class ArithmeticSlices {
             return 0;
         }
         int[] counts = new int[A.length];
-        int[] diff = new int[A.length];
+        long[] diff = new long[A.length];
         counts[0] = 0;
         counts[1] = 0;
         diff[0] = 0;
