@@ -2,7 +2,8 @@
 
 526. Beautiful Arrangement
 
-Suppose you have N integers from 1 to N. We define a beautiful arrangement as an array that is constructed by these N numbers successfully if one of the following is true for the ith position (1 ≤ i ≤ N) in this array:
+Suppose you have N integers from 1 to N. We define a beautiful arrangement as an array that is constructed by
+these N numbers successfully if one of the following is true for the ith position (1 ≤ i ≤ N) in this array:
 1.The number at the ith position is divisible by i.
 2.i is divisible by the number at the ith position.
 
@@ -33,4 +34,7 @@ Note:
 
 */
 public class BeautifulArrangement {
+    public int countArrangement(int N) {
+
+    }
 }
