@@ -47,7 +47,7 @@ public class BeautifulArrangement {
             return;
         }
         for (int i = 1; i <= N; i++) {
-            if (visited[i] || k % i != 0 || i % k != 0) {
+            if (visited[i] || (k % i != 0 && i % k != 0)) {
                 continue;
             }
             visited[i] = true;
