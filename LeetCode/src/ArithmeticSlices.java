@@ -32,6 +32,6 @@ public class ArithmeticSlices {
         if(A.length == 0) {
             return 0;
         }
-
+        int[] count = new int[A.length];
     }
 }
