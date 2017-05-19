@@ -32,16 +32,20 @@ public class ArithmeticSlices {
         if(A.length < 2) {
             return 0;
         }
-        int[] count = new int[A.length];
+        int[] counts = new int[A.length];
         int[] diff = new int[A.length];
-        count[0] = 0;
-        count[1] = 0;
+        counts[0] = 0;
+        counts[1] = 0;
         diff[0] = 0;
         diff[1] = A[1] - A[0];
+        int count  = 0;
         for (int i = 2; i < A.length; i++) {
             diff[i] = A[i] - A[i - 1];
+            count++;
             if (diff[i] == diff[i - 1]) {
-
+                counts[i] = counts[i - 1] + count;
+            } else {
+                count = 0;
             }
         }
     }
