@@ -34,8 +34,15 @@ public class ArithmeticSlices {
         }
         int[] count = new int[A.length];
         int[] diff = new int[A.length];
-        for (int i = 1; i<A.length;i++) {
+        count[0] = 0;
+        count[1] = 0;
+        diff[0] = 0;
+        diff[1] = A[1] - A[0];
+        for (int i = 2; i < A.length; i++) {
             diff[i] = A[i] - A[i - 1];
+            if (diff[i] == diff[i - 1]) {
+
+            }
         }
     }
 }
