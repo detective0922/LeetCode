@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /*
 
@@ -25,11 +26,11 @@ public class FindAllDuplicatesinanArray {
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> count = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; i++) {
-            int num = nums[i];
-            if (nums[num - 1] < 0) {
-                count.add(num);
+            int hash = Math.abs(nums[i]) - 1;
+            if (nums[hash] < 0) {
+                count.add(nums[i]);
             }
-            nums[num - 1] = -nums[num - 1];
+            nums[hash] = -nums[hash];
         }
         return count;
     }
