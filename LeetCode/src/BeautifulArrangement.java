@@ -34,9 +34,21 @@ Note:
 
 */
 public class BeautifulArrangement {
+    private int count = 0;
+
     public int countArrangement(int N) {
-        int count = 0;
-        dfs(N, N, new boolean[N+1]);
-        return count = 0;
+        dfs(N, N, new boolean[N + 1]);
+        return count;
+    }
+
+    public void dfs(int N, int k, boolean[] visited) {
+        if (k < 2) {
+            count++;
+            return;
+        }
+        for (int i = 1; i <= N; i++) {
+
+        }
+
     }
 }
