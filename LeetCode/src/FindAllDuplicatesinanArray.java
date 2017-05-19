@@ -31,6 +31,6 @@ public class FindAllDuplicatesinanArray {
             }
             nums[num - 1] = -nums[num - 1];
         }
-
+        return count;
     }
 }
