@@ -30,7 +30,7 @@ return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 4] i
 public class ArithmeticSlices {
 
     public static void main(String[] args) {
-        int[] test1 = { 1, 2, 3, 4 , 5, 6 , 8 , 9 , 10};
+        int[] test1 = { 1, 2, 3, 4, 5, 6, 8, 9, 10};
         System.out.println(new ArithmeticSlices().numberOfArithmeticSlices(test1) );
     }
 
