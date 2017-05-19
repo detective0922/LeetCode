@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 
 442. Find All Duplicates in an Array
@@ -19,4 +21,7 @@ Output:
 
 */
 public class FindAllDuplicatesinanArray {
+    public List<Integer> findDuplicates(int[] nums) {
+
+    }
 }
