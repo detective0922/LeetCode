@@ -50,7 +50,9 @@ public class BeautifulArrangement {
             if (visited[i] || k % i != 0 || i % k != 0) {
                 continue;
             }
-
+            visited[i] = true;
+            dfs(N, k - 1, visited);
+            visited[i] = false;
         }
 
     }
