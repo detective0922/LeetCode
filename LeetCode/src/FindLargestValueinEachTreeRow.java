@@ -29,11 +29,11 @@ public class FindLargestValueinEachTreeRow {
         if (root == null) {
             return maxVals;
         }
-        maxVals(root, 0, maxVals);
+        findMaxVals(root, 0, maxVals);
         return maxVals;
     }
 
-    public void maxVals(TreeNode root, int depth, List<Integer> maxVals) {
+    public void findMaxVals(TreeNode root, int depth, List<Integer> maxVals) {
         if (depth >= maxVals.size()) {
             maxVals.add(root.val);
         } else {
@@ -41,6 +41,12 @@ public class FindLargestValueinEachTreeRow {
             if (root.val > preMax) {
                 maxVals.set(depth, root.val);
             }
+        }
+        if (root.left !=null) {
+            findMaxVals(root.left, depth + 1, maxVals);
+        }
+        if (root.right !=null) {
+            findMaxVals(root.right, depth + 1, maxVals);
         }
 
     }
