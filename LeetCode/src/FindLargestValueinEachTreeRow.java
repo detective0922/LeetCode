@@ -22,8 +22,6 @@ Output: [1, 3, 9]
 
 */
 public class FindLargestValueinEachTreeRow {
-    private int currRow;
-    private int rowMax;
     public List<Integer> largestValues(TreeNode root) {
         List<Integer> maxVals = new ArrayList<Integer>();
         if (root == null) {
