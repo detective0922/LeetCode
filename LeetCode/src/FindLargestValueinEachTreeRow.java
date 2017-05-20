@@ -22,6 +22,22 @@ Output: [1, 3, 9]
 
 */
 public class FindLargestValueinEachTreeRow {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+        TreeNode four = new TreeNode(4);
+        TreeNode five = new TreeNode(5);
+        TreeNode six = new TreeNode(6);
+        TreeNode seven = new TreeNode(7);
+        root.left = two;
+        root.right = three;
+        two.left = four;
+        three.left = five;
+        three.right = six;
+        five.left = seven;
+        System.out.println(new FindLargestValueinEachTreeRow().largestValues(root));
+    }
     public List<Integer> largestValues(TreeNode root) {
         List<Integer> maxVals = new ArrayList<Integer>();
         if (root == null) {
