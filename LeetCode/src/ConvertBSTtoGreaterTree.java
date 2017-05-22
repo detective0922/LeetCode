@@ -42,17 +42,4 @@ public class ConvertBSTtoGreaterTree {
         convertBST(root.left);
         return root;
     }
-
-    private void addToNodes(TreeNode root, Stack<TreeNode> nodes) {
-        if (root == null) {
-            return;
-        }
-        if (root.left != null) {
-            addToNodes(root.left, nodes);
-        }
-        nodes.add(root);
-        if (root.right != null) {
-            addToNodes(root.right, nodes);
-        }
-    }
 }
