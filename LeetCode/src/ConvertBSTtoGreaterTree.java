@@ -25,7 +25,18 @@ public class ConvertBSTtoGreaterTree{
             return null;
         }
         Stack<TreeNode> nodes = new Stack<TreeNode>();
+        addToNodes(root, nodes);
 
 
+    }
+
+    private void addToNodes(TreeNode root, Stack<TreeNode> nodes) {
+        nodes.add(root);
+        if (root.left != null) {
+            addToNodes(root.left, nodes);
+        }
+        if (root.right != null) {
+            addToNodes(root.right, nodes);
+        }
     }
 }
