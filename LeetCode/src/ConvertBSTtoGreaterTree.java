@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /*
 
 538. Convert BST to Greater Tree
@@ -19,6 +21,11 @@ Output: The root of a Greater Tree like this:
 */
 public class ConvertBSTtoGreaterTree{
     public TreeNode convertBST(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        Stack<TreeNode> nodes = new Stack<TreeNode>();
+
 
     }
 }
