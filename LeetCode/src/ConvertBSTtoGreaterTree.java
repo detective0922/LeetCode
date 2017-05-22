@@ -19,7 +19,17 @@ Output: The root of a Greater Tree like this:
           20     13
 
 */
-public class ConvertBSTtoGreaterTree{
+public class ConvertBSTtoGreaterTree {
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(5);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(13);
+        root.left = two;
+        root.right = three;
+        System.out.println(new ConvertBSTtoGreaterTree().convertBST(root));
+    }
+
     public TreeNode convertBST(TreeNode root) {
         if (root == null) {
             return null;
@@ -37,10 +47,13 @@ public class ConvertBSTtoGreaterTree{
     }
 
     private void addToNodes(TreeNode root, Stack<TreeNode> nodes) {
-        nodes.add(root);
+        if (root == null) {
+            return;
+        }
         if (root.left != null) {
             addToNodes(root.left, nodes);
         }
+        nodes.add(root);
         if (root.right != null) {
             addToNodes(root.right, nodes);
         }
