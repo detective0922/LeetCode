@@ -18,4 +18,7 @@ Output: The root of a Greater Tree like this:
 
 */
 public class ConvertBSTtoGreaterTree{
+    public TreeNode convertBST(TreeNode root) {
+
+    }
 }
