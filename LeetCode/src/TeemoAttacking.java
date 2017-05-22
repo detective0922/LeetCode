@@ -38,4 +38,7 @@ Note:
 
 */
 public class TeemoAttacking {
+    public int findPoisonedDuration(int[] timeSeries, int duration) {
+
+    }
 }
