@@ -30,19 +30,16 @@ public class ConvertBSTtoGreaterTree {
         System.out.println(new ConvertBSTtoGreaterTree().convertBST(root));
     }
 
+    private int sum = 0;
     public TreeNode convertBST(TreeNode root) {
         if (root == null) {
             return null;
         }
-        Stack<TreeNode> nodes = new Stack<TreeNode>();
-        addToNodes(root, nodes);
-        int sum = 0;
-        while (!nodes.isEmpty()) {
-            TreeNode node = nodes.pop();
-            int tmp = node.val;
-            node.val += sum;
-            sum += tmp;
-        }
+        convertBST(root.right);
+        int tmp = root.val;
+        root.val += sum;
+        sum += tmp;
+        convertBST(root.left);
         return root;
     }
 
