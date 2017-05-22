@@ -38,12 +38,25 @@ Note:
 
 */
 public class TeemoAttacking {
+
+    public static void main(String[] args) {
+        int[] timeSeries = {1, 2};
+        System.out.println(new TeemoAttacking().findPoisonedDuration(timeSeries, 2));
+    }
+
     public int findPoisonedDuration(int[] timeSeries, int duration) {
+        if (timeSeries.length == 0) {
+            return 0;
+        }
+        if (timeSeries.length == 1) {
+            return duration;
+        }
+
         int totalTime = 0;
-        for (int i = 0; i < timeSeries.length; i++) {
-            int singleTime = duration;
-            if (i > 1 && timeSeries[i] - timeSeries[i - 1] > duration) {
-                singleTime = timeSeries[i] - timeSeries[i - 1];
+        for (int i = 1; i < timeSeries.length; i++) {
+            int singleTime = timeSeries[i] - timeSeries[i - 1];
+            if (singleTime > duration) {
+                singleTime = duration;
             }
             totalTime += singleTime;
         }
