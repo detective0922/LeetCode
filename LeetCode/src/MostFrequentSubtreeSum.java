@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class MostFrequentSubtreeSum {
     public int[] findFrequentTreeSum(TreeNode root) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-
+        return map.keySet().toArray()
     }
 
     public void sum(TreeNode root, Map<Integer, Integer> map) {
