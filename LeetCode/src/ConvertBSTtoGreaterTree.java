@@ -26,8 +26,14 @@ public class ConvertBSTtoGreaterTree{
         }
         Stack<TreeNode> nodes = new Stack<TreeNode>();
         addToNodes(root, nodes);
-
-
+        int sum = 0;
+        while (!nodes.isEmpty()) {
+            TreeNode node = nodes.pop();
+            int tmp = node.val;
+            node.val += sum;
+            sum += tmp;
+        }
+        return root;
     }
 
     private void addToNodes(TreeNode root, Stack<TreeNode> nodes) {
