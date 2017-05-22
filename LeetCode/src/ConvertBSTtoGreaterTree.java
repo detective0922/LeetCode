@@ -36,9 +36,8 @@ public class ConvertBSTtoGreaterTree {
             return null;
         }
         convertBST(root.right);
-        int tmp = root.val;
         root.val += sum;
-        sum += tmp;
+        sum = root.val;
         convertBST(root.left);
         return root;
     }
