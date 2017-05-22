@@ -42,8 +42,8 @@ public class TeemoAttacking {
         int totalTime = 0;
         for (int i = 0; i < timeSeries.length; i++) {
             int singleTime = duration;
-            if (i>1 && timeSeries[i] - timeSeries[i-1] > duration) {
-                singleTime = timeSeries[i] - timeSeries[i-1];
+            if (i > 1 && timeSeries[i] - timeSeries[i - 1] > duration) {
+                singleTime = timeSeries[i] - timeSeries[i - 1];
             }
             totalTime += singleTime;
         }
