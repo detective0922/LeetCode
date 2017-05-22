@@ -39,6 +39,14 @@ Note:
 */
 public class TeemoAttacking {
     public int findPoisonedDuration(int[] timeSeries, int duration) {
-
+        int totalTime = 0;
+        for (int i = 0; i < timeSeries.length; i++) {
+            int singleTime = duration;
+            if (i>1 && timeSeries[i] - timeSeries[i-1] > duration) {
+                singleTime = timeSeries[i] - timeSeries[i-1];
+            }
+            totalTime += singleTime;
+        }
+        return totalTime;
     }
 }
