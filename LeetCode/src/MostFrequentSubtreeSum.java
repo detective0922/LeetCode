@@ -36,6 +36,13 @@ public class MostFrequentSubtreeSum {
     }
 
     public void sum(TreeNode root, Map<Integer, Integer> map) {
+        if (root == null) {
+            return;
+        }
+        int sum = root.val;
+        if (root.left != null) {
+
+        }
 
     }
 }
