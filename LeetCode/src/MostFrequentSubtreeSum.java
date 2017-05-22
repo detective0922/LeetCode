@@ -46,6 +46,8 @@ public class MostFrequentSubtreeSum {
         if (root.right !=null) {
             sum = sum + root.right.val;
         }
+        sum(root.left, map);
+        sum(root.right,map);
 
     }
 }
