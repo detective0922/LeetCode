@@ -26,4 +26,7 @@ Note: You may assume the sum of values in any subtree is in the range of 32-bit 
 
 */
 public class MostFrequentSubtreeSum {
+    public int[] findFrequentTreeSum(TreeNode root) {
+
+    }
 }
