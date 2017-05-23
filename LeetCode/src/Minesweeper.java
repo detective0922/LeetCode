@@ -74,11 +74,24 @@ Note:
 */
 public class Minesweeper {
     public char[][] updateBoard(char[][] board, int[] click) {
-        if(board[click[0]][click[1]] == 'M') {
-            board[click[0]][click[1]] = 'X';
+        char[] minesCount = {'1','2','3','4','5','6','7','8'};
+        int rowIndex = click[0];
+        int colIndex = click[1];
+        if(board[rowIndex][colIndex] == 'M') {
+            board[rowIndex][colIndex] = 'X';
             return board;
         }
+        if(board[rowIndex][colIndex] == 'E') {
+            int mines = hasMines(board, click);
+            if (mines == 0) {
+                board[rowIndex][colIndex] = 'E';
+            } else {
+                board[rowIndex][colIndex] = minesCount[mines];
+        }
 
+    }
+
+    public int hasMines(char[][] board, int[] element) {
 
     }
 
