@@ -92,7 +92,19 @@ public class Minesweeper {
     }
 
     public int hasMines(char[][] board, int[] element) {
+        int rowIndex = element[0];
+        int colIndex = element[1];
+        for (int i = rowIndex - 1; i<=rowIndex + 1;i++) {
+            if (i<0) {
+                continue;
+            }
+            for (int j = colIndex - 1; j<=colIndex+1;j++) {
+                if (j<0) {
+                    continue;
+                }
 
+            }
+        }
     }
 
 }
