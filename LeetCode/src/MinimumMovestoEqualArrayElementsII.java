@@ -22,6 +22,13 @@ Only two moves are needed (remember each move increments or decrements one eleme
 
 */
 public class MinimumMovestoEqualArrayElementsII {
+
+    public static void main(String[] args) {
+        int[] test = { 1, 2, 3, 4};
+        System.out.println(new MinimumMovestoEqualArrayElementsII().minMoves2(test));
+
+    }
+
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
         int mid = (nums[nums.length - 1] - nums[0]) / 2 + nums[0];
