@@ -24,17 +24,17 @@ Only two moves are needed (remember each move increments or decrements one eleme
 public class MinimumMovestoEqualArrayElementsII {
 
     public static void main(String[] args) {
-        int[] test = { 1, 2, 3, 4};
+        int[] test = { 1,0,0,8,6};
         System.out.println(new MinimumMovestoEqualArrayElementsII().minMoves2(test));
 
     }
 
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
-        int mid = (nums[nums.length - 1] - nums[0]) / 2 + nums[0];
+        int mid = nums.length / 2;
         int moves = 0;
         for (int i = 0; i< nums.length;i++) {
-            moves += Math.abs(nums[i] - mid);
+            moves += Math.abs(nums[i] - nums[mid]);
         }
         return moves;
     }
