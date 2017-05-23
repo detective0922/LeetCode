@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 508. Most Frequent Subtree Sum
@@ -32,7 +30,24 @@ Note: You may assume the sum of values in any subtree is in the range of 32-bit 
 public class MostFrequentSubtreeSum {
     public int[] findFrequentTreeSum(TreeNode root) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        f
+        sum(root, map, 0);
+        List<Integer> res = new ArrayList<Integer>();
+        int maxFrequency = 0;
+        for (int frequency: map.values()) {
+            if (frequency >= maxFrequency) {
+                maxFrequency = frequency;
+            }
+        }
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int sum = entry.getKey();
+            int frequency = entry.getValue();
+            if (frequency >= maxFrequency) {
+                res.add(sum);
+            }
+        }
+        int[] sums = new int[res.size()];
+        for ()
+        return sums;
     }
 
     public int sum(TreeNode root, Map<Integer, Integer> map, int sum) {
