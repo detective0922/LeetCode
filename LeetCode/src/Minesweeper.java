@@ -73,8 +73,9 @@ Note:
 
 */
 public class Minesweeper {
+    private boolean
     public char[][] updateBoard(char[][] board, int[] click) {
-        char[] minesCount = {'1','2','3','4','5','6','7','8'};
+        char[] charNum = {'1','2','3','4','5','6','7','8'};
         int rowIndex = click[0];
         int colIndex = click[1];
         if(board[rowIndex][colIndex] == 'M') {
@@ -86,20 +87,21 @@ public class Minesweeper {
             if (mines == 0) {
                 board[rowIndex][colIndex] = 'E';
             } else {
-                board[rowIndex][colIndex] = minesCount[mines];
+                board[rowIndex][colIndex] = charNum[mines];
         }
 
     }
 
-    public int hasMines(char[][] board, int[] element) {
+    public int bfs(char[][] board, int[] element, boolean[] visited) {
         int rowIndex = element[0];
         int colIndex = element[1];
-        for (int i = rowIndex - 1; i<=rowIndex + 1;i++) {
-            if (i<0) {
+        int mines = 0;
+        for (int i = rowIndex - 1; i <= rowIndex + 1; i++) {
+            if (i < 0) {
                 continue;
             }
-            for (int j = colIndex - 1; j<=colIndex+1;j++) {
-                if (j<0) {
+            for (int j = colIndex - 1; j <= colIndex + 1; j++) {
+                if (j < 0 || (i == rowIndex && j == colIndex)) {
                     continue;
                 }
 
