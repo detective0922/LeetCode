@@ -25,8 +25,11 @@ public class MinimumMovestoEqualArrayElementsII {
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
         int mid = (nums[nums.length - 1] - nums[0]) / 2 + nums[0];
-
-
+        int moves = 0;
+        for (int i = 0; i< nums.length;i++) {
+            moves += Math.abs(nums[i] - mid);
+        }
+        return moves;
     }
 
 }
