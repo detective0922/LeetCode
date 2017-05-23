@@ -28,9 +28,18 @@ Note: You may assume the sum of values in any subtree is in the range of 32-bit 
 
 */
 public class MostFrequentSubtreeSum {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(5);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(-5);
+        root.left = two;
+        root.right = three;
+        System.out.println(new MostFrequentSubtreeSum().findFrequentTreeSum(root));
+    }
+
     public int[] findFrequentTreeSum(TreeNode root) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        sum(root, map, 0);
+        sum(root, map);
         List<Integer> res = new ArrayList<Integer>();
         int maxFrequency = 0;
         for (int frequency : map.values()) {
@@ -52,11 +61,11 @@ public class MostFrequentSubtreeSum {
         return sums;
     }
 
-    public int sum(TreeNode root, Map<Integer, Integer> map, int sum) {
+    public int sum(TreeNode root, Map<Integer, Integer> map) {
         if (root == null) {
-            return sum;
+            return 0;
         }
-        sum += root.val;
+        int sum = root.val;
         if (root.left == null && root.right == null) {
             if (map.containsKey(sum)) {
                 map.put(sum, map.get(sum) + 1);
@@ -65,8 +74,8 @@ public class MostFrequentSubtreeSum {
             }
             return sum;
         }
-        sum += sum(root.left, map, sum);
-        sum += sum(root.right, map, sum);
+        sum += sum(root.left, map);
+        sum += sum(root.right, map);
         if (map.containsKey(sum)) {
             map.put(sum, map.get(sum) + 1);
         } else {
