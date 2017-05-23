@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 462. Minimum Moves to Equal Array Elements II
 
@@ -21,6 +23,7 @@ Only two moves are needed (remember each move increments or decrements one eleme
 */
 public class MinimumMovestoEqualArrayElementsII {
     public int minMoves2(int[] nums) {
+        Arrays.sort(nums);
 
     }
 
