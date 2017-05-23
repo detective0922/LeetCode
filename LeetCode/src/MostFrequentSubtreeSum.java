@@ -67,14 +67,6 @@ public class MostFrequentSubtreeSum {
             return 0;
         }
         int sum = root.val;
-        if (root.left == null && root.right == null) {
-            if (map.containsKey(sum)) {
-                map.put(sum, map.get(sum) + 1);
-            } else {
-                map.put(sum, 1);
-            }
-            return sum;
-        }
         sum += sum(root.left);
         sum += sum(root.right);
         if (map.containsKey(sum)) {
