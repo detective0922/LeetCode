@@ -33,7 +33,7 @@ public class MostFrequentSubtreeSum {
         sum(root, map, 0);
         List<Integer> res = new ArrayList<Integer>();
         int maxFrequency = 0;
-        for (int frequency: map.values()) {
+        for (int frequency : map.values()) {
             if (frequency >= maxFrequency) {
                 maxFrequency = frequency;
             }
@@ -46,7 +46,9 @@ public class MostFrequentSubtreeSum {
             }
         }
         int[] sums = new int[res.size()];
-        for ()
+        for (int i = 0; i < sums.length; i++) {
+            sums[i] = res.get(i);
+        }
         return sums;
     }
 
