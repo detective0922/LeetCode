@@ -16,4 +16,7 @@ Note:
 
 */
 public class SingleNumberIII {
+    public int[] singleNumber(int[] nums) {
+
+    }
 }
