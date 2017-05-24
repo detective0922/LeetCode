@@ -83,8 +83,6 @@ public class Minesweeper {
         System.out.println(new Minesweeper().updateBoard(test, click));
     }
 
-    private char[] intToChar = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
-
     public char[][] updateBoard(char[][] board, int[] click) {
         int rowIndex = click[0];
         int colIndex = click[1];
@@ -93,11 +91,11 @@ public class Minesweeper {
             return board;
         }
         boolean[][] visited = new boolean[board.length][board[0].length];
-        bfs(board, click, visited);
+        dfs(board, click, visited);
         return board;
     }
 
-    public void bfs(char[][] board, int[] element, boolean[][] visited) {
+    public void dfs(char[][] board, int[] element, boolean[][] visited) {
         int rowIndex = element[0];
         int colIndex = element[1];
         if (board[rowIndex][colIndex] == 'M') {
@@ -122,11 +120,11 @@ public class Minesweeper {
                     if (i < 0 || j < 0 || i >= board.length || j >= board[0].length || (i == rowIndex && j == colIndex) || visited[i][j]) {
                         continue;
                     }
-                    bfs(board, new int[]{i, j}, visited);
+                    dfs(board, new int[]{i, j}, visited);
                 }
             }
         } else {
-            board[rowIndex][colIndex] = intToChar[mines];
+            board[rowIndex][colIndex] = (char) (mines + '0');
         }
     }
 
