@@ -73,8 +73,9 @@ Note:
 
 */
 public class Minesweeper {
-    private boolean
+    private boolean[][] visited;
     public char[][] updateBoard(char[][] board, int[] click) {
+        visited = new boolean[board[0].length][board.length];
         bfs(board, click);
         return board;
     }
@@ -92,7 +93,17 @@ public class Minesweeper {
                 if (i < 0 || j < 0 || (i == rowIndex && j == colIndex) || visited[i][j]) {
                     continue;
                 }
+                visited[i][j] = true;
+                if (board[i][j] == 'E') {
+                    bfs(board, new int[]{i, j}, visited);
+                }
+                if (board[i][j] == 'M') {
+                    mines++;
+                }
             }
+        }
+        if (mines == 0) {
+
         }
 
     }
