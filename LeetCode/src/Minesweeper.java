@@ -79,11 +79,12 @@ public class Minesweeper {
         return board;
     }
 
-    public int bfs(char[][] board, int[] element) {
+    public void bfs(char[][] board, int[] element) {
         int rowIndex = element[0];
         int colIndex = element[1];
         if (board[rowIndex][colIndex] == 'M') {
-            return 1;
+            board[rowIndex][colIndex] = 'X';
+            return;
         }
         int mines = 0;
         for (int i = rowIndex - 1; i <= rowIndex + 1; i++) {
