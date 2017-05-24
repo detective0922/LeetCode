@@ -83,7 +83,7 @@ public class Minesweeper {
         System.out.println(new Minesweeper().updateBoard(test, click));
     }
 
-    private char[] intToChar = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+    private char[] intToChar = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
 
     public char[][] updateBoard(char[][] board, int[] click) {
         int rowIndex = click[0];
@@ -112,7 +112,6 @@ public class Minesweeper {
                 }
                 if (board[i][j] == 'M') {
                     mines++;
-                    visited[i][j] = true;
                 }
             }
         }
@@ -120,7 +119,7 @@ public class Minesweeper {
             board[rowIndex][colIndex] = 'B';
             for (int i = rowIndex - 1; i <= rowIndex + 1; i++) {
                 for (int j = colIndex - 1; j <= colIndex + 1; j++) {
-                    if (i < 0 || j < 0 || (i == rowIndex && j == colIndex) || visited[i][j]) {
+                    if (i < 0 || j < 0 || i >= board.length || j >= board[0].length || (i == rowIndex && j == colIndex) || visited[i][j]) {
                         continue;
                     }
                     bfs(board, new int[]{i, j}, visited);
