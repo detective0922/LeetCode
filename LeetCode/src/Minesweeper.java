@@ -83,7 +83,7 @@ public class Minesweeper {
             return board;
         }
         if(board[rowIndex][colIndex] == 'E') {
-            int mines = hasMines(board, click);
+            int mines = bfs(board, click);
             if (mines == 0) {
                 board[rowIndex][colIndex] = 'E';
             } else {
@@ -92,9 +92,12 @@ public class Minesweeper {
 
     }
 
-    public int bfs(char[][] board, int[] element, boolean[] visited) {
+    public int bfs(char[][] board, int[] element) {
         int rowIndex = element[0];
         int colIndex = element[1];
+        if (board[rowIndex][colIndex] == 'M') {
+            return 1;
+        }
         int mines = 0;
         for (int i = rowIndex - 1; i <= rowIndex + 1; i++) {
             if (i < 0) {
@@ -104,9 +107,10 @@ public class Minesweeper {
                 if (j < 0 || (i == rowIndex && j == colIndex)) {
                     continue;
                 }
-
+                mines += bfs(board, new int[]{i, j});
             }
         }
+        return mines;
     }
 
 }
