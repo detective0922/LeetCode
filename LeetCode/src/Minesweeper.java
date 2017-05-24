@@ -79,7 +79,7 @@ public class Minesweeper {
         return board;
     }
 
-    public void bfs(char[][] board, int[] element) {
+    public void bfs(char[][] board, int[] element, boolean[][] visited) {
         int rowIndex = element[0];
         int colIndex = element[1];
         if (board[rowIndex][colIndex] == 'M') {
@@ -88,17 +88,13 @@ public class Minesweeper {
         }
         int mines = 0;
         for (int i = rowIndex - 1; i <= rowIndex + 1; i++) {
-            if (i < 0) {
-                continue;
-            }
             for (int j = colIndex - 1; j <= colIndex + 1; j++) {
-                if (j < 0 || (i == rowIndex && j == colIndex)) {
+                if (i < 0 || j < 0 || (i == rowIndex && j == colIndex) || visited[i][j]) {
                     continue;
                 }
-                mines += bfs(board, new int[]{i, j});
             }
         }
-        return mines;
+
     }
 
 }
