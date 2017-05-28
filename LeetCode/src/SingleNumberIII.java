@@ -17,6 +17,10 @@ Note:
 */
 public class SingleNumberIII {
     public int[] singleNumber(int[] nums) {
+        int diff = 0;
+        for(int num : nums) {
+            diff ^= num;
+        }
 
     }
 }
