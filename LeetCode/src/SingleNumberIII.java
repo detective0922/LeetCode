@@ -21,7 +21,12 @@ public class SingleNumberIII {
         for(int num : nums) {
             diff ^= num;
         }
+
         diff &= -diff;
+
+        for(int num : nums) {
+
+        }
 
     }
 }
