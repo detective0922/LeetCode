@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 451. Sort Characters By Frequency
@@ -46,14 +48,24 @@ Note that 'A' and 'a' are treated as two different characters.
 */
 public class SortCharactersByFrequency {
     public String frequencySort(String s) {
-        int[] freq = new int[52];
+        int[] freqs = new int[52];
         char[] sChars = s.toCharArray();
         for (char c : sChars) {
-            freq[c - 'a']++;
+            freqs[c - 'a']++;
         }
-        Arrays.sort(freq);
+        Map<Integer, Character> charMap = new HashMap<Integer, Character>();
+        for (char c = 'a'; c <= 'Z'; c++) {
+            if (freqs[c - 'a'] != 0) {
+                charMap.put(freqs[c - 'a'], c);
+            }
+        }
+        Arrays.sort(freqs);
 
+        for (int freq: freqs) {
+            if (freq != 0) {
 
+            }
+        }
 
     }
 }
