@@ -77,10 +77,9 @@ public class SortCharactersByFrequency {
             if (freqs[i] != 0) {
                 List<Character> charList = charMap.get(freqs[i]);
                 for (char c : charList) {
-
-                }
-                for (int j = 0;j<freqs[i];j++) {
-                    str.append(charMap.get(freqs[i]));
+                    for (int j = 0;j<freqs[i];j++) {
+                        str.append(c);
+                    }
                 }
             }
         }
