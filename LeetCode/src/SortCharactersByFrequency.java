@@ -47,16 +47,23 @@ Note that 'A' and 'a' are treated as two different characters.
 
 */
 public class SortCharactersByFrequency {
+
+    public static void main(String[] args) {
+        System.out.println(new SortCharactersByFrequency().frequencySort("tree"));
+    }
+
     public String frequencySort(String s) {
-        int[] freqs = new int[52];
+        int R = 128;
+        int[] freqs = new int[R];
         char[] sChars = s.toCharArray();
         for (char c : sChars) {
-            freqs[c - 'a']++;
+            freqs[c]++;
         }
         Map<Integer, Character> charMap = new HashMap<Integer, Character>();
-        for (char c = 'a'; c <= 'Z'; c++) {
-            if (freqs[c - 'a'] != 0) {
-                charMap.put(freqs[c - 'a'], c);
+
+        for (char c = 0; c < R; c++) {
+            if (freqs[c] != 0) {
+                charMap.put(freqs[c], c);
             }
         }
         Arrays.sort(freqs);
