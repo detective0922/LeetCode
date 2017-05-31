@@ -32,6 +32,6 @@ public class SingleNumberIII {
                 singles[1] ^= num;
             }
         }
-
+        return singles;
     }
 }
