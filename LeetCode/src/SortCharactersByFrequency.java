@@ -70,14 +70,14 @@ public class SortCharactersByFrequency {
         Arrays.sort(freqs);
 
         StringBuilder str = new StringBuilder();
-        for (int i = freqs.length - 1; i >=0 ;i--) {
-            if (freqs[i]==0) {
+        for (int i = freqs.length - 1; i >= 0; i--) {
+            if (freqs[i] == 0) {
                 break;
             }
             if (freqs[i] != 0) {
                 List<Character> charList = charMap.get(freqs[i]);
                 for (char c : charList) {
-                    for (int j = 0;j<freqs[i];j++) {
+                    for (int j = 0; j < freqs[i]; j++) {
                         str.append(c);
                     }
                 }
