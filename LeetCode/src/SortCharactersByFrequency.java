@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,11 +60,14 @@ public class SortCharactersByFrequency {
         for (char c : sChars) {
             freqs[c]++;
         }
-        Map<Integer, Character> charMap = new HashMap<Integer, Character>();
+        Map<Integer, ArrayList<Character>> charMap = new HashMap<Integer, ArrayList<Character>>();
 
         for (char c = 0; c < R; c++) {
             if (freqs[c] != 0) {
-                charMap.put(freqs[c], c);
+                if (!charMap.containsKey(freqs[c])) {
+                    charMap.put(freqs[c], new ArrayList<Character>());
+                }
+                charMap.get(freqs[c]).add(c);
             }
         }
         Arrays.sort(freqs);
