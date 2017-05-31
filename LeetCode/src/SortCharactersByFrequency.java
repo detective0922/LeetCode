@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 451. Sort Characters By Frequency
 
@@ -49,6 +51,9 @@ public class SortCharactersByFrequency {
         for (char c : sChars) {
             freq[c - 'a']++;
         }
+        Arrays.sort(freq);
+
+
 
     }
 }
