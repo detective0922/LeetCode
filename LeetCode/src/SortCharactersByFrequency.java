@@ -67,8 +67,8 @@ public class SortCharactersByFrequency {
                 break;
             }
             if (freqs[i] != 0) {
-                for (int i = 0;i<freq;i++) {
-                    str
+                for (int j = 0;j<freqs[i];j++) {
+                    str.append(charMap.get(freqs[i]));
                 }
             }
         }
