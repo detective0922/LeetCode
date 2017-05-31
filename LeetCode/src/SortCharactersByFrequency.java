@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 451. Sort Characters By Frequency
@@ -78,6 +75,7 @@ public class SortCharactersByFrequency {
                 break;
             }
             if (freqs[i] != 0) {
+                List charList = charMap.get(freqs[i]);
                 for (int j = 0;j<freqs[i];j++) {
                     str.append(charMap.get(freqs[i]));
                 }
