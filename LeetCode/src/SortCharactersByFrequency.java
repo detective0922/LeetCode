@@ -46,7 +46,7 @@ Note that 'A' and 'a' are treated as two different characters.
 */
 public class SortCharactersByFrequency {
     public String frequencySort(String s) {
-        char[] freq = new char[52];
+        int[] freq = new int[52];
         char[] sChars = s.toCharArray();
         for (char c : sChars) {
             freq[c - 'a']++;
