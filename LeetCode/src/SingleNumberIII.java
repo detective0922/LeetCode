@@ -24,8 +24,13 @@ public class SingleNumberIII {
 
         diff &= -diff;
 
+        int[] singles = {0, 0};
         for(int num : nums) {
-
+            if ((num & diff) == 0) {
+                singles[0] ^= num;
+            } else {
+                singles[1] ^= num;
+            }
         }
 
     }
