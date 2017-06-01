@@ -19,17 +19,18 @@ public class ProductofArrayExceptSelf {
     }
 
     public int[] productExceptSelf(int[] nums) {
-        int[] ret = new int[nums.length];
+        int[] result = new int[nums.length];
         int[] array2 = new int[nums.length];
-        ret[0] = 1;
+        result[0] = 1;
         array2[nums.length - 1] = 1;
         for (int i = 1; i < nums.length; i++) {
-            ret[i] = nums[i - 1] * ret[i - 1];
-            array2[nums.length - 1 - i] = nums[nums.length - i] * array2[nums.length - i];
+            result[i] = nums[i - 1] * result[i - 1];
         }
-        for (int i = 0; i < nums.length; i++) {
-            ret[i] = ret[i] * array2[i];
+        int reverseElement = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            result[i] *= reverseElement;
+            reverseElement *= nums[i];
         }
-        return ret;
+        return result;
     }
 }
