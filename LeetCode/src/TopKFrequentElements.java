@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
 347. Top K Frequent Elements
@@ -16,7 +19,19 @@ Note:
 */
 public class TopKFrequentElements {
     public List<Integer> topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            int freq = 1;
+            if (freqMap.containsKey(num)) {
+                freq = freqMap.get(num) + 1;
+            }
+            freqMap.put(num, freq);
+        }
 
+        List<Integer> topK = new ArrayList<Integer>();
+        for (Map.Entry<Integer,Integer> entry : freqMap.entrySet()) {
+
+        }
     }
 
 }
