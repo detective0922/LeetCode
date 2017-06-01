@@ -13,4 +13,7 @@ Follow up:
 
 */
 public class ProductofArrayExceptSelf {
+    public int[] productExceptSelf(int[] nums) {
+
+    }
 }
