@@ -15,6 +15,12 @@ Note:
 
 */
 public class TopKFrequentElements {
+
+    public static void main(String[] args) {
+        int[] nums = {1,2};
+        System.out.println(new TopKFrequentElements().topKFrequent(nums, 2));
+    }
+
     public List<Integer> topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
         for (int num : nums) {
