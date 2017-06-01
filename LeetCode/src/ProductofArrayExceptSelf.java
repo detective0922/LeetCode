@@ -14,6 +14,13 @@ Follow up:
 */
 public class ProductofArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {
+        int[] array1 = new int[nums.length];
+        int[] array2 = new int[nums.length];
+        array1[0] = 1;
+        array2[nums.length - 1] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            array1[i] = nums[i] * nums[i - 1];
+        }
 
     }
 }
