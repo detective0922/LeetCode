@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 347. Top K Frequent Elements
@@ -29,10 +26,15 @@ public class TopKFrequentElements {
         }
 
         List<Integer> topK = new ArrayList<Integer>();
-        for (Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
-            if (entry.getValue() >= k) {
-                topK.add(entry.getKey());
+        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<Map.Entry<Integer, Integer>>(freqMap.size(), new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                return o1.getValue() - o2.getValue();
             }
+        });
+        queue.addAll(freqMap.entrySet());
+        for (int i = 0; i< k; i++) {
+            
         }
         return topK;
     }
