@@ -30,7 +30,9 @@ public class TopKFrequentElements {
 
         List<Integer> topK = new ArrayList<Integer>();
         for (Map.Entry<Integer,Integer> entry : freqMap.entrySet()) {
-
+            if (entry.getValue() >= k) {
+                topK.add(entry.getKey());
+            }
         }
     }
 
