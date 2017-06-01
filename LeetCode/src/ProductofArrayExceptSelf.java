@@ -15,21 +15,20 @@ Follow up:
 public class ProductofArrayExceptSelf {
 
     public static void main(String[] args) {
-        System.out.println(new ProductofArrayExceptSelf().productExceptSelf(new int[]{1,2,3,4}));
+        System.out.println(new ProductofArrayExceptSelf().productExceptSelf(new int[]{9,0,-2}));
     }
 
     public int[] productExceptSelf(int[] nums) {
-        int[] array1 = new int[nums.length];
+        int[] ret = new int[nums.length];
         int[] array2 = new int[nums.length];
-        array1[0] = 1;
+        ret[0] = 1;
         array2[nums.length - 1] = 1;
         for (int i = 1; i < nums.length; i++) {
-            array1[i] = nums[i - 1] * array1[i - 1];
+            ret[i] = nums[i - 1] * ret[i - 1];
             array2[nums.length - 1 - i] = nums[nums.length - i] * array2[nums.length - i];
         }
-        int[] ret = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            ret[i] = array1[i] * array2[i];
+            ret[i] = ret[i] * array2[i];
         }
         return ret;
     }
