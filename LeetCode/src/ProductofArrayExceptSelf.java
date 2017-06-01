@@ -24,12 +24,12 @@ public class ProductofArrayExceptSelf {
         array1[0] = 1;
         array2[nums.length - 1] = 1;
         for (int i = 1; i < nums.length; i++) {
-            array1[i] = nums[i] * array1[i - 1];
-            array2[nums.length - 1 - i] = nums[nums.length - 1 - i] * array2[nums.length - i];
+            array1[i] = nums[i - 1] * array1[i - 1];
+            array2[nums.length - 1 - i] = nums[nums.length - i] * array2[nums.length - i];
         }
         int[] ret = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            ret[i] = array1[nums.length - 1 - i] * array2[nums.length - 1 - i];
+            ret[i] = array1[i] * array2[i];
         }
         return ret;
     }
