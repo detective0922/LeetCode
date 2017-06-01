@@ -13,6 +13,11 @@ Follow up:
 
 */
 public class ProductofArrayExceptSelf {
+
+    public static void main(String[] args) {
+        System.out.println(new ProductofArrayExceptSelf().productExceptSelf(new int[]{1,2,3,4}));
+    }
+
     public int[] productExceptSelf(int[] nums) {
         int[] array1 = new int[nums.length];
         int[] array2 = new int[nums.length];
