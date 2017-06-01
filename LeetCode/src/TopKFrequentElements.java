@@ -34,7 +34,7 @@ public class TopKFrequentElements {
         });
         queue.addAll(freqMap.entrySet());
         for (int i = 0; i< k; i++) {
-            
+            topK.add(queue.poll().getKey());
         }
         return topK;
     }
