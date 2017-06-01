@@ -28,8 +28,8 @@ public class ProductofArrayExceptSelf {
             array2[nums.length - 1 - i] = nums[nums.length - 1 - i] * array2[nums.length - i];
         }
         int[] ret = new int[nums.length];
-        for (int i = 0;i<nums.length;i++) {
-            ret[i] = array1[i] * array2[i];
+        for (int i = 0; i < nums.length; i++) {
+            ret[i] = array1[nums.length - 1 - i] * array2[nums.length - 1 - i];
         }
         return ret;
     }
