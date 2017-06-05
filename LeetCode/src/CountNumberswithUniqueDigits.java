@@ -13,5 +13,7 @@ public class CountNumberswithUniqueDigits {
     public int countNumbersWithUniqueDigits(int n) {
         int count = 0;
 
+        return count;
+
     }
 }
