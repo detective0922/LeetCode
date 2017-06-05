@@ -18,10 +18,12 @@ solution.getRandom();
 
 */
 public class LinkedListRandomNode {
+
+    private ListNode head;
     /** @param head The linked list's head.
     Note that the head is guaranteed to be not null, so it contains at least one node. */
     public Solution(ListNode head) {
-
+        this.head = head;
     }
 
     /** Returns a random node's value. */
