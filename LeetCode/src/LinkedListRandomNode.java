@@ -32,8 +32,12 @@ public class LinkedListRandomNode {
     public int getRandom() {
         Random random = new Random();
         ListNode currNode = head;
-        for (int i = 1; currNode != null; currNode = currNode.next) {
-
+        int randomInt = head.val;
+        for (int i = 1; currNode != null; currNode = currNode.next, i++) {
+            if (random.nextInt(i) == i) {
+                randomInt = currNode.val;
+            }
         }
+        return randomInt;
     }
 }
