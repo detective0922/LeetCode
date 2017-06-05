@@ -21,6 +21,18 @@ return [1,3,2].
 
 */
 public class BinaryTreeInorderTraversal {
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+        root.left = null;
+        root.right = two;
+        two.left = three;
+        two.right = null;
+        System.out.println(new BinaryTreeInorderTraversal().inorderTraversal(root));
+    }
+
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> inorder = new ArrayList<Integer>();
         inorderTraversal(inorder, root);
