@@ -52,9 +52,11 @@ public class ShuffleanArray {
         for (int i = nums.length; i > 0; i--) {
             randomIndex = random.nextInt(i);
             while(isRead[randomIndex]) {
-
+                randomIndex = random.nextInt(i);
             }
+            isRead[randomIndex] = true;
             shuffledNums[i-1] = nums[randomIndex];
         }
+        return shuffledNums;
     }
 }
