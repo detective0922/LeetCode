@@ -14,7 +14,7 @@ public class CountNumberswithUniqueDigits {
         int count = 0;
         int[] uniqueCount = new int[n];
         uniqueCount[0] = 10;
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
 
         }
 
