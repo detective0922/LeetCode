@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 
 94. Binary Tree Inorder Traversal
@@ -18,4 +20,7 @@ return [1,3,2].
 
 */
 public class BinaryTreeInorderTraversal {
+    public List<Integer> inorderTraversal(TreeNode root) {
+
+    }
 }
