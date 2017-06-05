@@ -22,6 +22,7 @@ solution.shuffle();
 */
 
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -32,10 +33,17 @@ import java.util.Random;
  */
 public class ShuffleanArray {
 
+    public static void main(String[] args) {
+        int[] nums = {1,2,3};
+        ShuffleanArray test = new ShuffleanArray(nums);
+        test.reset();
+        test.shuffle();
+    }
+
     private int[] nums;
     private Random random = new Random();
 
-    public Solution(int[] nums) {
+    public ShuffleanArray(int[] nums) {
         this.nums = nums;
     }
 
@@ -46,17 +54,20 @@ public class ShuffleanArray {
 
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
-        int[] shuffledNums = new int[nums.length];
-        boolean[] isRead = new boolean[nums.length];
+        int[] shuffledNums = Arrays.copyOf(nums, nums.length);
         int randomIndex = 0;
         for (int i = nums.length; i > 0; i--) {
             randomIndex = random.nextInt(i);
-            while(isRead[randomIndex]) {
-                randomIndex = random.nextInt(i);
-            }
-            isRead[randomIndex] = true;
-            shuffledNums[i-1] = nums[randomIndex];
+
         }
         return shuffledNums;
     }
+
+    public void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+
+
 }
