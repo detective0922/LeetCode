@@ -23,7 +23,7 @@ return [1,3,2].
 public class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> inorder = new ArrayList<Integer>();
-        inorder = inorderTraversal(inorder, root);
+        inorderTraversal(inorder, root);
         return inorder;
     }
 
