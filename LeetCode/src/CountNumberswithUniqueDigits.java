@@ -11,6 +11,7 @@ Example:
 */
 public class CountNumberswithUniqueDigits {
     public int countNumbersWithUniqueDigits(int n) {
+        int count = 0;
 
     }
 }
