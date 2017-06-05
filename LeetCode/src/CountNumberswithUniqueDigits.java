@@ -13,7 +13,8 @@ public class CountNumberswithUniqueDigits {
     public int countNumbersWithUniqueDigits(int n) {
         int count = 0;
         int[] uniqueCount = new int[n];
-        for (int i = 0;i<n;i++) {
+        uniqueCount[0] = 10;
+        for (int i = 0; i < n; i++) {
 
         }
 
