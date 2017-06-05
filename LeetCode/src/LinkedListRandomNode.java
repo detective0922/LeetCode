@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /*
 382. Linked List Random Node
 
@@ -28,6 +30,10 @@ public class LinkedListRandomNode {
 
     /** Returns a random node's value. */
     public int getRandom() {
+        Random random = new Random();
+        ListNode currNode = head;
+        for (int i = 1; currNode != null; currNode = currNode.next) {
 
+        }
     }
 }
