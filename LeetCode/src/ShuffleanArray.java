@@ -22,6 +22,8 @@ solution.shuffle();
 */
 
 
+import java.util.Random;
+
 /**
  * Your Solution object will be instantiated and called as such:
  * Solution obj = new Solution(nums);
@@ -31,6 +33,7 @@ solution.shuffle();
 public class ShuffleanArray {
 
     private int[] nums;
+    private Random random = new Random();
 
     public Solution(int[] nums) {
         this.nums = nums;
@@ -43,6 +46,15 @@ public class ShuffleanArray {
 
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
+        int[] shuffledNums = new int[nums.length];
+        boolean[] isRead = new boolean[nums.length];
+        int randomIndex = 0;
+        for (int i = nums.length; i > 0; i--) {
+            randomIndex = random.nextInt(i);
+            while(isRead[randomIndex]) {
 
+            }
+            shuffledNums[i-1] = nums[randomIndex];
+        }
     }
 }
