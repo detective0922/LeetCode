@@ -34,7 +34,7 @@ public class LinkedListRandomNode {
         ListNode currNode = head;
         int randomInt = head.val;
         for (int i = 1; currNode != null; currNode = currNode.next, i++) {
-            if (random.nextInt(i) == i) {
+            if (random.nextInt(i + 1) == i) {
                 randomInt = currNode.val;
             }
         }
