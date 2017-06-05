@@ -10,4 +10,7 @@ Example:
 
 */
 public class CountNumberswithUniqueDigits {
+    public int countNumbersWithUniqueDigits(int n) {
+
+    }
 }
