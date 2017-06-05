@@ -56,9 +56,9 @@ public class ShuffleanArray {
     public int[] shuffle() {
         int[] shuffledNums = Arrays.copyOf(nums, nums.length);
         int randomIndex = 0;
-        for (int i = nums.length; i > 0; i--) {
-            randomIndex = random.nextInt(i);
-
+        for (int i = nums.length - 1; i >= 0; i--) {
+            randomIndex = random.nextInt(i + 1);
+            swap(shuffledNums, i, randomIndex);
         }
         return shuffledNums;
     }
