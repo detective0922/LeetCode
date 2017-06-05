@@ -29,13 +29,16 @@ solution.shuffle();
  * int[] param_2 = obj.shuffle();
  */
 public class ShuffleanArray {
-    public Solution(int[] nums) {
 
+    private int[] nums;
+
+    public Solution(int[] nums) {
+        this.nums = nums;
     }
 
     /** Resets the array to its original configuration and return it. */
     public int[] reset() {
-
+        return nums;
     }
 
     /** Returns a random shuffling of the array. */
