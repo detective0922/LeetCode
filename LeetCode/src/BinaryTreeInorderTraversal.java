@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -21,6 +22,17 @@ return [1,3,2].
 */
 public class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> inorder = new ArrayList<Integer>();
+        inorder = inorderTraversal(inorder, root);
+        return inorder;
+    }
 
+    public void inorderTraversal(List<Integer> inorder, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversal(inorder, root.left);
+        inorder.add(root.val);
+        inorderTraversal(inorder, root.right);
     }
 }
