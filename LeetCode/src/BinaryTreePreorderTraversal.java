@@ -21,4 +21,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
 
 */
 public class BinaryTreePreorderTraversal {
+    public List<Integer> preorderTraversal(TreeNode root) {
+
+    }
 }
