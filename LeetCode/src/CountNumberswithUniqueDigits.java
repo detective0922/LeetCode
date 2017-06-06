@@ -14,18 +14,19 @@ public class CountNumberswithUniqueDigits {
         int[] uniqueCount = new int[n+1];
         uniqueCount[0] = 1;
         uniqueCount[1] = 10;
-        for (int i = 2; i <= n; i++) {
-            int bit = n;
+        for (int i = 1; i <= n; i++) {
+            int bit = i;
             int currCount = 9;
-            while (bit > 0) {
-                currCount *= currCount;
+            int p = 9;
+            while (bit > 1) {
+                currCount *= 9;
                 bit--;
-                currCount--;
+                p--;
             }
-
+            uniqueCount[i] = uniqueCount[i-1] + currCount;
         }
 
-        return count;
+        return uniqueCount[n];
 
     }
 }
