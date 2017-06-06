@@ -20,9 +20,13 @@ public class IntegerBreak {
         while (n >= 4) {
             if (n % 2 == 0) {
                 product *= 2;
-            } else
-
+                n -= 2;
+            } else {
+                product *= 3;
+                n -= 3;
+            }
         }
+        return product * n;
 
     }
 }
