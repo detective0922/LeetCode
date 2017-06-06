@@ -10,6 +10,11 @@ Example:
 
 */
 public class CountNumberswithUniqueDigits {
+
+    public static void main(String[] args) {
+        System.out.println(new CountNumberswithUniqueDigits().countNumbersWithUniqueDigits(3));
+    }
+
     public int countNumbersWithUniqueDigits(int n) {
         int[] uniqueCount = new int[n + 1];
         uniqueCount[0] = 1;
@@ -18,7 +23,7 @@ public class CountNumberswithUniqueDigits {
             int currCount = 9;
             int p = 9;
             while (bit > 1) {
-                currCount *= 9;
+                currCount *= p;
                 bit--;
                 p--;
             }
