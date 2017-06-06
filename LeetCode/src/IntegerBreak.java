@@ -12,6 +12,17 @@ Note: You may assume that n is not less than 2 and not larger than 58.
 */
 public class IntegerBreak {
     public int integerBreak(int n) {
+        if (n < 4) {
+            return n - 1;
+        }
+
+        int product = 1;
+        while (n >= 4) {
+            if (n % 2 == 0) {
+                product *= 2;
+            } else
+
+        }
 
     }
 }
