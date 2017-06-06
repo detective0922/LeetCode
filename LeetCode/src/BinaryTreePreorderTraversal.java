@@ -27,5 +27,6 @@ public class BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> nodes = new ArrayList<Integer>();
 
+        return nodes;
     }
 }
