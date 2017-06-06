@@ -11,10 +11,17 @@ Example:
 */
 public class CountNumberswithUniqueDigits {
     public int countNumbersWithUniqueDigits(int n) {
-        int count = 0;
-        int[] uniqueCount = new int[n];
-        uniqueCount[0] = 10;
-        for (int i = 1; i < n; i++) {
+        int[] uniqueCount = new int[n+1];
+        uniqueCount[0] = 1;
+        uniqueCount[1] = 10;
+        for (int i = 2; i <= n; i++) {
+            int bit = n;
+            int currCount = 9;
+            while (bit > 0) {
+                currCount *= currCount;
+                bit--;
+                currCount--;
+            }
 
         }
 
