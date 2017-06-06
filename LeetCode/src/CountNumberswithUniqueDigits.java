@@ -11,7 +11,7 @@ Example:
 */
 public class CountNumberswithUniqueDigits {
     public int countNumbersWithUniqueDigits(int n) {
-        int[] uniqueCount = new int[n+1];
+        int[] uniqueCount = new int[n + 1];
         uniqueCount[0] = 1;
         uniqueCount[1] = 10;
         for (int i = 1; i <= n; i++) {
@@ -23,7 +23,7 @@ public class CountNumberswithUniqueDigits {
                 bit--;
                 p--;
             }
-            uniqueCount[i] = uniqueCount[i-1] + currCount;
+            uniqueCount[i] = uniqueCount[i - 1] + currCount;
         }
 
         return uniqueCount[n];
