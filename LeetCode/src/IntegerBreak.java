@@ -17,16 +17,11 @@ public class IntegerBreak {
         }
 
         int product = 1;
-        while (n >= 4) {
-            if (n % 2 == 0) {
-                product *= 2;
-                n -= 2;
-            } else {
-                product *= 3;
-                n -= 3;
-            }
+        //if (n - 2)*n = (n - 3)*n, then n = 5
+        while (n > 4) {
+            product *= 3;
+            n -= 3;
         }
         return product * n;
-
     }
 }
