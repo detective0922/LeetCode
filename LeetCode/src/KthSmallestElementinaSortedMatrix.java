@@ -22,18 +22,16 @@ Note:
 */
 public class KthSmallestElementinaSortedMatrix {
     public int kthSmallest(int[][] matrix, int k) {
-        int low = 1;
-        int high = matrix.length * matrix[0].length;
+        int low = 0;
+        int high = matrix.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            int row = mid / matrix[0].length;
-            int col = mid % matrix[0].length;
-            if (matrix[row][col] > k) {
+            if (mid > k) {
                 high = mid - 1;
             } else if (matrix[row][col] < k) {
                 low = mid + 1;
             } else {
-                return
+
             }
         }
 
