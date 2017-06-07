@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /*
 
@@ -26,11 +28,23 @@ Note: Recursive solution is trivial, could you do it iteratively?
 public class BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> nodes = new ArrayList<Integer>();
-        preorderTraversal(root, nodes);
+        if (root == null) {
+            return nodes;
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            nodes.add(node.val);
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
         return nodes;
     }
 
-    private void preorderTraversal(TreeNode root, List<Integer> nodes) {
 
-    }
 }
