@@ -26,6 +26,17 @@ Note: Recursive solution is trivial, could you do it iteratively?
 
 */
 public class BinaryTreePreorderTraversal {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+        root.left = null;
+        root.right = two;
+        two.left = three;
+        two.right = null;
+        System.out.println(new BinaryTreePreorderTraversal().preorderTraversal(root));
+    }
+
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> nodes = new ArrayList<Integer>();
         if (root == null) {
