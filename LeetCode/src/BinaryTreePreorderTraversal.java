@@ -1,7 +1,6 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
+import java.util.Stack;
 
 /*
 
@@ -30,10 +29,10 @@ public class BinaryTreePreorderTraversal {
         TreeNode root = new TreeNode(1);
         TreeNode two = new TreeNode(2);
         TreeNode three = new TreeNode(3);
-        root.left = null;
-        root.right = two;
-        two.left = three;
-        two.right = null;
+        TreeNode four = new TreeNode(4);
+        root.left = four;
+        root.right = three;
+        four.left = two;
         System.out.println(new BinaryTreePreorderTraversal().preorderTraversal(root));
     }
 
@@ -42,10 +41,10 @@ public class BinaryTreePreorderTraversal {
         if (root == null) {
             return nodes;
         }
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
             nodes.add(node.val);
             if (node.left != null) {
                 queue.add(node.left);
