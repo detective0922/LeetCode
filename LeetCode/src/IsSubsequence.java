@@ -61,9 +61,10 @@ public class IsSubsequence {
             if (mid < index) {
                 low = mid + 1;
             } else {
-                high = mid;
+                high = mid - 1;
             }
         }
-        return high >= index ? high : -1;
+
+        return low >= indexs.size() ? -1 : indexs.get(low);
     }
 }
