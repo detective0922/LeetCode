@@ -46,10 +46,24 @@ public class IsSubsequence {
                 return false;
             }
             index = BinarySearch(tMap[c], index);
+            if (index == -1) {
+                return false;
+            }
         }
 
     }
 
     private int BinarySearch(List<Integer> indexs, int index) {
+        int low = 0;
+        int high = indexs.size();
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (mid < index) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+        return high >= index ? high : -1;
     }
 }
