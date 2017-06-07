@@ -29,6 +29,9 @@ Follow up:
 
 */
 public class IsSubsequence {
+    public static void main(String[] args) {
+        System.out.println(new IsSubsequence().isSubsequence("acb", "ahbgdc"));
+    }
     public boolean isSubsequence(String s, String t) {
         List<Integer>[] tMap = new List[128];
         char[] tArray = t.toCharArray();
@@ -56,10 +59,10 @@ public class IsSubsequence {
 
     private int BinarySearch(List<Integer> indexs, int index) {
         int low = 0;
-        int high = indexs.size();
+        int high = indexs.size() - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (mid < index) {
+            if (indexs.get(mid) < index) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
