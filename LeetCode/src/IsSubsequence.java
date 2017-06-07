@@ -50,6 +50,7 @@ public class IsSubsequence {
                 return false;
             }
         }
+        return true;
 
     }
 
