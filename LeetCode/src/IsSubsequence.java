@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 392. Is Subsequence
 
@@ -26,4 +29,17 @@ Follow up:
 
 */
 public class IsSubsequence {
+    private List<Integer>[] tMap = new List[128];
+    public boolean isSubsequence(String s, String t) {
+        char[] tArray = t.toCharArray();
+        for (int i = 0; i< tArray.length;i++) {
+            if (tMap[tArray[i]] == null) {
+                tMap[tArray[i]] = new ArrayList<Integer>();
+            }
+            tMap[tArray[i]].add(i);
+        }
+
+        char[] sArray = s.toCharArray();
+
+    }
 }
