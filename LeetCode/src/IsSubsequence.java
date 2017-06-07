@@ -29,8 +29,8 @@ Follow up:
 
 */
 public class IsSubsequence {
-    private List<Integer>[] tMap = new List[128];
     public boolean isSubsequence(String s, String t) {
+        List<Integer>[] tMap = new List[128];
         char[] tArray = t.toCharArray();
         for (int i = 0; i< tArray.length;i++) {
             if (tMap[tArray[i]] == null) {
@@ -40,6 +40,16 @@ public class IsSubsequence {
         }
 
         char[] sArray = s.toCharArray();
+        int index = -1;
+        for (char c: sArray) {
+            if (tMap[c] == null) {
+                return false;
+            }
+            index = BinarySearch(tMap[c], index);
+        }
 
+    }
+
+    private int BinarySearch(List<Integer> indexs, int index) {
     }
 }
