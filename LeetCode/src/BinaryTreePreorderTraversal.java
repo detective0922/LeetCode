@@ -29,4 +29,8 @@ public class BinaryTreePreorderTraversal {
         preorderTraversal(root, nodes);
         return nodes;
     }
+
+    private void preorderTraversal(TreeNode root, List<Integer> nodes) {
+
+    }
 }
