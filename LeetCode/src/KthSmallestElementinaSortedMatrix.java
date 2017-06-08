@@ -24,7 +24,7 @@ public class KthSmallestElementinaSortedMatrix {
     public int kthSmallest(int[][] matrix, int k) {
         int low = matrix[0][0];
         int high = matrix[matrix.length - 1][matrix.length - 1];
-        while (low <= high) {
+        while (low < high) {
             int mid = low + (high - low) / 2;
             int count = 0;
             for (int i = 0; i < matrix[0].length; i++) {
@@ -37,7 +37,7 @@ public class KthSmallestElementinaSortedMatrix {
             if (count < k) {
                 low = mid + 1;
             } else {
-                high = mid - 1;
+                high = mid;
             }
         }
         return low;
