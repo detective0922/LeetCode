@@ -23,9 +23,9 @@ public class IntegertoRoman {
 
         StringBuilder roman = new StringBuilder();
         roman.append(map[0][num / 1000])
-                .append(map[0][(num % 1000) / 100])
-                .append(map[0][(num % 100) / 10])
-                .append(map[0][num % 10]);
+                .append(map[1][(num % 1000) / 100])
+                .append(map[2][(num % 100) / 10])
+                .append(map[3][num % 10]);
         return roman.toString();
     }
 }
