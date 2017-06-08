@@ -13,6 +13,13 @@ Input is guaranteed to be within the range from 1 to 3999.
 public class IntegertoRoman {
     public String intToRoman(int num) {
         Map<Integer, Character> map = new HashMap<Integer, Character>();
+        map.put(1000,'M');
+        map.put(500,'D');
+        map.put(100,'C');
+        map.put(50,'L');
+        map.put(10,'X');
+        map.put(5,'V');
+        map.put(1,'I');
         StringBuilder roman = new StringBuilder();
         int unit = 0;
         while (num > 0) {
@@ -31,8 +38,9 @@ public class IntegertoRoman {
             } else if (num >= 1) {
                 unit = 1;
             }
-
+            num -= unit;
+            roman.append(map.get(unit));
         }
-
+        return roman.toString();
     }
 }
