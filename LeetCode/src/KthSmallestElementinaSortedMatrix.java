@@ -28,11 +28,11 @@ public class KthSmallestElementinaSortedMatrix {
             int mid = low + (high - low) / 2;
             int count = 0;
             for (int i = 0; i < matrix[0].length; i++) {
-                for (int j = matrix.length - 1; j >=0; j--) {
-
-                    
+                int j = matrix.length - 1;
+                while (j >= 0 && matrix[i][j] > mid) {
+                    j--;
                 }
-                
+                count += j + 1;
             }
         }
 
