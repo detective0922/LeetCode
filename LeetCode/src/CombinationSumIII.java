@@ -45,9 +45,9 @@ public class CombinationSumIII {
         if (sum.size() == k && n == 0) {
             sums.add(new ArrayList<Integer>(sum));
         } else {
-            for (int i = start; i<= 9; i++) {
+            for (int i = start; i <= 9 && i <= n; i++) {
                 sum.add(i);
-                combination(sums,sum, k, n - i, i + 1);
+                combination(sums, sum, k, n - i, i + 1);
                 sum.remove(sum.size() - 1);
             }
         }
