@@ -34,17 +34,21 @@ Output:
 public class CombinationSumIII {
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> sums = new ArrayList<List<Integer>>();
-        combination(sums, k, n);
+        combination(sums, new ArrayList<Integer>(), k, n, 1);
         return sums;
     }
 
-    private void combination(List<List<Integer>> sums, List<Integer> sum,int k, int n) {
+    private void combination(List<List<Integer>> sums, List<Integer> sum,int k, int n, int start) {
+        if (sum.size() > k) {
+            return;
+        }
         if (sum.size() == k && n == 0) {
             sums.add(new ArrayList<Integer>(sum));
         } else {
-            for (int i = 1; i<= 9; i++) {
+            for (int i = start; i<= 9; i++) {
                 sum.add(i);
-                
+                combination(sums,sum, k, n - i, i + 1);
+                sum.remove(sum.size() - 1);
             }
         }
     }
