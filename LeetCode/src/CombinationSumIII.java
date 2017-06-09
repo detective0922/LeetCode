@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -37,6 +38,14 @@ public class CombinationSumIII {
         return sums;
     }
 
-    private void combination(List<List<Integer>> sums, int k, int n) {
+    private void combination(List<List<Integer>> sums, List<Integer> sum,int k, int n) {
+        if (sum.size() == k && n == 0) {
+            sums.add(new ArrayList<Integer>(sum));
+        } else {
+            for (int i = 1; i<= 9; i++) {
+                sum.add(i);
+                
+            }
+        }
     }
 }
