@@ -32,6 +32,9 @@ Output:
 
 */
 public class CombinationSumIII {
+    public static void main(String[] args) {
+        System.out.println(new CombinationSumIII().combinationSum3(3, 9));
+    }
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> sums = new ArrayList<List<Integer>>();
         combination(sums, new ArrayList<Integer>(), k, n, 1);
