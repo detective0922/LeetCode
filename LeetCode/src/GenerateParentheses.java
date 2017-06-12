@@ -18,6 +18,11 @@ For example, given n = 3, a solution set is:
 
 */
 public class GenerateParentheses {
+
+    public static void main(String[] args) {
+        System.out.println(new GenerateParentheses().generateParenthesis(3));
+    }
+
     public List<String> generateParenthesis(int n) {
         List<String> parentheses = new ArrayList<String>();
         if (n == 0) {
