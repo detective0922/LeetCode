@@ -23,18 +23,16 @@ public class GenerateParentheses {
         if (n == 0) {
             return parentheses;
         }
-        int left = 0;
-        int right = 0;
-        generateParentheses(parentheses, left, right, n);
+        generateParentheses(parentheses, new StringBuilder("("), 1, 0, n);
         return parentheses;
     }
 
-    private void generateParentheses(List<String> parentheses, String parenthesis, int left, int right, int n) {
+    private void generateParentheses(List<String> parentheses, StringBuilder parenthesis, int left, int right, int n) {
         if (left > n || right > n) {
             return;
         }
         if (left == n && right == n) {
-            parentheses.add(parenthesis);
+            parentheses.add(parenthesis.toString());
         } else {
 
         }
