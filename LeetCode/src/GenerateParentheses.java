@@ -23,7 +23,7 @@ public class GenerateParentheses {
         if (n == 0) {
             return parentheses;
         }
-        generateParentheses(parentheses, new StringBuilder("("), 1, 0, n);
+        generateParentheses(parentheses, new StringBuilder(), 0, 0, n);
         return parentheses;
     }
 
@@ -37,6 +37,11 @@ public class GenerateParentheses {
             if (left == n) {
                 generateParentheses(parentheses, parenthesis.append(")"), left, right + 1, n);
             }
+
+            if (left < n) {
+                generateParentheses(parentheses, parenthesis.append("("), left + 1, right, n);
+            }
+
 
         }
 
