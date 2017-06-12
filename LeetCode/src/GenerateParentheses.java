@@ -20,8 +20,8 @@ For example, given n = 3, a solution set is:
 public class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
         List<String> parentheses = new ArrayList<String>();
-        int left = n;
-        int right = n;
+        int left = 0;
+        int right = 0;
         generateParentheses(parentheses, left, right, n);
         return parentheses;
     }
@@ -30,6 +30,7 @@ public class GenerateParentheses {
         if (left > n || right > n) {
             return;
         }
+        if ()
 
     }
 
