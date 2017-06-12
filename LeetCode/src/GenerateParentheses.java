@@ -35,11 +35,20 @@ public class GenerateParentheses {
             parentheses.add(parenthesis.toString());
         } else {
             if (left == n) {
-                generateParentheses(parentheses, parenthesis.append(")"), left, right + 1, n);
+                parenthesis.append(")");
+                generateParentheses(parentheses, parenthesis, left, right + 1, n);
+                parenthesis.deleteCharAt(parenthesis.length() - 1);
             }
 
             if (left < n) {
-                generateParentheses(parentheses, parenthesis.append("("), left + 1, right, n);
+                parenthesis.append("(");
+                generateParentheses(parentheses, parenthesis, left + 1, right, n);
+                parenthesis.deleteCharAt(parenthesis.length() - 1);
+            }
+            if(left > right) {
+                parenthesis.append(")");
+                generateParentheses(parentheses, parenthesis, left, right + 1, n);
+                parenthesis.deleteCharAt(parenthesis.length() - 1);
             }
 
 
