@@ -34,6 +34,9 @@ public class GenerateParentheses {
         if (left == n && right == n) {
             parentheses.add(parenthesis.toString());
         } else {
+            if (left == n) {
+                generateParentheses(parentheses, parenthesis.append(")"), left, right + 1, n);
+            }
 
         }
 
