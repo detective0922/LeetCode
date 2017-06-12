@@ -20,17 +20,24 @@ For example, given n = 3, a solution set is:
 public class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
         List<String> parentheses = new ArrayList<String>();
+        if (n == 0) {
+            return parentheses;
+        }
         int left = 0;
         int right = 0;
         generateParentheses(parentheses, left, right, n);
         return parentheses;
     }
 
-    private void generateParentheses(List<String> parentheses, int left, int right, int n) {
+    private void generateParentheses(List<String> parentheses, String parenthesis, int left, int right, int n) {
         if (left > n || right > n) {
             return;
         }
-        if ()
+        if (left == n && right == n) {
+            parentheses.add(parenthesis);
+        } else {
+
+        }
 
     }
 
