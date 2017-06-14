@@ -28,6 +28,8 @@ Given ["a", "aa", "aaa", "aaaa"]
 */
 public class MaximumProductofWordLengths {
     public int maxProduct(String[] words) {
+        int maxProduct = 0;
 
+        return maxProduct;
     }
 }
