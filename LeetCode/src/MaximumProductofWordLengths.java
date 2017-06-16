@@ -29,11 +29,10 @@ Given ["a", "aa", "aaa", "aaaa"]
 public class MaximumProductofWordLengths {
     public int maxProduct(String[] words) {
         int maxProduct = 0;
-        for (String word : words) {
-
+        int[] binValues = new int[words.length];
+        for (int i = 0; i < words.length; i++) {
+            
         }
-
-
         return maxProduct;
     }
 }
