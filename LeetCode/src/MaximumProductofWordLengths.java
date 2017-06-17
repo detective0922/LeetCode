@@ -31,7 +31,9 @@ public class MaximumProductofWordLengths {
         int maxProduct = 0;
         int[] binValues = new int[words.length];
         for (int i = 0; i < words.length; i++) {
-            
+            for (int j = 0; j < words[i].length(); j++) {
+                
+            }
         }
         return maxProduct;
     }
