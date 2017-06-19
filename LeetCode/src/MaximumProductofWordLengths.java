@@ -38,7 +38,9 @@ public class MaximumProductofWordLengths {
         }
         for (int i = 0; i < binValues.length; i++) {
             for (int j = i + 1; j < binValues.length; j++) {
+                if ((binValues[i] & binValues[j]) == 0) {
 
+                }
             }
         }
         return maxProduct;
