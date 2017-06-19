@@ -28,6 +28,10 @@ Given ["a", "aa", "aaa", "aaaa"]
 */
 public class MaximumProductofWordLengths {
 
+    public static void main(String[] args) {
+        String[] test = { "abcw", "baz", "foo", "bar", "xtfn", "abcdef" };
+        System.out.println(new MaximumProductofWordLengths().maxProduct(test));
+    }
 
 
     public int maxProduct(String[] words) {
