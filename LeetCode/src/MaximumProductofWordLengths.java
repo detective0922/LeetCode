@@ -36,6 +36,11 @@ public class MaximumProductofWordLengths {
                 binValues[i] &= (1 << bit);
             }
         }
+        for (int i = 0; i < binValues.length; i++) {
+            for (int j = i + 1; j < binValues.length; j++) {
+
+            }
+        }
         return maxProduct;
     }
 }
