@@ -29,7 +29,7 @@ Given ["a", "aa", "aaa", "aaaa"]
 public class MaximumProductofWordLengths {
 
     public static void main(String[] args) {
-        String[] test = { "abcw", "baz", "foo", "bar", "xtfn", "abcdef" };
+        String[] test = { "a", "aa", "aaa", "aaaa" };
         System.out.println(new MaximumProductofWordLengths().maxProduct(test));
     }
 
@@ -40,7 +40,7 @@ public class MaximumProductofWordLengths {
         for (int i = 0; i < words.length; i++) {
             for (int j = 0; j < words[i].length(); j++) {
                 int bit = words[i].charAt(j) - 'a' + 1;
-                binValues[i] &= (1 << bit);
+                binValues[i] |= (1 << bit);
             }
         }
         for (int i = 0; i < binValues.length; i++) {
