@@ -39,7 +39,7 @@ public class MaximumProductofWordLengths {
         int[] binValues = new int[words.length];
         for (int i = 0; i < words.length; i++) {
             for (int j = 0; j < words[i].length(); j++) {
-                int bit = words[i].charAt(j) - 'a';
+                int bit = words[i].charAt(j) - 'a' + 1;
                 binValues[i] &= (1 << bit);
             }
         }
