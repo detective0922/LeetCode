@@ -29,6 +29,9 @@ Output: [-34, -14, -10, -10, 10]
 public class DifferentWaystoAddParentheses {
     public List<Integer> diffWaysToCompute(String input) {
         List<Integer> results = new ArrayList<Integer>();
+        if (input == null || input.length() == 0) {
+            return results;
+        }
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == '+'||input.charAt(i)=='-'||input.charAt(i)=='*') {
                 String part1 = input.substring(0, i);
@@ -54,6 +57,9 @@ public class DifferentWaystoAddParentheses {
                 }
 
             }
+        }
+        if (results.size() == 0) {
+
         }
         return results;
     }
