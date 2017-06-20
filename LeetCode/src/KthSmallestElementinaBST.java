@@ -26,7 +26,31 @@ public class KthSmallestElementinaBST {
         System.out.println(new KthSmallestElementinaBST().kthSmallest(root, 2));
     }
 
+    private int count = 0;
+    private int kth = 0;
+
     public int kthSmallest(TreeNode root, int k) {
+        count = k;
+        dfs(root);
+        return kth;
+    }
+
+    public void dfs(TreeNode node) {
+        if (node.left != null) {
+            dfs(node.left);
+        }
+        count--;
+        if (count == 0) {
+            kth = node.val;
+            return;
+        }
+        if (node.right != null) {
+            dfs(node.right);
+        }
+
+    }
+
+    /*public int kthSmallest(TreeNode root, int k) {
         List<TreeNode> dfsList = new ArrayList<TreeNode>();
         dfs(root, dfsList);
         return dfsList.get(k - 1).val;
@@ -39,6 +63,6 @@ public class KthSmallestElementinaBST {
         dfs(node.left, dfsList);
         dfsList.add(node);
         dfs(node.right, dfsList);
-    }
+    }*/
 
 }
