@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /*
@@ -17,18 +19,19 @@ Follow up:
 */
 public class KthSmallestElementinaBST {
     public int kthSmallest(TreeNode root, int k) {
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(root);
-        dfs(root, queue);
+        List<TreeNode> dfsList = new ArrayList<TreeNode>();
+        dfsList.add(root);
+        dfs(root, dfsList);
+        return dfsList.get(k - 1).val;
     }
 
-    public void dfs(TreeNode node, Queue<TreeNode> queue) {
+    public void dfs(TreeNode node, List<TreeNode> dfsList) {
         if (node == null) {
             return;
         }
-        dfs(node.left, queue);
-        queue.add(node);
-        dfs(node.right, queue);
+        dfs(node.left, dfsList);
+        dfsList.add(node);
+        dfs(node.right, dfsList);
 
 
     }
