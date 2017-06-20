@@ -22,10 +22,13 @@ public class KthSmallestElementinaBST {
         dfs(root, queue);
     }
 
-    public void dfs(TreeNode root, Queue<TreeNode> queue) {
-        if (root==null) {
+    public void dfs(TreeNode node, Queue<TreeNode> queue) {
+        if (node == null) {
             return;
         }
+        dfs(node.left, queue);
+        queue.add(node);
+        dfs(node.right, queue);
 
 
     }
