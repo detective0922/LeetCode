@@ -33,6 +33,9 @@ public class DifferentWaystoAddParentheses {
             if (input.charAt(i) == '+'||input.charAt(i)=='-'||input.charAt(i)=='*') {
                 String part1 = input.substring(0, i);
                 String part2 = input.substring(i + 1);
+                List<Integer> part1Result = diffWaysToCompute(part1);
+                List<Integer> part2Result = diffWaysToCompute(part2);
+
             }
         }
 
