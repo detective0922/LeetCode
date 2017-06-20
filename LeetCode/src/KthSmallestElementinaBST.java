@@ -18,6 +18,17 @@ Follow up:
 
 */
 public class KthSmallestElementinaBST {
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode Null = new TreeNode(3);
+
+        root.right = two;
+        root.left = Null;
+        System.out.println(new KthSmallestElementinaBST().kthSmallest(root));
+    }
+
     public int kthSmallest(TreeNode root, int k) {
         List<TreeNode> dfsList = new ArrayList<TreeNode>();
         dfsList.add(root);
@@ -32,8 +43,6 @@ public class KthSmallestElementinaBST {
         dfs(node.left, dfsList);
         dfsList.add(node);
         dfs(node.right, dfsList);
-
-
     }
 
 }
