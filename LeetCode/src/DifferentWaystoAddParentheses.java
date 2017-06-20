@@ -59,7 +59,7 @@ public class DifferentWaystoAddParentheses {
             }
         }
         if (results.size() == 0) {
-
+            results.add(Integer.parseInt(input));
         }
         return results;
     }
