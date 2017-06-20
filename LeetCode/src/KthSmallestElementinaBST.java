@@ -19,26 +19,14 @@ public class KthSmallestElementinaBST {
     public int kthSmallest(TreeNode root, int k) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
-        while (!queue.isEmpty()) {
-
-        }
-
-        countNode(root, count, k, queue);
+        dfs(root, queue);
     }
 
-    public int countNode(TreeNode root, int count, int k) {
-
-        queue.add(root.left);
-        while (!queue.isEmpty()) {
-            TreeNode tmpNode = queue.poll();
-            if (tmpNode != null) {
-                count++;
-                queue.add(root.left);
-            }
+    public void dfs(TreeNode root, Queue<TreeNode> queue) {
+        if (root==null) {
+            return;
         }
-        if (count > k) {
 
-        }
 
     }
 
