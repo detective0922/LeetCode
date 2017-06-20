@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 241. Different Ways to Add Parentheses
 
@@ -24,4 +26,7 @@ Output: [-34, -14, -10, -10, 10]
 
 */
 public class DifferentWaystoAddParentheses {
+    public List<Integer> diffWaysToCompute(String input) {
+
+    }
 }
