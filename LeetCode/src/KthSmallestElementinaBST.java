@@ -17,51 +17,29 @@ Follow up:
 */
 public class KthSmallestElementinaBST {
     public int kthSmallest(TreeNode root, int k) {
-        int depth = 1;
-
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        int leftCount = 1;
+        queue.add(root);
+        while (!queue.isEmpty()) {
+
+        }
+
+        countNode(root, count, k, queue);
+    }
+
+    public int countNode(TreeNode root, int count, int k) {
+
         queue.add(root.left);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            if (node != null) {
-                leftCount++;
-                queue.add(node.left);
-                queue.add(node.right);
+            TreeNode tmpNode = queue.poll();
+            if (tmpNode != null) {
+                count++;
+                queue.add(root.left);
             }
         }
-        if (leftCount > k) {
+        if (count > k) {
 
         }
 
     }
-
-    public int maxDepth(TreeNode node, int depth) {
-        if (node == null) {
-            return depth;
-        }
-
-        depth++;
-        if (node.left == null && node.right == null) {
-            return depth;
-        }
-
-        int leftDepth = 0;
-        if (node.left != null) {
-            leftDepth = maxDepth(node.left, depth);
-        }
-
-        int rightDepth = 0;
-        if (node.right != null) {
-            rightDepth = maxDepth(node.right, depth);
-        }
-
-        if (leftDepth > rightDepth) {
-            return leftDepth;
-        } else {
-            return rightDepth;
-        }
-    }
-
 
 }
