@@ -28,16 +28,33 @@ Output: [-34, -14, -10, -10, 10]
 */
 public class DifferentWaystoAddParentheses {
     public List<Integer> diffWaysToCompute(String input) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> results = new ArrayList<Integer>();
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == '+'||input.charAt(i)=='-'||input.charAt(i)=='*') {
                 String part1 = input.substring(0, i);
                 String part2 = input.substring(i + 1);
                 List<Integer> part1Result = diffWaysToCompute(part1);
                 List<Integer> part2Result = diffWaysToCompute(part2);
+                for (Integer result1 : part1Result) {
+                    for (Integer result2 : part2Result) {
+                        int result = 0;
+                        switch (input.charAt(i)) {
+                            case '+':
+                                result = result1 + result2;
+                                break;
+                            case '-':
+                                result = result1 - result2;
+                                break;
+                            case '*':
+                                result = result1 * result2;
+                                break;
+                        }
+                        results.add(result);
+                    }
+                }
 
             }
         }
-
+        return results;
     }
 }
