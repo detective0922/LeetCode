@@ -16,16 +16,8 @@ Note:
 */
 public class FindtheDuplicateNumber {
     public int findDuplicate(int[] nums) {
+        int walker = nums[0];
+        int runner = nums[0];
 
-    }
-
-    public int binarySearch(int[] nums, int num) {
-        int low = 0;
-        int high = nums.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            
-        }
-        return -1;
     }
 }
