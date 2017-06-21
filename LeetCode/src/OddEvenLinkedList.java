@@ -30,7 +30,7 @@ public class OddEvenLinkedList {
         two.next = three;
         three.next = four;
         four.next = five;
-        System.out.println(new RemoveDuplicatesfromSortedList().deleteDuplicates(root));
+        System.out.println(new OddEvenLinkedList().oddEvenList(root));
     }
 
     public ListNode oddEvenList(ListNode head) {
@@ -40,10 +40,10 @@ public class OddEvenLinkedList {
         ListNode firstEvenNode = head.next;
         ListNode tmpOddNode = head;
         ListNode tmpEvenNode = head.next;
-        while (tmpOddNode != null && tmpEvenNode !=null) {
+        while (tmpOddNode != null && tmpEvenNode !=null && tmpEvenNode.next != null) {
             tmpOddNode.next = tmpEvenNode.next;
-            tmpEvenNode.next = tmpOddNode.next;
             tmpOddNode = tmpOddNode.next;
+            tmpEvenNode.next = tmpOddNode.next;
             tmpEvenNode = tmpEvenNode.next;
         }
         tmpOddNode.next = firstEvenNode;
