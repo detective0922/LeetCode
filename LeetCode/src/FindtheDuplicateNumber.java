@@ -23,6 +23,11 @@ public class FindtheDuplicateNumber {
             runner = nums[nums[runner]];
         }
 
+        runner = 0;
+        while (walker != runner) {
 
+        }
+
+        return nums[walker];
     }
 }
