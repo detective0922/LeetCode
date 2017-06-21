@@ -29,6 +29,6 @@ public class FindtheDuplicateNumber {
             runner = nums[runner];
         }
 
-        return nums[walker];
+        return walker;
     }
 }
