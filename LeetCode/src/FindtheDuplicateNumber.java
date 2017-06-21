@@ -15,4 +15,7 @@ Note:
 
 */
 public class FindtheDuplicateNumber {
+    public int findDuplicate(int[] nums) {
+
+    }
 }
