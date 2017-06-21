@@ -17,7 +17,12 @@ Note:
 public class FindtheDuplicateNumber {
     public int findDuplicate(int[] nums) {
         int walker = nums[0];
-        int runner = nums[0];
+        int runner = nums[nums[0]];
+        while (walker != runner) {
+            walker = nums[walker];
+            runner = nums[nums[runner]];
+        }
+
 
     }
 }
