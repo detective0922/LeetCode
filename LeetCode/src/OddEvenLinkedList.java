@@ -20,6 +20,16 @@ Note:
 */
 public class OddEvenLinkedList {
     public ListNode oddEvenList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode firstOddNode = head;
+        ListNode firstEvenNode = head.next;
+        ListNode tmpOddNode = head;
+        ListNode tmpEvenNode = head.next;
+        while (tmpOddNode != null) {
+
+        }
 
     }
 
