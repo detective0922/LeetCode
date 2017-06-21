@@ -18,4 +18,14 @@ public class FindtheDuplicateNumber {
     public int findDuplicate(int[] nums) {
 
     }
+
+    public int binarySearch(int[] nums, int num) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            
+        }
+        return -1;
+    }
 }
