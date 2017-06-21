@@ -19,6 +19,20 @@ Note:
 
 */
 public class OddEvenLinkedList {
+
+    public static void main(String[] args) {
+        ListNode root = new ListNode(1);
+        ListNode two = new ListNode(2);
+        ListNode three = new ListNode(3);
+        ListNode four = new ListNode(4);
+        ListNode five = new ListNode(5);
+        root.next = two;
+        two.next = three;
+        three.next = four;
+        four.next = five;
+        System.out.println(new RemoveDuplicatesfromSortedList().deleteDuplicates(root));
+    }
+
     public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
