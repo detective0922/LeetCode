@@ -25,7 +25,8 @@ public class FindtheDuplicateNumber {
 
         runner = 0;
         while (walker != runner) {
-
+            walker = nums[walker];
+            runner = nums[runner];
         }
 
         return nums[walker];
