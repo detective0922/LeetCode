@@ -23,14 +23,17 @@ public class OddEvenLinkedList {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode firstOddNode = head;
         ListNode firstEvenNode = head.next;
         ListNode tmpOddNode = head;
         ListNode tmpEvenNode = head.next;
-        while (tmpOddNode != null) {
-
+        while (tmpOddNode != null && tmpEvenNode !=null) {
+            tmpOddNode.next = tmpEvenNode.next;
+            tmpEvenNode.next = tmpOddNode.next;
+            tmpOddNode = tmpOddNode.next;
+            tmpEvenNode = tmpEvenNode.next;
         }
-
+        tmpOddNode.next = firstEvenNode;
+        return head;
     }
 
 }
