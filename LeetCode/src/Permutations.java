@@ -21,6 +21,10 @@ For example,
 */
 public class Permutations {
 
+    public static void main(String[] args) {
+        new Permutations().permute(new int[]{1,2,3});
+    }
+
     private int permutationTotal = 1;
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> permutations = new ArrayList<List<Integer>>();
