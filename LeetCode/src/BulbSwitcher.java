@@ -18,4 +18,7 @@ So you should return 1, because there is only one bulb is on.
 
 */
 public class BulbSwitcher {
+    public int bulbSwitch(int n) {
+        return (int) Math.sqrt(n);
+    }
 }
