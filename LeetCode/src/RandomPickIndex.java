@@ -39,6 +39,12 @@ public class RandomPickIndex {
 
     public int pick(int target) {
         int randomIndex = 0;
+        List<Integer> list = null;
+        if (map.containsKey(target)) {
+            list = map.get(target);
+        } else {
+
+        }
         return list.get(randomIndex);
     }
 
