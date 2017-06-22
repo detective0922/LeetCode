@@ -27,11 +27,10 @@ public class Permutations {
     }
 
     private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int[] nums) {
-        if (n > nums.length) {
-            return;
-        }
-        if (n == nums.length) {
-            permutations.add(p)
+        if (permutation.size() == nums.length) {
+            permutations.add(permutation);
+        } else {
+
         }
 
     }
