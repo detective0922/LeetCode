@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 
 46. Permutations
@@ -17,5 +20,16 @@ For example,
 
 */
 public class Permutations {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> permutations = new ArrayList<List<Integer>>();
+        generatePermutations(permutations, 0, nums);
+        return permutations;
+    }
+
+    private void generatePermutations(List<List<Integer>> permutations, int n, int[] nums) {
+        if (n>nums.length) {
+            return;
+        }
+    }
 
 }
