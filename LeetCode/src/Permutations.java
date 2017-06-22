@@ -35,28 +35,26 @@ public class Permutations {
         for (int i = 1; i <= nums.length; i++) {
             permutationTotal *= i;
         }
-        generatePermutations(permutations, new ArrayList<Integer>(),0, nums);
+        generatePermutations(permutations, new ArrayList<Integer>(), nums);
         return permutations;
     }
 
-    private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int numIndex, int[] nums) {
+    private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int[] nums) {
         if (permutations.size() == permutationTotal) {
             return;
         }
 
         if (permutation.size() == nums.length) {
             permutations.add(new ArrayList<Integer>(permutation));
-            generatePermutations(permutations, new ArrayList<Integer>(), numIndex + 1, nums);
         } else {
             for (int i = 0; i < nums.length; i++) {
                 if (!permutation.contains(nums[i])) {
                     permutation.add(nums[i]);
-                    generatePermutations(permutations, permutation, numIndex, nums);
+                    generatePermutations(permutations, permutation, nums);
                     permutation.remove(permutation.size() - 1);
                 }
             }
         }
-
     }
 
 }
