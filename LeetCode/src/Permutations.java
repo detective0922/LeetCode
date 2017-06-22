@@ -22,14 +22,27 @@ For example,
 public class Permutations {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> permutations = new ArrayList<List<Integer>>();
-        generatePermutations(permutations, new ArrayList<Integer>(), nums);
+        if (nums.length == 0) {
+            return permutations;
+        }
+        int permutationTotal = 1;
+        for (int i = 1; i <= nums.length; i++) {
+            permutationTotal *= i;
+        }
+        generatePermutations(permutations, new ArrayList<Integer>(), permutationTotal, 0, nums);
         return permutations;
     }
 
-    private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int[] nums) {
+    private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int permutationCount, int numIndex, int[] nums) {
+        if (permutations.size() == permutationCount) {
+            return;
+        }
+
         if (permutation.size() == nums.length) {
             permutations.add(permutation);
+            generatePermutations(permutations, new ArrayList<Integer>(), permutationCount, numIndex + 1, nums);
         } else {
+
 
         }
 
