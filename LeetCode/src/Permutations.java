@@ -45,10 +45,10 @@ public class Permutations {
         }
 
         if (permutation.size() == nums.length) {
-            permutations.add(permutation);
+            permutations.add(new ArrayList<Integer>(permutation));
             generatePermutations(permutations, new ArrayList<Integer>(), numIndex + 1, nums);
         } else {
-            for (int i = 0; i< nums.length; i++) {
+            for (int i = 0; i < nums.length; i++) {
                 if (!permutation.contains(nums[i])) {
                     permutation.add(nums[i]);
                     generatePermutations(permutations, permutation, numIndex, nums);
