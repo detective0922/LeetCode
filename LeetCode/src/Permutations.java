@@ -20,30 +20,37 @@ For example,
 
 */
 public class Permutations {
+
+    private int permutationTotal = 1;
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> permutations = new ArrayList<List<Integer>>();
         if (nums.length == 0) {
             return permutations;
         }
-        int permutationTotal = 1;
+
         for (int i = 1; i <= nums.length; i++) {
             permutationTotal *= i;
         }
-        generatePermutations(permutations, new ArrayList<Integer>(), permutationTotal, 0, nums);
+        generatePermutations(permutations, new ArrayList<Integer>(),0, nums);
         return permutations;
     }
 
-    private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int permutationCount, int numIndex, int[] nums) {
-        if (permutations.size() == permutationCount) {
+    private void generatePermutations(List<List<Integer>> permutations, List<Integer> permutation, int numIndex, int[] nums) {
+        if (permutations.size() == permutationTotal) {
             return;
         }
 
         if (permutation.size() == nums.length) {
             permutations.add(permutation);
-            generatePermutations(permutations, new ArrayList<Integer>(), permutationCount, numIndex + 1, nums);
+            generatePermutations(permutations, new ArrayList<Integer>(), numIndex + 1, nums);
         } else {
-
-
+            for (int i = 0; i< nums.length; i++) {
+                if (!permutation.contains(nums[i])) {
+                    permutation.add(nums[i]);
+                    generatePermutations(permutations, permutation, numIndex, nums);
+                    permutation.remove(permutation.size() - 1);
+                }
+            }
         }
 
     }
