@@ -41,6 +41,7 @@ public class CombinationSumIV {
 
     public int combinationSum4(int[] nums, int target) {
         int[] sums = new int[target + 1];
+        sums[0] = 1;
     }
 
 }
