@@ -44,8 +44,19 @@ public class CombinationSumIV {
     }
 
     private void countSet(int[] nums, List<Integer> addedNums, int sum, int index) {
+        if (sum > target) {
+            return;
+        }
 
+        if (sum == target) {
+            count++;
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                if (!addedNums.contains(nums[i]) && (sum + nums[i]) < target) {
 
+                }
+            }
+        }
 
     }
 }
