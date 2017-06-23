@@ -46,7 +46,7 @@ public class RandomPickIndex {
         for (int num : nums) {
             if (num == target) {
                 if (random.nextInt(++count) == 0) {
-                    ret = i;
+                    ret = num;
                 }
             }
         }
