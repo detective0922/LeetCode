@@ -36,7 +36,7 @@ Follow up:
 public class CombinationSumIV {
 
     public static void main(String[] args) {
-        new CombinationSumIV().combinationSum4(new int[]{1,2,3}, 7);
+        new CombinationSumIV().combinationSum4(new int[]{1,2,3}, 4);
     }
 
     private int count = 0;
@@ -57,13 +57,11 @@ public class CombinationSumIV {
             count++;
         } else {
             for (int i = 0; i < nums.length; i++) {
-                if (!addedNums.contains(nums[i])) {
-                    sum += nums[i];
-                    addedNums.add(nums[i]);
-                    countSet(nums, addedNums, sum);
-                    addedNums.remove(addedNums.size()-1);
-                    sum -= nums[i];
-                }
+                sum += nums[i];
+                addedNums.add(nums[i]);
+                countSet(nums, addedNums, sum);
+                addedNums.remove(addedNums.size() - 1);
+                sum -= nums[i];
             }
         }
 
