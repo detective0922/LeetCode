@@ -34,16 +34,21 @@ Follow up:
 
 */
 public class CombinationSumIV {
+
+    public static void main(String[] args) {
+        new CombinationSumIV().combinationSum4(new int[]{1,2,3}, 7);
+    }
+
     private int count = 0;
     private int target = 0;
     public int combinationSum4(int[] nums, int target) {
         this.target = target;
         List<Integer> addedNums = new ArrayList<Integer>();
-        countSet(nums, addedNums, 0, 0);
+        countSet(nums, addedNums, 0);
         return count;
     }
 
-    private void countSet(int[] nums, List<Integer> addedNums, int sum, int index) {
+    private void countSet(int[] nums, List<Integer> addedNums, int sum) {
         if (sum > target) {
             return;
         }
@@ -52,8 +57,12 @@ public class CombinationSumIV {
             count++;
         } else {
             for (int i = 0; i < nums.length; i++) {
-                if (!addedNums.contains(nums[i]) && (sum + nums[i]) < target) {
-
+                if (!addedNums.contains(nums[i])) {
+                    sum += nums[i];
+                    addedNums.add(nums[i]);
+                    countSet(nums, addedNums, sum);
+                    addedNums.remove(addedNums.size()-1);
+                    sum -= nums[i];
                 }
             }
         }
