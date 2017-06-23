@@ -43,10 +43,10 @@ public class RandomPickIndex {
     public int pick(int target) {
         int count = 0;
         int ret = -1;
-        for (int num : nums) {
-            if (num == target) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
                 if (random.nextInt(++count) == 0) {
-                    ret = num;
+                    ret = i;
                 }
             }
         }
