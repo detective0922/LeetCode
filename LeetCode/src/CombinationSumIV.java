@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 
 377. Combination Sum IV
@@ -31,4 +34,8 @@ Follow up:
 
 */
 public class CombinationSumIV {
+    public int combinationSum4(int[] nums, int target) {
+        List<Integer> sum = new ArrayList<Integer>();
+
+    }
 }
