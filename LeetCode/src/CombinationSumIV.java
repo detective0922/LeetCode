@@ -39,31 +39,8 @@ public class CombinationSumIV {
         new CombinationSumIV().combinationSum4(new int[]{1,2,3}, 4);
     }
 
-    private int count = 0;
-    private int target = 0;
     public int combinationSum4(int[] nums, int target) {
-        this.target = target;
-        List<Integer> addedNums = new ArrayList<Integer>();
-        countSet(nums, addedNums, 0);
-        return count;
-    }
-
-    private void countSet(int[] nums, List<Integer> addedNums, int sum) {
-        if (sum > target) {
-            return;
-        }
-
-        if (sum == target) {
-            count++;
-        } else {
-            for (int i = 0; i < nums.length; i++) {
-                sum += nums[i];
-                addedNums.add(nums[i]);
-                countSet(nums, addedNums, sum);
-                addedNums.remove(addedNums.size() - 1);
-                sum -= nums[i];
-            }
-        }
 
     }
+
 }
