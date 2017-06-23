@@ -36,7 +36,8 @@ public class RandomPickIndex {
     private int[] nums;
     private Random random;
     public Solution(int[] nums) {
-
+        this.nums = nums;
+        this.random = new Random();
     }
 
     public int pick(int target) {
