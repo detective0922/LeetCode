@@ -25,6 +25,7 @@ solution.pick(1);
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Your Solution object will be instantiated and called as such:
@@ -32,7 +33,8 @@ import java.util.Map;
  * int param_1 = obj.pick(target);
  */
 public class RandomPickIndex {
-    private Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
+    private int[] nums;
+    private Random random;
     public Solution(int[] nums) {
 
     }
