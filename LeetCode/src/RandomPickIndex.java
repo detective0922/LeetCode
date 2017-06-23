@@ -41,14 +41,16 @@ public class RandomPickIndex {
     }
 
     public int pick(int target) {
-        int randomIndex = 0;
-        List<Integer> list = null;
-        if (map.containsKey(target)) {
-            list = map.get(target);
-        } else {
-
+        int count = 0;
+        int ret = -1;
+        for (int num : nums) {
+            if (num == target) {
+                if (random.nextInt(++count) == 0) {
+                    ret = i;
+                }
+            }
         }
-        return list.get(randomIndex);
+        return ret;
     }
 
 }
