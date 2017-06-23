@@ -34,8 +34,18 @@ Follow up:
 
 */
 public class CombinationSumIV {
+    private int count = 0;
+    private int target = 0;
     public int combinationSum4(int[] nums, int target) {
-        List<Integer> sum = new ArrayList<Integer>();
+        this.target = target;
+        List<Integer> addedNums = new ArrayList<Integer>();
+        countSet(nums, addedNums, 0, 0);
+        return count;
+    }
+
+    private void countSet(int[] nums, List<Integer> addedNums, int sum, int index) {
+
+
 
     }
 }
