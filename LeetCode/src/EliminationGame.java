@@ -25,6 +25,16 @@ Output:
 
 public class EliminationGame {
     public int lastRemaining(int n) {
+        int difference = 1;
+        return remaining(n, difference);
+    }
 
+    private int remaining(int n, int difference) {
+        if (difference >= n) {
+            return n;
+        }
+        n -= difference;
+        difference += difference;
+        return remaining(n, difference);
     }
 }
