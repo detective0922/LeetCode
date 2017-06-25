@@ -42,7 +42,7 @@ public class CombinationSumIV {
     public int combinationSum4(int[] nums, int target) {
         int result = 0;
         for (int i = 1; i < nums.length; i++) {
-
+            result += combinationSum4(nums, target- nums[i]);
         }
     }
 
