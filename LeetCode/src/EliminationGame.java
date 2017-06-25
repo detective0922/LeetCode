@@ -25,7 +25,7 @@ Output:
 
 public class EliminationGame {
     public static void main(String[] args) {
-        new EliminationGame().lastRemaining(9);
+        new EliminationGame().lastRemaining(10);
     }
 
     public int lastRemaining(int n) {
@@ -39,7 +39,7 @@ public class EliminationGame {
     }
 
     private int remaining(int n, int difference, boolean isLeft, int count) {
-        if (difference >= n) {
+        if (count == 1) {
             return n;
         }
         if ((!isLeft) || (isLeft && (count % 2 != 0))) {
