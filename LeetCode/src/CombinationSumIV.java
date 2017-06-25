@@ -37,28 +37,28 @@ Follow up:
 public class CombinationSumIV {
 
     public static void main(String[] args) {
-        new CombinationSumIV().combinationSum4(new int[]{1,2,3}, 4);
+        System.out.println(new CombinationSumIV().combinationSum4(new int[]{1, 2, 3}, 4));
     }
 
     private int[] sums;
-
     public int combinationSum4(int[] nums, int target) {
         sums = new int[target + 1];
         Arrays.fill(sums, -1);
         sums[0] = 1;
-        combinationSum(nums, target);
-        return sums[target];
+        return combinationSum(nums, target);
     }
 
     public int combinationSum(int[] nums, int target) {
-        if (sums[target] < 0) {
-            return 0;
+        if (sums[target] >= 0) {
+            return sums[target];
         }
+        int result = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] <= target) {
-                sums[target] += combinationSum(nums, target - nums[i]);
+                result += combinationSum(nums, target - nums[i]);
             }
         }
+        sums[target] = result;
         return sums[target];
     }
 
