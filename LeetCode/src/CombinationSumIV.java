@@ -40,16 +40,14 @@ public class CombinationSumIV {
     }
 
     public int combinationSum4(int[] nums, int target) {
-        if (target == 0) {
-            return 1;
-        }
-        int result = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] <= target) {
-                result += combinationSum4(nums, target - nums[i]);
+        int[] sums = new int[target + 1];
+        sums[0] = 1;
+        for (int i = 1; i < sums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+
             }
         }
-        return result;
+        return sums[target];
     }
 
 }
