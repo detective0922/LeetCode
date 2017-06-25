@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -39,14 +40,23 @@ public class CombinationSumIV {
         new CombinationSumIV().combinationSum4(new int[]{1,2,3}, 4);
     }
 
+    private int[] sums;
+
     public int combinationSum4(int[] nums, int target) {
-        int[] sums = new int[target + 1];
+        sums = new int[target + 1];
+        Arrays.fill(sums, -1);
         sums[0] = 1;
-        for (int i = 1; i < sums.length; i++) {
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[j] <= i) {
-                    sums[i] += sums[i - nums[j]];
-                }
+        combinationSum(nums, target);
+        return sums[target];
+    }
+
+    public int combinationSum(int[] nums, int target) {
+        if (sums[target] < 0) {
+            return 0;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] <= target) {
+                sums[target] += combinationSum(nums, target - nums[i]);
             }
         }
         return sums[target];
