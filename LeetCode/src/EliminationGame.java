@@ -24,17 +24,31 @@ Output:
 */
 
 public class EliminationGame {
-    public int lastRemaining(int n) {
-        int difference = 1;
-        return remaining(n, difference);
+    public static void main(String[] args) {
+        new EliminationGame().lastRemaining(9);
     }
 
-    private int remaining(int n, int difference) {
+    public int lastRemaining(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        int difference = 1;
+        boolean isLeft = true;
+        int count = n;
+        return remaining(n, difference, isLeft, count);
+    }
+
+    private int remaining(int n, int difference, boolean isLeft, int count) {
         if (difference >= n) {
             return n;
         }
-        n -= difference;
+        if ((!isLeft) || (isLeft && (count % 2 != 0))) {
+            n -= difference;
+        }
+
         difference += difference;
-        return remaining(n, difference);
+        isLeft = !isLeft;
+        count >>>= 1;
+        return remaining(n, difference, isLeft, count);
     }
 }
