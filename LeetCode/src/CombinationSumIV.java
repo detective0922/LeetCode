@@ -44,8 +44,8 @@ public class CombinationSumIV {
         sums[0] = 1;
         for (int i = 1; i < sums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
-                if (nums[j] <= target) {
-                    sums[i] += sums[target - nums[j]];
+                if (nums[j] <= i) {
+                    sums[i] += sums[i - nums[j]];
                 }
             }
         }
