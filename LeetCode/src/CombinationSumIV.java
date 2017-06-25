@@ -44,8 +44,10 @@ public class CombinationSumIV {
             return 1;
         }
         int result = 0;
-        for (int i = 1; i < nums.length; i++) {
-            result += combinationSum4(nums, target- nums[i]);
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] <= target) {
+                result += combinationSum4(nums, target - nums[i]);
+            }
         }
         return result;
     }
