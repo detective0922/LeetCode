@@ -27,9 +27,24 @@ public class DecodeString {
     public String decodeString(String s) {
         StringBuilder retStr = new StringBuilder();
         Queue<String> queue = new LinkedList<String>();
-        queue.add(s.substring(0, 1));
-        int index = 1;
-        while (!queue.isEmpty()) {
+        for (int index = 0; index < s.length(); index++) {
+            char c = s.charAt(index);
+            if (Character.isLetter(c)) {
+                retStr.append(c);
+            }
+            if (Character.isDigit(c)) {
+                queue.add(s.substring(index, index + 1));
+                while (!queue.isEmpty()) {
+
+                }
+            }
+
+        }
+
+        while (index < s.length()) {
+
+
+
             if (s.charAt(index) == '[') {
                 index++;
                 StringBuilder subStr = new StringBuilder();
