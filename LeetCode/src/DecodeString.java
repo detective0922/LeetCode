@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /*
 
 394. Decode String
@@ -22,7 +25,11 @@ s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 */
 public class DecodeString {
     public String decodeString(String s) {
+        Queue<String> queue = new LinkedList<String>();
+        queue.add(s.substring(0, 1));
+        while (!queue.isEmpty()) {
 
+        }
     }
 
 }
