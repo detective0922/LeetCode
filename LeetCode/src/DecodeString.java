@@ -27,7 +27,8 @@ s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 */
 public class DecodeString {
     public String decodeString(String s) {
-        Queue<String> queue = new LinkedList<String>();
+        Queue<String> codes = new LinkedList<String>();
+        Queue<Integer> k = new LinkedList<Integer>();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '[') {
                 continue;
@@ -39,11 +40,15 @@ public class DecodeString {
                 i++;
             }
             if (subStr.length() != 0) {
-                queue.add(subStr.toString());
+                codes.add(subStr.toString());
             }
 
-            if (Character.isDigit(s.charAt(i))|| s.charAt(i)==']') {
-                queue.add(subStr.substring(i, ++i));
+            if (Character.isDigit(s.charAt(i))) {
+                k.add(Character.getNumericValue(s.charAt(i)));
+            }
+
+            if (s.charAt(i) == ']') {
+
             }
         }
         List<String> strList = new ArrayList<String>();
