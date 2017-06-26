@@ -43,6 +43,11 @@ public class DecodeString {
                 queue.add(s.substring(index, index + 1));
             }
             if (s.charAt(index) == ']') {
+                String tmpStr = queue.poll();
+                int count = Integer.parseInt(queue.poll());
+                for (int i = 0; i < count; i++) {
+                    tmpStr += tmpStr;
+                }
                 index++;
             }
         }
