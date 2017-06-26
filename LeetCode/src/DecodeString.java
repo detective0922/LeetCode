@@ -25,23 +25,19 @@ s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 */
 public class DecodeString {
     public String decodeString(String s) {
-        StringBuilder retStr = new StringBuilder();
         Queue<String> queue = new LinkedList<String>();
-        for (int index = 0; index < s.length(); index++) {
-            char c = s.charAt(index);
-            if (Character.isLetter(c)) {
-                retStr.append(c);
+        for (int i = 0; i < s.length(); i++) {
+            StringBuilder subStr = new StringBuilder();
+            while (Character.isLetter(s.charAt(i))) {
+                subStr.append(s.charAt(i));
+                i++;
             }
-            if (Character.isDigit(c)) {
-                queue.add(s.substring(index, ++index));
-                while (!queue.isEmpty()) {
-
-                    if (s.charAt(index))
-
-                }
+            queue.add(subStr.toString());
+            if (Character.isDigit(s.charAt(i))|| s.charAt(i)==']') {
+                queue.add(subStr.substring(i, ++i));
             }
-
         }
+        StringBuilder retStr = new StringBuilder();
         return retStr.toString();
     }
 
