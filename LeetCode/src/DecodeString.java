@@ -26,6 +26,12 @@ s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 
 */
 public class DecodeString {
+    public static void main(String[] args) {
+        System.out.println(new DecodeString().decodeString("3[a]2[bc]"));
+        System.out.println(new DecodeString().decodeString("3[a2[c]]"));
+        System.out.println(new DecodeString().decodeString("2[abc]3[cd]ef"));
+    }
+
     public String decodeString(String s) {
         Queue<String> codes = new LinkedList<String>();
         Queue<Integer> k = new LinkedList<Integer>();
@@ -53,21 +59,15 @@ public class DecodeString {
                 for (int j = 0; j < kNum; j++) {
                     codeStr += codeStr;
                 }
-                codes.add()
-            }
-        }
-        List<String> strList = new ArrayList<String>();
-        while (!queue.isEmpty()) {
-            String str = queue.poll();
-            if (str.equals("]")) {
-                String codeStr = queue.poll();
-                int k = Integer.parseInt(queue.poll());
-                for (int i = 0; i < k; i++) {
-                    codeStr += codeStr;
+                if (codes.isEmpty()) {
+                    codes.add(codeStr);
+                } else {
+                    codes.add(codes.poll() + codeStr);
                 }
             }
         }
-        return retStr.toString();
+
+        return codes.poll();
     }
 
 }
