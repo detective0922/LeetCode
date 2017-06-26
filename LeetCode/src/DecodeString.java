@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /*
@@ -27,17 +29,34 @@ public class DecodeString {
     public String decodeString(String s) {
         Queue<String> queue = new LinkedList<String>();
         for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '[') {
+                continue;
+            }
+
             StringBuilder subStr = new StringBuilder();
             while (Character.isLetter(s.charAt(i))) {
                 subStr.append(s.charAt(i));
                 i++;
             }
-            queue.add(subStr.toString());
+            if (subStr.length() != 0) {
+                queue.add(subStr.toString());
+            }
+
             if (Character.isDigit(s.charAt(i))|| s.charAt(i)==']') {
                 queue.add(subStr.substring(i, ++i));
             }
         }
-        StringBuilder retStr = new StringBuilder();
+        List<String> strList = new ArrayList<String>();
+        while (!queue.isEmpty()) {
+            String str = queue.poll();
+            if (str.equals("]")) {
+                String codeStr = queue.poll();
+                int k = Integer.parseInt(queue.poll());
+                for (int i = 0; i < k; i++) {
+                    codeStr += codeStr;
+                }
+            }
+        }
         return retStr.toString();
     }
 
