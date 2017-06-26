@@ -48,7 +48,12 @@ public class DecodeString {
             }
 
             if (s.charAt(i) == ']') {
-
+                String codeStr = codes.poll();
+                int kNum = k.poll();
+                for (int j = 0; j < kNum; j++) {
+                    codeStr += codeStr;
+                }
+                codes.add()
             }
         }
         List<String> strList = new ArrayList<String>();
