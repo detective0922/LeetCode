@@ -33,38 +33,14 @@ public class DecodeString {
                 retStr.append(c);
             }
             if (Character.isDigit(c)) {
-                queue.add(s.substring(index, index + 1));
+                queue.add(s.substring(index, ++index));
                 while (!queue.isEmpty()) {
 
+                    if (s.charAt(index))
+
                 }
             }
 
-        }
-
-        while (index < s.length()) {
-
-
-
-            if (s.charAt(index) == '[') {
-                index++;
-                StringBuilder subStr = new StringBuilder();
-                while (Character.isLetter(s.charAt(index))) {
-                    subStr.append(s.charAt(index));
-                    index++;
-                }
-                queue.add(subStr.toString());
-            }
-            if (Character.isDigit(s.charAt(index))) {
-                queue.add(s.substring(index, index + 1));
-            }
-            if (s.charAt(index) == ']') {
-                String tmpStr = queue.poll();
-                int count = Integer.parseInt(queue.poll());
-                for (int i = 0; i < count; i++) {
-                    tmpStr += tmpStr;
-                }
-                index++;
-            }
         }
         return retStr.toString();
     }
