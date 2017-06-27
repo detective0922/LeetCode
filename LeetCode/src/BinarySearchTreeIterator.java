@@ -10,5 +10,25 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
 
 
 */
+
+/**
+ * Your BSTIterator will be called like this:
+ * BSTIterator i = new BSTIterator(root);
+ * while (i.hasNext()) v[f()] = i.next();
+ */
+
 public class BinarySearchTreeIterator {
+    public BSTIterator(TreeNode root) {
+
+    }
+
+    /** @return whether we have a next smallest number */
+    public boolean hasNext() {
+
+    }
+
+    /** @return the next smallest number */
+    public int next() {
+
+    }
 }
