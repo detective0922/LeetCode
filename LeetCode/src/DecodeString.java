@@ -56,13 +56,14 @@ public class DecodeString {
             if (s.charAt(i) == ']') {
                 String codeStr = codes.poll();
                 int kNum = k.poll();
+                StringBuilder newCodeStr = new StringBuilder();
                 for (int j = 0; j < kNum; j++) {
-                    codeStr += codeStr;
+                    newCodeStr.append(newCodeStr);
                 }
                 if (codes.isEmpty()) {
-                    codes.add(codeStr);
+                    codes.add(newCodeStr.toString());
                 } else {
-                    codes.add(codes.poll() + codeStr);
+                    codes.add(codes.poll() + newCodeStr.toString());
                 }
             }
         }
