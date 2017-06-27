@@ -39,47 +39,21 @@ public class DecodeString {
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '[') {
                 codes.push(retStr.toString());
-                retStr.setLength(0);
-            } else if(Character.isDigit(s.charAt(i))) {
-
-            }
-
-            StringBuilder charStr = new StringBuilder();
-            while (i < s.length() && Character.isLetter(s.charAt(i))) {
-                charStr.append(s.charAt(i));
-                i++;
-            }
-            if (charStr.length() != 0) {
-                codes.push(charStr.toString());
-            }
-
-            StringBuilder digitStr = new StringBuilder();
-            while (i < s.length() && Character.isDigit(s.charAt(i))) {
-                digitStr.append(s.charAt(i));
-                i++;
-            }
-            if (digitStr.length() != 0) {
                 k.push(Integer.parseInt(digitStr.toString()));
-            }
-
-            if (i < s.length() && s.charAt(i) == ']') {
-                String codeStr = codes.pop();
+                retStr.setLength(0);
+                digitStr.setLength(0);
+            } else if(Character.isDigit(s.charAt(i))) {
+                digitStr.append(s.charAt(i));
+            } else if (s.charAt(i) == ']') {
+                String codeStr = retStr.toString();
+                retStr = new StringBuilder(codes.pop());
                 int kNum = k.pop();
-                StringBuilder newCodeStr = new StringBuilder();
                 for (int j = 0; j < kNum; j++) {
-                    newCodeStr.append(codeStr);
+                    retStr.append(codeStr);
                 }
-                if (codes.isEmpty()) {
-                    codes.push(newCodeStr.toString());
-                } else {
-                    codes.push(codes.pop() + newCodeStr.toString());
-                }
+            } else {
+                retStr.append(s.charAt(i));
             }
-        }
-
-        StringBuilder retStr = new StringBuilder();
-        for (int i = 0; i < codes.size(); i++) {
-            retStr.append(codes.get(i));
         }
 
         return retStr.toString();
