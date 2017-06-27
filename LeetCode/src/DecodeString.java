@@ -26,18 +26,43 @@ public class DecodeString {
     public static void main(String[] args) {
         //System.out.println(new DecodeString().decodeString("3[a]2[bc]"));
         //System.out.println(new DecodeString().decodeString("3[a2[c]]"));
-        System.out.println(new DecodeString().decodeString("2[abc]3[cd]ef"));
+        //System.out.println(new DecodeString().decodeString("2[abc]3[cd]ef"));
+        //System.out.println(new DecodeString().decodeString("100[leetcode]"));
+        System.out.println(new DecodeString().decodeString( "sd2[f2[e]g]i"));
     }
 
     public String decodeString(String s) {
         Stack<String> codes = new Stack<String>();
         Stack<Integer> k = new Stack<Integer>();
+        StringBuilder retStr = new StringBuilder();
+        StringBuilder digitStr = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '[') {
-                continue;
-            } else if (Character.isDigit(s.charAt(i))) {
-                k.push(Character.getNumericValue(s.charAt(i)));
-            } else if (s.charAt(i) == ']') {
+                codes.push(retStr.toString());
+                retStr.setLength(0);
+            } else if(Character.isDigit(s.charAt(i))) {
+
+            }
+
+            StringBuilder charStr = new StringBuilder();
+            while (i < s.length() && Character.isLetter(s.charAt(i))) {
+                charStr.append(s.charAt(i));
+                i++;
+            }
+            if (charStr.length() != 0) {
+                codes.push(charStr.toString());
+            }
+
+            StringBuilder digitStr = new StringBuilder();
+            while (i < s.length() && Character.isDigit(s.charAt(i))) {
+                digitStr.append(s.charAt(i));
+                i++;
+            }
+            if (digitStr.length() != 0) {
+                k.push(Integer.parseInt(digitStr.toString()));
+            }
+
+            if (i < s.length() && s.charAt(i) == ']') {
                 String codeStr = codes.pop();
                 int kNum = k.pop();
                 StringBuilder newCodeStr = new StringBuilder();
@@ -49,19 +74,15 @@ public class DecodeString {
                 } else {
                     codes.push(codes.pop() + newCodeStr.toString());
                 }
-            } else {
-                StringBuilder subStr = new StringBuilder();
-                while (i<s.length() && Character.isLetter(s.charAt(i))) {
-                    subStr.append(s.charAt(i));
-                    i++;
-                }
-                if (subStr.length() != 0) {
-                    codes.push(subStr.toString());
-                }
             }
         }
 
-        return codes.pop();
+        StringBuilder retStr = new StringBuilder();
+        for (int i = 0; i < codes.size(); i++) {
+            retStr.append(codes.get(i));
+        }
+
+        return retStr.toString();
     }
 
 }
