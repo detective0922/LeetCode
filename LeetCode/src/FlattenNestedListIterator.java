@@ -52,12 +52,12 @@ public class FlattenNestedListIterator {
     private List<Integer> intList = new ArrayList<Integer>();
     private int index = 0;
     public NestedIterator(List<NestedInteger> nestedList) {
-        buildList(List<NestedInteger> nestedList);
+        buildList(nestedList);
     }
 
     private void buildList(List<NestedInteger> nestedList) {
         for (NestedInteger nestedInteger : nestedList) {
-            if (nestedInteger.isInteger) {
+            if (nestedInteger.isInteger()) {
                 intList.add(nestedInteger.getInteger);
             } else {
                 buildList(nestedList);
@@ -66,7 +66,7 @@ public class FlattenNestedListIterator {
     }
 
     @Override
-    public Integer next(List<NestedInteger> nestedList) {
+    public Integer next() {
         Integer ret = intList.get(index);
         index++;
         return ret;
