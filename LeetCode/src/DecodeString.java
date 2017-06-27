@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /*
 
@@ -27,14 +24,14 @@ s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 */
 public class DecodeString {
     public static void main(String[] args) {
-        System.out.println(new DecodeString().decodeString("3[a]2[bc]"));
-        System.out.println(new DecodeString().decodeString("3[a2[c]]"));
+        //System.out.println(new DecodeString().decodeString("3[a]2[bc]"));
+        //System.out.println(new DecodeString().decodeString("3[a2[c]]"));
         System.out.println(new DecodeString().decodeString("2[abc]3[cd]ef"));
     }
 
     public String decodeString(String s) {
-        Queue<String> codes = new LinkedList<String>();
-        Queue<Integer> k = new LinkedList<Integer>();
+        Stack<String> codes = new Stack<String>();
+        Stack<Integer> k = new Stack<Integer>();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '[') {
                 continue;
@@ -46,29 +43,29 @@ public class DecodeString {
                 i++;
             }
             if (subStr.length() != 0) {
-                codes.add(subStr.toString());
+                codes.push(subStr.toString());
             }
 
             if (Character.isDigit(s.charAt(i))) {
-                k.add(Character.getNumericValue(s.charAt(i)));
+                k.push(Character.getNumericValue(s.charAt(i)));
             }
 
             if (s.charAt(i) == ']') {
-                String codeStr = codes.poll();
-                int kNum = k.poll();
+                String codeStr = codes.pop();
+                int kNum = k.pop();
                 StringBuilder newCodeStr = new StringBuilder();
                 for (int j = 0; j < kNum; j++) {
-                    newCodeStr.append(newCodeStr);
+                    newCodeStr.append(codeStr);
                 }
                 if (codes.isEmpty()) {
-                    codes.add(newCodeStr.toString());
+                    codes.push(newCodeStr.toString());
                 } else {
-                    codes.add(codes.poll() + newCodeStr.toString());
+                    codes.push(codes.pop() + newCodeStr.toString());
                 }
             }
         }
 
-        return codes.poll();
+        return codes.pop();
     }
 
 }
