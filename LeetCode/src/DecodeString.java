@@ -35,22 +35,9 @@ public class DecodeString {
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '[') {
                 continue;
-            }
-
-            StringBuilder subStr = new StringBuilder();
-            while (Character.isLetter(s.charAt(i))) {
-                subStr.append(s.charAt(i));
-                i++;
-            }
-            if (subStr.length() != 0) {
-                codes.push(subStr.toString());
-            }
-
-            if (Character.isDigit(s.charAt(i))) {
+            } else if (Character.isDigit(s.charAt(i))) {
                 k.push(Character.getNumericValue(s.charAt(i)));
-            }
-
-            if (s.charAt(i) == ']') {
+            } else if (s.charAt(i) == ']') {
                 String codeStr = codes.pop();
                 int kNum = k.pop();
                 StringBuilder newCodeStr = new StringBuilder();
@@ -61,6 +48,15 @@ public class DecodeString {
                     codes.push(newCodeStr.toString());
                 } else {
                     codes.push(codes.pop() + newCodeStr.toString());
+                }
+            } else {
+                StringBuilder subStr = new StringBuilder();
+                while (i<s.length() && Character.isLetter(s.charAt(i))) {
+                    subStr.append(s.charAt(i));
+                    i++;
+                }
+                if (subStr.length() != 0) {
+                    codes.push(subStr.toString());
                 }
             }
         }
