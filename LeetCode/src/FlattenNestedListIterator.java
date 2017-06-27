@@ -58,9 +58,9 @@ public class FlattenNestedListIterator {
     private void buildList(List<NestedInteger> nestedList) {
         for (NestedInteger nestedInteger : nestedList) {
             if (nestedInteger.isInteger()) {
-                intList.add(nestedInteger.getInteger);
+                intList.add(nestedInteger.getInteger());
             } else {
-                buildList(nestedList);
+                buildList(nestedInteger.getList());
             }
         }
     }
@@ -74,6 +74,6 @@ public class FlattenNestedListIterator {
 
     @Override
     public boolean hasNext() {
-        return index != (intList.size() - 1);
+        return index != intList.size();
     }
 }
