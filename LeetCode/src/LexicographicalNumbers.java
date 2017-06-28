@@ -9,10 +9,12 @@ Please optimize your algorithm to use less time and space. The input size may be
 
 */
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LexicographicalNumbers {
     public List<Integer> lexicalOrder(int n) {
+        List<Integer> retList = new ArrayList<Integer>();
 
     }
 }
