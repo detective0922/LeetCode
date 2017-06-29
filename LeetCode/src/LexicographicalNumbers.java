@@ -16,5 +16,6 @@ public class LexicographicalNumbers {
     public List<Integer> lexicalOrder(int n) {
         List<Integer> retList = new ArrayList<Integer>();
 
+        return retList;
     }
 }
