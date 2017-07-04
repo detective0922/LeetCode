@@ -15,8 +15,10 @@ import java.util.List;
 public class LexicographicalNumbers {
     public List<Integer> lexicalOrder(int n) {
         List<Integer> retList = new ArrayList<Integer>();
+        int next = 1;
         for (int i = 1; i <= n; i++) {
-            retList.add(i);
+            retList.add(next);
+
 
 
         }
