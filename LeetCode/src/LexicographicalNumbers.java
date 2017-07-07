@@ -20,8 +20,8 @@ public class LexicographicalNumbers {
             retList.add(next);
             if ( next*10 < n) {
                 next *= 10;
-            } else if() {
-
+            } else if((next + 1)/10 == next/10) {
+                next += 1;
             }
 
 
