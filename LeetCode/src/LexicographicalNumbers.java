@@ -22,10 +22,9 @@ public class LexicographicalNumbers {
                 next *= 10;
             } else if((next + 1)/10 == next/10) {
                 next += 1;
+            } else {
+
             }
-
-
-
         }
 
         return retList;
