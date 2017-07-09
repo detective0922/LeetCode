@@ -18,7 +18,7 @@ public class LexicographicalNumbers {
         int next = 1;
         for (int i = 1; i <= n; i++) {
             retList.add(next);
-            if ( next*10 < n) {
+            if ( next*10 <= n) {
                 next *= 10;
             } else if((next + 1)/10 == next/10) {
                 next += 1;
