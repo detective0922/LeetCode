@@ -18,12 +18,12 @@ public class LexicographicalNumbers {
         int next = 1;
         for (int i = 1; i <= n; i++) {
             retList.add(next);
-            if ( next*10 <= n) {
+            if (next * 10 <= n) {
                 next *= 10;
-            } else if(next % 10 !=9 && (next+1)<=n) {
+            } else if ((next + 1) <= n && (next + 1) / 10 == next / 10) {
                 next += 1;
             } else {
-
+                while (next / 10 >)
             }
         }
 
