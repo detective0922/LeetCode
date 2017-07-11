@@ -23,8 +23,8 @@ public class LexicographicalNumbers {
             } else if ((next + 1) <= n && next % 10 != 9) {
                 next += 1;
             } else {
-                while ((next + 1) / 10 == next / 10) {
-
+                while ((next / 10) % 10 == 9) {
+                    next /= 10;
                 }
                 next = next / 10 + 1;
             }
