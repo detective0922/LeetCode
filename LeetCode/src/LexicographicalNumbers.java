@@ -23,7 +23,10 @@ public class LexicographicalNumbers {
             } else if ((next + 1) <= n && (next + 1) / 10 == next / 10) {
                 next += 1;
             } else {
-                while (next / 10 >)
+                while ((next + 1) / 10 == next / 10) {
+
+                }
+                next = next / 10 + 1;
             }
         }
 
