@@ -20,7 +20,7 @@ public class LexicographicalNumbers {
             retList.add(next);
             if (next * 10 <= n) {
                 next *= 10;
-            } else if ((next + 1) <= n && next % 10 != 9) {
+            } else if ((next + 1) <= n) {
                 while (next % 10 == 9) {
                     next /= 10;
                 }
