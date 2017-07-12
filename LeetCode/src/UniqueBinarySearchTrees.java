@@ -14,6 +14,8 @@ For example,
 */
 public class UniqueBinarySearchTrees {
     public int numTrees(int n) {
+        int count = 0;
 
+        return count;
     }
 }
