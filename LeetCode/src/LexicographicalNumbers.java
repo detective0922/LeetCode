@@ -23,12 +23,10 @@ public class LexicographicalNumbers {
             } else if ((next + 1) <= n && next % 10 != 9) {
                 next += 1;
             } else {
-                int a = next / 10;
-                while ((a) % 10 == 9) {
+                while (next % 10 == 9) {
                     next /= 10;
-                    a = next;
                 }
-                next = a + 1;
+                next += 1;
             }
         }
 
