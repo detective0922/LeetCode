@@ -19,7 +19,7 @@ public class UniqueBinarySearchTrees {
         dp[1] = 1;
         dp[2] = 2;
         for (int i = 3; i <= n; i++) {
-            dp[i] = 4 + dp[i-1]-2;
+
         }
         return dp[n];
     }
