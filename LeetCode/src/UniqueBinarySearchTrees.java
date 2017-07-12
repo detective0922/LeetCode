@@ -14,13 +14,13 @@ For example,
 */
 public class UniqueBinarySearchTrees {
     public int numTrees(int n) {
-        int[] dp = new int[n];
+        int[] dp = new int[n+1];
         dp[0] = 0;
         dp[1] = 1;
         dp[2] = 2;
-        for (int i = 3; i < n; i++) {
+        for (int i = 3; i <= n; i++) {
             dp[i] = 4 + dp[i-1]-2;
         }
-        return dp[n-1];
+        return dp[n];
     }
 }
