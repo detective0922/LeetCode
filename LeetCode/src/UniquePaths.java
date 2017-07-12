@@ -18,4 +18,11 @@ Note: m and n will be at most 100.
 */
 
 public class UniquePaths {
+    public int uniquePaths(int m, int n) {
+        int paths = 0;
+        int currX = 0;
+        int currY = 0;
+        findPaths(currX, currY, m, n, paths);
+        return paths;
+    }
 }
