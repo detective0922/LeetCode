@@ -28,10 +28,10 @@ For now, the judge is able to judge based on one instance of gray code sequence.
 */
 public class GrayCode {
     public List<Integer> grayCode(int n) {
-        int size = 1<<n;
+        int size = 1 << n;
         List<Integer> retList = new ArrayList<Integer>();
-        for (int i = 0;i< size; i++) {
-            retList.add(i ^ i>>1);
+        for (int i = 0; i < size; i++) {
+            retList.add(i ^ i >> 1);
         }
         return retList;
     }
