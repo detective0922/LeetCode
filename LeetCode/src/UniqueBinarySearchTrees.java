@@ -18,7 +18,7 @@ public class UniqueBinarySearchTrees {
         dp[0] = dp[1] = 1;
         for (int i = 2; i <= n; i++) {
             for (int j = 2; j < i; j++) {
-                dp[i] = dp[j-1] * dp[n-j];
+                dp[i] = dp[j-1] * dp[i-j];
             }
         }
         return dp[n];
