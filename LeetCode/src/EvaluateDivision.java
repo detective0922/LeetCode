@@ -26,5 +26,6 @@ public class EvaluateDivision {
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         double[] answers = new double[queries.length];
 
+        return answers;
     }
 }
