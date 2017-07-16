@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 399. Evaluate Division
 
@@ -25,6 +28,7 @@ The input is always valid. You may assume that evaluating the queries will resul
 public class EvaluateDivision {
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         double[] answers = new double[queries.length];
+        Map<String, String> equ = new HashMap<String, String>();
 
         return answers;
     }
