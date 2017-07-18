@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,6 +30,7 @@ public class EvaluateDivision {
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         double[] answers = new double[queries.length];
         Map<String, String> equs = new HashMap<String, String>();
+        Map<String, ArrayList<Double>> weights = new HashMap<String, ArrayList<Double>>();
         for (String[] equ : equations) {
             equs.put(equ[0], equ[1]);
             equs.put(equ[1], equ[0]);
