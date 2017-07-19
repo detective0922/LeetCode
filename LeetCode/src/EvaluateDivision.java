@@ -29,7 +29,7 @@ The input is always valid. You may assume that evaluating the queries will resul
 public class EvaluateDivision {
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         double[] answers = new double[queries.length];
-        Map<String, String> equs = new HashMap<String, String>();
+        Map<String, String> edges = new HashMap<String, String>();
         Map<String, ArrayList<Double>> weights = new HashMap<String, ArrayList<Double>>();
         for (String[] equ : equations) {
             equs.put(equ[0], equ[1]);
