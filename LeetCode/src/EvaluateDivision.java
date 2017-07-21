@@ -33,7 +33,7 @@ public class EvaluateDivision {
         Map<String, ArrayList<Double>> weights = new HashMap<String, ArrayList<Double>>();
         for (String[] equ : equations) {
             edges.put(equ[0], equ[1]);
-            equs.put(equ[1], equ[0]);
+            edges.put(equ[1], equ[0]);
         }
 
         return answers;
