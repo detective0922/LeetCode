@@ -17,4 +17,7 @@ transactions = [buy, sell, cooldown, buy, sell]
 
 */
 public class BestTimetoBuyandSellStockwithCooldown {
+    public int maxProfit(int[] prices) {
+
+    }
 }
