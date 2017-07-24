@@ -55,7 +55,7 @@ public class EvaluateDivision {
         }
 
         for (int i = 0; i < queries.length; i++) {
-            answers[i] = dfs(queries[i][0], queries[i][1], edges, weights, new ArrayList<String>(), 0);
+            answers[i] = dfs(queries[i][0], queries[i][1], edges, weights, new ArrayList<String>(), 1.0);
         }
         return answers;
     }
