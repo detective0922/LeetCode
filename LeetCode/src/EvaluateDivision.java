@@ -31,9 +31,19 @@ public class EvaluateDivision {
         double[] answers = new double[queries.length];
         Map<String, ArrayList<String>> edges = new HashMap<String, ArrayList<String>>();
         Map<String, ArrayList<Double>> weights = new HashMap<String, ArrayList<Double>>();
-        for (String[] equ : equations) {
-            edges.put(equ[0], equ[1]);
-            edges.put(equ[1], equ[0]);
+        for (int i = 0; i < equations.length; i++) {
+            if (!edges.containsKey(equations[i][0])) {
+                edges.put(equations[i][0], new ArrayList<String>());
+                weights.put(equations[i][0], new ArrayList<Double>());
+            }
+            if (!edges.containsKey(equations[i][1])) {
+                edges.put(equations[i][1], new ArrayList<String>());
+                weights.put(equations[i][1], new ArrayList<Double>());
+            }
+            edges.get(equations[i][0]).add(equations[i][1]);
+            edges.get(equations[i][1]).add(equations[i][0]);
+            weights.get(equations[i][0]).add(values[i]);
+            weights.get(equations[i][1]).add(1/values[i]);
         }
 
         return answers;
