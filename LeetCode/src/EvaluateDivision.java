@@ -67,12 +67,14 @@ public class EvaluateDivision {
         visited.add(v);
         List<String> subEdges = edges.get(v);
         List<Double> subWeights = weights.get(v);
-        double tmpWeight;
+        double tmpWeight = 0.0;
         for (int i = 0; i < subEdges.size(); i++) {
             tmpWeight = dfs(subEdges.get(i), w, edges, weights, visited, currentWeight * subWeights.get(i));
             if (tmpWeight != -1.0) {
                 break;
             }
         }
+        visited.remove(v);
+        return tmpWeight;
     }
 }
