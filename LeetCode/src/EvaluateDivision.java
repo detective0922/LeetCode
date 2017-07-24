@@ -46,6 +46,15 @@ public class EvaluateDivision {
             weights.get(equations[i][1]).add(1/values[i]);
         }
 
+        for (int i = 0; i < queries.length; i++) {
+            answers[i] = dfs(queries[i][0], queries[i][1], edges, weights, new ArrayList<String>(), 0);
+        }
         return answers;
+    }
+
+    private double dfs(String v, String w, Map<String, ArrayList<String>> edges, Map<String, ArrayList<Double>> weights, ArrayList<String> visited, double currentWeight) {
+        if (visited.contains(v)) {
+
+        }
     }
 }
