@@ -28,6 +28,13 @@ The input is always valid. You may assume that evaluating the queries will resul
 
 */
 public class EvaluateDivision {
+    public static void main(String[] args) {
+        String[][] equations = {{"a","b"},{"b","c"}};
+        double[] values ={2.0,3.0};
+        String[][] queries = {{"a","c"},{"b","c"},{"a","e"},{"a","a"},{"x","x"}};
+
+        new EvaluateDivision().calcEquation(equations,values,queries);
+    }
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         double[] answers = new double[queries.length];
         Map<String, ArrayList<String>> edges = new HashMap<String, ArrayList<String>>();
