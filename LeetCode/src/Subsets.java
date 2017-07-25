@@ -24,6 +24,7 @@ For example,
 */
 public class Subsets {
     public static void main(String[] args) {
+        System.out.println( 7 & 2);
         System.out.println(new Subsets().subsets(new int[]{1,2,3}));
     }
 
@@ -36,9 +37,9 @@ public class Subsets {
 
     private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums) {
         subsets.add(new ArrayList<Integer>(subset));
-        for (int num: nums) {
-            if (!subset.contains(num)) {
-                subset.add(num);
+        for (int i = 0; i < nums.length; i++) {
+            if (!subset.contains(nums[i])) {
+                subset.add(nums[i]);
                 generateSubsets(subsets, subset, nums);
                 subset.remove(subset.size() - 1);
             }
