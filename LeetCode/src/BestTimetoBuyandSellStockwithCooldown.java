@@ -18,6 +18,13 @@ transactions = [buy, sell, cooldown, buy, sell]
 */
 public class BestTimetoBuyandSellStockwithCooldown {
     public int maxProfit(int[] prices) {
+        //buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);
+        //sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);
+        if (prices == null|| prices.length < 2) {
+            return 0;
+        }
+
+
 
     }
 }
