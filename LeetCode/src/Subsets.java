@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 78. Subsets
 
@@ -20,4 +22,7 @@ For example,
 
 */
 public class Subsets {
+    public List<List<Integer>> subsets(int[] nums) {
+
+    }
 }
