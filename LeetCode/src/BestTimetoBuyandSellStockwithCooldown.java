@@ -23,11 +23,17 @@ public class BestTimetoBuyandSellStockwithCooldown {
         if (prices == null || prices.length < 2) {
             return 0;
         }
-        int[] buy = new int[prices.length];
-        int[] sell = new int[prices.length];
+        int buy = -prices[0];
+        int prevbuy = 0;
+        int sell = 0;
+        int prevsell = 0;
+        for (int i = 1; i < prices.length; i++) {
+            buy = Math.max(prevbuy, prevsell - prices[i]);
+            sell = Math.max(prevbuy, prevbuy + prices[i]);
+            prevbuy = buy;
+            prevsell = sell;
+        }
 
-
-
-
+        return sell;
     }
 }
