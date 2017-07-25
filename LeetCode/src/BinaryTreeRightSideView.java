@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -20,6 +21,17 @@ You should return [1, 3, 4].
 */
 public class BinaryTreeRightSideView {
     public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> nodeList = new ArrayList<Integer>();
+        int depth = 0;
+        bfs(nodeList, root, depth);
+        return nodeList;
+    }
+
+    private void bfs(List<Integer> nodeList, TreeNode root, int depth) {
+        if (root == null) {
+            return;
+        }
+
 
     }
 }
