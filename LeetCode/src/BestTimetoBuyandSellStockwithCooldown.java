@@ -28,10 +28,10 @@ public class BestTimetoBuyandSellStockwithCooldown {
         int sell = 0;
         int prevsell = 0;
         for (int i = 1; i < prices.length; i++) {
-            buy = Math.max(prevbuy, prevsell - prices[i]);
-            sell = Math.max(prevbuy, prevbuy + prices[i]);
             prevbuy = buy;
+            buy = Math.max(prevbuy, prevsell - prices[i]);
             prevsell = sell;
+            sell = Math.max(prevbuy, prevbuy + prices[i]);
         }
 
         return sell;
