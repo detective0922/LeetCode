@@ -29,4 +29,15 @@ public class Subsets {
         generateSubsets(subsets, subset, nums);
         return subsets;
     }
+
+    private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums) {
+        subsets.add(new ArrayList<Integer>(subset));
+        for (int num: nums) {
+            if (!subset.contains(num)) {
+                subset.add(num);
+                generateSubsets(subsets, subset, nums);
+                subset.remove(subset.size() - 1);
+            }
+        }
+    }
 }
