@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -23,6 +24,9 @@ For example,
 */
 public class Subsets {
     public List<List<Integer>> subsets(int[] nums) {
-
+        List<List<Integer>> subsets = new ArrayList<List<Integer>>();
+        List<Integer> subset = new ArrayList<Integer>();
+        generateSubsets(subsets, subset, nums);
+        return subsets;
     }
 }
