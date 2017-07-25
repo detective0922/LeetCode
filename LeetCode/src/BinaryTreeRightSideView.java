@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /*
 
@@ -22,15 +21,27 @@ You should return [1, 3, 4].
 public class BinaryTreeRightSideView {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> nodeList = new ArrayList<Integer>();
+        Map<Integer, TreeNode> nodeMap = new HashMap<Integer, TreeNode>();
         int depth = 0;
-        bfs(nodeList, root, depth);
+        bfs(nodeList, nodeMap, root, depth);
         return nodeList;
     }
 
-    private void bfs(List<Integer> nodeList, TreeNode root, int depth) {
+    private void bfs(List<Integer> nodeList, Map<Integer, TreeNode> nodeMap, TreeNode root, int depth) {
         if (root == null) {
             return;
         }
+
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+
+        }
+
+        if (depth > nodeMap.size()) {
+            nodeList.add(nodeMap.get(depth - 1).val);
+        }
+        nodeMap.put(depth, root);
 
 
     }
