@@ -35,11 +35,24 @@ public class BinaryTreeRightSideView {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> vals = new ArrayList<Integer>();
         int depth = 0;
-        dfs(vals, root, depth);
+        //dfs(vals, root, depth);
+        bfs(vals, root, depth);
         return vals;
     }
 
-    private void dfs(List<Integer> vals, TreeNode root, int depth) {
+    private void bfs(List<Integer> vals, TreeNode root, int depth) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+
+        }
+
+    }
+
+    /*private void dfs(List<Integer> vals, TreeNode root, int depth) {
         if (root == null) {
             return;
         }
@@ -49,5 +62,5 @@ public class BinaryTreeRightSideView {
         depth++;
         dfs(vals, root.right, depth);
         dfs(vals, root.left, depth);
-    }
+    }*/
 }
