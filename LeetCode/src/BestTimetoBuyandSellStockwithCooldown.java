@@ -31,7 +31,7 @@ public class BestTimetoBuyandSellStockwithCooldown {
             prevbuy = buy;
             buy = Math.max(prevbuy, prevsell - prices[i]);
             prevsell = sell;
-            sell = Math.max(prevbuy, prevbuy + prices[i]);
+            sell = Math.max(prevsell, prevbuy + prices[i]);
         }
 
         return sell;
