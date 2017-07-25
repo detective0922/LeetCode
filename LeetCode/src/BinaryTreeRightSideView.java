@@ -35,14 +35,10 @@ public class BinaryTreeRightSideView {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         while (!queue.isEmpty()) {
-
+            if (depth > nodeMap.size()) {
+                nodeList.add(nodeMap.get(depth - 1).val);
+            }
+            nodeMap.put(depth, root);
         }
-
-        if (depth > nodeMap.size()) {
-            nodeList.add(nodeMap.get(depth - 1).val);
-        }
-        nodeMap.put(depth, root);
-
-
     }
 }
