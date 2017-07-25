@@ -27,24 +27,27 @@ public class BinaryTreeRightSideView {
         TreeNode five = new TreeNode(7);
         root.left = two;
         root.right = three;
-        three.left = four;
-        three.right = five;
+        two.left = four;
+        two.right = five;
         System.out.println(new BinaryTreeRightSideView().rightSideView(root));
     }
+
     public List<Integer> rightSideView(TreeNode root) {
-        Map<Integer, Integer> nodeMap = new HashMap<Integer, Integer>();
+        List<Integer> vals = new ArrayList<Integer>();
         int depth = 0;
-        dfs(nodeMap, root, depth);
-        return new ArrayList<Integer>(nodeMap.values());
+        dfs(vals, root, depth);
+        return vals;
     }
 
-    private void dfs(Map<Integer, Integer> nodeMap, TreeNode root, int depth) {
+    private void dfs(List<Integer> vals, TreeNode root, int depth) {
         if (root == null) {
             return;
         }
-        nodeMap.put(depth, root.val);
+        if (depth == vals.size()) {
+            vals.add(root.val);
+        }
         depth++;
-        dfs(nodeMap, root.left, depth);
-        dfs(nodeMap, root.right, depth);
+        dfs(vals, root.right, depth);
+        dfs(vals, root.left, depth);
     }
 }
