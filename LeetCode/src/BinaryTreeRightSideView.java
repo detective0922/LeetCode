@@ -20,29 +20,19 @@ You should return [1, 3, 4].
 */
 public class BinaryTreeRightSideView {
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> nodeList = new ArrayList<Integer>();
-        Map<Integer, TreeNode> nodeMap = new HashMap<Integer, TreeNode>();
+        Map<Integer, Integer> nodeMap = new HashMap<Integer, Integer>();
         int depth = 0;
-        bfs(nodeList, nodeMap, root, depth);
-        return nodeList;
+        dfs(nodeMap, root, depth);
+        return new ArrayList<Integer>(nodeMap.values());
     }
 
-    private void bfs(List<Integer> nodeList, Map<Integer, TreeNode> nodeMap, TreeNode root, int depth) {
+    private void dfs(Map<Integer, Integer> nodeMap, TreeNode root, int depth) {
         if (root == null) {
             return;
         }
-
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            if (depth > nodeMap.size()) {
-                nodeList.add(nodeMap.get(depth - 1).val);
-            }
-            nodeMap.put(depth, root);
-            if (root.left != null) {
-                queue.add(root.left);
-            }
-        }
+        nodeMap.put(depth, root.val);
+        depth++;
+        dfs(nodeMap, root.left, depth);
+        dfs(nodeMap, root.right, depth);
     }
 }
