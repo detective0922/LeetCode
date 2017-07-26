@@ -20,6 +20,10 @@ For example,
 
 */
 public class Combinations {
+    public static void main(String[] args) {
+        System.out.println(new Combinations().combine(4, 2));
+    }
+
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> combinations = new ArrayList<List<Integer>>();
         List<Integer> combination = new ArrayList<Integer>();
@@ -33,7 +37,7 @@ public class Combinations {
         } else {
             for (int i = start; i <= n && combination.size() < k; i++) {
                 combination.add(i);
-                generateCombinations(combinations, combination, k, n, start + 1);
+                generateCombinations(combinations, combination, k, n, i + 1);
                 combination.remove(combination.size() - 1);
             }
         }
