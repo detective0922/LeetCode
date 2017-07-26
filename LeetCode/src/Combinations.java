@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -20,6 +21,9 @@ For example,
 */
 public class Combinations {
     public List<List<Integer>> combine(int n, int k) {
-
+        List<List<Integer>> combinations = new ArrayList<List<Integer>>();
+        List<Integer> combination = new ArrayList<Integer>();
+        generateCombinations(combinations, combination, k, n);
+        return combinations;
     }
 }
