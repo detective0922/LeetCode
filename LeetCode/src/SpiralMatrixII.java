@@ -14,7 +14,7 @@ You should return the following matrix: [
 */
 public class SpiralMatrixII {
     public static void main(String[] args) {
-        new SpiralMatrixII().generateMatrix(4);
+        new SpiralMatrixII().generateMatrix(3);
     }
 
     public int[][] generateMatrix(int n) {
@@ -47,10 +47,9 @@ public class SpiralMatrixII {
         for (; row > startRow; row--, value++) {
             matrix[row][col] = value;
         }
-        if (value < max) {
+        if (value <= max) {
             fillMatrixBorder(matrix, value, startRow + 1, startCol + 1, size - 2, max);
         }
-
     }
 
 }
