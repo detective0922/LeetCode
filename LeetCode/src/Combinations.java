@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 
 77. Combinations
@@ -17,4 +19,7 @@ For example,
 
 */
 public class Combinations {
+    public List<List<Integer>> combine(int n, int k) {
+
+    }
 }
