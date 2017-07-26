@@ -26,11 +26,11 @@ public class Combinations {
 
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> combinations = new ArrayList<List<Integer>>();
-        if (k == 0) {
-            return combinations;
-        }
         if (k > n) {
             k = n;
+        }
+        if (k == 0) {
+            return combinations;
         }
         List<Integer> combination = new ArrayList<Integer>();
         generateCombinations(combinations, combination, k, n, 1);
