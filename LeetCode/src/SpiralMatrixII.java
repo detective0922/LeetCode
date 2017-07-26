@@ -15,8 +15,30 @@ You should return the following matrix: [
 public class SpiralMatrixII {
     public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
-
+        fillMatrixBorder(matrix, 1, 0, 0, n, n * n);
         return matrix;
+    }
+
+    private void fillMatrixBorder(int[][] matrix, int startValue, int startRow, int startCol, int size, int max) {
+        int row = startRow;
+        int col = startCol;
+        int value = startValue;
+        for (; col < size; col++, value++) {
+            matrix[row][col] = value;
+        }
+        for (; row < size; row++, value++) {
+            matrix[row][col] = value;
+        }
+        for (; col > startCol; col--, value++) {
+            matrix[row][col] = value;
+        }
+        for (; row > startRow; row--, value++) {
+            matrix[row][col] = value;
+        }
+        if (value < max) {
+            fillMatrixBorder(matrix, value, startRow + 1, startCol + 1, size - 2, max);
+        }
+
     }
 
 }
