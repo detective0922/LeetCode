@@ -13,6 +13,10 @@ You should return the following matrix: [
 
 */
 public class SpiralMatrixII {
+    public static void main(String[] args) {
+        new SpiralMatrixII().generateMatrix(4);
+    }
+
     public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         fillMatrixBorder(matrix, 1, 0, 0, n, n * n);
@@ -23,15 +27,23 @@ public class SpiralMatrixII {
         int row = startRow;
         int col = startCol;
         int value = startValue;
-        for (; col < size; col++, value++) {
+        int rowBorder = startRow + size;
+        int colBorder = startCol + size;
+        for (; col < colBorder; col++, value++) {
             matrix[row][col] = value;
         }
-        for (; row < size; row++, value++) {
+        col--;
+        row++;
+        for (; row < rowBorder; row++, value++) {
             matrix[row][col] = value;
         }
-        for (; col > startCol; col--, value++) {
+        row--;
+        col--;
+        for (; col >= startCol; col--, value++) {
             matrix[row][col] = value;
         }
+        col++;
+        row--;
         for (; row > startRow; row--, value++) {
             matrix[row][col] = value;
         }
