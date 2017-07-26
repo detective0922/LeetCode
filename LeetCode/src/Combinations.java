@@ -21,11 +21,17 @@ For example,
 */
 public class Combinations {
     public static void main(String[] args) {
-        System.out.println(new Combinations().combine(4, 2));
+        System.out.println(new Combinations().combine(2, 4));
     }
 
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> combinations = new ArrayList<List<Integer>>();
+        if (k == 0) {
+            return combinations;
+        }
+        if (k > n) {
+            k = n;
+        }
         List<Integer> combination = new ArrayList<Integer>();
         generateCombinations(combinations, combination, k, n, 1);
         return combinations;
