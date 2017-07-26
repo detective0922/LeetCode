@@ -31,16 +31,16 @@ public class Subsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> subsets = new ArrayList<List<Integer>>();
         List<Integer> subset = new ArrayList<Integer>();
-        generateSubsets(subsets, subset, nums);
+        generateSubsets(subsets, subset, nums, 0);
         return subsets;
     }
 
-    private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums) {
+    private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
         subsets.add(new ArrayList<Integer>(subset));
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = start; i < nums.length; i++) {
             if (!subset.contains(nums[i])) {
                 subset.add(nums[i]);
-                generateSubsets(subsets, subset, nums);
+                generateSubsets(subsets, subset, nums, i + 1);
                 subset.remove(subset.size() - 1);
             }
         }
