@@ -38,11 +38,9 @@ public class Subsets {
     private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
         subsets.add(new ArrayList<Integer>(subset));
         for (int i = start; i < nums.length; i++) {
-            if (!subset.contains(nums[i])) {
-                subset.add(nums[i]);
-                generateSubsets(subsets, subset, nums, i + 1);
-                subset.remove(subset.size() - 1);
-            }
+            subset.add(nums[i]);
+            generateSubsets(subsets, subset, nums, i + 1);
+            subset.remove(subset.size() - 1);
         }
     }
 }
