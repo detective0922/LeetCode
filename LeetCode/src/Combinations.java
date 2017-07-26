@@ -26,4 +26,14 @@ public class Combinations {
         generateCombinations(combinations, combination, k, n);
         return combinations;
     }
+
+    private void generateCombinations(List<List<Integer>> combinations, List<Integer> combination, int k, int n) {
+        if (combination.size() == k) {
+            combinations.add(new ArrayList<Integer>(combination));
+        } else {
+            for (int i = 1; i <= n; i++) {
+
+            }
+        }
+    }
 }
