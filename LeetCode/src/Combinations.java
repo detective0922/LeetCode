@@ -23,16 +23,18 @@ public class Combinations {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> combinations = new ArrayList<List<Integer>>();
         List<Integer> combination = new ArrayList<Integer>();
-        generateCombinations(combinations, combination, k, n);
+        generateCombinations(combinations, combination, k, n, 1);
         return combinations;
     }
 
-    private void generateCombinations(List<List<Integer>> combinations, List<Integer> combination, int k, int n) {
+    private void generateCombinations(List<List<Integer>> combinations, List<Integer> combination, int k, int n, int start) {
         if (combination.size() == k) {
             combinations.add(new ArrayList<Integer>(combination));
         } else {
-            for (int i = 1; i <= n; i++) {
-
+            for (int i = start; i <= n && combination.size() < k; i++) {
+                combination.add(i);
+                generateCombinations(combinations, combination, k, n, start + 1);
+                combination.remove(combination.size() - 1);
             }
         }
     }
