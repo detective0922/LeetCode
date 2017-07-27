@@ -63,7 +63,12 @@ public class RandomizedSet {
 
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     public boolean insert(int val) {
-
+        boolean exist = nums.contains(val);
+        if (exist) {
+            return false;
+        }
+        nums.add(val);
+        positions.put(val, nums.size()-1);
     }
 
     /** Removes a value from the set. Returns true if the set contained the specified element. */
