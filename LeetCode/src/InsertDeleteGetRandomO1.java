@@ -38,6 +38,7 @@ randomSet.getRandom();
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Your RandomizedSet object will be instantiated and called as such:
@@ -55,6 +56,7 @@ public class RandomizedSet {
 
     ArrayList<Integer> nums;
     HashMap<Integer, Integer> positions;
+    Random random = new Random();
     /** Initialize your data structure here. */
     public RandomizedSet() {
         nums = new ArrayList<Integer>();
@@ -67,17 +69,30 @@ public class RandomizedSet {
         if (exist) {
             return false;
         }
+        positions.put(val, nums.size());
         nums.add(val);
-        positions.put(val, nums.size()-1);
+        return true;
     }
 
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
-
+        boolean exist = nums.contains(val);
+        if (!exist) {
+            return false;
+        }
+        int pos = positions.get(val);
+        if (pos < nums.size() - 1) {
+            int lastNum = nums.get(nums.size() - 1);
+            nums.set(pos, lastNum);
+            positions.put(lastNum, pos);
+        }
+        nums.remove(nums.size() - 1);
+        positions.remove(val);
+        return true;
     }
 
     /** Get a random element from the set. */
     public int getRandom() {
-
+        return nums.get(random.nextInt(nums.size()));
     }
 }
