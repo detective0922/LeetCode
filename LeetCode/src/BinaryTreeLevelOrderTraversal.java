@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -28,6 +29,8 @@ return its level order traversal as:
 */
 public class BinaryTreeLevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
-
+        List<List<Integer>> Order = new ArrayList<List<Integer>>();
+        generateOrder(Order, new ArrayList<Integer>(), root);
+        return Order;
     }
 }
