@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /*
 
@@ -35,5 +37,14 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     private void generateOrder(List<List<Integer>> order, ArrayList<Integer> integers, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.offer(root.val);
+        while (!queue.isEmpty()) {
+
+        }
+
     }
 }
