@@ -21,7 +21,7 @@ For example,
 */
 public class Combinations {
     public static void main(String[] args) {
-        System.out.println(new Combinations().combine(2, 4));
+        System.out.println(new Combinations().combine(0, 4));
     }
 
     public List<List<Integer>> combine(int n, int k) {
