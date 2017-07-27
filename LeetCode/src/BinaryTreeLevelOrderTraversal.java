@@ -33,4 +33,7 @@ public class BinaryTreeLevelOrderTraversal {
         generateOrder(Order, new ArrayList<Integer>(), root);
         return Order;
     }
+
+    private void generateOrder(List<List<Integer>> order, ArrayList<Integer> integers, TreeNode root) {
+    }
 }
