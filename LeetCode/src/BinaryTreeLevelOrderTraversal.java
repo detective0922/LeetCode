@@ -30,6 +30,19 @@ return its level order traversal as:
 
 */
 public class BinaryTreeLevelOrderTraversal {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3);
+        TreeNode two = new TreeNode(9);
+        TreeNode three = new TreeNode(20);
+        TreeNode four = new TreeNode(15);
+        TreeNode five = new TreeNode(7);
+        root.left = two;
+        root.right = three;
+        three.left = four;
+        three.right = five;
+        System.out.println(new BinaryTreeLevelOrderTraversal().levelOrder(root));
+    }
+
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> Order = new ArrayList<List<Integer>>();
         generateOrder(Order, root);
@@ -55,6 +68,7 @@ public class BinaryTreeLevelOrderTraversal {
                     queue.offer(node.right);
                 }
             }
+            order.add(level);
         }
     }
 }
