@@ -32,18 +32,22 @@ return its level order traversal as:
 public class BinaryTreeLevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> Order = new ArrayList<List<Integer>>();
-        generateOrder(Order, new ArrayList<Integer>(), root);
+        generateOrder(Order, root);
         return Order;
     }
 
-    private void generateOrder(List<List<Integer>> order, ArrayList<Integer> integers, TreeNode root) {
+    private void generateOrder(List<List<Integer>> order, TreeNode root) {
         if (root == null) {
             return;
         }
         Queue<Integer> queue = new LinkedList<Integer>();
         queue.offer(root.val);
         while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
 
+            }
         }
 
     }
