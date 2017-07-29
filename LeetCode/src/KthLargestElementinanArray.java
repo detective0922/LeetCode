@@ -14,7 +14,7 @@ Note:
 public class KthLargestElementinanArray {
     public int findKthLargest(int[] nums, int k) {
 
-
+        int j = partition(nums, 0, nums.length - 1);
         return nums[k];
     }
 }
