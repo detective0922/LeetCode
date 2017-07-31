@@ -13,11 +13,37 @@ Note:
 
 public class KthLargestElementinanArray {
     public int findKthLargest(int[] nums, int k) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
+            int j = partition(nums, low, high);
+        }
 
-        int j = partition(nums, 0, nums.length - 1);
+
         return nums[k];
     }
 
-    private int partition(int[] nums, int i, int i1) {
+    private int partition(int[] nums, int low, int high) {
+        int i = low;
+        int j = high;
+        int pivot = nums[low];
+        while (i<=j) {
+            while (nums[i++] < pivot) {
+                if (i == high) {
+                    break;
+                }
+            }
+            while (nums[j--] > pivot) {
+                if (j == low) {
+                    break;
+                }
+            }
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
     }
 }
