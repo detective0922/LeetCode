@@ -24,7 +24,7 @@ public class KthLargestElementinanArray {
     }
 
     private int partition(int[] nums, int low, int high) {
-        int i = low;
+        int i = low + 1;
         int j = high;
         int pivot = nums[low];
         while (i<=j) {
@@ -38,7 +38,10 @@ public class KthLargestElementinanArray {
                     break;
                 }
             }
+            swap(nums, i, j);
         }
+        swap(nums, low, j);
+        return j;
     }
 
     private void swap(int[] nums, int i, int j) {
