@@ -26,8 +26,8 @@ public class MinimumPathSum {
                 i++;
                 currVal = grid[i][j + 1];
             }
-            dp[step] = dp[step-1] + currVal;
+            dp += currVal;
         }
-        return dp[m + n - 1];
+        return dp;
     }
 }
