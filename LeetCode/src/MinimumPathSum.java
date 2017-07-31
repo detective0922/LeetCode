@@ -16,12 +16,11 @@ public class MinimumPathSum {
         int n = grid[0].length;
         int[] dp = new int[m + n];
         dp[0] = grid[0][0];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                
-            }
+        int i = 0;
+        int j = 0;
+        while (i < m || j < n) {
 
         }
-        return dp[step - 1];
+        return dp[m + n - 1];
     }
 }
