@@ -24,4 +24,7 @@ Given target = 20, return false.
 
 */
 public class Searcha2DMatrixII {
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+    }
 }
