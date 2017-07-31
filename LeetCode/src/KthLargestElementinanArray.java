@@ -12,6 +12,10 @@ Note:
 */
 
 public class KthLargestElementinanArray {
+    public static void main(String[] args) {
+        new KthLargestElementinanArray().findKthLargest(new int[]{3,2,1,5,6,4}, 2);
+    }
+
     public int findKthLargest(int[] nums, int k) {
         int low = 0;
         int high = nums.length - 1;
@@ -33,17 +37,17 @@ public class KthLargestElementinanArray {
         int j = high;
         int pivot = nums[low];
         while (i<=j) {
-            while (nums[i++] < pivot) {
-                if (i == high) {
-                    break;
-                }
+            if (nums[i] > pivot && nums[j] < pivot) {
+                swap(nums, i, j);
+                i++;
+                j--;
             }
-            while (nums[j--] > pivot) {
-                if (j == low) {
-                    break;
-                }
+            if (nums[i] <= pivot) {
+                i++;
             }
-            swap(nums, i, j);
+            if (nums[j] >= pivot) {
+                j--;
+            }
         }
         swap(nums, low, j);
         return j;
