@@ -19,17 +19,18 @@ public class KthLargestElementinanArray {
     public int findKthLargest(int[] nums, int k) {
         int low = 0;
         int high = nums.length - 1;
+        int kthSmallestIndex = nums.length - k;
         while (low < high) {
             int pivotIndex = partition(nums, low, high);
-            if (pivotIndex > k) {
+            if (pivotIndex > kthSmallestIndex) {
                 high = pivotIndex - 1;
-            } else if (pivotIndex < k) {
+            } else if (pivotIndex < kthSmallestIndex) {
                 low = pivotIndex + 1;
             } else {
                 break;
             }
         }
-        return nums[k];
+        return nums[kthSmallestIndex];
     }
 
     private int partition(int[] nums, int low, int high) {
