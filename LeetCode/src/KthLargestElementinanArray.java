@@ -16,10 +16,15 @@ public class KthLargestElementinanArray {
         int low = 0;
         int high = nums.length - 1;
         while (low < high) {
-            int j = partition(nums, low, high);
+            int pivotIndex = partition(nums, low, high);
+            if (pivotIndex > k) {
+                high = pivotIndex - 1;
+            } else if (pivotIndex < k) {
+                low = pivotIndex + 1;
+            } else {
+                break;
+            }
         }
-
-
         return nums[k];
     }
 
