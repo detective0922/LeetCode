@@ -14,16 +14,14 @@ public class MinimumPathSum {
         }
         int m = grid.length;
         int n = grid[0].length;
-        int[] preCol = new int[n];
-        int[] currCol = new int[n];
-        for (int i = 1; i < n; i++) {
-            preCol[i] = preCol[i-1] + grid[0][i];
-        }
+        int[] currCol = new int[m];
         for (int i = 1; i < m; i++) {
-            currCol[0] = preCol[0] + grid[i][0];
-            for (int j = 1; j < n; j++) {
-                currCol[j] = Math.min(currCol[j-1], preCol[i]) + grid[i][j];
-                preCol[i] = currCol[j];
+            currCol[i] = currCol[i-1] + grid[0][i];
+        }
+        for (int i = 1; i < n; i++) {
+            currCol[0] += grid[i][0];
+            for (int j = 1; j < m; j++) {
+                currCol[j] = Math.min(currCol[j-1], currCol[i]) + grid[i][j];
             }
         }
         return currCol[m-1];
