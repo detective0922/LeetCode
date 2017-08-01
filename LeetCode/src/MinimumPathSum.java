@@ -18,8 +18,9 @@ public class MinimumPathSum {
         int m = grid.length;
         int n = grid[0].length;
         int[] currCol = new int[m];
+        currCol[0] = grid[0][0];
         for (int i = 1; i < m; i++) {
-            currCol[i] = currCol[i-1] + grid[0][i];
+            currCol[i] = currCol[i-1] + grid[i][0];
         }
         for (int j = 1; j < n; j++) {
             currCol[0] += grid[0][j];
