@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -25,6 +26,14 @@ For example, given candidate set [2, 3, 6, 7] and target 7,
 */
 public class CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> sums = new ArrayList<List<Integer>>();
+        combination(sums, new ArrayList<Integer>(), 0, target, 0);
+        return sums;
+    }
 
+    private void combination(List<List<Integer>> sums, ArrayList<Integer> sum, int currSum, int target, int start) {
+        if (currSum == target) {
+            sums.add(new ArrayList<Integer>(sum));
+        }
     }
 }
