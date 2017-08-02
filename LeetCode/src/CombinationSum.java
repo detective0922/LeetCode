@@ -27,13 +27,24 @@ For example, given candidate set [2, 3, 6, 7] and target 7,
 public class CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> sums = new ArrayList<List<Integer>>();
-        combination(sums, new ArrayList<Integer>(), 0, target, 0);
+        combination(sums, new ArrayList<Integer>(), 0, candidates, target);
         return sums;
     }
 
-    private void combination(List<List<Integer>> sums, ArrayList<Integer> sum, int currSum, int target, int start) {
+    private void combination(List<List<Integer>> sums, ArrayList<Integer> sum, int currSum, int[] candidates, int target) {
+        if (currSum > target) {
+            return;
+        }
         if (currSum == target) {
             sums.add(new ArrayList<Integer>(sum));
+        } else {
+            for (int i = 0; i < candidates.length; i++) {
+                currSum += candidates[i];
+                sum.add(candidates[i]);
+                combination(sums, sum, currSum, candidates, target);
+                currSum -= candidates[i];
+                sum.remove(sum.size() - 1);
+            }
         }
     }
 }
