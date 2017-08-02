@@ -15,4 +15,7 @@ Follow up: Could you improve it to O(n log n) time complexity?
 
 */
 public class LongestIncreasingSubsequence {
+    public int lengthOfLIS(int[] nums) {
+
+    }
 }
