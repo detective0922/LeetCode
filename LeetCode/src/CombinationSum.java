@@ -31,20 +31,20 @@ public class CombinationSum {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> sums = new ArrayList<List<Integer>>();
-        combination(sums, new ArrayList<Integer>(), candidates, target);
+        combination(sums, new ArrayList<Integer>(), candidates, target, 0);
         return sums;
     }
 
-    private void combination(List<List<Integer>> sums, ArrayList<Integer> sum, int[] candidates, int target) {
+    private void combination(List<List<Integer>> sums, ArrayList<Integer> sum, int[] candidates, int target, int start) {
         if (target < 0) {
             return;
         }
         if (target == 0) {
             sums.add(new ArrayList<Integer>(sum));
         } else {
-            for (int i = 0; i < candidates.length; i++) {
+            for (int i = start; i < candidates.length; i++) {
                 sum.add(candidates[i]);
-                combination(sums, sum, candidates, target - candidates[i]);
+                combination(sums, sum, candidates, target - candidates[i], i);
                 sum.remove(sum.size() - 1);
             }
         }
