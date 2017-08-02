@@ -17,14 +17,12 @@ Follow up: Could you improve it to O(n log n) time complexity?
 public class LongestIncreasingSubsequence {
     public int lengthOfLIS(int[] nums) {
         int[] dp = new int[nums.length];
-        int max = 0;
+        dp[0] = 0;
+        int max = nums[0];
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
-                
-            }
-            
+
         }
 
-        return maxLength;
+        return dp[nums.length - 1];
     }
 }
