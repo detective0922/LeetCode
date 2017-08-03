@@ -23,9 +23,9 @@ public class LongestIncreasingSubsequence {
         if (nums.length == 0) {
             return 0;
         }
-        int[] dp = new int[nums.length];
+        /*int[] dp = new int[nums.length];
         dp[0] = 1;
-        int maxLength = 0;
+        int maxLength = 1;
         for (int i = 1; i < nums.length; i++) {
             int dpMax = 0;
             for (int j = 0; j < i; j++) {
@@ -37,6 +37,13 @@ public class LongestIncreasingSubsequence {
             maxLength = Math.max(maxLength, dp[i]);
         }
 
+        return maxLength;*/
+
+        int[] tails = new int[nums.length];
+        int maxLength = 1;
+        for (int i = 1; i < nums.length; i++) {
+
+        }
         return maxLength;
     }
 }
