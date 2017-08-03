@@ -15,19 +15,25 @@ Follow up: Could you improve it to O(n log n) time complexity?
 
 */
 public class LongestIncreasingSubsequence {
+    public static void main(String[] args) {
+        System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
+    }
+
     public int lengthOfLIS(int[] nums) {
         int[] dp = new int[nums.length];
         dp[0] = 1;
         int maxLength = 0;
         for (int i = 1; i < nums.length; i++) {
+            int dpMax = 0;
             for (int j = 0; j < i; j++) {
-                if (dp[j] > maxLength & nums[j] < nums[i]) {
-                    maxLength = dp[j];
+                if (dp[j] > dpMax & nums[j] < nums[i]) {
+                    dpMax = dp[j];
                 }
             }
-            dp[i] = maxLength + 1;
+            dp[i] = dpMax + 1;
+            maxLength = Math.max(maxLength, dp[i]);
         }
 
-        return dp[nums.length - 1];
+        return maxLength;
     }
 }
