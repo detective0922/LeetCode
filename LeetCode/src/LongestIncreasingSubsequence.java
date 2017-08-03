@@ -57,7 +57,9 @@ public class LongestIncreasingSubsequence {
                 }
             }
             tails[low] = nums[i];
-
+            if(low == maxLength) {
+                maxLength ++;
+            }
         }
         return maxLength;
     }
