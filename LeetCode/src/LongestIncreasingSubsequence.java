@@ -42,6 +42,7 @@ public class LongestIncreasingSubsequence {
         return maxLength;*/
 
         int[] tails = new int[nums.length];
+        tails[0] = nums[0];
         int maxLength = 1;
         for (int i = 1; i < nums.length; i++) {
             int low = 0;
