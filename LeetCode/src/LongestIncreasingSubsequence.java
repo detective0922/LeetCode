@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 300. Longest Increasing Subsequence
 
@@ -42,14 +44,23 @@ public class LongestIncreasingSubsequence {
         int[] tails = new int[nums.length];
         int maxLength = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > tails[i-1]) {
-                tails[i-1] = nums[i];
+            if (nums[i] > tails[i - 1]) {
+                tails[i - 1] = nums[i];
             }
-
+            if (nums[i] < tails[0]) {
+                tails[0] = nums[i];
+            }
             int low = 0;
-            int high = i-1;
+            int high = i - 1;
             while (low < high) {
-
+                int mid = low + (high - low) / 2;
+                if (tails[mid]> nums[i]) {
+                    high = mid - 1;
+                } else if (tails[mid] < nums[i]) {
+                    low = mid + 1;
+                } else {
+                    break;
+                }
             }
             tails[low] = nums[i];
 
