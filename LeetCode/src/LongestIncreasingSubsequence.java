@@ -52,7 +52,7 @@ public class LongestIncreasingSubsequence {
             }
             int low = 0;
             int high = i - 1;
-            while (low < high) {
+            while (low <= high) {
                 int mid = low + (high - low) / 2;
                 if (tails[mid]> nums[i]) {
                     high = mid - 1;
