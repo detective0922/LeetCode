@@ -19,8 +19,10 @@ public class LongestIncreasingSubsequence {
         int[] dp = new int[nums.length];
         dp[0] = 0;
         int max = nums[0];
-        for (int i = 0; i < nums.length; i++) {
-
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > max) {
+                dp[i] = dp[i-1]+1;
+            }
         }
 
         return dp[nums.length - 1];
