@@ -47,9 +47,6 @@ public class LongestIncreasingSubsequence {
             if (nums[i] > tails[i - 1]) {
                 tails[i - 1] = nums[i];
             }
-            if (nums[i] < tails[0]) {
-                tails[0] = nums[i];
-            }
             int low = 0;
             int high = i - 1;
             while (low <= high) {
