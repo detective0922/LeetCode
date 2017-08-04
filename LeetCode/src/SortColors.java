@@ -58,6 +58,7 @@ public class SortColors {
                 swap(nums,i, low);
                 i++;low++;
             }else if(nums[i]==2) {
+                swap(nums, i, high);
                 high--;
             }else {
                 i++;
