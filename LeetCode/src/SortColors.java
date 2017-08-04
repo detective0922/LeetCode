@@ -22,6 +22,10 @@ Could you come up with an one-pass algorithm using only constant space?
 
 */
 public class SortColors {
+    public static void main(String[] args) {
+        new SortColors().sortColors(new int[]{0, 1, 2, 0, 1, 2, 0});
+    }
+
     public void sortColors(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
@@ -34,17 +38,16 @@ public class SortColors {
                 i++;
                 j++;
             } else {
-                while (j < nums.length) {
-                    j++;
+                for (j++; j < nums.length; j++) {
                     if (nums[j] == color) {
                         swap(nums, i, j);
-                        i++;
-                        j = i;
                         break;
                     }
                 }
-                if (j == nums.length) {
+                i++;
+                if (j >= nums.length - 1) {
                     color++;
+                    j = i;
                 }
             }
         }
