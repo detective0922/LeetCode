@@ -38,6 +38,8 @@ public class SortColors {
                     j++;
                     if (nums[j] == color) {
                         swap(nums, i, j);
+                        i++;
+                        j = i;
                         break;
                     }
                 }
@@ -45,7 +47,6 @@ public class SortColors {
                     color++;
                 }
             }
-
         }
     }
 
