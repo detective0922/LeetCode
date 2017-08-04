@@ -28,9 +28,30 @@ public class SortColors {
         }
         int i = 0;
         int j = 0;
+        int color = 0;
         while (i < nums.length) {
+            if (nums[i] == color) {
+                i++;
+                j++;
+            } else {
+                while (j < nums.length) {
+                    j++;
+                    if (nums[j] == color) {
+                        swap(nums, i, j);
+                        break;
+                    }
+                }
+                if (j == nums.length) {
+                    color++;
+                }
+            }
 
         }
+    }
 
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 }
