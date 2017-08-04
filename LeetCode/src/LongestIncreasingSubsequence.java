@@ -66,6 +66,6 @@ public class LongestIncreasingSubsequence {
                 tails[low] = nums[i];
             }
         }
-        return maxLength;
+        return maxLength + 1;
     }
 }
