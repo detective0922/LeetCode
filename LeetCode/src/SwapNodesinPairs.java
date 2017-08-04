@@ -14,7 +14,13 @@ public class SwapNodesinPairs {
         if (head == null || head.next == null) {
             return head;
         }
+        ListNode newHead = new ListNode(0);
+        newHead.next = head;
+        ListNode currNode = newHead;
+        while (currNode != null && currNode.next !=null) {
 
+        }
+        return newHead.next;
     }
 
 }
