@@ -23,6 +23,14 @@ Could you come up with an one-pass algorithm using only constant space?
 */
 public class SortColors {
     public void sortColors(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int i = 0;
+        int j = 0;
+        while (i < nums.length) {
+
+        }
 
     }
 }
