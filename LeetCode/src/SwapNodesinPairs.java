@@ -20,8 +20,6 @@ public class SwapNodesinPairs {
         ListNode seven = new ListNode(6);
         root.next = two;
         two.next = three;
-        three.next = four;
-        four.next = five;
         new SwapNodesinPairs().swapPairs(root);
     }
 
@@ -29,6 +27,7 @@ public class SwapNodesinPairs {
         if (head == null || head.next == null) {
             return head;
         }
+
         ListNode newHead = new ListNode(0);
         newHead.next = head;
         ListNode currNode = newHead;
