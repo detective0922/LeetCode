@@ -23,7 +23,7 @@ Could you come up with an one-pass algorithm using only constant space?
 */
 public class SortColors {
     public static void main(String[] args) {
-        new SortColors().sortColors(new int[]{0, 1, 2, 0, 1, 2, 0});
+        new SortColors().sortColors(new int[]{2,1});
     }
 
     public void sortColors(int[] nums) {
@@ -41,10 +41,10 @@ public class SortColors {
                 for (j++; j < nums.length; j++) {
                     if (nums[j] == color) {
                         swap(nums, i, j);
+                        i++;
                         break;
                     }
                 }
-                i++;
                 if (j >= nums.length - 1) {
                     color++;
                     j = i;
