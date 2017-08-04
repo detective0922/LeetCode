@@ -10,4 +10,11 @@ Your algorithm should use only constant space. You may not modify the values in 
 
 */
 public class SwapNodesinPairs {
+    public ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+    }
+
 }
