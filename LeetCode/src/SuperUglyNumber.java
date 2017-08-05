@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 313. Super Ugly Number
 
@@ -15,6 +18,7 @@ Note:
 */
 public class SuperUglyNumber {
     public int nthSuperUglyNumber(int n, int[] primes) {
+        List<Integer> seq = new ArrayList<Integer>();
 
     }
 }
