@@ -20,5 +20,6 @@ public class SuperUglyNumber {
     public int nthSuperUglyNumber(int n, int[] primes) {
         List<Integer> seq = new ArrayList<Integer>();
 
+        return seq.get(n);
     }
 }
