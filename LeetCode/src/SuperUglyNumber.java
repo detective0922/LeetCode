@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -24,17 +25,13 @@ public class SuperUglyNumber {
 
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] seq = new int[n];
-        seq[0] = 1;
-        int index = 0;
-        int prime = primes[index];
+        int[] tmpPrimes = Arrays.copyOf(primes, primes.length);
         for (int i = 1; i < seq.length;) {
-            if (prime <= primes[index+1]) {
-                seq[i] = prime;
-                prime *= prime;
-            } else {
-                index++;
-                prime = primes[index];
+            int minPrime = 0;
+            for (int j = 0; j < tmpPrimes.length; j++) {
+
             }
+            seq[i] = minPrime;
         }
         return seq[n-1];
     }
