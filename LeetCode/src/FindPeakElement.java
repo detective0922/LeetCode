@@ -20,6 +20,11 @@ Your solution should be in logarithmic complexity.
 */
 public class FindPeakElement {
     public int findPeakElement(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
 
+        }
+        return low;
     }
 }
