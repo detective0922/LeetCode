@@ -20,6 +20,13 @@ public class SuperUglyNumber {
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] seq = new int[n];
         seq[0] = 1;
+        int index = 0;
+        int prime = primes[index];
+        for (int i = 1; i < seq.length; i++) {
+            if (prime < primes[index+1]) {
+
+            }
+        }
 
         return seq[n-1];
     }
