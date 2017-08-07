@@ -29,7 +29,10 @@ public class SuperUglyNumber {
         for (int i = 1; i < seq.length;) {
             int minPrime = 0;
             for (int j = 0; j < tmpPrimes.length; j++) {
-
+                if (tmpPrimes[j] < minPrime) {
+                    minPrime = tmpPrimes[j];
+                    tmpPrimes[j] *= tmpPrimes[j];
+                }
             }
             seq[i] = minPrime;
         }
