@@ -17,17 +17,23 @@ Note:
 
 */
 public class SuperUglyNumber {
+    public static void main(String[] args) {
+        int[] primes = new int[]{2, 7, 13, 19};
+        new SuperUglyNumber().nthSuperUglyNumber(12, primes);
+    }
+
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] seq = new int[n];
         seq[0] = 1;
         int index = 0;
         int prime = primes[index];
-        for (int i = 1; i < seq.length; i++) {
+        for (int i = 1; i < seq.length;) {
             if (prime <= primes[index+1]) {
                 seq[i] = prime;
                 prime *= prime;
             } else {
                 index++;
+                prime = primes[index];
             }
         }
         return seq[n-1];
