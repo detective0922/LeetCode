@@ -30,14 +30,12 @@ public class SuperUglyNumber {
         for (int i = 1; i < seq.length; i++) {
             int minPrime = Integer.MAX_VALUE;
             for (int j = 0; j < primes.length; j++) {
-                minPrime = Math.min(minPrime, primes[j] * indexs[j]);
-            }
-            seq[i] = minPrime;
-            for (int j = 0; j < primes.length; j++) {
-                if (seq[i] == primes[j] * indexs[j]) {
+                if (seq[i-1] == primes[j] * seq[indexs[j]]) {
                     indexs[j]++;
                 }
+                minPrime = Math.min(minPrime, primes[j] * seq[indexs[j]]);
             }
+            seq[i] = minPrime;
         }
         return seq[n - 1];
     }
