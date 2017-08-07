@@ -25,9 +25,10 @@ public class SuperUglyNumber {
 
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] seq = new int[n];
+        seq[0] = 1;
         int[] tmpPrimes = Arrays.copyOf(primes, primes.length);
-        for (int i = 1; i < seq.length;) {
-            int minPrime = 0;
+        for (int i = 1; i < seq.length; i++) {
+            int minPrime = Integer.MAX_VALUE;
             for (int j = 0; j < tmpPrimes.length; j++) {
                 if (tmpPrimes[j] < minPrime) {
                     minPrime = tmpPrimes[j];
@@ -36,6 +37,6 @@ public class SuperUglyNumber {
             }
             seq[i] = minPrime;
         }
-        return seq[n-1];
+        return seq[n - 1];
     }
 }
