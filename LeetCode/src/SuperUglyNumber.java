@@ -18,8 +18,9 @@ Note:
 */
 public class SuperUglyNumber {
     public int nthSuperUglyNumber(int n, int[] primes) {
-        List<Integer> seq = new ArrayList<Integer>();
+        int[] seq = new int[n];
+        seq[0] = 1;
 
-        return seq.get(n);
+        return seq[n-1];
     }
 }
