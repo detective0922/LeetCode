@@ -26,16 +26,18 @@ public class SuperUglyNumber {
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] seq = new int[n];
         seq[0] = 1;
-        int[] tmpPrimes = Arrays.copyOf(primes, primes.length);
+        int[] indexs = new int[primes.length];
         for (int i = 1; i < seq.length; i++) {
             int minPrime = Integer.MAX_VALUE;
-            for (int j = 0; j < tmpPrimes.length; j++) {
-                if (tmpPrimes[j] < minPrime) {
-                    minPrime = tmpPrimes[j];
-                    tmpPrimes[j] *= primes[j];
-                }
+            for (int j = 0; j < primes.length; j++) {
+                minPrime = Math.min(minPrime, primes[j] * indexs[j]);
             }
             seq[i] = minPrime;
+            for (int j = 0; j < primes.length; j++) {
+                if (seq[i] == primes[j] * indexs[j]) {
+                    indexs[j]++;
+                }
+            }
         }
         return seq[n - 1];
     }
