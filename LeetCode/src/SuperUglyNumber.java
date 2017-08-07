@@ -23,11 +23,13 @@ public class SuperUglyNumber {
         int index = 0;
         int prime = primes[index];
         for (int i = 1; i < seq.length; i++) {
-            if (prime < primes[index+1]) {
-
+            if (prime <= primes[index+1]) {
+                seq[i] = prime;
+                prime *= prime;
+            } else {
+                index++;
             }
         }
-
         return seq[n-1];
     }
 }
