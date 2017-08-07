@@ -32,7 +32,7 @@ public class SuperUglyNumber {
             for (int j = 0; j < tmpPrimes.length; j++) {
                 if (tmpPrimes[j] < minPrime) {
                     minPrime = tmpPrimes[j];
-                    tmpPrimes[j] *= tmpPrimes[j];
+                    tmpPrimes[j] *= primes[j];
                 }
             }
             seq[i] = minPrime;
