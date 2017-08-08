@@ -66,6 +66,8 @@ public class PopulatingNextRightPointersinEachNode {
             }
             if (currNode.next != null) {
                 currNode.right.next = currNode.next.left;
+            } else {
+                currNode.right.next = null;
             }
 
         }
