@@ -59,16 +59,15 @@ public class PopulatingNextRightPointersinEachNode {
         if (root == null) {
             return;
         }
-        Queue<TreeLinkNode> queue = new LinkedList<TreeLinkNode>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            TreeLinkNode node = null;
-            for (int i = 0; i < size; i++) {
-                node = queue.poll();
-                node.next = queue.peek();
+        TreeLinkNode currNode = root;
+        while (currNode != null) {
+            if (currNode.left != null && currNode.right != null) {
+                currNode.left.next = currNode.right;
             }
-            node.next = null;
+            if (currNode.next != null) {
+                currNode.right.next = currNode.next.left;
+            }
+
         }
     }
 }
