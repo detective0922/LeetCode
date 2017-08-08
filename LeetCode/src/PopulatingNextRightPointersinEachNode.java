@@ -42,5 +42,23 @@ After calling your function, the tree should look like:
 
 */
 
+/**
+ * Definition for binary tree with next pointer.
+ * public class TreeLinkNode {
+ *     int val;
+ *     TreeLinkNode left, right, next;
+ *     TreeLinkNode(int x) { val = x; }
+ * }
+ */
+
 public class PopulatingNextRightPointersinEachNode {
+    public void connect(TreeLinkNode root) {
+
+    }
 }
+
+class TreeLinkNode {
+    int val;
+    TreeLinkNode left, right, next;
+    TreeLinkNode(int x) { val = x; }
+ }
