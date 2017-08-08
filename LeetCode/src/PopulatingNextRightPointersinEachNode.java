@@ -62,6 +62,7 @@ public class PopulatingNextRightPointersinEachNode {
         TreeLinkNode preNode = root;
         TreeLinkNode currNode = null;
         while (preNode != null) {
+            currNode = preNode;
             while (currNode != null) {
                 if (currNode.left != null && currNode.right != null) {
                     currNode.left.next = currNode.right;
@@ -71,7 +72,6 @@ public class PopulatingNextRightPointersinEachNode {
             }
             preNode = preNode.left;
         }
-
     }
 }
 
