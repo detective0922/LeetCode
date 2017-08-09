@@ -31,6 +31,23 @@ public class GameofLife {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 int liveCells = liveNeighbor(board, i, j);
+                if (board[i][j]==1 && liveCells < 2) {
+                    //die, 01
+                    board[i][j]=1;
+                }
+                if (board[i][j]==1 && liveCells > 3) {
+                    //die 01
+                    board[i][j]=1;
+                }
+                if (board[i][j]==0 && liveCells == 3) {
+                    //reborn 10
+                    board[i][j] = 2;
+                }
+                if (board[i][j]==1 && (liveCells == 2||liveCells==3)) {
+                    //live 11
+                    board[i][j] = 3;
+                }
+
             }
 
         }
