@@ -32,12 +32,20 @@ public class GameofLife {
             for (int j = 0; j < board[0].length; j++) {
                 int liveCells = liveNeighbor(board, i, j);
             }
-            
+
         }
 
     }
 
     private int liveNeighbor(int[][] board, int i, int j) {
+        int m = Math.max(i-1, 0);
+        int n = Math.max(j-1, 0);
+        int live = 0;
+        for (; m < i + 2; m++) {
+            for (; n < j + 2; n++) {
 
+            }
+        }
+        return live;
     }
 }
