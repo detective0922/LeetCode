@@ -58,7 +58,7 @@ public class GameofLife {
         int live = 0;
         for (int m = Math.max(i - 1, 0); m < mSize; m++) {
             for (int n = Math.max(j - 1, 0); n < nSize; n++) {
-                if (m != i && n != j && (board[m][n] & 1) == 1) {
+                if ((m != i || n != j) && (board[m][n] & 1) == 1) {
                     live++;
                 }
             }
