@@ -12,11 +12,12 @@ public class PerfectSquares {
         int[] dp = new int[n];
         dp[0] = 0;
         for (int i = 1; i < n; i++) {
+            int min = Integer.MAX_VALUE;
             for (int j = 1; j * j < n; j++) {
-
+                min = Math.min(min, dp[n - j*j] + 1);
             }
-
+            dp[i] = min;
         }
-
+        return dp[n-1];
     }
 }
