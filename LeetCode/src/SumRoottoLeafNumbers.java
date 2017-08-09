@@ -27,7 +27,9 @@ public class SumRoottoLeafNumbers {
         if (root == null) {
             return 0;
         }
-        Queue<Integer> queue = new LinkedList<Integer>();
-
+        int sum = 0;
+        int unit = 1;
+        sum = Sum(root, sum, unit);
+        return sum;
     }
 }
