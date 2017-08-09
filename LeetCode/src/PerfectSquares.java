@@ -9,6 +9,14 @@ For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return
 
 public class PerfectSquares {
     public int numSquares(int n) {
+        int[] dp = new int[n];
+        dp[0] = 0;
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j * j < n; j++) {
+
+            }
+
+        }
 
     }
 }
