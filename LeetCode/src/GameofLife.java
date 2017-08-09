@@ -38,12 +38,14 @@ public class GameofLife {
     }
 
     private int liveNeighbor(int[][] board, int i, int j) {
-        int m = Math.max(i-1, 0);
-        int n = Math.max(j-1, 0);
+        int m = Math.max(i - 1, 0);
+        int n = Math.max(j - 1, 0);
         int live = 0;
         for (; m < i + 2; m++) {
             for (; n < j + 2; n++) {
-
+                if (m != i && n != j && board[m][n] == 1) {
+                    live++;
+                }
             }
         }
         return live;
