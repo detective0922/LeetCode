@@ -27,6 +27,10 @@ which would cause problems when the active area encroaches the border of the arr
 
 */
 public class GameofLife {
+    public static void main(String[] args) {
+        new GameofLife().gameOfLife(new int[][]{{1,1},{1,0}});
+    }
+
     public void gameOfLife(int[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
@@ -40,19 +44,20 @@ public class GameofLife {
                     board[i][j] = 3;
                 }
             }
-
         }
-
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                board[i][j] >>=1;
+            }
+        }
     }
 
     private int liveNeighbor(int[][] board, int i, int j) {
-        int m = Math.max(i - 1, 0);
-        int n = Math.max(j - 1, 0);
         int mSize = Math.min(i + 2, board.length);
         int nSize = Math.min(j + 2, board[0].length);
         int live = 0;
-        for (; m < mSize; m++) {
-            for (; n < nSize; n++) {
+        for (int m = Math.max(i - 1, 0); m < mSize; m++) {
+            for (int n = Math.max(j - 1, 0); n < nSize; n++) {
                 if (m != i && n != j && (board[m][n] & 1) == 1) {
                     live++;
                 }
