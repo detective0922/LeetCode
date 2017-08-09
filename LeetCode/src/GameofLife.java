@@ -31,15 +31,14 @@ public class GameofLife {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 int liveCells = liveNeighbor(board, i, j);
-                if (board[i][j]==0 && liveCells == 3) {
+                if (board[i][j] == 0 && liveCells == 3) {
                     //reborn 10
                     board[i][j] = 2;
                 }
-                if (board[i][j]==1 && (liveCells == 2||liveCells==3)) {
+                if (board[i][j] == 1 && (liveCells == 2 || liveCells == 3)) {
                     //live 11
                     board[i][j] = 3;
                 }
-
             }
 
         }
@@ -49,9 +48,11 @@ public class GameofLife {
     private int liveNeighbor(int[][] board, int i, int j) {
         int m = Math.max(i - 1, 0);
         int n = Math.max(j - 1, 0);
+        int mSize = Math.min(i + 2, board.length);
+        int nSize = Math.min(j + 2, board[0].length);
         int live = 0;
-        for (; m < i + 2; m++) {
-            for (; n < j + 2; n++) {
+        for (; m < mSize; m++) {
+            for (; n < nSize; n++) {
                 if (m != i && n != j && (board[m][n] & 1) == 1) {
                     live++;
                 }
