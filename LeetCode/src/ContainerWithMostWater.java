@@ -10,4 +10,7 @@ Note: You may not slant the container and n is at least 2.
 
 */
 public class ContainerWithMostWater {
+    public int maxArea(int[] height) {
+
+    }
 }
