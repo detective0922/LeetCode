@@ -34,11 +34,16 @@ public class SumRoottoLeafNumbers {
     }
 
     private int Sum(TreeNode root, int sum, int unit) {
+        if (root == null) {
+            return 0;
+        }
         if(root.left != null) {
             sum += Sum(root.left, sum, unit * 10);
         }
         if (root.right != null) {
-
+            sum += Sum(root.right, sum, unit * 10);
         }
+        sum += root.val * unit;
+        return sum;
     }
 }
