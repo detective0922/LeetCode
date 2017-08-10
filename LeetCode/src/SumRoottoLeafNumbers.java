@@ -23,19 +23,17 @@ Return the sum = 12 + 13 = 25.
 
 */
 public class SumRoottoLeafNumbers {
+    private int sum = 0;
     public int sumNumbers(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
         int sum = 0;
         int unit = 1;
-        sum = Sum(root, sum, unit);
+        Sum(root, sum, unit);
         return sum;
     }
 
-    private int Sum(TreeNode root, int sum, int unit) {
+    private void Sum(TreeNode root, int sum, int unit) {
         if (root == null) {
-            return 0;
+            return;
         }
         if(root.left != null) {
             sum += Sum(root.left, sum, unit * 10);
