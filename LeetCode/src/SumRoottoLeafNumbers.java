@@ -34,5 +34,11 @@ public class SumRoottoLeafNumbers {
     }
 
     private int Sum(TreeNode root, int sum, int unit) {
+        if(root.left != null) {
+            sum += Sum(root.left, sum, unit * 10);
+        }
+        if (root.right != null) {
+
+        }
     }
 }
