@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 /*
 129. Sum Root to Leaf Numbers
 
@@ -24,23 +21,29 @@ Return the sum = 12 + 13 = 25.
 */
 public class SumRoottoLeafNumbers {
     private int sum = 0;
+    private int maxDepth = 0;
     public int sumNumbers(TreeNode root) {
         int sum = 0;
         int unit = 1;
-        Sum(root, unit);
+        int depth = 0;
+        Sum(root, depth, unit);
         return sum;
     }
 
-    private void Sum(TreeNode root, int unit) {
+    private void Sum(TreeNode root, int depth, int unit) {
         if (root == null) {
             return;
         }
+        if (root.left == null && root.right == null) {
+            maxDepth = depth;
+        }
         if(root.left != null) {
-            Sum(root.left, unit * 10);
+            Sum(root.left, depth + 1, unit * 10);
         }
         if (root.right != null) {
-            Sum(root.right, unit * 10);
+            Sum(root.right, depth + 1, unit * 10);
         }
+
         sum += root.val * unit;
     }
 }
