@@ -27,21 +27,20 @@ public class SumRoottoLeafNumbers {
     public int sumNumbers(TreeNode root) {
         int sum = 0;
         int unit = 1;
-        Sum(root, sum, unit);
+        Sum(root, unit);
         return sum;
     }
 
-    private void Sum(TreeNode root, int sum, int unit) {
+    private void Sum(TreeNode root, int unit) {
         if (root == null) {
             return;
         }
         if(root.left != null) {
-            sum += Sum(root.left, sum, unit * 10);
+            Sum(root.left, unit * 10);
         }
         if (root.right != null) {
-            sum += Sum(root.right, sum, unit * 10);
+            Sum(root.right, unit * 10);
         }
         sum += root.val * unit;
-        return sum;
     }
 }
