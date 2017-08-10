@@ -20,17 +20,25 @@ Return the sum = 12 + 13 = 25.
 
 */
 public class SumRoottoLeafNumbers {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+        root.left = two;
+        root.right = three;
+        System.out.println(new SumRoottoLeafNumbers().sumNumbers(root));
+    }
+
     private int sum = 0;
     private int maxDepth = 0;
     public int sumNumbers(TreeNode root) {
         int sum = 0;
-        int unit = 1;
         int depth = 0;
-        Sum(root, depth, unit);
+        Sum(root, depth);
         return sum;
     }
 
-    private void Sum(TreeNode root, int depth, int unit) {
+    private void Sum(TreeNode root, int depth) {
         if (root == null) {
             return;
         }
@@ -38,12 +46,12 @@ public class SumRoottoLeafNumbers {
             maxDepth = depth;
         }
         if(root.left != null) {
-            Sum(root.left, depth + 1, unit * 10);
+            Sum(root.left, depth + 1);
         }
         if (root.right != null) {
-            Sum(root.right, depth + 1, unit * 10);
+            Sum(root.right, depth + 1);
         }
 
-        sum += root.val * unit;
+        sum += root.val * (int) Math.pow(10, maxDepth - depth);
     }
 }
