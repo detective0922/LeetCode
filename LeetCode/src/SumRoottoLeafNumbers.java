@@ -52,6 +52,6 @@ public class SumRoottoLeafNumbers {
             Sum(root.right, depth + 1);
         }
 
-        sum += root.val * (int) Math.pow(10, maxDepth - depth);
+        sum += root.val * (int) Math.pow(10, maxDepth - depth) * (1 + maxDepth - depth);
     }
 }
