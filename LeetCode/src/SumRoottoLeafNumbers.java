@@ -29,10 +29,10 @@ public class SumRoottoLeafNumbers {
         System.out.println(new SumRoottoLeafNumbers().sumNumbers(root));
     }
 
-    private int sum = 0;
+    private int totalSum = 0;
     public int sumNumbers(TreeNode root) {
         Sum(root, 0);
-        return sum;
+        return totalSum;
     }
 
     private void Sum(TreeNode root, int sum) {
@@ -40,6 +40,9 @@ public class SumRoottoLeafNumbers {
             return;
         }
         sum += root.val;
+        if (root.left == null && root.right == null) {
+            totalSum += sum;
+        }
         Sum(root.left, sum * 10);
         Sum(root.right, sum * 10);
     }
