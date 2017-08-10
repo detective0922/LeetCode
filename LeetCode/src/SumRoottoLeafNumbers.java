@@ -30,28 +30,22 @@ public class SumRoottoLeafNumbers {
     }
 
     private int sum = 0;
-    private int maxDepth = 0;
     public int sumNumbers(TreeNode root) {
-        int sum = 0;
-        int depth = 0;
-        Sum(root, depth);
+        Sum(root, 0);
         return sum;
     }
 
-    private void Sum(TreeNode root, int depth) {
+    private void Sum(TreeNode root, int sum) {
         if (root == null) {
             return;
         }
-        if (root.left == null && root.right == null) {
-            maxDepth = depth;
-        }
         if(root.left != null) {
-            Sum(root.left, depth + 1);
+            Sum(root.left, sum * 10);
         }
         if (root.right != null) {
-            Sum(root.right, depth + 1);
+            Sum(root.right, sum * 10);
         }
 
-        sum += root.val * (int) Math.pow(10, maxDepth - depth) * (1 + maxDepth - depth);
+        sum += root.val;
     }
 }
