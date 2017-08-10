@@ -39,13 +39,8 @@ public class SumRoottoLeafNumbers {
         if (root == null) {
             return;
         }
-        if(root.left != null) {
-            Sum(root.left, sum * 10);
-        }
-        if (root.right != null) {
-            Sum(root.right, sum * 10);
-        }
-
         sum += root.val;
+        Sum(root.left, sum * 10);
+        Sum(root.right, sum * 10);
     }
 }
