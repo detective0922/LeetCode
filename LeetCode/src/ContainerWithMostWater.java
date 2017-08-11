@@ -12,8 +12,10 @@ Note: You may not slant the container and n is at least 2.
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
         int maxArea = 0;
-        for (int i = 0; i < height.length; i++) {
-            maxArea = i * height[i];
+        int low = 0;
+        int high = height.length - 1;
+        while (low < high) {
+
         }
         return maxArea;
     }
