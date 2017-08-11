@@ -44,6 +44,8 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
 */
 public class LongestAbsoluteFilePath {
     public int lengthLongestPath(String input) {
+        int maxLength = 0;
 
+        return maxLength;
     }
 }
