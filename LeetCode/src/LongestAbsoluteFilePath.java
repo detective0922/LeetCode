@@ -46,6 +46,9 @@ public class LongestAbsoluteFilePath {
     public int lengthLongestPath(String input) {
         int maxLength = 0;
         String[] paths = input.split("\n");
+        for(String path : paths) {
+
+        }
 
         return maxLength;
     }
