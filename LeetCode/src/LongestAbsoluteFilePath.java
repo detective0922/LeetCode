@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 388. Longest Absolute File Path
 
@@ -46,9 +49,12 @@ public class LongestAbsoluteFilePath {
     public int lengthLongestPath(String input) {
         int maxLength = 0;
         String[] paths = input.split("\n");
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int nCount = 0;
-        for(String path : paths) {
-
+        int nMaxLength = 0;
+        for (String path : paths) {
+            nCount = path.split("\t").length - 1;
+            map.put(nCount, Math.max(nMaxLength, path.length()));
         }
 
         return maxLength;
