@@ -46,7 +46,7 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
 */
 public class LongestAbsoluteFilePath {
     public static void main(String[] args) {
-        new LongestAbsoluteFilePath().lengthLongestPath("\"dir\\n\\tsubdir1\\n\\t\\tfile1.ext\\n\\t\\tsubsubdir1\\n\\tsubdir2\\n\\t\\tsubsubdir2\\n\\t\\t\\tfile222.ext\"");
+        new LongestAbsoluteFilePath().lengthLongestPath("dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile22.ext");
     }
 
     public int lengthLongestPath(String input) {
