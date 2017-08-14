@@ -62,9 +62,9 @@ public class LongestAbsoluteFilePath {
             depth = path.lastIndexOf("\t") + 1;
             int currLen = path.length() - depth;
             if (path.contains(".")) {
-                maxLength = Math.max(maxLength, stack.pop() + currLen);
+                maxLength = Math.max(maxLength, stack.peek() + currLen);
             } else {
-                stack.push(stack.pop() + currLen);
+                stack.push(stack.peek() + currLen);
             }
         }
         return maxLength;
