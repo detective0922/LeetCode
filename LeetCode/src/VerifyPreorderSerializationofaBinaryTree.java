@@ -36,4 +36,7 @@ Example 3:
 
 */
 public class VerifyPreorderSerializationofaBinaryTree {
+    public boolean isValidSerialization(String preorder) {
+
+    }
 }
