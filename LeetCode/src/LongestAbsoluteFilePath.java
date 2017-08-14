@@ -57,6 +57,7 @@ public class LongestAbsoluteFilePath {
         int depth = 0;
         String[] paths = input.split("\n");
         Deque<Integer> stack = new ArrayDeque<Integer>();
+        stack.push(0);
         for (String path : paths) {
             depth = path.lastIndexOf("\t") + 1;
             int currLen = path.length() - depth;
