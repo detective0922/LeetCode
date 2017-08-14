@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -47,14 +49,25 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
 */
 public class LongestAbsoluteFilePath {
     public int lengthLongestPath(String input) {
+        if (input == null || input.length() == 0) {
+            return 0;
+        }
         int maxLength = 0;
         String[] paths = input.split("\n");
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, List<String>> map = new HashMap<Integer, List<String>>();
         int nCount = 0;
         int nMaxLength = 0;
         for (String path : paths) {
             nCount = path.split("\t").length - 1;
-            map.put(nCount, Math.max(nMaxLength, path.length()));
+            if (map.containsKey(nCount)) {
+                map.get(nCount).add(path);
+            } else {
+                map.put(nCount, new ArrayList<String>());
+            }
+        }
+
+        for (List<String> strings : map.values()) {
+
         }
 
         return maxLength;
