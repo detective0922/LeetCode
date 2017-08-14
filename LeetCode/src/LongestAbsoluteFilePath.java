@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 388. Longest Absolute File Path
@@ -53,23 +50,18 @@ public class LongestAbsoluteFilePath {
             return 0;
         }
         int maxLength = 0;
+        int depth = 0;
         String[] paths = input.split("\n");
-        Map<Integer, List<String>> map = new HashMap<Integer, List<String>>();
-        int nCount = 0;
-        int nMaxLength = 0;
+        Deque<Integer> stack = new ArrayDeque<Integer>();
         for (String path : paths) {
-            nCount = path.split("\t").length - 1;
-            if (map.containsKey(nCount)) {
-                map.get(nCount).add(path);
+            depth = path.lastIndexOf("\t") + 1;
+            int currLen = path.length() - depth;
+            if (path.contains(".")) {
+                maxLength = Math.max(maxLength, stack.pop() + currLen)
             } else {
-                map.put(nCount, new ArrayList<String>());
+                stack.push(stack.pop() + currLen);
             }
         }
-
-        for (List<String> strings : map.values()) {
-
-        }
-
         return maxLength;
     }
 }
