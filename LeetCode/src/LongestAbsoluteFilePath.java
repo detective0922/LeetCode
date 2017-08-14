@@ -63,9 +63,9 @@ public class LongestAbsoluteFilePath {
             while (depth + 1< stack.size()) {
                 stack.pop();
             }
-            int currLen = path.length() - depth;
+            int currLen = path.length() - depth + 1;
             if (path.contains(".")) {
-                maxLength = Math.max(maxLength, stack.peek() + currLen);
+                maxLength = Math.max(maxLength, stack.peek() + currLen - 1);
             } else {
                 stack.push(stack.peek() + currLen);
             }
