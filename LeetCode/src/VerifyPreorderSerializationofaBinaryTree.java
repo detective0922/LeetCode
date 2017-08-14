@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /*
 331. Verify Preorder Serialization of a Binary Tree
 
@@ -38,6 +41,7 @@ Example 3:
 public class VerifyPreorderSerializationofaBinaryTree {
     public boolean isValidSerialization(String preorder) {
         String[] nodes = preorder.split(",");
+        Deque<String> stack = new ArrayDeque<String>();
 
     }
 }
