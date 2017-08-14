@@ -60,7 +60,7 @@ public class LongestAbsoluteFilePath {
         stack.push(0);
         for (String path : paths) {
             depth = path.lastIndexOf("\t") + 1;
-            if (depth + 1< stack.size()) {
+            while (depth + 1< stack.size()) {
                 stack.pop();
             }
             int currLen = path.length() - depth;
