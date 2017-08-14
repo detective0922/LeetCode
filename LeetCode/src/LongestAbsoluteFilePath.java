@@ -60,6 +60,9 @@ public class LongestAbsoluteFilePath {
         stack.push(0);
         for (String path : paths) {
             depth = path.lastIndexOf("\t") + 1;
+            if (depth < stack.size()) {
+                stack.pop();
+            }
             int currLen = path.length() - depth;
             if (path.contains(".")) {
                 maxLength = Math.max(maxLength, stack.peek() + currLen);
