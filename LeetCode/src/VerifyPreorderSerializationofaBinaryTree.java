@@ -52,9 +52,12 @@ public class VerifyPreorderSerializationofaBinaryTree {
             if (!nodes[i].equals("#")) {
                 stack.push(nodes[i]);
             }
-
         }
 
-
+        if (stack.size() == 0 || stack.size() % 2 != 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
