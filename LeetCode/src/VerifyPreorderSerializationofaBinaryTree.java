@@ -40,9 +40,7 @@ Example 3:
 */
 public class VerifyPreorderSerializationofaBinaryTree {
     public static void main(String[] args) {
-        System.out.println(new VerifyPreorderSerializationofaBinaryTree().isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
-        System.out.println(new VerifyPreorderSerializationofaBinaryTree().isValidSerialization("1,#"));
-        System.out.println(new VerifyPreorderSerializationofaBinaryTree().isValidSerialization("9,#,#,1"));
+        System.out.println(new VerifyPreorderSerializationofaBinaryTree().isValidSerialization("1,#,#,#,#"));
     }
 
     public boolean isValidSerialization(String preorder) {
@@ -55,8 +53,14 @@ public class VerifyPreorderSerializationofaBinaryTree {
         }
         Deque<String> stack = new ArrayDeque<String>();
         for (int i = 0; i < nodes.length; i++) {
-            if (nodes[i].equals("#") && nodes[i + 1].equals("#")) {
-                stack.pop();
+            if (i< nodes.length - 1) {
+                if (nodes[i].equals("#") && nodes[i + 1].equals("#")) {
+                    if (!stack.isEmpty()) {
+                        stack.pop();
+                    } else {
+                        return false;
+                    }
+                }
             }
             if (!nodes[i].equals("#")) {
                 stack.push(nodes[i]);
