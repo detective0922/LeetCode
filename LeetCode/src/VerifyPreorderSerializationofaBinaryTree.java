@@ -40,8 +40,21 @@ Example 3:
 */
 public class VerifyPreorderSerializationofaBinaryTree {
     public boolean isValidSerialization(String preorder) {
+        if (preorder == null || preorder.isEmpty()) {
+            return false;
+        }
         String[] nodes = preorder.split(",");
         Deque<String> stack = new ArrayDeque<String>();
+        for (int i = 0; i < nodes.length; i++) {
+            if (nodes[i].equals("#") && nodes[i + 1].equals("#")) {
+                stack.pop();
+            }
+            if (!nodes[i].equals("#")) {
+                stack.push(nodes[i]);
+            }
+
+        }
+
 
     }
 }
