@@ -48,9 +48,9 @@ public class VerifyPreorderSerializationofaBinaryTree {
             return false;
         }
         String[] nodes = preorder.split(",");
-        if (nodes.length < 3 || !(nodes[nodes.length - 1].equals("#") && nodes[nodes.length - 2].equals("#"))) {
+        /*if (nodes.length < 3 || !(nodes[nodes.length - 1].equals("#") && nodes[nodes.length - 2].equals("#"))) {
             return false;
-        }
+        }*/
         Deque<String> stack = new ArrayDeque<String>();
         for (int i = 0; i < nodes.length; i++) {
             if (i< nodes.length - 1) {
