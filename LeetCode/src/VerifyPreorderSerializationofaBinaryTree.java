@@ -51,10 +51,8 @@ public class VerifyPreorderSerializationofaBinaryTree {
         Deque<String> stack = new ArrayDeque<String>();
         for (int i = 0; i < nodes.length; i++) {
             if ("#".equals(nodes[i])) {
-                if ("#".equals(stack.peek())) {
+                while ("#".equals(stack.peek())) {
                     stack.pop();
-                } else {
-                    stack.push(nodes[i]);
                 }
             } else {
                 stack.push(nodes[i]);
