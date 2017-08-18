@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -21,10 +22,11 @@ For example,
 */
 public class SubsetsII {
     public static void main(String[] args) {
-        System.out.println(new SubsetsII().subsetsWithDup(new int[]{1,2,2}));
+        System.out.println(new SubsetsII().subsetsWithDup(new int[]{0}));
     }
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
         List<List<Integer>> subsets = new ArrayList<List<Integer>>();
         List<Integer> subset = new ArrayList<Integer>();
         generateSubsets(subsets, subset, nums, 0);
