@@ -12,4 +12,10 @@ It doesn't matter what you leave beyond the new length.
 
 */
 public class RemoveDuplicatesfromSortedArrayII {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+
+    }
 }
