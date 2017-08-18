@@ -21,7 +21,7 @@ For example,
 */
 public class SubsetsII {
     public static void main(String[] args) {
-        System.out.println(new Subsets().subsets(new int[]{1,2,2}));
+        System.out.println(new SubsetsII().subsetsWithDup(new int[]{0}));
     }
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
@@ -33,17 +33,16 @@ public class SubsetsII {
     }
 
     private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start, List<Integer> sums, int sum) {
-        subsets.add(new ArrayList<Integer>(subset));
+        if (!sums.contains(sum)) {
+            subsets.add(new ArrayList<Integer>(subset));
+            sums.add(sum);
+        }
         for (int i = start; i < nums.length; i++) {
             sum += nums[i];
-            if (sums.contains(sum)) {
-                sum -= nums[i];
-                continue;;
-            }
-            sums.add(sum);
             subset.add(nums[i]);
-            generateSubsets(subsets, subset, nums, i + 1);
+            generateSubsets(subsets, subset, nums, i + 1, sums, sum);
             subset.remove(subset.size() - 1);
+            sum -= nums[i];
         }
     }
 }
