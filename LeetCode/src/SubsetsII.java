@@ -34,7 +34,7 @@ public class SubsetsII {
     private void generateSubsets(List<List<Integer>> subsets, List<Integer> subset, int[] nums, int start) {
         subsets.add(new ArrayList<Integer>(subset));
         for (int i = start; i < nums.length; i++) {
-            if (i > 1 && nums[i] == nums[i-1]) {
+            if (i > start && nums[i] == nums[i-1]) {
                 continue;
             }
             subset.add(nums[i]);
