@@ -14,4 +14,7 @@ Did you use extra space?
 
 */
 public class SetMatrixZeroes {
+    public void setZeroes(int[][] matrix) {
+
+    }
 }
