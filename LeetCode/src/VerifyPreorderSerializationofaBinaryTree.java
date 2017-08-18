@@ -40,7 +40,7 @@ Example 3:
 */
 public class VerifyPreorderSerializationofaBinaryTree {
     public static void main(String[] args) {
-        System.out.println(new VerifyPreorderSerializationofaBinaryTree().isValidSerialization("#"));
+        System.out.println(new VerifyPreorderSerializationofaBinaryTree().isValidSerialization("1,#,#,#,#"));
     }
 
     public boolean isValidSerialization(String preorder) {
@@ -53,10 +53,13 @@ public class VerifyPreorderSerializationofaBinaryTree {
             if ("#".equals(nodes[i])) {
                 while ("#".equals(stack.peek())) {
                     stack.pop();
+                    if (stack.isEmpty()) {
+                        return false;
+                    }
+                    stack.pop();
                 }
             }
             stack.push(nodes[i]);
-
         }
 
         if (stack.size() == 1 && stack.peek().equals("#")) {
