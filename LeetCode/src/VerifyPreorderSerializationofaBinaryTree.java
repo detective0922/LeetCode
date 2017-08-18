@@ -54,9 +54,9 @@ public class VerifyPreorderSerializationofaBinaryTree {
                 while ("#".equals(stack.peek())) {
                     stack.pop();
                 }
-            } else {
-                stack.push(nodes[i]);
             }
+            stack.push(nodes[i]);
+
         }
 
         if (stack.size() == 0 || stack.size() % 2 != 0) {
