@@ -59,7 +59,7 @@ public class VerifyPreorderSerializationofaBinaryTree {
 
         }
 
-        if (stack.size() == 0 || stack.size() % 2 != 0) {
+        if (stack.size() == 1 && stack.peek().equals("#")) {
             return true;
         } else {
             return false;
