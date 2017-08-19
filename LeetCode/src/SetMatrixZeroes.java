@@ -18,6 +18,9 @@ public class SetMatrixZeroes {
         if (matrix == null) {
             return;
         }
+        for (int i = 0; i < matrix.length; i++) {
+            
+        }
 
     }
 }
