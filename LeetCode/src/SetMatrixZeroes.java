@@ -26,4 +26,8 @@ public class SetMatrixZeroes {
         }
 
     }
+
+    private void fillZero() {
+
+    }
 }
