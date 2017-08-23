@@ -27,7 +27,7 @@ public class SetMatrixZeroes {
 
     }
 
-    private void fillZero(int[][] matrix, int i, int j) {
+    private void fillZero(int[][] matrix, int row, int col) {
 
     }
 }
