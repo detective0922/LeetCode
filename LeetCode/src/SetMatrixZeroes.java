@@ -31,6 +31,9 @@ public class SetMatrixZeroes {
         for (int i = 0; i < matrix[0].length; i++) {
             matrix[row][i] = 0;
         }
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][col] = 0;
+        }
 
     }
 }
