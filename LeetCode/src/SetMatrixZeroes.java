@@ -14,6 +14,10 @@ Did you use extra space?
 
 */
 public class SetMatrixZeroes {
+    public static void main(String[] args) {
+
+    }
+
     public void setZeroes(int[][] matrix) {
         if (matrix == null) {
             return;
