@@ -15,7 +15,7 @@ Did you use extra space?
 */
 public class SetMatrixZeroes {
     public static void main(String[] args) {
-        new SetMatrixZeroes().setZeroes();
+        new SetMatrixZeroes().setZeroes(new int[][]{});
     }
 
     public void setZeroes(int[][] matrix) {
