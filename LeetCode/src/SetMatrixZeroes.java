@@ -28,6 +28,8 @@ public class SetMatrixZeroes {
                 if (matrix[i][j] == 0) {
                     fillZero(copyMatrix, i, j);
                     break;
+                } else {
+                    copyMatrix[i][j] = matrix[i][j];
                 }
             }
         }
