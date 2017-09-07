@@ -27,12 +27,14 @@ public class SetMatrixZeroes {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 0) {
                     fillZero(copyMatrix, i, j);
+                } else if (copyMatrix[i][j] == 0) {
+                    continue;
                 } else {
                     copyMatrix[i][j] = matrix[i][j];
                 }
             }
         }
-
+        matrix = copyMatrix;
     }
 
     private void fillZero(int[][] matrix, int row, int col) {
