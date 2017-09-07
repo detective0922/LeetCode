@@ -24,20 +24,13 @@ public class SetMatrixZeroes {
         if (matrix == null) {
             return;
         }
-        int[][] copyMatrix = new int[matrix.length][matrix[0].length];
-        for (int i = 0; i < copyMatrix.length; i++) {
-            for (int j = 0; j < copyMatrix[0].length; j++) {
-                copyMatrix[i][j] = -1;
-            }
-        }
+        boolean[] rowZeros = new boolean[matrix.length];
+        boolean[] colZeros = new boolean[matrix[0].length];
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 0) {
-                    fillZero(copyMatrix, i, j);
-                } else if (copyMatrix[i][j] == 0) {
-                    continue;
-                } else {
-                    copyMatrix[i][j] = matrix[i][j];
+                    rowZeros[i] =
                 }
             }
         }
@@ -46,15 +39,5 @@ public class SetMatrixZeroes {
                 matrix[i][j] = copyMatrix[i][j];
             }
         }
-    }
-
-    private void fillZero(int[][] matrix, int row, int col) {
-        for (int i = 0; i < matrix[0].length; i++) {
-            matrix[row][i] = 0;
-        }
-        for (int i = 0; i < matrix.length; i++) {
-            matrix[i][col] = 0;
-        }
-
     }
 }
