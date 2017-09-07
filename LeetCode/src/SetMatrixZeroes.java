@@ -27,7 +27,6 @@ public class SetMatrixZeroes {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 0) {
                     fillZero(copyMatrix, i, j);
-                    break;
                 } else {
                     copyMatrix[i][j] = matrix[i][j];
                 }
