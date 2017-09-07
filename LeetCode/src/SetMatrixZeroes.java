@@ -35,17 +35,11 @@ public class SetMatrixZeroes {
                 }
             }
         }
-        for (int i = 0; i < rowZeros.length; i++) {
-            if (rowZeros[i]) {
-                for (int j = 0; j < matrix[i].length; j++) {
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if(rowZeros[i] || colZeros[j]) {
                     matrix[i][j] = 0;
-                }
-            }
-        }
-        for (int i = 0; i < colZeros.length; i++) {
-            if (colZeros[i]) {
-                for (int j = 0; j < matrix.length; j++) {
-                    matrix[j][i] = 0;
                 }
             }
         }
