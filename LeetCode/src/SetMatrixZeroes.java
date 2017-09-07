@@ -15,7 +15,9 @@ Did you use extra space?
 */
 public class SetMatrixZeroes {
     public static void main(String[] args) {
-        new SetMatrixZeroes().setZeroes(new int[][]{{1,1,1,1},{2,2,0,2},{3,3,3,3},{4,4,4,4}});
+        int[][] matrix = new int[][]{{0,1}};
+        new SetMatrixZeroes().setZeroes(matrix);
+        System.out.println(matrix);
     }
 
     public void setZeroes(int[][] matrix) {
@@ -39,7 +41,11 @@ public class SetMatrixZeroes {
                 }
             }
         }
-        matrix = copyMatrix;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = copyMatrix[i][j];
+            }
+        }
     }
 
     private void fillZero(int[][] matrix, int row, int col) {
