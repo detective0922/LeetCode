@@ -20,5 +20,9 @@ public class ValidSudoku {
         for (int i = 0; i < board.length; i++) {
             
         }
+
+        for (int i = 0; i < board[0].length; i++) {
+            
+        }
     }
 }
