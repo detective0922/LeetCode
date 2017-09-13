@@ -17,7 +17,7 @@ Note:
 */
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
-        for (int i = 0; i < board.length; i++) {
+        for (int i = 0; i < 9; i++) {
             
         }
 
