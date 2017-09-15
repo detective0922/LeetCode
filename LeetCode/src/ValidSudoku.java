@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /*
 36. Valid Sudoku
 
@@ -17,6 +19,7 @@ Note:
 */
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
+        HashSet<Character> row = new HashSet<Character>();
         for (int i = 0; i < 9; i++) {
             
         }
