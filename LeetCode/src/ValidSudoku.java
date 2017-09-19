@@ -24,9 +24,10 @@ public class ValidSudoku {
         HashSet<Character> subbox = new HashSet<Character>();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                
+                if (board[i][j] != '.' &&  !row.add(board[i][j])) {
+                    return false;
+                }
             }
-
         }
     }
 }
