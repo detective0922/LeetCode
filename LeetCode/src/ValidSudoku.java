@@ -27,6 +27,9 @@ public class ValidSudoku {
                 if (board[i][j] != '.' &&  !row.add(board[i][j])) {
                     return false;
                 }
+                if (board[j][i] != '.' &&  !col.add(board[i][j])) {
+                    return false;
+                }
             }
         }
     }
