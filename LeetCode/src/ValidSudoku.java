@@ -31,6 +31,7 @@ public class ValidSudoku {
                     return false;
                 }
                 int boxRowIndex = 0;
+                int boxColIndex = 0;
             }
         }
     }
