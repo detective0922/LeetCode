@@ -30,8 +30,8 @@ public class ValidSudoku {
                 if (board[j][i] != '.' &&  !col.add(board[i][j])) {
                     return false;
                 }
-                int boxRowIndex = 0;
-                int boxColIndex = 0;
+                int boxRowIndex = j % 3 + i*3;
+                int boxColIndex = j / 3 + i*3;
             }
         }
     }
