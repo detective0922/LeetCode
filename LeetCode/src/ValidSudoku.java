@@ -18,6 +18,10 @@ Note:
 
 */
 public class ValidSudoku {
+    public static void main(String[] args) {
+
+    }
+
     public boolean isValidSudoku(char[][] board) {
         HashSet<Character> row = new HashSet<Character>();
         HashSet<Character> col = new HashSet<Character>();
