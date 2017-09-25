@@ -19,7 +19,7 @@ Note:
 */
 public class ValidSudoku {
     public static void main(String[] args) {
-        char[][] board = {".87654321".toCharArray(), "2........".toCharArray(), "3........".toCharArray(), "4........".toCharArray(), "5........".toCharArray(), "6........".toCharArray(), "7........".toCharArray(), "8........".toCharArray(), "9........".toCharArray()};
+        char[][] board = {"..5.....6".toCharArray(),"....14...".toCharArray(),".........".toCharArray(),".....92..".toCharArray(),"5....2...".toCharArray(),".......3.".toCharArray(),"...54....".toCharArray(),"3.....42.".toCharArray(),"...27.6..".toCharArray()};
         new ValidSudoku().isValidSudoku(board);
     }
 
@@ -29,15 +29,15 @@ public class ValidSudoku {
             HashSet<Character> col = new HashSet<Character>();
             HashSet<Character> subbox = new HashSet<Character>();
             for (int j = 0; j < 9; j++) {
-                if (board[i][j] != '.' &&  !row.add(board[i][j])) {
+                if (board[i][j] != '.' && !row.add(board[i][j])) {
                     return false;
                 }
-                if (board[j][i] != '.' &&  !col.add(board[i][j])) {
+                if (board[j][i] != '.' && !col.add(board[i][j])) {
                     return false;
                 }
-                int boxRowIndex = i / 3 + j / 3;
-                int boxColIndex = i % 3 + j % 3;
-                if (board[boxColIndex][boxRowIndex] != '.' &&  !subbox.add(board[boxColIndex][boxRowIndex])) {
+                int boxRowIndex = (i / 3) * 3 + j / 3;
+                int boxColIndex = (i % 3) * 3 + j % 3;
+                if (board[boxRowIndex][boxColIndex] != '.' && !subbox.add(board[boxRowIndex][boxColIndex])) {
                     return false;
                 }
             }
