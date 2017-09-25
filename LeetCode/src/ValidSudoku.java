@@ -20,7 +20,7 @@ Note:
 public class ValidSudoku {
     public static void main(String[] args) {
         char[][] board = {"..5.....6".toCharArray(),"....14...".toCharArray(),".........".toCharArray(),".....92..".toCharArray(),"5....2...".toCharArray(),".......3.".toCharArray(),"...54....".toCharArray(),"3.....42.".toCharArray(),"...27.6..".toCharArray()};
-        new ValidSudoku().isValidSudoku(board);
+        System.out.println(new ValidSudoku().isValidSudoku(board));
     }
 
     public boolean isValidSudoku(char[][] board) {
@@ -32,7 +32,7 @@ public class ValidSudoku {
                 if (board[i][j] != '.' && !row.add(board[i][j])) {
                     return false;
                 }
-                if (board[j][i] != '.' && !col.add(board[i][j])) {
+                if (board[j][i] != '.' && !col.add(board[j][i])) {
                     return false;
                 }
                 int boxRowIndex = (i / 3) * 3 + j / 3;
