@@ -25,4 +25,7 @@ The longest substring is "ababb", as 'a' is repeated 2 times and 'b' is repeated
 
 */
 public class LongestSubstringwithAtLeastKRepeatingCharacters {
+    public int longestSubstring(String s, int k) {
+
+    }
 }
