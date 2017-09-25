@@ -35,8 +35,8 @@ public class ValidSudoku {
                 if (board[j][i] != '.' &&  !col.add(board[i][j])) {
                     return false;
                 }
-                int boxRowIndex = j / 3 + i*3;
-                int boxColIndex = j % 3 + i*3;
+                int boxRowIndex = i / 3 + j / 3;
+                int boxColIndex = i % 3 + j % 3;
                 if (board[boxColIndex][boxRowIndex] != '.' &&  !subbox.add(board[boxColIndex][boxRowIndex])) {
                     return false;
                 }
