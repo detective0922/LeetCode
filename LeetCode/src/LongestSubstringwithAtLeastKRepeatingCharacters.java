@@ -31,6 +31,7 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
         helper(chars, 0, s.length(), sMap);
     }
 
-    private void helper(char[] chars, int i, int length, char[] sMap) {
+    private void helper(char[] chars, int start, int end, char[] sMap) {
+
     }
 }
