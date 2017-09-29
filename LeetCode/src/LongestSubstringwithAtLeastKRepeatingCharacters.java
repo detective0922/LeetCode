@@ -28,10 +28,10 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
     public int longestSubstring(String s, int k) {
         char[] sMap = new char[128];
         char[] chars = s.toCharArray();
-        helper(chars, 0, s.length(), sMap);
+        return helper(chars, 0, s.length(), sMap);
     }
 
-    private void helper(char[] chars, int start, int end, char[] sMap) {
+    private int helper(char[] chars, int start, int end, char[] sMap) {
 
     }
 }
