@@ -35,6 +35,8 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
             return 0;
         }
         char[] sMap = new char[128];
-
+        for (int i = 0; i < chars.length; i++) {
+            sMap[chars[i]]++;
+        }
     }
 }
