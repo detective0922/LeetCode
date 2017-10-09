@@ -42,7 +42,7 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
             if (sMap[i] > 0 && sMap[i] < k) {
                 for (int j = start; j <= end; j++) {
                     if (chars[j] == i + 'a') {
-
+                        int left = helper(chars, start, j-1, k);
                     }
                 }
 
