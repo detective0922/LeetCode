@@ -43,6 +43,7 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
                 for (int j = start; j <= end; j++) {
                     if (chars[j] == i + 'a') {
                         int left = helper(chars, start, j-1, k);
+                        int right = helper(chars, j+1, end, k);
                     }
                 }
 
