@@ -44,6 +44,7 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
                     if (chars[j] == i + 'a') {
                         int left = helper(chars, start, j-1, k);
                         int right = helper(chars, j+1, end, k);
+                        return Math.max(left, right);
                     }
                 }
 
