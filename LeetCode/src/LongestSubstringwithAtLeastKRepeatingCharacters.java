@@ -47,8 +47,8 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
                         return Math.max(left, right);
                     }
                 }
-
             }
         }
+        return end - start;
     }
 }
