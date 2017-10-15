@@ -53,6 +53,6 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
                 }
             }
         }
-        return end - start;
+        return end - start + 1;
     }
 }
