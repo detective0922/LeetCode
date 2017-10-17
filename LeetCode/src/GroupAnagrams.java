@@ -21,6 +21,11 @@ Note: All inputs will be in lower-case.
 import java.util.*;
 
 public class GroupAnagrams {
+    public static void main(String[] args) {
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        System.out.println(new GroupAnagrams().groupAnagrams(strs));
+    }
+
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<Integer, List<String>> anagramsMap = new HashMap<Integer, List<String>>();
         int key = 0;
