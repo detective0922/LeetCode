@@ -18,10 +18,7 @@ Note: All inputs will be in lower-case.
 
 */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -37,7 +34,7 @@ public class GroupAnagrams {
             }
             anagramsMap.get(key).add(str);
         }
-
+        return new ArrayList<List<String>>(anagramsMap.values());
     }
 
 }
