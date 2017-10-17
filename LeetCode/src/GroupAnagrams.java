@@ -19,13 +19,24 @@ Note: All inputs will be in lower-case.
 */
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> anagrams = new ArrayList<List<String>>();
+        Map<Character, List<String>> anagramsMap = new HashMap<Character, List<String>>();
+        int key = 0;
         for (String str : strs) {
-
+            char[] chars = str.toCharArray();
+            for (char c : chars) {
+                key += c;
+            }
+            if (anagramsMap.containsKey(key)) {
+                anagramsMap.get(key).add(str);
+            } else {
+                anagramsMap.put(key, new ArrayList<String>());
+            }
         }
 
     }
