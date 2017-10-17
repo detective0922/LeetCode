@@ -33,8 +33,13 @@ Follow up:
 */
 public class WiggleSubsequence {
     public int wiggleMaxLength(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < nums[i + 1]) {
+        if (nums.length < 2) {
+            return nums.length;
+        }
+        int high = 1;
+        int low = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
 
             } else {
 
