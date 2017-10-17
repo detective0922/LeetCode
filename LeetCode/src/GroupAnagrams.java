@@ -25,18 +25,17 @@ import java.util.Map;
 
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
-        Map<Character, List<String>> anagramsMap = new HashMap<Character, List<String>>();
+        Map<Integer, List<String>> anagramsMap = new HashMap<Integer, List<String>>();
         int key = 0;
         for (String str : strs) {
             char[] chars = str.toCharArray();
             for (char c : chars) {
                 key += c;
             }
-            if (anagramsMap.containsKey(key)) {
-                anagramsMap.get(key).add(str);
-            } else {
+            if (!anagramsMap.containsKey(key)) {
                 anagramsMap.put(key, new ArrayList<String>());
             }
+            anagramsMap.get(key).add(str);
         }
 
     }
