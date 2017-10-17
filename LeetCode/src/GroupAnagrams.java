@@ -28,8 +28,8 @@ public class GroupAnagrams {
 
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<Integer, List<String>> anagramsMap = new HashMap<Integer, List<String>>();
-        int key = 0;
         for (String str : strs) {
+            int key = 0;
             char[] chars = str.toCharArray();
             for (char c : chars) {
                 key += c;
