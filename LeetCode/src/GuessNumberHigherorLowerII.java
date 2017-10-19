@@ -31,6 +31,9 @@ Given a particular n ≥ 1, find out how much money you need to have to guarante
 public class GuessNumberHigherorLowerII {
     public int getMoneyAmount(int n) {
         int[][] dp = new int[n+1][n+1];
+        return win(dp, 1, n);
+    }
 
+    private int win(int[][] dp, int i, int n) {
     }
 }
