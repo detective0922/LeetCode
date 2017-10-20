@@ -34,6 +34,8 @@ public class GuessNumberHigherorLowerII {
         return win(dp, 1, n);
     }
 
-    private int win(int[][] dp, int i, int n) {
+    private int win(int[][] dp, int low, int high) {
+
+
     }
 }
