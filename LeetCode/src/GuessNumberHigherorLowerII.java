@@ -35,6 +35,9 @@ public class GuessNumberHigherorLowerII {
     }
 
     private int win(int[][] dp, int low, int high) {
+        if (low >= high) {
+            return 0;
+        }
 
 
     }
