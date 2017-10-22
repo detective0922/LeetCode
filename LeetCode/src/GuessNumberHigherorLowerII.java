@@ -38,6 +38,12 @@ public class GuessNumberHigherorLowerII {
         if (low >= high) {
             return 0;
         }
+        for (int i = low; i <= high; i++) {
+            for (int j = low + 1; j < high-1; j++) {
+                
+            }
+            
+        }
 
 
     }
