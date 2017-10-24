@@ -40,9 +40,7 @@ public class GuessNumberHigherorLowerII {
         }
         for (int guess = low; guess < high; guess++) {
             dp[low][high] = guess + Math.max(dp[1][guess - 1], dp[guess + 1][high]);
-            for (int j = low + 1; j <= high-1; j++) {
-                dp[i][j] = Math.min()
-            }
+
             
         }
 
