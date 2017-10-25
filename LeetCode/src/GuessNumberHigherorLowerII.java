@@ -38,10 +38,8 @@ public class GuessNumberHigherorLowerII {
         if (low >= high) {
             return 0;
         }
-        for (int guess = low; guess < high; guess++) {
-            dp[low][high] = guess + Math.max(dp[1][guess - 1], dp[guess + 1][high]);
-
-            
+        for (int guess = low; guess <= high; guess++) {
+            dp[low][high] = guess + Math.max(win(dp, low,  guess - 1), win(dp, guess + 1, high));
         }
 
 
