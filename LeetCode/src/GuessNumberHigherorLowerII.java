@@ -39,7 +39,7 @@ public class GuessNumberHigherorLowerII {
             return 0;
         }
 
-
+        int pay = Integer.MAX_VALUE;
         for (int guess = low; guess <= high; guess++) {
             int tmp = guess + Math.max(win(dp, low, guess - 1), win(dp, guess + 1, high));
         }
