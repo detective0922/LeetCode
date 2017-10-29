@@ -44,7 +44,7 @@ public class GuessNumberHigherorLowerII {
             int tmp = guess + Math.max(win(dp, low, guess - 1), win(dp, guess + 1, high));
             pay = Math.min(pay, tmp);
         }
-
+        dp[low][high] = pay;
 
     }
 }
