@@ -29,6 +29,9 @@ click to show hints.
 */
 public class FlattenBinaryTreetoLinkedList {
     public void flatten(TreeNode root) {
+        if (root == null) {
+            return;
+        }
 
     }
 }
