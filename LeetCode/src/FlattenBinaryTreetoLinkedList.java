@@ -33,5 +33,10 @@ public class FlattenBinaryTreetoLinkedList {
             return;
         }
 
+        if (root.left == null && root.right == null) {
+            return;
+        }
+
+
     }
 }
