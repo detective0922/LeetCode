@@ -38,7 +38,7 @@ public class FlattenBinaryTreetoLinkedList {
         }
 
         flatten(root.right);
-
+        flatten(root.left);
 
 
     }
